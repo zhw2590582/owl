@@ -4,7 +4,7 @@
 	<div id="lSidebar" class="widgets">
 		<div class="sideinner">
 			<div class="lContent">
-                <?php if (function_exists('dynamic_sidebar') && dynamic_sidebar('Main Sidebar') ) : else : ?>
+                <?php if (function_exists('dynamic_sidebar') && dynamic_sidebar('Sidebar') ) : else : ?>
                 <?php endif; ?>
 			</div>
 		</div>

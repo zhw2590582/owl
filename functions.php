@@ -682,17 +682,25 @@ add_filter('pre_option_link_manager_enabled', '__return_true');
 
 /* 注册小工具 */
 if (function_exists('register_sidebars')) register_sidebar(array(
-    'name' => __('Main Sidebar', 'dw-minion') ,
+    'name' => __('Aside', 'dw-minion') ,
     'id' => 'sidebar-1',
-    'description' => __('显示在页面右边', 'island') ,	
+    'description' => __('显示在页面右边', 'island') ,
     'before_widget' => '<aside id="%1$s" class="widget %2$s">',
     'after_widget' => '</aside>',
     'before_title' => '<h3 class="widget-title"><span>',
     'after_title' => '</span></h3>',
 ));
 register_sidebar(array(
-    'name' => __('Drawer', 'island') ,
-    'description' => __('显示在页面右边', 'island') ,
+    'name' => __('Bottom', 'island') ,
+    'description' => __('显示在页面底部', 'island') ,
+    'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+    'after_widget' => '</aside>',
+    'before_title' => '<h3 class="widget-title"><span>',
+    'after_title' => '</span></h3>',
+));
+register_sidebar(array(
+    'name' => __('Sidebar', 'island') ,
+    'description' => __('显示在左侧边栏', 'island') ,
     'before_widget' => '<aside id="%1$s" class="widget %2$s">',
     'after_widget' => '</aside>',
     'before_title' => '<h3 class="widget-title"><span>',

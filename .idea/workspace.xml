@@ -21,41 +21,91 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="_content.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sass/_content.scss">
+      <file leaf-file-name="functions.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/functions.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-23.458334">
-              <caret line="1426" column="0" selection-start-line="1426" selection-start-column="0" selection-end-line="1426" selection-end-column="0" />
+            <state vertical-scroll-proportion="-9.296296">
+              <caret line="684" column="23" selection-start-line="684" selection-start-column="18" selection-end-line="684" selection-end-column="23" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_header.scss" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/sass/_header.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5630631">
-              <caret line="85" column="5" selection-start-line="85" selection-start-column="5" selection-end-line="85" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="custom-about.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/custom-about.php">
+      <file leaf-file-name="footer.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/footer.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="90" column="81" selection-start-line="90" selection-start-column="81" selection-end-line="90" selection-end-column="81" />
+              <caret line="55" column="91" selection-start-line="55" selection-start-column="91" selection-end-line="55" selection-end-column="91" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="404.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/404.php">
+      <file leaf-file-name="sidebar.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sidebar.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="88" column="80" selection-start-line="88" selection-start-column="80" selection-end-line="88" selection-end-column="80" />
+              <caret line="6" column="88" selection-start-line="6" selection-start-column="88" selection-end-line="6" selection-end-column="88" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="custom-archive.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/custom-archive.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="77" column="106" selection-start-line="77" selection-start-column="106" selection-end-line="77" selection-end-column="106" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="custom-friend.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/custom-friend.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="76" column="106" selection-start-line="76" selection-start-column="106" selection-end-line="76" selection-end-column="106" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="custom-message.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/custom-message.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="77" column="106" selection-start-line="77" selection-start-column="106" selection-end-line="77" selection-end-column="106" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="custom-work.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/custom-work.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="80" column="106" selection-start-line="80" selection-start-column="106" selection-end-line="80" selection-end-column="106" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="format-standard.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/format-standard.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="21" column="16" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.5869565">
+              <caret line="91" column="98" selection-start-line="91" selection-start-column="98" selection-end-line="91" selection-end-column="98" />
               <folding />
             </state>
           </provider>
@@ -72,29 +122,32 @@
         <option value="$PROJECT_DIR$/js/plugins.js" />
         <option value="$PROJECT_DIR$/post-like.php" />
         <option value="$PROJECT_DIR$/widgets.php" />
-        <option value="$PROJECT_DIR$/sidebar.php" />
         <option value="$PROJECT_DIR$/tab.php" />
         <option value="$PROJECT_DIR$/layouts/width.css" />
         <option value="$PROJECT_DIR$/layouts/box.css" />
         <option value="$PROJECT_DIR$/sass/_base.scss" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/format-standard.php" />
         <option value="$PROJECT_DIR$/sass/_mixin.scss" />
         <option value="$PROJECT_DIR$/single.php" />
         <option value="$PROJECT_DIR$/js/custom.js" />
         <option value="$PROJECT_DIR$/comments-ajax.php" />
         <option value="$PROJECT_DIR$/comments.php" />
-        <option value="$PROJECT_DIR$/custom-archive.php" />
-        <option value="$PROJECT_DIR$/footer.php" />
         <option value="$PROJECT_DIR$/cs-framework/config/framework.config.php" />
         <option value="$PROJECT_DIR$/sass/_plugins.scss" />
-        <option value="$PROJECT_DIR$/functions.php" />
         <option value="$PROJECT_DIR$/css/nivo-slider.css" />
         <option value="$PROJECT_DIR$/header.php" />
         <option value="$PROJECT_DIR$/404.php" />
-        <option value="$PROJECT_DIR$/custom-about.php" />
         <option value="$PROJECT_DIR$/sass/_content.scss" />
         <option value="$PROJECT_DIR$/sass/_header.scss" />
+        <option value="$PROJECT_DIR$/functions.php" />
+        <option value="$PROJECT_DIR$/footer.php" />
+        <option value="$PROJECT_DIR$/sidebar.php" />
+        <option value="$PROJECT_DIR$/custom-about.php" />
+        <option value="$PROJECT_DIR$/custom-archive.php" />
+        <option value="$PROJECT_DIR$/custom-friend.php" />
+        <option value="$PROJECT_DIR$/custom-message.php" />
+        <option value="$PROJECT_DIR$/custom-work.php" />
+        <option value="$PROJECT_DIR$/index.php" />
       </list>
     </option>
   </component>
@@ -321,29 +374,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/404.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="88" column="80" selection-start-line="88" selection-start-column="80" selection-end-line="88" selection-end-column="80" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sass/_base.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="65" column="1" selection-start-line="65" selection-start-column="1" selection-end-line="65" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sass/_content.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/format-standard.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -499,13 +529,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sidebar.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="37" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/widgets.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -539,13 +562,6 @@
         <state vertical-scroll-proportion="-12.208333">
           <caret line="77" column="12" selection-start-line="77" selection-start-column="12" selection-end-line="77" selection-end-column="12" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/format-standard.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="16" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -585,38 +601,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="146" column="59" selection-start-line="146" selection-start-column="59" selection-end-line="146" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/single.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="186" column="46" selection-start-line="186" selection-start-column="46" selection-end-line="186" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/custom-archive.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="31" column="38" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/footer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="45" selection-start-line="12" selection-start-column="45" selection-end-line="12" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/functions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.185185">
-          <caret line="419" column="30" selection-start-line="419" selection-start-column="30" selection-end-line="419" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -663,14 +651,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/custom-about.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="90" column="81" selection-start-line="90" selection-start-column="81" selection-end-line="90" selection-end-column="81" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sass/_content.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-23.458334">
@@ -681,8 +661,88 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sass/_header.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5630631">
+        <state vertical-scroll-proportion="-15.625">
           <caret line="85" column="5" selection-start-line="85" selection-start-column="5" selection-end-line="85" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/footer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="55" column="91" selection-start-line="55" selection-start-column="91" selection-end-line="55" selection-end-column="91" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.296296">
+          <caret line="684" column="23" selection-start-line="684" selection-start-column="18" selection-end-line="684" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/custom-about.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="76" column="106" selection-start-line="76" selection-start-column="106" selection-end-line="76" selection-end-column="106" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/custom-archive.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="77" column="106" selection-start-line="77" selection-start-column="106" selection-end-line="77" selection-end-column="106" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/custom-friend.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="76" column="106" selection-start-line="76" selection-start-column="106" selection-end-line="76" selection-end-column="106" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/custom-message.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="77" column="106" selection-start-line="77" selection-start-column="106" selection-end-line="77" selection-end-column="106" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/custom-work.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="80" column="106" selection-start-line="80" selection-start-column="106" selection-end-line="80" selection-end-column="106" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/format-standard.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="21" column="16" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sidebar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="6" column="88" selection-start-line="6" selection-start-column="88" selection-end-line="6" selection-end-column="88" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5869565">
+          <caret line="91" column="98" selection-start-line="91" selection-start-column="98" selection-end-line="91" selection-end-column="98" />
           <folding />
         </state>
       </provider>

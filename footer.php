@@ -53,7 +53,7 @@ $sliders = cs_get_option( 'i_slider' );
 					}
 				 ?>
                 <div id="drawer-inside" class="widgets clearfix <?php echo $column_style; ?>">
-                    <?php if (function_exists('dynamic_sidebar') && dynamic_sidebar('Drawer') ) : else : ?>		
+                    <?php if (function_exists('dynamic_sidebar') && dynamic_sidebar('Bottom') ) : else : ?>
                     <?php endif; ?>		
                 </div>
             </div>
