@@ -1,0 +1,34 @@
+/*
+Theme Name: owl
+Theme URI: http://zhw-island.com/
+Description: owl.
+Author: zhao
+Author URI: http://zhw-island.com/
+Version: 1.0.0
+License: GNU General Public License v2.0
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+*/
+
+/* reset */
+@import 'sass/reset';
+
+/* media-queries */
+@import 'sass/queries';
+
+/* base */
+@import 'sass/base';
+
+/* mixin */
+@import 'sass/mixin';
+
+/* header */
+@import 'sass/header';
+
+/* content */
+@import 'sass/content';
+
+/* footer */
+@import 'sass/footer';
+
+/* plugins */
+@import 'sass/plugins';

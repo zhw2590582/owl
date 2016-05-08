@@ -1,0 +1,64 @@
+@mixin bl () {
+    display: block;
+}
+@mixin no () {
+    display: none;
+}
+@mixin i () {
+    display: inline-block;
+}
+@mixin il () {
+    display: inline-block;
+    float: left;
+}
+@mixin ir () {
+    display: inline-block;
+    float: right;
+}
+@mixin bg-b ($n) {
+    background: rgba(0, 0, 0, $n);
+}
+@mixin bg-w ($n) {
+    background: rgba(225, 225, 225, $n);
+}
+@mixin br ($n) {
+    -webkit-filter:blur(5px);
+    -ms-filter:blur(5px);
+    filter:blur(5px);
+    filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius=5,MakeShadow=false);
+}
+
+@mixin bg-c () {
+    background: #ebe7e4;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
+}
+
+@mixin gray-c () {
+    color: #969696;
+    a{
+        color: #969696;
+
+        &:hover{
+            color: #4078c0;
+        }
+    }
+
+}
+
+@mixin black-c () {
+    color: #333;
+    a{
+        color: #333;
+        &:hover{
+            color: #4078c0;
+        }
+    }
+
+}
+
+@mixin white-bg () {
+    background: #fff;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    border-radius: 3px;
+}

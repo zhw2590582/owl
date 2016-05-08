@@ -1,0 +1,149 @@
+.nivoSlider {
+	position:relative;
+	width:100%;
+	height:auto;
+	overflow: hidden;
+	z-index: 0;
+}
+.nivoSlider img {
+	position:absolute;
+	top:0px;
+	left:0px;
+	max-width: none;
+}
+.nivo-main-image {
+	display: block !important;
+	position: relative !important; 
+	width: 100% !important;
+}
+
+.nivoSlider a.nivo-imageLink {
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:100%;
+	height:100%;
+	border:0;
+	padding:0;
+	margin:0;
+	z-index:6;
+	display:none;
+	background:white; 
+	filter:alpha(opacity=0); 
+	opacity:0;
+}
+.nivo-slice {
+	display:block;
+	position:absolute;
+	z-index:5;
+	height:100%;
+	top:0;
+}
+.nivo-box {
+	display:block;
+	position:absolute;
+	z-index:5;
+	overflow:hidden;
+}
+.nivo-box img { display:block; }
+
+.nivo-caption {
+	position:absolute;
+	left:0;
+	bottom:0;
+	color:#fff;
+	width:100%;
+	z-index:8;
+	padding: 5px 10px;
+	font-size: 13px;
+	overflow: hidden;
+	height: 35px;
+	line-height: 30px;
+	display: none;
+	background: #000;
+	background: -webkit-linear-gradient(transparent,rgba(0,0,0,0.1) 20%,rgba(0,0,0,0.2) 35%,rgba(0,0,0,0.5) 65%,rgba(0,0,0,0.66));
+	background: -o-linear-gradient(transparent,rgba(0,0,0,0.1) 20%,rgba(0,0,0,0.2) 35%,rgba(0,0,0,0.5) 65%,rgba(0,0,0,0.66));
+	background: -moz-linear-gradient(transparent,rgba(0,0,0,0.1) 20%,rgba(0,0,0,0.2) 35%,rgba(0,0,0,0.5) 65%,rgba(0,0,0,0.66));
+	background: linear-gradient(transparent,rgba(0,0,0,0.1) 20%,rgba(0,0,0,0.2) 35%,rgba(0,0,0,0.5) 65%,rgba(0,0,0,0.66));
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.nivo-caption p {
+	padding:5px;
+	margin:0;
+}
+.nivo-caption a {
+	display:inline !important;
+}
+.nivo-html-caption {
+    display:none;
+}
+.nivo-directionNav a {
+	display: block;
+	top: 50%;
+	height: 60px;
+	width: 60px;
+	line-height: 60px;
+	cursor: pointer;
+	position: absolute;
+	z-index: 10;
+	margin-top: -30px;
+}
+.nivo-prevNav {
+	left:-23px;
+}
+.nivo-nextNav {
+	right:-23px;
+}
+
+.nivo-prevNav:before {
+	content: "\f104";
+	font-family: FontAwesome;
+	font-size: 35px;
+	line-height: 60px;
+	padding-left: 33px;
+}
+
+.nivo-nextNav:after {
+	content: "\f105";
+	font-family: FontAwesome;
+	font-size: 35px;
+	line-height: 60px;
+	padding-left: 13px;
+}
+
+.nivo-directionNav{
+    opacity: 0;  
+}
+
+.nivoSlider:hover .nivo-directionNav{
+    opacity: 1;    
+}
+
+.ls-slide-outer .ls-pager.ls-pg>li {
+	cursor: pointer;
+	display: inline-block;
+	padding: 0 5px
+}
+
+.nivo-controlNav {
+	text-align:center;
+	padding: 15px 0 0;
+}
+.nivo-controlNav a {
+	cursor:pointer;
+}
+.nivo-controlNav a.active {
+	font-weight:bold;
+}
+
+.nivo-control {
+	display:inline-block;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	text-indent:-9999px;
+	border:0;
+	margin: 0px 5px;
+}

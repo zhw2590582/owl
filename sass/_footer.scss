@@ -1,0 +1,17 @@
+//footer
+$footer_h:300px;
+$footer_bg:#BDB2AA;
+
+#footer{
+    height: $footer_h;
+
+    .footer-inner{
+        
+    }
+}
+
+#footer_btn{
+    position: fixed;
+    bottom: 100px;
+    right: 100px;
+}
