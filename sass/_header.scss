@@ -1,5 +1,4 @@
 //header
-$header_after: url('images/banner_after.png') repeat;
 $header_h:50px;
 $header_c:#333;
 $header_c_h:#4078c0;
@@ -84,16 +83,6 @@ $sidebar_w:240px;
     }
     .header-tool{
         @include ir;
-    }
-
-    &:after{
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        background:$header_after;
-        height: 7px;
-        width: 100%;
     }
 }
 
