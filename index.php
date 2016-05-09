@@ -211,7 +211,7 @@ $me = cs_get_option( 'i_me_switch' );
 	                        </div>
 
 	                        <!-- 分页 -->
-	                        <?php if ( $pagination == 'i_ajax' || $pagination == 'i_next') { ?>
+	                        <?php if ( $pagination == 'i_ajax') { ?>
 	                            <?php if( island_page_has_nav() ) : ?>
 	                                <div class="post-nav">
 	                                    <div class="post-nav-inside clearfix">

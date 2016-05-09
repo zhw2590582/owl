@@ -1,5 +1,6 @@
 jQuery(document).ready(function($) {
 
+//文章分栏
 $('.layouts_width').click(function(){
     $("body").removeClass("layouts-box");
     $(this).addClass('selected').siblings().removeClass('selected');
@@ -46,34 +47,6 @@ $('body').on('click', '#comment-nav-below a', function(e) {
     });
 });
 
-//固定小工具
-	var rw = $('.sidebar-contentWrapper').width();
-	var rh = $('.rightbar').height();
-	var bh = $('.main').height();
-	$('#wrapper').css('min-height', rh + 100 + "px");
-
-	if($(".rightbar aside").length>0){
-		var documentHeight = 0;
-		var topPadding = 15;
-		$(function() {
-			var offset = $(".rightbar aside:last").offset();
-			documentHeight = $(document).height();
-			$(window).scroll(function() {
-				var sideBarHeight = $(".rightbar aside:last").height();
-				if ($(window).scrollTop() > offset.top) {
-					var newPosition = ($(window).scrollTop() - offset.top) + topPadding;
-					var maxPosition = documentHeight - (sideBarHeight + 368);
-					if (newPosition > maxPosition) {
-						newPosition = maxPosition;
-					}
-					$(".rightbar aside:last").addClass("affix").css({width: rw});
-				} else {
-					$(".rightbar aside:last").removeClass("affix");
-				};
-			});
-		});
-	} else {}
-
 //选项卡
 (function ($) {
     $('.tabs_title').addClass('active').find('> li:eq(0)').addClass('current');
@@ -94,12 +67,18 @@ $('body').on('click', '#comment-nav-below a', function(e) {
 		var _rel = jQuery(this).attr("href");
 		var _targetTop = jQuery(_rel).offset().top;
 		jQuery("html,body").animate({
-			scrollTop: _targetTop - 50
+			scrollTop: _targetTop
 		}, 700);
 		return false
 	});
-    $('.page-template-custom-archive .navbar-ng a').click();
 
+	$(window).scroll(function (){
+		if ($(window).scrollTop()> 300){
+			$(".index-box").fadeIn();
+		}else {
+			$(".index-box").hide();
+		}
+	});
 
 //图像CSS类
 	$("#content img, .avatar").addClass('ajax_gif');
@@ -173,83 +152,54 @@ $('body').on('click', '#comment-nav-below a', function(e) {
 	});
 
 
-//登录面板
-
-	$(".login-toggle").toggle(function() {
-		$(".login_bg").slideToggle(300);
-		return false;
-	}, function() {
-		$(".login_bg").slideToggle(300);
-		return false;
-	});
-
-//自适应菜单
-	$("#menu-toggle").click(function() {
-		$(".mobile-nav , #menu-toggle").toggleClass("open-nav");
-	});
-
 //Modal
-	$(".modal-close").click(function() {
-		$(".modal-bg").addClass("hide").removeClass("show");
+	var $modal = $('.cd-user-modal');
+	$('.cd-user-modal').on('click', function(event){
+		if( $(event.target).is($modal) || $(event.target).is('.cd-close-form') ) {
+			$modal.removeClass('is-visible');
+			return false;
+		}
 	});
-
-
-//登录面板
-    var $form_modal = $('.cd-user-modal');
+	$(document).keyup(function(event){
+		if(event.which=='27'){
+			$modal.removeClass('is-visible');
+		}
+	});
+	
+//登录Modal
+    var $form_modal = $('.login-modal');
     $(".navbar-btn").click(function(){
         $form_modal.toggleClass("is-visible");
     });
 
-	//关闭modal
-	$('.cd-user-modal').on('click', function(event){
-		if( $(event.target).is($form_modal) || $(event.target).is('.cd-close-form') ) {
-			$form_modal.removeClass('is-visible');
-		}
-	});
-	$(document).keyup(function(event){
-    	if(event.which=='27'){
-    		$form_modal.removeClass('is-visible');
-	    }
-    });
-
-//下载盒子
+//下载Modal
+	var $download_modal = $('.download-modal');
 	$(".dl-link a").click(function() {
-		$(".download-bg").addClass("show").removeClass("hide");
+		$download_modal.toggleClass("is-visible");
 		var dlLink = $(this).attr('data-dl');
 		var dlCode = $(this).attr('data-code');
 		$(".dl-btn a").attr("href",dlLink);
 		$(".dl-tqcode span").text(dlCode);
 	});
 
-//手风琴
-    var headers = ["H1"];
-    $(".accordion").click(function(e) {
-      var target = e.target,
-          name = target.nodeName.toUpperCase();
+//通知Modal
+	function jump(count) {
+		window.setTimeout(function(){
+			count--;
+			if(count > 0) {
+				$('#num').text(count);
+				jump(count);
+			} else {
+				$('.notice-modal').removeClass('is-visible');
+			}
+		}, 1000);
+	}
+	jump(10);
 
-      if($.inArray(name,headers) > -1) {
-        var subItem = $(target).next();
-        var depth = $(subItem).parents().length;
-        var allAtDepth = $(".accordion div").filter(function() {
-          if($(this).parents().length >= depth && this !== subItem.get(0)) {
-            return true;
-          }
-        });
-        $(allAtDepth).slideUp("fast");
-            subItem.slideToggle("fast",function() {
-            $(".accordion :visible:last").css("border-radius","0");
-        });
-            $(target).toggleClass("open").siblings().removeClass("open");
-            $(target).children().toggleClass("fa-minus");
-            $(target).siblings().children().removeClass("fa-minus");
-      }
-    });
-
-	//公告条
+//公告条
 	bulletin();
 	setInterval('bulletin()', 6000);
 });
-
 
 // 图像懒加载
 echo.init({
@@ -258,16 +208,7 @@ echo.init({
 	unload: false,
 });
 
-// 作品模板
-(function(){
-minigrid('.grid', '.grid-item');
-
-window.addEventListener('resize', function(){
-  minigrid('.grid', '.grid-item');
-});
-})();
-
-// Banner + 读者墙提示文本
+//提示文本
 MouseTooltip.init();
 
 //公告条

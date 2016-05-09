@@ -7,16 +7,16 @@ $sticky_img = cs_get_option( 'i_related_image' );
 $featured = cs_get_option( 'i_post_featured' );
 $meta_data = get_post_meta( get_the_ID(), 'standard_options', true );
 $music = $meta_data['i_post_music'];
-$player = cs_get_option('i_player');
-$player_mobi = cs_get_option('i_player_mobi');
-$author = cs_get_option( 'i_post_author' );
-$jieya = cs_get_option( 'i_download_jieya' );
-$dlview = cs_get_option( 'i_download_view' );
 $download = $meta_data['i_download'];
 $web = $meta_data['i_download_web'];
 $charge = $meta_data['i_download_charge'];
 $link = $meta_data['i_download_link'];
 $code = $meta_data['i_download_code'];
+$player = cs_get_option('i_player');
+$player_mobi = cs_get_option('i_player_mobi');
+$author = cs_get_option( 'i_post_author' );
+$jieya = cs_get_option( 'i_download_jieya' );
+$dlview = cs_get_option( 'i_download_view' );
 ?>
 
 <div class="post-inner">
@@ -31,7 +31,7 @@ $code = $meta_data['i_download_code'];
             <?php }else{?>
                 <div class="featured-image" >
                     <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                        <img src="<?php echo $sticky_img ?>">
+						<img src="<?php bloginfo('template_directory'); ?>/images/featured/img<?php echo rand(1,5)?>.png" alt="<?php the_title(); ?>" />
                     </a>
                 </div>
             <?php } ?>
@@ -81,9 +81,7 @@ $code = $meta_data['i_download_code'];
     </div>
 </div>
 
-
 <?php if ( is_single() && $download && !is_mobile() ) {?>
-    <!-- 下载盒子 -->
     <div class="download-wrap">
         <div class="post-download <?php if ( !current_user_can('level_10') && $dlview == true ){echo 'dlview';}?>">
             <div class="dl-title"><i class="fa fa-download"></i>资源下载</div>

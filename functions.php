@@ -25,26 +25,6 @@ function island_scripts_styles() {
 		wp_enqueue_script('prettify');
 	}	
 	
-	/* 二维码 */
-    wp_register_script('qrcode', get_template_directory_uri() . '/js/qrcode.js', false, '0.3', true);
-	$qrcodes = cs_get_option( 'i_code_qrcodes' ); 
-	if ($qrcodes == true && !is_mobile()) {
-		wp_enqueue_script('qrcode');
-	}
-	/* 萤火虫背景 */
-	wp_register_script('circle', get_template_directory_uri() . '/js/circle.js', false, '0.3', true);
-	$circle = cs_get_option( 'i_circle' );
- 	if ( $circle == true && !is_mobile() ) {
-		wp_enqueue_script('circle');	
-	}
-	
-	/* Snowfall */
-	wp_register_script('snowfall', get_template_directory_uri() . '/js/snowfall.js', false, '0.3', true);
-	$snowfall = cs_get_option( 'i_snowfall' );
- 	if ( $snowfall == true && !is_mobile() ) {
-		wp_enqueue_script('snowfall');	
-	}	
-	
 	/* 自定义皮肤 */
     wp_register_style('switcher', get_template_directory_uri() . "/skin/switcher.php", array() , '0.3', 'screen');
     wp_register_style('skin01', get_template_directory_uri() . "/skin/skin01.css", array() , '0.3', 'screen');
@@ -636,7 +616,7 @@ function post_thumbnail_src() {
         $post_thumbnail_src = $matches[1][0];
         if (empty($post_thumbnail_src)) {
             $random = mt_rand(1, 10);
-            echo cs_get_option('i_related_image');
+            echo ''.get_template_directory_uri().'/images/featured/img'.rand(1,5).'.png';
         }
     };
     echo $post_thumbnail_src;
@@ -847,16 +827,33 @@ function get_not_audit_comments(){
 }
 add_filter('wp_footer','get_not_audit_comments');
 
-/* 插件css */
+/* 设置Css */
 add_action('wp_head', 'plugin_css', 99);
 function plugin_css() {
 	$ajaxbar = cs_get_option( 'i_ajax_color' ); 
-	$player_bg = cs_get_option( 'i_player_bg' );
-	$player_btn = cs_get_option( 'i_player_btn' );
-	$progress = cs_get_option( 'i_loadingbar_color' );
-	$width = cs_get_option( 'i_menu_width' ); 
-	$banner = cs_get_option( 'i_banner_image' ); 
-    echo '<!-- 插件参数css --><style>
+	$body_s = cs_get_option( 'i_body_style' ); 
+	$menu_g = cs_get_option( 'i_menu_glass' ); 
+
+	if ( $body_s == 'i_body_c') { 
+		$body_c = cs_get_option( 'i_body_color' ); 
+	} else {
+		$body_b = cs_get_option( 'i_body_image' ); 
+		$body_c = ' '. $body_b[color] .' url(\''. $body_b[image] .'\') '. $body_b[repeat] .' '. $body_b[position] .' '. $body_b[attachment] .''; 
+	}
+	
+	if ( $menu_g  == true) { 
+		$menu_c = 'none'; 
+	};
+	
+    echo '<!-- 设置Css --><style>
+	body{
+	  background:'. $body_c .' ;
+	}
+	
+	#header .header-inner{
+	  background:'. $menu_c .' ;
+	}
+	
 	.loading-bar{
 	  background:'. $ajaxbar.';
 	}
@@ -962,23 +959,23 @@ if (cs_get_option('i_post_revision') == true) {
 
 //文章目录
 function article_index($content) {
-    $matches = array();
-    $ul_li = '';
-    $r = '/<h([2-6]).*?\>(.*?)<\/h[2-6]>/is';
-    if(is_single() && preg_match_all($r, $content, $matches)) {
-        foreach($matches[1] as $key => $value) {
-            $title = trim(strip_tags($matches[2][$key]));
-            $content = str_replace($matches[0][$key], '<h' . $value . ' id="title-' . $key . '">'.$title.'</h2>', $content);
-            $ul_li .= '<li><a href="#title-'.$key.'" title="'.$title.'"><i class="fa fa-angle-right"></i>'.$title."</a></li>\n";
-        }
-        $content = "\n<div id=\"article-index\">
-        <div class=\"index-header\">文章目录</div>
-        <div class=\"index-content\"><ul>\n" . $ul_li . "</ul></div>
-        </div>\n" . $content;
-    }
-    return $content;
+	$matches = array();
+	$ul_li = '';
+	$r = '/<h([2-6]).*?\>(.*?)<\/h[2-6]>/is';
+	if(is_single() && preg_match_all($r, $content, $matches)) {
+		foreach($matches[1] as $key => $value) {
+			$title = trim(strip_tags($matches[2][$key]));
+			$content = str_replace($matches[0][$key], '<h' . $value . ' id="title-' . $key . '">'.$title.'</h2>', $content);
+			$ul_li .= '<li><a href="#title-'.$key.'" title="'.$title.'">'.$title."</a></li>\n";
+		}
+		$content = "\n<div id=\"article-index\">
+		<strong>文章目录</strong>
+		<ol id=\"index-ul\">\n" . $ul_li . "</ol>
+		</div>\n" . $content;
+	}
+	return $content;
 }
-add_filter( 'the_content', 'article_index' );     
+add_filter( 'the_content', 'article_index' );
 
 /**
  * 添加输出菜单描述的 Walker 类

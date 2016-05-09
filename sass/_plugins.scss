@@ -221,6 +221,57 @@ input#wp-submit:hover {
   }
 }
 
+.cd-user-modal-container{
+
+  .modal-head{
+    color: #6B6B6B;
+    height: 35px;
+    line-height: 35px;
+    padding: 0 10px;
+    background: #fbfbfb;
+    border-bottom: 1px solid #e5e5e5;
+    border-top-left-radius: 0.25em;
+    border-top-right-radius: 0.25em;
+
+    i{
+      margin-right: 5px;
+    }
+  }
+  .modal-main{
+    color: #6B6B6B;
+    text-align: center;
+    min-height: 200px;
+    padding: 50px 10px 10px;
+
+
+    .dl-btn{
+      a{
+        font-size: 16px;
+        display: inline-block;
+        padding: 10px 20px;
+        background: #27ae60;
+        border-radius: 0.25em;
+        margin-bottom: 20px;
+        color: #fff;
+        i{
+          margin-right: 10px;
+        }
+        &:hover{
+          background: #38CA76;
+        }
+      }
+    }
+  }
+  .modal-bottom{
+    color: #999;
+    font-size: 12px;
+    background: #fbfbfb;
+    padding: 10px;
+    border-top: 1px solid #e5e5e5;
+    border-bottom-left-radius: 0.25em;
+    border-bottom-right-radius: 0.25em;
+  }
+}
 
 //movetip
 #mouse-tooltip {
@@ -248,3 +299,44 @@ input#wp-submit:hover {
 .with-tooltip:before , .with-tooltip:after {
   display: none;
 }
+
+
+.content #article-index{
+  display:none;
+}
+
+.index-box{
+  display:none;
+  position:fixed;
+  top:30px;
+  left:50%;
+  margin-left:550px;
+
+  #article-index {
+    -moz-border-radius: 6px 6px 6px 6px;
+    border: 1px solid #DEDFE1;
+    margin: 0 0 15px 15px;
+    padding: 0 6px;
+    width: 200px;
+    line-height: 23px;
+    strong {
+      border-bottom: 1px dashed #DDDDDD;
+      display: block;
+      line-height: 30px;
+      padding: 0 4px;
+    }
+  }
+
+  #index-ul {
+    margin: 0;
+    padding-bottom: 10px;
+
+    li {
+      background: none repeat scroll 0 0 transparent;
+      list-style-type: disc;
+      padding: 0;
+      margin-left: 20px;
+    }
+  }
+}
+

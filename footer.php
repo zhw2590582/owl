@@ -13,19 +13,21 @@ $comment = cs_get_option( 'i_comment_switch' );
 $player_id = cs_get_option( 'i_player_id' ); 
 $player = cs_get_option('i_player');
 $player_mobi = cs_get_option('i_player_mobi');
-$unlock = cs_get_option( 'i_comment_unlock' ); 
 $share = cs_get_option( 'i_share' ); 
 $share_img = cs_get_option( 'i_share_img' ); 
 $share_word = cs_get_option( 'i_share_word' ); 
 $tongji = cs_get_option( 'i_js_tongji' );
-$circle = cs_get_option( 'i_circle' ); 
-$snowfall = cs_get_option( 'i_snowfall' ); 
-$modal = cs_get_option( 'i_modal' ); 
-$modal_title = cs_get_option( 'i_modal_title' ); 
-$modal_main = cs_get_option( 'i_modal_main' ); 
+$notice = cs_get_option( 'i_notice' ); 
+$notice_title = cs_get_option( 'i_notice_title' ); 
+$notice_main = cs_get_option( 'i_notice_main' ); 
 $shengming = cs_get_option( 'i_download_shengming' ); 
 $layout = cs_get_option( 'i_layout' );
 $sliders = cs_get_option( 'i_slider' );
+$login = cs_get_option( 'i_login' ); 
+$login_img = cs_get_option( 'i_login_image' );
+$meta_data = get_post_meta( get_the_ID(), 'standard_options', true );
+$download = $meta_data['i_download'];
+$index = $meta_data['i_index'];
 ?> 
 	
 	<footer id="footer">
@@ -165,32 +167,37 @@ $sliders = cs_get_option( 'i_slider' );
 		<?php }	 ?>
 	<?php }	 ?>
 
-	<?php if ($modal == true && !is_mobile() ) {?>		
+	<?php if ($notice == true && !is_mobile() ) {?>		
 		<?php
-		setcookie('modal','show',time()+3600);
-		if(isset($_COOKIE["modal"])){
+		setcookie('notice','show',time()+3600);
+		if(isset($_COOKIE["notice"])){
 		}else{?>	
-			<div class="modal-bg">
-				<div class="modal-body">
+			<div class="cd-user-modal is-visible notice-modal">
+				<a href="#" class="cd-close-form"></a>
+				<div class="cd-user-modal-container">
 					<div class="modal-head clearfix">
-						<div class="modal-title"><?php echo $modal_title ?></div>
-						<div class="modal-close"><a href="javascript:void(0)"><i class="fa fa-times"></i></a></div>
+						<div class="modal-title"><?php echo $notice_title ?></div>
 					</div>
-					<div class="modal-main"><?php echo $modal_main ?></div>
+					<div class="modal-main">
+						<?php echo $notice_main ?>
+					</div>
+					<div class="modal-bottom">
+						<span>窗口<span id="num">3</span>秒后自动关闭</span>
+					</div>
 				</div>
 			</div>
 		<?php }	?>	
 	<?php }	?>	
 
-	<?php if ( is_single() && !is_mobile() ) {?>		
-        <div class="download-bg modal-bg hide">
-            <div class="modal-body">
-                <div class="modal-head clearfix">
+	<?php if ( is_single() && !is_mobile() && $download) {?>	
+        <div class="cd-user-modal download-modal">
+			<a href="#" class="cd-close-form"></a>
+            <div class="cd-user-modal-container">
+                <div class="modal-head">
                     <div class="modal-title"><i class="fa fa-download"></i>资源下载</div>
-                    <div class="modal-close"><a href="javascript:void(0)"><i class="fa fa-times"></i></a></div>
                 </div>
                 <div class="modal-main">
-                    <div class="dl-btn"><a href="javascript:void(0)" target="_black"><i class="fa fa-download"></i>点击下载</a></div>
+                    <div class="dl-btn"><a href="javascript:void(0)" target="_black"><i class="fa fa-arrow-circle-o-down"></i>点击下载</a></div>
                     <div class="dl-tqcode">提取码：<span></span></div>
                 </div>
                 <div class="modal-bottom">
@@ -200,13 +207,15 @@ $sliders = cs_get_option( 'i_slider' );
         </div> 
 	<?php }	?>
 
-	<?php get_sidebar(); ?>
-
-    <?php if ( !is_user_logged_in() ) { ?>
-        <div class="cd-user-modal">
+	<?php if ( is_single() && !is_mobile() && $index) {?>	
+		<div class="index-box"></div>
+	<?php }	?>	
+	
+    <?php if ( !is_user_logged_in() && $login == true) { ?>
+        <div class="cd-user-modal login-modal">
             <a href="#" class="cd-close-form"></a>
             <div class="cd-user-modal-container">
-                <div class="login-img"></div>
+                <div class="login-img" style="background: url('<?php echo $login_img; ?>') no-repeat center center;"></div>
             	<div class="login-form">
                     <?php
                         $login_form_args = array (
@@ -230,6 +239,7 @@ $sliders = cs_get_option( 'i_slider' );
         </div>
 	<?php }	?>
 
+	<?php get_sidebar(); ?>
 	<?php wp_footer(); ?>
 	<script>
 
@@ -306,10 +316,6 @@ $sliders = cs_get_option( 'i_slider' );
         
 	jQuery(document).ready(function($) {
 	
-	<?php if ( $snowfall == true && !is_mobile()  ) { ?>
-		$(document).snowfall({flakeCount : 200});
-	<?php }?>		
-
 	<?php if ( $pagination == 'i_ajax' && is_home() || $pagination == 'i_ajax' && is_archive()) { ?>
 		// ajax加载			
 		var ias = $.ias({
@@ -348,9 +354,6 @@ $sliders = cs_get_option( 'i_slider' );
 	<?php } ?>		
 	});
 	</script>
-	<?php if ( $circle == true && !is_mobile()  ) { ?>
-		<canvas id="pixie"></canvas>
-	<?php }?>		
-	
+
 </body>
 </html>

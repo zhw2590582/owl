@@ -86,15 +86,6 @@ $options[]      = array(
           'help'      => '皮肤随版本更新而增加，另可定制个人专属皮肤',
         ),
 
-		// 开启前端换肤功能
-		array(
-          'id'    	  => 'i_switcher',
-          'type'      => 'switcher',
-          'title'     => '开启前端换肤',
-          'label'     => '假如此项没开启，换肤小工具会失效；一旦开启，自定义皮肤将失效',
-          'help'      => '开启后默认显示第一套皮肤，关于修改默认皮肤请看使用说明',
-        ),
-
 
 		// 分页设置
 		 array(
@@ -111,14 +102,13 @@ $options[]      = array(
           'class'      => 'horizontal',
           'options'    => array(
             'i_ajax'   => 'ajax无限加载',
-            'i_next'   => '下一篇/前一篇按钮',
             'i_num'   => '页码',
           ),
           'default'    => 'i_num',
           'help'       => '后续增加页码显示方式',
         ),
 
-			// 无限加载页数
+		// 无限加载页数
         array(
           'id'         => 'i_ajax_num',
           'type'       => 'number',
@@ -159,6 +149,104 @@ $options[]      = array(
   ),
 );
 
+// ----------------------------------------
+// 样式  -
+// ----------------------------------------
+
+$options[]      = array(
+  'name'        => 'style',
+  'title'       => '样式',
+  'icon'        => 'fa fa-paint-brush',
+  'fields'      => array(
+
+    	// Body设置
+ 		 array(
+ 		  'type'    => 'notice',
+ 		  'class'   => 'info',
+ 		  'content' => 'Body设置',
+ 		),
+		
+		// 背景样式
+        array(
+          'id'         => 'i_body_style',
+          'type'       => 'radio',
+          'title'      => '背景样式',
+          'class'      => 'horizontal',
+          'options'    => array(
+            'i_body_c'   => '使用颜色',
+            'i_body_b'   => '使用纹理',
+          ),
+          'default'    => 'i_body_c',
+        ),
+  
+		// 使用颜色
+        array(
+          'id'         => 'i_body_color',
+          'type'       => 'color_picker',
+          'title'      => '使用颜色',
+		  'default'    => '#fff',
+          'dependency' => array( 'i_body_style_i_body_c', '==', 'true' ),
+        ),  
+  
+		// 使用纹理
+        array(
+          'id'           => 'i_body_image',
+          'type'         => 'background',
+          'title'        => '使用纹理',
+          'default'      => array(
+            'image'      => 'something.png',
+            'repeat'     => 'repeat-x',
+            'position'   => 'center center',
+            'attachment' => 'fixed',
+            'color'      => '#ffbc00',
+          ),
+		  'dependency' => array( 'i_body_style_i_body_b', '==', 'true' ),
+        ),  
+		
+		// 菜单设置
+ 		 array(
+ 		  'type'    => 'notice',
+ 		  'class'   => 'info',
+ 		  'content' => '菜单设置',
+ 		),
+		
+		// 背景样式
+        array(
+          'id'         => 'i_menu_glass',
+          'type'       => 'switcher',
+          'title'      => '毛玻璃效果',
+        ),
+		
+  
+  		// Banner设置
+ 		 array(
+ 		  'type'    => 'notice',
+ 		  'class'   => 'info',
+ 		  'content' => 'Banner设置',
+ 		),
+
+ 		// Banner图片
+         array(
+           'id'      => 'i_banner_image',
+           'type'    => 'upload',
+           'title'   => 'Banner图片',
+           'help'      => '',
+           'default' => get_template_directory_uri()."/images/banner.jpg",
+ 		  'help'      => '推荐尺寸为1920X200',
+         ),
+
+ 		// Banner文字
+ 		array(
+ 		  'id'      => 'i_banner_text',
+ 		  'type'    => 'textarea',
+ 		  'title'   => 'Banner文字',
+ 		  'help'    => '',
+           'default' => '尚未设置',
+ 		),
+
+  ),
+);
+
 // ------------------------------
 // 页眉                      -
 // ------------------------------
@@ -186,20 +274,21 @@ $options[]      = array(
 		  'help'      => '因为主题的页尾自带进入后台操作的按钮，建议隐藏;另你也可以进入个人资料禁用工具条',
         ),
 
-		// 左边栏按钮
+		// 搜索按钮
 		array(
-          'id'    	  => 'i_left_btn',
+          'id'    	  => 'i_search',
           'type'      => 'switcher',
-          'title'     => '左边栏按钮',
           'default'   => true,
+          'title'     => '搜索按钮',
         ),
-
-		// 归档按钮
+		
+		// 开启前端换肤功能
 		array(
-          'id'    	  => 'i_archive_btn',
+          'id'    	  => 'i_switcher',
           'type'      => 'switcher',
-          'title'     => '归档按钮',
-          'default'   => true,
+          'title'     => '开启前端换肤',
+          'label'     => '假如此项没开启，换肤小工具会失效；一旦开启，自定义皮肤将失效',
+          'help'      => '开启后默认显示第一套皮肤，关于修改默认皮肤请看使用说明',
         ),
 
 		// 前端登录
@@ -209,41 +298,18 @@ $options[]      = array(
           'title'     => '前端登录',
           'default'   => true,
         ),
-
-		// 搜索按钮
-		array(
-          'id'    	  => 'i_search',
-          'type'      => 'switcher',
-          'default'   => true,
-          'title'     => '搜索按钮',
-        ),
-
-  		// Banner设置
- 		 array(
- 		  'type'    => 'notice',
- 		  'class'   => 'info',
- 		  'content' => 'Banner设置',
- 		),
-
- 		// Banner图片
+		
+		// 登录图片
          array(
-           'id'      => 'i_banner_image',
+           'id'      => 'i_login_image',
            'type'    => 'upload',
-           'title'   => 'Banner图片',
+           'title'   => '登录图片',
            'help'      => '',
-           'default' => get_template_directory_uri()."/images/banner.jpg",
- 		  'help'      => '推荐尺寸为1920X200',
+           'default' => get_template_directory_uri()."/images/login_bg.png",
+ 		   'help'      => '推荐尺寸为1920X200',
+		   'dependency' => array( 'i_login', '==', 'true' ),
          ),
-
- 		// Banner文字
- 		array(
- 		  'id'      => 'i_banner_text',
- 		  'type'    => 'textarea',
- 		  'title'   => 'Banner文字',
- 		  'help'    => '',
-           'default' => '尚未设置',
- 		),
-
+		
   ),
 );
 
@@ -443,19 +509,6 @@ $options[]      = array(
 		  'content' => '常规设置',
 		),
 
-        // 分栏方式
-        array(
-          'id'         => 'i_post_layout',
-          'type'       => 'radio',
-          'title'      => '分栏方式',
-          'class'      => 'horizontal',
-          'options'    => array(
-            'i_post_single'   => '单栏',
-            'i_post_double'   => '双栏',
-          ),
-          'default'    => 'i_post_double',
-        ),
-
   		// 移除修订版本
 		array(
           'id'    	  => 'i_post_autosave',
@@ -469,37 +522,8 @@ $options[]      = array(
           'type'      => 'switcher',
           'title'     => '移除自动保存',
         ),
-
-  		// 自动特色图
-		array(
-          'id'    	  => 'i_auto_featured',
-          'type'      => 'switcher',
-          'default'   => true,
-          'title'     => '自动特色图',
-        ),
-
-  		// 内页特色图
-		array(
-          'id'    	  => 'i_post_featured',
-          'type'      => 'switcher',
-          'default'   => true,
-          'title'     => '内页特色图',
-        ),
-
-  		// 启用浏览数目
-		array(
-          'id'    	  => 'i_post_view',
-          'type'      => 'switcher',
-          'title'     => '启用浏览数目',
-        ),
-
-   		// 启用作者名字
-		array(
-          'id'    	  => 'i_post_author',
-          'type'      => 'switcher',
-          'title'     => '启用作者名字',
-        ),
-
+	
+		
  		// 启用喜欢按钮
 		array(
           'id'    	  => 'i_post_like',
@@ -508,26 +532,28 @@ $options[]      = array(
           'title'     => '启用喜欢按钮',
         ),
 
-		// 喜欢按钮类型
-        array(
-          'id'         => 'i_like_style',
-          'type'       => 'radio',
-          'title'      => '喜欢按钮类型',
-          'class'      => 'horizontal',
-          'options'    => array(
-            'i_like'   => '喜欢按钮',
-            'i_zancai'   => '赞/踩按钮',
-          ),
-          'default'    => 'i_like',
-		  'dependency'   => array( 'i_post_like', '==', 'true' ),
-        ),
-
  		// 开启转载链接信息
 		array(
           'id'    	  => 'i_post_link',
           'type'      => 'switcher',
           'default'   => true,
           'title'     => '开启转载链接信息',
+        ),
+		
+		 // 开启相关文章
+		array(
+          'id'    	  => 'i_post_related',
+          'type'      => 'switcher',
+          'default'   => true,
+          'title'     => '开启相关文章',
+        ),
+
+		// Lazyload加载图片
+		array(
+          'id'    	  => 'i_post_image',
+          'type'      => 'switcher',
+          'default'   => true,
+          'title'     => 'Lazyload加载图片',
         ),
 
  		// 阅读更多设置
@@ -573,52 +599,6 @@ $options[]      = array(
 		  'dependency'   => array( 'i_post_readmore', '==', 'true' ),
         ),
 
- 		// 文章相关链接设置
-		 array(
-		  'type'    => 'notice',
-		  'class'   => 'info',
-		  'content' => '文章相关链接设置',
-		),
-
- 		// 开启文章的上一篇和下一篇链接
-		array(
-          'id'    	  => 'i_post_next',
-          'type'      => 'switcher',
-          'default'   => true,
-          'title'     => '开启文章的上一篇和下一篇链接',
-        ),
-
- 		// 开启相关文章
-		array(
-          'id'    	  => 'i_post_related',
-          'type'      => 'switcher',
-          'default'   => true,
-          'title'     => '开启相关文章',
-        ),
-
-		// 设置默认相关文章预览图
-        array(
-          'id'        => 'i_related_image',
-          'type'      => 'upload',
-          'title'     => '设置默认相关文章预览图',
-          'default' => get_template_directory_uri()."/images/post_thumb.png",
-		  'dependency'   => array( 'i_post_related', '==', 'true' ),
-        ),
-
- 		// 文章图片设置
-		 array(
-		  'type'    => 'notice',
-		  'class'   => 'info',
-		  'content' => '文章图片设置',
-		),
-
-		// Lazyload加载图片
-		array(
-          'id'    	  => 'i_post_image',
-          'type'      => 'switcher',
-          'default'   => true,
-          'title'     => 'Lazyload加载图片',
-        ),
 
   ),
 );
@@ -770,14 +750,6 @@ $options[]      = array(
           'title'     => '启用头像Lazyload功能',
         ),
 
-		// 启用滑动验证
-		array(
-          'id'    	  => 'i_comment_unlock',
-          'type'      => 'switcher',
-          'default'   => true,
-          'title'     => '启用滑动验证',
-        ),
-
 		// 启用读者墙
 		array(
           'id'    	  => 'i_comment_wall',
@@ -870,11 +842,11 @@ $options[]      = array(
   'icon'        => 'fa fa-tasks',
   'fields'      => array(
 
- 		// 顶栏（归档按钮）
+		// 底部小工具
 		 array(
 		  'type'    => 'notice',
 		  'class'   => 'info',
-		  'content' => '顶栏',
+		  'content' => '底部小工具',
 		),
 
 		// 顶侧底边栏
@@ -891,6 +863,7 @@ $options[]      = array(
           ),
           'default'    => 'col_1',
         ),
+		
 
     ),
 );
@@ -1325,32 +1298,6 @@ $options[]   = array(
           'title'     => '手机端是否关闭',
         ),
 
-		array(
-		  'type'    => 'notice',
-		  'class'   => 'info',
-		  'content' => '萤火虫背景',
-		),
-
- 		// 萤火虫背景
-		array(
-          'id'    	  => 'i_circle',
-          'type'      => 'switcher',
-          'title'     => '开启萤火虫背景',
-        ),
-
-		array(
-		  'type'    => 'notice',
-		  'class'   => 'info',
-		  'content' => '下雪特效',
-		),
-
- 		// 下雪特效
-		array(
-          'id'    	  => 'i_snowfall',
-          'type'      => 'switcher',
-          'title'     => '下雪特效',
-        ),
-
   )
 );
 
@@ -1560,7 +1507,7 @@ $options[]   = array(
 
       // 弹窗控件
     array(
-          'id'        => 'i_modal',
+          'id'        => 'i_notice',
           'type'      => 'switcher',
           'title'     => '弹窗控件',
           'label'     => 'cookie效果的弹窗',
@@ -1568,18 +1515,18 @@ $options[]   = array(
 
     // 标题
     array(
-      'id'      => 'i_modal_title',
+      'id'      => 'i_notice_title',
       'type'    => 'text',
       'title'   => '标题',
-      'dependency' => array( 'i_modal', '==', 'true' ),
+      'dependency' => array( 'i_notice', '==', 'true' ),
     ),
 
     // 内容
     array(
-      'id'      => 'i_modal_main',
+      'id'      => 'i_notice_main',
       'type'    => 'textarea',
       'title'   => '内容',
-      'dependency' => array( 'i_modal', '==', 'true' ),
+      'dependency' => array( 'i_notice', '==', 'true' ),
     ),
 
   )

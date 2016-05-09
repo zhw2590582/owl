@@ -1,9 +1,9 @@
 //footer
-$footer_h:300px;
-$footer_bg:#BDB2AA;
 
 #footer{
-    height: $footer_h;
+    margin-top: -100px;
+    padding-top: 100px;
+    background: #fff;
 
     .footer-inner{
         
