@@ -283,7 +283,7 @@ textarea:-moz-placeholder {
 }
 
 .ajax_gif {
-  background: url("images/ajax.gif") center center no-repeat;
+  background: url("images/default/ajax.gif") center center no-repeat;
 }
 
 /* mixin */

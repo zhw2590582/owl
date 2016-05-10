@@ -8,7 +8,7 @@ $newpost = cs_get_option('i_mail_newpost');
 
  //定义界面顶部区域内容,请注意修改您的主题目录
 $name = wp_get_theme()->display('Name');
-$email_bg =get_bloginfo('url') .'/wp-content/themes/'.$name.'/images/email.jpg';
+$email_bg =get_bloginfo('url') .'/wp-content/themes/'.$name.'/images/admin/email.jpg';
 define ('emailbg', $email_bg );
 
 $email_headertop = '

@@ -4,9 +4,9 @@
 function island_widget_js() {
   global $wp_customize;
   if ( ! isset( $wp_customize ) ) {
-    wp_enqueue_script( 'dashboard-js', get_template_directory_uri() . '/js/dashboard.js', array('jquery','jquery-ui-datepicker','jquery-ui-sortable','jquery-ui-sortable', 'jquery-ui-draggable','jquery-ui-droppable','admin-widgets' ) );
+    wp_enqueue_script( 'dashboard-js', get_template_directory_uri() . '/js/admin.js', array('jquery','jquery-ui-datepicker','jquery-ui-sortable','jquery-ui-sortable', 'jquery-ui-draggable','jquery-ui-droppable','admin-widgets' ) );
   }
-  wp_enqueue_style( 'dashboard-style', get_template_directory_uri() . '/css/dashboard.css', array() );
+  wp_enqueue_style( 'dashboard-style', get_template_directory_uri() . '/css/admin.css', array() );
 }
 add_action( 'admin_enqueue_scripts', 'island_widget_js' ); 
 

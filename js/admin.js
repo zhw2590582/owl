@@ -12,16 +12,6 @@ jQuery(document).ready(function($) {
 		$(".verify_info").html("<b style='color:#05991D;'>验证成功</b>");
 	}
 	
-	/*	判断后台demo用户，禁用相关条目 */	
-	if ($('#adminmenu').children('li').length < 8) {
-	$('#dashboard_activity , .user-pass1-wrap , .user-pass2-wrap , .show-admin-bar , .user-nickname-wrap').remove();		
-	$("#save , .cs-restore , .button-primary , .verify_form .button").attr("disabled", "disabled");
-	$('.cs-add').live('click', function(event) {
-	  alert("此功能对demo用户不可用"); 
-	  event.preventDefault();  
-	});
-	} else {} 	
-	
 	/*	判断文章形式 */
 	$(':radio[name="post_format"]').change(function() {
 		$('#standard_options').toggle(this.value == 0);

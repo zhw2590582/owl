@@ -31,7 +31,7 @@ $dlview = cs_get_option( 'i_download_view' );
             <?php }else{?>
                 <div class="featured-image" >
                     <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-						<img src="<?php bloginfo('template_directory'); ?>/images/featured/img<?php echo rand(1,5)?>.png" alt="<?php the_title(); ?>" />
+						<img src="<?php bloginfo('template_directory'); ?>/images/thumbnail/img<?php echo rand(1,5)?>.png" alt="<?php the_title(); ?>" />
                     </a>
                 </div>
             <?php } ?>

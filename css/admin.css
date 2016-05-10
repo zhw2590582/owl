@@ -4,7 +4,7 @@
 	width: 397px;
 	height: 599px;
 	margin: 0 auto;
-	background: url(../images/verify_bg.png) no-repeat;
+	background: url(../images/admin/verify_bg.png) no-repeat;
 }
 
 .verify_serve {
@@ -45,11 +45,11 @@
 }
 
 .verify_yes {
-	background: url(../images/verify_yes.png) no-repeat;
+	background: url(../images/admin/verify_yes.png) no-repeat;
 }
 
 .verify_no {
-	background: url(../images/verify_no.png) no-repeat;
+	background: url(../images/admin/verify_no.png) no-repeat;
 }
 
 .verify_form {

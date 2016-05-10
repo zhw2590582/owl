@@ -5,14 +5,19 @@
 // -----------------------------------------------------------------------------------------------
 // ===============================================================================================
 
-$settings           = array(
-  'menu_title'      => '主题选项',
-  'menu_type'       => 'menu', // menu, submenu, options, theme, etc.
-  'menu_slug'       => 'cs-framework',
-  'ajax_save'       => true,
-  'show_reset_all'  => false,
-  'framework_title' => ''.wp_get_theme()->display('Name').'<small style="color:red;margin-left:10px">'.wp_get_theme()->display('Version').'</small>',
-);
+global $verify;
+$key = cs_get_customize_option( 'lazycat_key' ); 
+$verify = get_option('Island_license_key');
+if (!empty($verify) || $key == 'zhw2590582' ) {
+   $settings           = array(
+      'menu_title'      => '主题选项',
+      'menu_type'       => 'menu', // menu, submenu, options, theme, etc.
+      'menu_slug'       => 'cs-framework',
+      'ajax_save'       => true,
+      'show_reset_all'  => false,
+      'framework_title' => ''.wp_get_theme()->display('Name').'<small style="color:red;margin-left:10px">'.wp_get_theme()->display('Version').'</small>',
+   );
+} else {};
 
 // ===============================================================================================
 // -----------------------------------------------------------------------------------------------
@@ -43,7 +48,7 @@ $options[]      = array(
           'type'    => 'upload',
           'title'   => 'Favicon',
 		  'add_title' => '添加favicon',
-          'default' => get_template_directory_uri()."/images/favicon.ico",
+          'default' => get_template_directory_uri()."/images/default/favicon.ico",
           'help'      => '建议制作一张400x400的png图像, 然后等比缩小到你想转换的ico尺寸,最后通过网上的工具转换成ico图标格式.',
         ),
 
@@ -231,7 +236,7 @@ $options[]      = array(
            'type'    => 'upload',
            'title'   => 'Banner图片',
            'help'      => '',
-           'default' => get_template_directory_uri()."/images/banner.jpg",
+           'default' => get_template_directory_uri()."/images/default/banner.png",
  		  'help'      => '推荐尺寸为1920X200',
          ),
 
@@ -305,7 +310,7 @@ $options[]      = array(
            'type'    => 'upload',
            'title'   => '登录图片',
            'help'      => '',
-           'default' => get_template_directory_uri()."/images/login_bg.png",
+           'default' => get_template_directory_uri()."/images/default/login_bg.png",
  		   'help'      => '推荐尺寸为1920X200',
 		   'dependency' => array( 'i_login', '==', 'true' ),
          ),
@@ -932,7 +937,7 @@ $options[]      = array(
           'id'      => 'i_qrcode_image',
           'type'    => 'upload',
           'title'   => '插入二维码',
-          'default' => get_template_directory_uri()."/images/qrcode.png",
+          'default' => get_template_directory_uri()."/images/default/qrcode.png",
           'help'      => '建议二维码尺寸不超过250px',
 		  'dependency'   => array( 'i_qrcode', '==', 'true' ),
         ),
@@ -1074,20 +1079,12 @@ $options[]      = array(
           'title'     => '显示简介',
         ),
 
- 		// 背景
-        array(
-          'id'      => 'i_avatar_bg',
-          'type'    => 'upload',
-          'title'   => '背景	',
-          'default' => get_template_directory_uri()."/images/me-bg.jpg",
-        ),
-
  		// 头像
         array(
           'id'      => 'i_avatar_image',
           'type'    => 'upload',
           'title'   => '头像	',
-          'default' => get_template_directory_uri()."/images/default-avatar.png",
+          'default' => get_template_directory_uri()."/images/default/avatar.png",
         ),
 
  		// 昵称

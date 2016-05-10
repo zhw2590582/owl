@@ -1,6 +1,6 @@
 <?php
-define('YOUR_SPECIAL_SECRET_KEY', '554f3e7894d275.30682003'); 
-define('YOUR_LICENSE_SERVER_URL', 'http://www.zhw-island.com'); 
+define('YOUR_SPECIAL_SECRET_KEY', '5731e458a8c9f2.99079365'); 
+define('YOUR_LICENSE_SERVER_URL', 'http://island.duapp.com'); 
 define('YOUR_ITEM_REFERENCE', 'island'); 
 add_action('admin_menu', 'slm_Island_license_menu');
 function slm_Island_license_menu() {
@@ -61,7 +61,7 @@ function Island_license_management_page() {
 		<a class="verify_help" href="http://zhw-island.com" target="_blank" title="了解更多"></a>
 		<div class="verify_info"></div>
 		<form action="" method="post" class="verify_form">
-			<input class="regular-text" type="text" id="Island_license_key" name="Island_license_key"  placeholder="输入密钥信息" value="<?php echo get_option('Island_license_key'); ?>" >
+			<input class="regular-text" autocomplete="off" type="text" id="Island_license_key" name="Island_license_key"  placeholder="输入密钥信息" value="<?php echo get_option('Island_license_key'); ?>" >
 			<ul class="verify_list">
 				<li>开启高级选项+自动更新</li>
 				<li>多套个性皮肤+功能补给</li>

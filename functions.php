@@ -616,7 +616,7 @@ function post_thumbnail_src() {
         $post_thumbnail_src = $matches[1][0];
         if (empty($post_thumbnail_src)) {
             $random = mt_rand(1, 10);
-            echo ''.get_template_directory_uri().'/images/featured/img'.rand(1,5).'.png';
+            echo ''.get_template_directory_uri().'/images/thumbnail/img'.rand(1,5).'.png';
         }
     };
     echo $post_thumbnail_src;
