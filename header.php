@@ -112,7 +112,7 @@ $avatar_name = cs_get_option( 'i_avatar_name' );
                 <!-- 搜索栏 -->	
                     <li class="search">
                         <form method="get" id="searchform" action="<?php echo home_url(); ?>/">
-                            <input type="text" class="search-text" name="s" value="搜索..." onfocus="if (this.value == '搜索...') {this.value = '';}" onblur="if (this.value == '') {this.value = '搜索...';}"  />
+                            <input type="text" class="search-form-input" name="s" value="搜索..." onfocus="if (this.value == '搜索...') {this.value = '';}" onblur="if (this.value == '') {this.value = '搜索...';}"  />
                         </form>
                     </li>
                 <?php }?>
@@ -120,6 +120,6 @@ $avatar_name = cs_get_option( 'i_avatar_name' );
                 </ul>
             </div>
         </div>
-
+        <div class="skin_btn hand"></div>
         <div id="header-modal" class="with-tooltip" data-tooltip="<?php echo $banner_test ?>"></div>
     </header>

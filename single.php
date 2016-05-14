@@ -111,7 +111,7 @@ $me = cs_get_option( 'i_me_switch' );
 
                                         <div class="post-related">
                                             <?php if ($related == true && !is_mobile()) { ?>
-                                            <ul class="related_box">
+                                            <ul class="related_box clearfix">
                                                 <?php
                                                 $post_num = 5;
                                                 $exclude_id = $post->ID;

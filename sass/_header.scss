@@ -1,15 +1,11 @@
 //header
 $header_h:50px;
-$header_c:#333;
-$header_c_h:#4078c0;
-$banner_h:250px;
-$bg_h:rgba(0, 0, 0, 0.37);
-$sidebar_w:240px;
+$banner_h:300px;
 
 #header{
     position: relative;
     height: $banner_h;
-    line-height: $header_h;
+
     .header-mask-sd{
         height: $header_h;
         @include bg-w(0.3);
@@ -48,20 +44,20 @@ $sidebar_w:240px;
         }
     }
     .header-inner{
-        background: #fafafa;
         height: $header_h;
+        line-height: $header_h;
         position: relative;
         z-index: 1;
     }
 
     .header-logo{
-        @include il;
+        display: inline-block;
+        float: left;
         
         .logo{
             height: $header_h;
             a{
                 font-size: 24px;
-                @include black-c;
             }
             img{
                 height: 100%;
@@ -70,36 +66,58 @@ $sidebar_w:240px;
             i{
                 margin-top: 10px;
                 font-size: 32px;
-                @include i;
-                
+                float: left;
             }
         }
     }
     .header-menu{
-        @include il;
+        display: inline-block;
+        float: left;
         margin-left: 10px;
         max-width: 680px;
         height: $header_h;
     }
     .header-tool{
-        @include ir;
+        display: inline-block;
+        float: right;
+    }
+    .skin_btn{
+      position: absolute;
+      z-index: 1;
+      top:$header_h;
+      right: 0;
+      width: 40px;
+      height: 40px;
+      background: url("images/default/skin_bg.png");
+      background-size: cover;
+      box-shadow:rgba(0,0,0,0.1) 0 1px 2px;
     }
 }
 
-
+.glass_nav .header-inner{
+  background: none;
+  .header-menu-list>li >a,.header-tool>li >a,.logo a{
+    color: #222;
+    &:hover{
+      color: #222;
+    }
+  }
+  #menu-header > li:hover{
+    background: rgba(255,255,255,0.24);
+  }
+}
 
 .header-menu-list,.header-tool{
     >li{
         position: relative;
-        @include il;
+        display: inline-block;
+        float: left;
         padding:0 15px;
         
         >a{
             padding: 5px
         }
     }
-
-  @include black-c;
 
   a{
     i{
@@ -112,7 +130,8 @@ $sidebar_w:240px;
 .header-tool{
     >li{
         position: relative;
-        @include il;
+        display: inline-block;
+        float: left;
         padding: 0 10px;
         height: $header_h;    
     }
@@ -126,17 +145,15 @@ $sidebar_w:240px;
     }
 }
 
+
 .search{
     position: relative;
     #searchform{
-        .search-text{
+        .search-form-input{
             padding:7px 8px;
             font-size: 12px;
-            color:#808080;
             vertical-align:middle;
-            border: 1px solid #ddd;
             box-shadow:inset 0 1px 2px rgba(0,0,0,0.075);
-            background: rgba(255, 255, 255, 0.75);
             height: 26px;
             width: 200px;
             border-radius: 3px;
@@ -163,7 +180,6 @@ $sidebar_w:240px;
     right: -2px;
     z-index: 9999;
     padding: 5px 0;
-    background: #fafafa;
     border: 1px solid rgba(0,0,0,0.15);
     box-shadow: 0 3px 12px rgba(0,0,0,0.15);
     background-clip:padding-box;
@@ -182,16 +198,9 @@ $sidebar_w:240px;
             width: 100%;
             line-height: 30px;
             padding: 0 10px;
-            border-bottom: 1px solid #e5e5e5;
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
-
-          &:hover{
-            color: #fff;
-            background: #4078c0;
-          }
-
         }
     }
 
@@ -251,20 +260,18 @@ $sidebar_w:240px;
     top:-14px;
     right: 10px;
     left: auto;
-    border:7px solid transparent;
-    border-bottom-color:#fafafa;
   }
 }
 
 li:hover{
   > .sub-menu{
-    @include bl;
+    display: block;
   }
 }
 
-
 #header-modal {
   position: absolute;
-  height: 200px;
+  z-index: 0;
+  height:$banner_h;
   width: 100%;
 }

@@ -97,51 +97,32 @@ $me = cs_get_option( 'i_me_switch' );
         												</header>
         												<div class="post-content">
         													<div calss="content">
-        														<?php the_content(); ?>
-                                                                <div id="archives-content">      
-                                                                    <?php       
-                                                                        $the_query = new WP_Query( 'posts_per_page=-1&ignore_sticky_posts=1' );      
-                                                                        $year=0; $mon=0; $i=0; $j=0;      
-                                                                        $all = array();      
-                                                                        $output = '';      
-                                                                        while ( $the_query->have_posts() ) : $the_query->the_post();      
-                                                                            $year_tmp = get_the_time('Y');      
-                                                                            $mon_tmp = get_the_time('n');      
-                                                                            $y=$year; $m=$mon;      
-                                                                            if ($mon != $mon_tmp && $mon > 0) $output .= '</div></div>';      
-                                                                            if ($year != $year_tmp) { // 输出年份      
-                                                                                $year = $year_tmp;      
-                                                                                $all[$year] = array();      
-                                                                            }      
-                                                                            if ($mon != $mon_tmp) { // 输出月份      
-                                                                                $mon = $mon_tmp;      
-                                                                                array_push($all[$year], $mon);      
-                                                                                $output .= "<div class='archive-title' id='arti-$year-$mon'><h3 id='mont-$year-$mon'>$year-$mon</h3><div class='archives archives-$mon' data-date='$year-$mon'>";      
-                                                                            }      
-                                                                            $output .= '<div class="brick"><a href="'.get_permalink() .'"><span class="time">'.get_the_time('n-d').'</span>'.get_the_title() .'<em>('. get_comments_number('0', '1', '%') .')</em></a></div>';      
-                                                                        endwhile;      
-                                                                        wp_reset_postdata();      
-                                                                        $output .= '</div></div>';      
-                                                                        echo $output;      
-
-                                                                        $html = "";      
-                                                                        $year_now = date("Y");      
-                                                                        foreach($all as $key => $value){// 输出 左侧年份表      
-                                                                            $html .= "<li class='year' id='year-$key'><a href='javascript:void(0)' class='year-toogle' id='yeto-$key'><i class='arrow fa fa-angle-right'></i>$key 年</a><ul class='monthall dropdown'>";      
-                                                                            for($i=12; $i>0; $i--){      
-                                                                                if($key == $year_now && $i > $value[0]) continue;      
-                                                                                $html .= in_array($i, $value) ? ("<li class='month monthed'><a href='#mont-$key-$i'>$i 月</a></li>") : ("<li class='month'>$i</li>");      
-                                                                            }      
-                                                                            $html .= "</ul></li>"; 
-                                                                        }      
-                                                                    ?>     
-                                                                </div>   
-                                                                 <div id="article-index">  
-                                                                    <div class="index-header">归档目录</div>
-                                                                    <div class="index-content">
-                                                                        <ul class="archive-nav"><?php echo $html;?></ul> 
-                                                                     </div>
-                                                                </div>  
+                                                                <div class="archivePost">
+                                                                     <ul class="timeline">
+                                                                     <li class="tl-header">
+                                                                       <div class="btn btn-info">Now</div>
+                                                                     </li>
+                                                                     <?php $count_posts = wp_count_posts(); $published_posts = $count_posts->publish;
+                                                                     query_posts( 'posts_per_page=-1' );
+                                                                     while ( have_posts() ) : the_post();
+                                                                         echo '<li class="tl-item"><div class="tl-wrap">';
+                                                                         echo '<span class="tl-date">';
+                                                                         the_time(get_option( 'date_format' ));
+                                                                         echo '</span><div class="tl-content">
+                                                                         <span class="arrow"></span>
+                                                                         <a href="';
+                                                                         the_permalink();
+                                                                         echo '" title="'.esc_attr( get_the_title() ).'">';
+                                                                         the_title();
+                                                                         echo '</a></div></div></li>';
+                                                                         $published_posts--;
+                                                                     endwhile;
+                                                                     wp_reset_query(); ?>
+                                                                      <li class="tl-header">
+                                                                        <div class="btn btn-info">Now</div>
+                                                                      </li>
+                                                                     </ul>
+                                                                 </div>
         													</div>
         												</div>
         											</div>
@@ -149,14 +130,6 @@ $me = cs_get_option( 'i_me_switch' );
         									</div>
         								</article>
         	                        </div>
-
-									<!-- 评论 -->
-									<?php if ('open' == $post->comment_status) { ?>
-									<div id="comment-jump" class="comments">
-										<?php comments_template(); ?>
-									</div>
-									<?php } ?>
-
         	                    </div>
                         	</div>
                         </div>

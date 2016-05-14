@@ -2,16 +2,90 @@
 
 #footer{
     margin-top: -100px;
-    padding-top: 100px;
-    background: #fff;
+    padding-top: 50px;
 
     .footer-inner{
-        
+        margin: 50px 0;
     }
 }
 
 #footer_btn{
     position: fixed;
-    bottom: 100px;
-    right: 100px;
+    z-index: 4;
+    right: 35px;
+    bottom: 70px;
+    display: none;
+}
+
+#footer_btn li {
+    margin-bottom: 15px;
+}
+
+#footer_btn li>a {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    text-decoration: none;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-transition: background 200ms linear;
+    -moz-transition: background 200ms linear;
+    transition: background 200ms linear;
+    -webkit-backface-visibility: hidden;
+    display: inline-block;
+    line-height: 1;
+    font-size: 20px;
+    padding: 9px 10px 10px 10px;
+    background: rgba(0, 0, 0, 0.2);
+    color: #FFFFFF;
+}
+
+#footer_btn li>a:hover {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+#fi-wx-show {
+    border-radius: 5px;
+    padding: 5px;
+    width: 150px;
+    height: 150px;
+    position: fixed;
+    right: 90px;
+    bottom: 85px;
+}
+
+#footer{
+
+}
+
+.footer-inner{
+
+}
+
+.footer-end{
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+}
+
+.share_show {
+    padding:15px;
+    width: 160px;
+    position: fixed;
+    right: 75px;
+    bottom: 70px;
+}
+
+.bdsharebuttonbox{
+    border-radius: 5px;
+    padding:10px;
+}
+
+.bdsharebuttonbox a{
+    font-size:14px !important;
+    padding-left:20px !important;
+}
+
+#fi-wx-show , .baidu_share .bdsharebuttonbox{
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 1px;
 }

@@ -1,6 +1,7 @@
 <?php
  // 获取选项
 error_reporting(0);
+$edit = cs_get_option( 'i_footer_edit' );
 $copyright = cs_get_option( 'i_foot_copyright' );  
 $gotop = cs_get_option( 'i_gotop' );  
 $qrcode = cs_get_option( 'i_qrcode' );  
@@ -25,41 +26,21 @@ $layout = cs_get_option( 'i_layout' );
 $sliders = cs_get_option( 'i_slider' );
 $login = cs_get_option( 'i_login' ); 
 $login_img = cs_get_option( 'i_login_image' );
+$sidebar = cs_get_option( 'i_sidebar' );
+$topbar = cs_get_option( 'i_topbar' );
 $meta_data = get_post_meta( get_the_ID(), 'standard_options', true );
 $download = $meta_data['i_download'];
 $index = $meta_data['i_index'];
 ?> 
 	
 	<footer id="footer">
-        <div class="footer-inner">
-            <div class="container clearfix">
-				<?php
-					$column = cs_get_option( 'i_topbar_col' );
-					$column_style = '';
-					switch ($column) {
-						case "col_1":
-							$column_style = 'columns1';
-							break;
 
-						case "col_2":
-							$column_style = 'columns2';
-							break;
+		<div class="footer-inner">
+			<div class="container clearfix">
+				<?php echo $edit ?>
+			</div>
+		</div>
 
-						case "col_3":
-							$column_style = 'columns3';
-							break;
-
-						case "col_4":
-							$column_style = 'columns4';
-							break;
-					}
-				 ?>
-                <div id="drawer-inside" class="widgets clearfix <?php echo $column_style; ?>">
-                    <?php if (function_exists('dynamic_sidebar') && dynamic_sidebar('Bottom') ) : else : ?>
-                    <?php endif; ?>		
-                </div>
-            </div>
-        </div>
         <div class="footer-end">
             <div class="container clearfix">
                 <?php if( ! empty( $copyright ) ){ echo ''.$copyright.'';}else{
@@ -87,7 +68,7 @@ $index = $meta_data['i_index'];
 				<?php if ($share == true) {
 					echo '<li class="baidu_share">
 							<a href="javascript:void(0)" class="share_icon" title="分享">
-								<i class="fa fa-share"></i>
+								<i class="fa fa-share-alt"></i>
 							</a>								
 								<div class="share_show" style="display: none;">
 									<div class="bdsharebuttonbox">
@@ -239,7 +220,11 @@ $index = $meta_data['i_index'];
         </div>
 	<?php }	?>
 
-	<?php get_sidebar(); ?>
+	<?php if ($sidebar == true) {?>
+		<?php get_sidebar(); ?>
+	<?php }?>
+	
+	
 	<?php wp_footer(); ?>
 	<script>
 
@@ -268,7 +253,7 @@ $index = $meta_data['i_index'];
                     $effect_style = 'sliceUpDownLeft';
                     break;
                 case "i_fold":
-                    $effect_style = 'i_fold';
+                    $effect_style = 'fold';
                     break;
                 case "i_fade":
                     $effect_style = 'fade';
@@ -308,7 +293,6 @@ $index = $meta_data['i_index'];
                 animSpeed: 300,
                 prevText: '',
                 nextText: '',      
-                controlNav: false,
             });
         });
     <?php } ?>     	

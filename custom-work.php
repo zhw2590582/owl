@@ -3,7 +3,7 @@
 Template Name: 作品页面
 */ 
 error_reporting(0);
-$pagination = cs_get_option('i_pagination'); 	
+$pagination = cs_get_option('i_pagination');
 $loadmore = cs_get_option( 'i_ajax_loading' );  
 $loadend = cs_get_option( 'i_ajax_end' ); 
 $loadnum = cs_get_option( 'i_ajax_num' ); 
@@ -13,7 +13,6 @@ $avatar_name = cs_get_option( 'i_avatar_name' );
 $avatar_content = cs_get_option( 'i_avatar_content' );
 $me = cs_get_option( 'i_me_switch' );
 ?>
-
 <?php get_header(); ?>
 		<section id="content">
             <div class="container">
@@ -48,45 +47,11 @@ $me = cs_get_option( 'i_me_switch' );
                             <?php wp_nav_menu(array('theme_location' => 'main', 'container' => 'div', 'container_class' => 'header-menu-wrapper', 'menu_class' => 'header-menu-list', 'walker' => new description_walker())); ?>
                         </div>
                     </div>
-
                     <div class="main_body colbox">
-                        <?php if (!is_mobile()) { ?>
-                            <aside id="sidebar" class="col">
-                                <?php if ($me == true) {?>
-                                    <div id="about">
-                                        <p class="me_content">
-                                            <?php echo $avatar_content; ?>
-                                        </p>
-                                        <div class="social_link">
-                                            <?php
-                                                $my_socials = cs_get_option( 'i_social' );
-                                                echo '<ul class="clearfix">';
-                                                if( ! empty( $my_socials ) ) {
-                                                  foreach ( $my_socials as $social ) {
-                                                    $iconstyle = $social['i_icon_style'];
-                                                    echo '<li>';
-                                                    if( ! empty( $social['i_social_link'] ) ){echo '<a href="'. $social['i_social_link'] .'" title="'. $social['i_social_title'] .'"';}else{echo '<a href="javascript:void(0)" title="'. $social['i_social_title'] .'" ';}
-                                                    if ( $social['i_social_newtab'] == true) { echo 'target="_black"';}
-                                                    if ($iconstyle == 'i_icon') {echo '><i class="'. $social['i_social_icon'] .'"></i>';} else {echo '><img src="'. $social['i_social_image'] .'">';}
-                                                    echo '</a>';
-                                                    echo '</li>';
-                                                  }
-                                                }
-                                                echo '</ul>';
-                                            ?>
-                                        </div>
-                                    </div>
-                                <?php } ?>
-                                <div id="widget" class="widgets">
-                                    <?php if (function_exists('dynamic_sidebar') && dynamic_sidebar('Aside') ) : else : ?>
-                                    <?php endif; ?>
-                                </div>
-                            </aside>
-                        <?php }?>
                         <div id="main" class="col">
                             <div class="main-inner">
         	                    <div id="posts-box">
-        	                        <div class="posts clearfix">
+        	                        <div class="posts grids clearfix">
                                         <?php 
                                           $temp = $wp_query; 
                                           $wp_query = null; 
@@ -116,16 +81,20 @@ $me = cs_get_option( 'i_me_switch' );
 
                                         <article <?php post_class('grid-item'); ?>>
                                             <div class="work-wrap">
-                                                <?php if ( has_post_thumbnail()) { ?>
-                                                    <a class="featured-image" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_post_thumbnail('thumbnail'); ?></a>
-                                                <?php } ?>				
-                                                 <div class="work-content">
-                                                     <?php the_title();?>
-                                                </div>
+                                                <a class="featured-image" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+                                                    <?php the_post_thumbnail('thumbnail'); ?>
+                                                </a>
+                                                <a class="work-content" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+                                                    <?php the_title();?>
+                                                </a>
                                             </div>
-                                            <ul class="work-mate">
-                                                <li class="work_tabs"><?php $terms_as_text = get_the_term_list( $post->ID, 'genre', '', ', ', '' ) ; echo strip_tags($terms_as_text); ?></li>
-                                                <li class="like_btn"><?php echo getPostLikeLink( get_the_ID() ); ?></li>	
+                                            <ul class="work-mate clearfix">
+                                                <li class="work_tabs fl"><?php $terms_as_text = get_the_term_list( $post->ID, 'genre', '', ', ', '' ) ; echo strip_tags($terms_as_text); ?></li>
+                                                <ul class="clearfix fr">
+                                                    <li class="fl"><?php echo getPostLikeLink( get_the_ID() ); ?></li>
+                                                    <li class="fl"><i class="fa fa-eye"></i><?php echo getPostViews(get_the_ID()); ?></li>
+                                                </ul>
+
                                             </ul>
                                         </article>
 

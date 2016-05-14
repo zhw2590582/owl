@@ -88,20 +88,6 @@ $me = cs_get_option( 'i_me_switch' );
 													<div calss="content">
 													    <div class="title404">404</div>
 														<p>对不起，你要查看的页面已经不存在，请返回！</p>
-														<?php														
-                                                            $postURL = "http://island.duapp.com/";
-                                                            $secretKey = "5731e458a8c861.88767493";
-                                                            $data = array ();
-                                                            $data['secret_key'] = $secretKey;
-                                                            $data['slm_action'] = 'slm_create_new';
-                                                            $ch = curl_init ($postURL);
-                                                            curl_setopt ($ch, CURLOPT_POST, true);
-                                                            curl_setopt ($ch, CURLOPT_POSTFIELDS, $data);
-                                                            curl_setopt ($ch, CURLOPT_RETURNTRANSFER, true);
-                                                            $returnValue = curl_exec ($ch);
-                                                            $str = explode("\"", $returnValue); 
-                                                            echo $str[11];
-														?>
 													</div>
 												</div>
 											</div>

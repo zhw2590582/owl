@@ -81,8 +81,8 @@ $('body').on('click', '#comment-nav-below a', function(e) {
 	});
 
 //图像CSS类
-	$("#content img, .avatar").addClass('ajax_gif');
-	$("#content img, .avatar").load(function() {
+	$("#content img, .avatar-box img").addClass('ajax_gif');
+	$("#content img, .avatar-box img").load(function() {
 		$(this).removeClass('ajax_gif');
 	});
 
@@ -101,15 +101,15 @@ $('body').on('click', '#comment-nav-below a', function(e) {
 	});
 
 	$('.linkcat li a img , .avatar').on('error', function () {
-	  $(this).prop('src', '../wp-content/themes/Island/images/broken.jpg');
+	  $(this).prop('src', '../wp-content/themes/owl/images/default/broken.jpg');
 	});
 
 //底部按钮
 	$(window).scroll(function() {
 		if ($(window).scrollTop() > 200) {
-			$(".foot_btn").fadeIn(500);
+			$("#footer_btn").fadeIn(500);
 		} else {
-			$(".foot_btn").fadeOut(500);
+			$("#footer_btn").fadeOut(500);
 		}
 	});
 

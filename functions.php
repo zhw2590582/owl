@@ -16,7 +16,6 @@ function island_scripts_styles() {
     wp_enqueue_script('plugins-js', get_template_directory_uri() . '/js/plugins.js', false, '0.3', true);
     wp_enqueue_script('comments-ajax', get_template_directory_uri() . '/comments-ajax.js', false, '0.4', true);
     wp_enqueue_script('custom-js', get_template_directory_uri() . '/js/custom.js', false, '2.0', true);
-    wp_enqueue_script('nivo-js', get_template_directory_uri() . '/js/nivo.js', false, '2.0', true);
 
 	/* 代码高亮 */
     wp_register_script('prettify', get_template_directory_uri() . '/js/prettify.js', false, '0.3', true);
@@ -100,6 +99,18 @@ function load_css($classes) {
 }
 add_filter('body_class','load_css');
 
+
+/* 菜单类名 */
+function nav_css($classes) {
+    $menu_g = cs_get_option( 'i_menu_glass' );
+	if ( $menu_g == true ) {
+        $classes[] = 'glass_nav';
+    }else {
+        $classes[] = '';
+	}
+    return $classes;
+}
+add_filter('body_class','nav_css');
 
 /* 引入密钥验证 */
 include ('verify.php');
@@ -515,7 +526,7 @@ if ($push == true) {
 		$sql = "SELECT DISTINCT ID, post_title, post_password, comment_ID, comment_post_ID, comment_author, comment_date_gmt, comment_approved, comment_type,comment_author_url,comment_author_email, SUBSTRING(comment_content,1,22) AS com_excerpt FROM $wpdb->comments LEFT OUTER JOIN $wpdb->posts ON ($wpdb->comments.comment_post_ID = $wpdb->posts.ID) WHERE comment_approved = '1' AND comment_type = '' AND post_password = '' AND user_id='0' AND comment_author != '$outer' ORDER BY comment_date_gmt DESC LIMIT $limit";
 		$comments = $wpdb->get_results($sql);
 		foreach ($comments as $comment) {
-			$output .= '<li class="colbox"><p class="col avatar_box">'.get_avatar( $comment, 32,"",$comment->comment_author).'</p><p class="col comment_box"><a class="with-tooltip" href="'. get_permalink($comment->ID) .'#comment-' . $comment->comment_ID . '" data-tooltip="《'.$comment->post_title . '》上的评论"><span class="s_name">'.strip_tags($comment->comment_author).':</span><span class="s_desc">'. strip_tags($comment->com_excerpt).'</span></a></p></li>';
+			$output .= '<li class="colbox"><p class="col avatar_box avatar">'.get_avatar( $comment, 32,"",$comment->comment_author).'</p><p class="col comment_box"><a class="with-tooltip" href="'. get_permalink($comment->ID) .'#comment-' . $comment->comment_ID . '" data-tooltip="《'.$comment->post_title . '》上的评论"><span class="s_name">'.strip_tags($comment->comment_author).':</span><span class="s_desc">'. strip_tags($comment->com_excerpt).'</span></a></p></li>';
 		}
 		$output = convert_smilies($output);
 		echo $output;
@@ -667,24 +678,16 @@ if (function_exists('register_sidebars')) register_sidebar(array(
     'description' => __('显示在页面右边', 'island') ,
     'before_widget' => '<aside id="%1$s" class="widget %2$s">',
     'after_widget' => '</aside>',
-    'before_title' => '<h3 class="widget-title"><span>',
-    'after_title' => '</span></h3>',
-));
-register_sidebar(array(
-    'name' => __('Bottom', 'island') ,
-    'description' => __('显示在页面底部', 'island') ,
-    'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-    'after_widget' => '</aside>',
-    'before_title' => '<h3 class="widget-title"><span>',
-    'after_title' => '</span></h3>',
+    'before_title' => '<h5 class="widget-title"><span>',
+    'after_title' => '</span></h5>',
 ));
 register_sidebar(array(
     'name' => __('Sidebar', 'island') ,
     'description' => __('显示在左侧边栏', 'island') ,
     'before_widget' => '<aside id="%1$s" class="widget %2$s">',
     'after_widget' => '</aside>',
-    'before_title' => '<h3 class="widget-title"><span>',
-    'after_title' => '</span></h3>',
+    'before_title' => '<h5 class="widget-title"><span>',
+    'after_title' => '</span></h5>',
 ));
 
 /* 引入小工具 */
@@ -832,7 +835,7 @@ add_action('wp_head', 'plugin_css', 99);
 function plugin_css() {
 	$ajaxbar = cs_get_option( 'i_ajax_color' ); 
 	$body_s = cs_get_option( 'i_body_style' ); 
-	$menu_g = cs_get_option( 'i_menu_glass' ); 
+
 
 	if ( $body_s == 'i_body_c') { 
 		$body_c = cs_get_option( 'i_body_color' ); 
@@ -842,16 +845,13 @@ function plugin_css() {
 	}
 	
 	if ( $menu_g  == true) { 
-		$menu_c = 'none'; 
+		$menu_bg = 'none';
+		$menu_c = '#222';
 	};
 	
     echo '<!-- 设置Css --><style>
 	body{
 	  background:'. $body_c .' ;
-	}
-	
-	#header .header-inner{
-	  background:'. $menu_c .' ;
 	}
 	
 	.loading-bar{

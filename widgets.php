@@ -1,14 +1,14 @@
 <?php
 
 //启用css和js
-function island_widget_js() {
+function owl_widget_js() {
   global $wp_customize;
   if ( ! isset( $wp_customize ) ) {
     wp_enqueue_script( 'dashboard-js', get_template_directory_uri() . '/js/admin.js', array('jquery','jquery-ui-datepicker','jquery-ui-sortable','jquery-ui-sortable', 'jquery-ui-draggable','jquery-ui-droppable','admin-widgets' ) );
   }
   wp_enqueue_style( 'dashboard-style', get_template_directory_uri() . '/css/admin.css', array() );
 }
-add_action( 'admin_enqueue_scripts', 'island_widget_js' ); 
+add_action( 'admin_enqueue_scripts', 'owl_widget_js' ); 
 
 // 小工具
 // 名称: 博客统计
@@ -24,7 +24,7 @@ class EfanBlogStat extends WP_Widget{
 	function EfanBlogStat(){
 		// 定义小工具的构造函数
 		$widget_ops = array('classname' => 'widget_blogstat', 'description' => '显示博客的统计信息');
-		$this->WP_Widget(false, 'island博客统计', $widget_ops);
+		$this->WP_Widget(false, 'Owl博客统计', $widget_ops);
 	}
 	
 	function form($instance){
@@ -311,7 +311,7 @@ if( ! class_exists( 'CS_Widget_Link' ) ) {
         'description' => '图像链接小工具'
       );
 
-      parent::__construct( 'cs_widget_link', 'island图像链接', $widget_ops );
+      parent::__construct( 'cs_widget_link', 'Owl图像链接', $widget_ops );
 
     }
 	//前台显示函数
@@ -432,10 +432,10 @@ if( ! class_exists( 'CS_Widget_Qr' ) ) {
 
       $widget_ops     = array(
         'classname'   => 'cs_widget_qr',
-        'description' => 'island扫码付款'
+        'description' => 'Owl扫码付款'
       );
 
-      parent::__construct( 'cs_widget_qr', 'island扫码付款', $widget_ops );
+      parent::__construct( 'cs_widget_qr', 'Owl扫码付款', $widget_ops );
 
     }
 	//前台显示函数
@@ -580,7 +580,7 @@ if( ! class_exists( 'CS_Widget_tab' ) ) {
         'description' => '三合一选项卡'
       );
 
-      parent::__construct( 'cs_widget_tab', 'island三合一选项卡', $widget_ops );
+      parent::__construct( 'cs_widget_tab', 'Owl三合一选项卡', $widget_ops );
 
     }
 	//前台显示函数
@@ -635,4 +635,85 @@ if ( ! function_exists( 'cs_widget_init_tab' ) ) {
     register_widget( 'CS_Widget_tab' );
   }
   add_action( 'widgets_init', 'cs_widget_init_tab', 2 );
+}
+
+/**
+ *
+ * CS框架_轮播图
+ *
+ */
+if( ! class_exists( 'CS_Widget_Slider' ) ) {
+  class CS_Widget_Slider extends WP_Widget {
+	//构建函数
+    function __construct() {
+
+      $widget_ops     = array(
+        'classname'   => 'cs_widget_slider',
+        'description' => '图像链接小工具'
+      );
+
+      parent::__construct( 'cs_widget_slider', 'Owl轮播图', $widget_ops );
+
+    }
+	//前台显示函数
+    function widget( $args, $instance ) {
+
+      extract( $args );
+
+      echo '<aside class="textwidget cs_widget_slider">';
+		echo '<div id="widget_slider" class="nivoSlider">';
+			$my_sliders2 = cs_get_option( 'i_slider2_custom' );
+			if( ! empty( $my_sliders2 ) ) {
+			  foreach ( $my_sliders2 as $slider2 ) {
+				if( ! empty( $slider2['i_slider2_link'] ) ){ echo '<a href="'. $slider2['i_slider2_link'] .'"';}
+				if ( ! empty( $slider2['i_slider2_link'] ) && $slider['i_slider2_newtab'] == true) { echo 'target="_black">';}else{ if ( ! empty( $slider2['i_slider2_link'] )){ echo '>';}}
+				echo '<img class=" " src="'. $slider2['i_slider2_image'] .'" data-thumb="'. $slider2['i_slider2_image'] .'" title="'. $slider2['i_slider2_text'] .'"/>';
+				if( ! empty( $slider2['i_slider2_link'] ) ){ echo '</a>';}
+			  }
+			}
+		echo '</div>';
+      echo '</aside>';
+
+    }
+	//数据更新函数
+    function update( $new_instance, $old_instance ) {
+
+      $instance            = $old_instance;
+      $instance['title']   = $new_instance['title'];
+
+      return $instance;
+
+    }
+	//后台表单函数
+    function form( $instance ) {
+
+      //
+      // 设置默认值
+      // -------------------------------------------------
+      $instance   = wp_parse_args( $instance, array(
+        'title'   => '轮播图',
+      ));
+
+      //
+      // 标题
+      // -------------------------------------------------
+      $text_value = esc_attr( $instance['title'] );
+      $text_field = array(
+        'id'    => $this->get_field_name('title'),
+        'name'  => $this->get_field_name('title'),
+        'type'  => 'text',
+        'title' => '标题',
+      );
+
+      echo cs_add_element( $text_field, $text_value );
+
+    }
+  } 
+}
+
+if ( ! function_exists( 'cs_widget_init_Slider' ) ) {
+  function cs_widget_init_Slider() {
+    register_widget( 'CS_Widget_Slider' );
+  }
+  add_action( 'widgets_init', 'cs_widget_init_Slider', 2 );
 }

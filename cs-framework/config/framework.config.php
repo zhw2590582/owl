@@ -740,13 +740,56 @@ $options[]      = array(
           'dependency' => array( 'i_comment_mail', '==', 'true' ),
         ),
 
- 		// 常规设置
+
+  ),
+);
+
+// ------------------------------
+// 页面                       -
+// ------------------------------
+
+$options[]      = array(
+  'name'        => 'pages',
+  'title'       => '页面',
+  'icon'        => 'fa fa-cube',
+  'fields'      => array(
+
+ 		// 关于页面
 		 array(
 		  'type'    => 'notice',
 		  'class'   => 'info',
-		  'content' => '常规设置',
-		),
-
+		  'content' => '关于页面',
+		),  
+		
+		 // 归档页面
+		 array(
+		  'type'    => 'notice',
+		  'class'   => 'info',
+		  'content' => '归档页面',
+		),  
+		
+		// 归档索引
+		array(
+          'id'    	  => 'i_archive_index',
+          'type'      => 'switcher',
+          'default'   => true,
+          'title'     => '归档索引',
+        ),
+		
+		 // 友链页面
+		 array(
+		  'type'    => 'notice',
+		  'class'   => 'info',
+		  'content' => '友链页面',
+		), 
+		
+		 // 留言页面
+		 array(
+		  'type'    => 'notice',
+		  'class'   => 'info',
+		  'content' => '留言页面',
+		), 
+		
 		// 启用头像Lazyload功能
 		array(
           'id'    	  => 'i_comment_avatar',
@@ -770,20 +813,14 @@ $options[]      = array(
           'default'    => '20',
           'title'     => '读者墙头像数目',
         ),
-
-  ),
-);
-
-// ------------------------------
-// 作品                       -
-// ------------------------------
-
-$options[]      = array(
-  'name'        => 'works',
-  'title'       => '作品',
-  'icon'        => 'fa fa-cube',
-  'fields'      => array(
-
+  
+		 // 作品页面
+		 array(
+		  'type'    => 'notice',
+		  'class'   => 'info',
+		  'content' => '作品页面',
+		),   
+  
  		// 每页显示作品数目
 		array(
           'id'    	  => 'i_works_num',
@@ -847,29 +884,86 @@ $options[]      = array(
   'icon'        => 'fa fa-tasks',
   'fields'      => array(
 
-		// 底部小工具
+		// 左边栏
 		 array(
 		  'type'    => 'notice',
 		  'class'   => 'info',
-		  'content' => '底部小工具',
-		),
+		  'content' => '左边栏',
+		),  
+  
+		 // 左边栏
+		array(
+		  'id'    	  => 'i_sidebar',
+		  'type'      => 'switcher',
+		  'title'     => '左边栏',
+		), 
 
-		// 顶侧底边栏
+		
+		// 边栏轮播图
+		 array(
+		  'type'    => 'notice',
+		  'class'   => 'info',
+		  'content' => '边栏轮播图',
+		),
+		
+			// 自定义轮播图
         array(
-          'id'         => 'i_topbar_col',
-          'type'       => 'radio',
-          'title'      => '分栏方式',
-          'class'      => 'horizontal',
-          'options'    => array(
-            'col_1'   => '一栏',
-            'col_2'   => '两栏',
-            'col_3'   => '三栏',
-            'col_4'   => '四栏',
-          ),
-          'default'    => 'col_1',
+          'id'              => 'i_slider2_custom',
+          'type'            => 'group',
+          'title'           => '自定义幻灯片',
+          'info'            => '更多详细设置方式可以浏览使用说明',
+          'button_title'    => '添加滑块',
+          'accordion_title' => '滑块',
+          'fields'          => array(
+
+				// 自定义轮播图--标题
+            array(
+              'id'          => 'i_slider2_title',
+			  'type'        => 'text',
+              'title'       => '标题',
+			  'attributes'    => array(
+				'placeholder' => '例如：滑块01'
+			  )
+            ),
+
+				// 自定义轮播图--图片
+			array(
+			  'id'      => 'i_slider2_image',
+			  'type'    => 'upload',
+			  'title'   => '图片',
+			),
+
+				// 自定义轮播图--描述
+            array(
+              'id'          => 'i_slider2_text',
+			  'type'        => 'text',
+              'title'       => '描述',
+			  'attributes'    => array(
+				'placeholder' => '输入描述'
+			  )
+            ),
+
+				// 自定义轮播图--链接
+			array(
+			  'id'            => 'i_slider2_link',
+			  'type'          => 'text',
+			  'title'         => '链接',
+			  'attributes'    => array(
+				'placeholder' => 'http://...'
+			  )
+			),
+
+				// 自定义轮播图--新标签
+			array(
+			  'id'    	  => 'i_slider2_newtab',
+			  'type'      => 'switcher',
+			  'title'     => '新标签打开',
+			  'dependency'   => array( 'i_slider2_link', '!=', '' ),
+			),
+
+          )
         ),
 		
-
     ),
 );
 
@@ -882,6 +976,13 @@ $options[]      = array(
   'title'       => '页脚',
   'icon'        => 'fa fa-sliders',
   'fields'      => array(
+
+        // 底部编辑器
+        array(
+          'id'    => 'i_footer_edit',
+          'type'  => 'wysiwyg',
+          'title' => '底部编辑器',
+        ),
 
  		// 显示回到顶部按钮
 		array(

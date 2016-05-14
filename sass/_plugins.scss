@@ -35,7 +35,6 @@
 }
 
 .cd-user-modal-container {
-	background: #fff;
 	position: relative;
 	width: 90%;
 	max-width: 420px;
@@ -175,30 +174,9 @@ input#wp-submit {
 	margin: 0 !important;
 }
 
-#user_login , #user_pass {
-	border: solid 1px #C1CED2;
-	background: #F0F3F4;
-}
-
-input#wp-submit {
-	border: 1px solid #00a1d6;
-	color: #fff;
-	background: #00a1d6;
-}
-
 .user-modal-header {
 	background: #EDF1F2;
 	border-bottom: 1px solid #C1CED2;
-}
-
-input#wp-submit:hover {
-	background: #00b5e5;
-}
-
-.login-links {
-	background: #edf1f2;
-	color: #58666e;
-	border-top: 1px solid #C1CED2;
 }
 
 .login-img{
@@ -224,12 +202,9 @@ input#wp-submit:hover {
 .cd-user-modal-container{
 
   .modal-head{
-    color: #6B6B6B;
     height: 35px;
     line-height: 35px;
     padding: 0 10px;
-    background: #fbfbfb;
-    border-bottom: 1px solid #e5e5e5;
     border-top-left-radius: 0.25em;
     border-top-right-radius: 0.25em;
 
@@ -238,7 +213,6 @@ input#wp-submit:hover {
     }
   }
   .modal-main{
-    color: #6B6B6B;
     text-align: center;
     min-height: 200px;
     padding: 50px 10px 10px;
@@ -249,25 +223,17 @@ input#wp-submit:hover {
         font-size: 16px;
         display: inline-block;
         padding: 10px 20px;
-        background: #27ae60;
         border-radius: 0.25em;
         margin-bottom: 20px;
-        color: #fff;
         i{
           margin-right: 10px;
-        }
-        &:hover{
-          background: #38CA76;
         }
       }
     }
   }
   .modal-bottom{
-    color: #999;
     font-size: 12px;
-    background: #fbfbfb;
     padding: 10px;
-    border-top: 1px solid #e5e5e5;
     border-bottom-left-radius: 0.25em;
     border-bottom-right-radius: 0.25em;
   }
@@ -333,10 +299,61 @@ input#wp-submit:hover {
 
     li {
       background: none repeat scroll 0 0 transparent;
-      list-style-type: disc;
-      padding: 0;
-      margin-left: 20px;
+	  list-style-type: disc;
+	  padding: 0;
+	  margin-left: 20px;
+	  }
+	}
+}
+
+.grids{
+  margin: 0 auto;
+  .grid-item{
+    position: relative;
+    width: 220px;
+    float: left;
+    padding: 0;
+    margin: 0 8px 30px;
+    @include itme-bg;
+
+    .work-wrap{
+      padding: 10px 10px 5px;
+      .featured-image{
+        width: 200px;
+        height: 150px;
+        overflow: hidden;
+        display: block;
+        img{
+          width: 100%;
+          height: auto;
+        }
+      }
+      &:hover .work-content{
+        display: block;
+        color: #fff;
+      }
+    }
+
+    .work-content{
+      position: absolute;
+      padding: 10px;
+      font-size: 14px;
+      display: none;
+      top: 10px;
+      left: 10px;
+      width: 200px;
+      height: 150px;
+      @include bg-b (0.75);
+    }
+
+    .work-mate{
+      padding: 0 10px 5px;
+      li{
+        margin-right: 10px;
+        &:last-child{
+          margin-right: 0;
+        }
+      }
     }
   }
 }
-

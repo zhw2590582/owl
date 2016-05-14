@@ -1,64 +1,313 @@
-@mixin bl () {
-    display: block;
-}
-@mixin no () {
-    display: none;
-}
-@mixin i () {
-    display: inline-block;
-}
-@mixin il () {
-    display: inline-block;
-    float: left;
-}
-@mixin ir () {
-    display: inline-block;
-    float: right;
-}
+@charset "utf-8";
+/* 黑色透明度 */
 @mixin bg-b ($n) {
     background: rgba(0, 0, 0, $n);
 }
+/* 白色透明度 */
 @mixin bg-w ($n) {
     background: rgba(225, 225, 225, $n);
 }
-@mixin br ($n) {
-    -webkit-filter:blur(5px);
-    -ms-filter:blur(5px);
-    filter:blur(5px);
-    filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius=5,MakeShadow=false);
-}
-
-@mixin bg-c () {
-    background: #ebe7e4;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
-    border-radius: 5px;
-}
-
-@mixin gray-c () {
-    color: #969696;
-    a{
-        color: #969696;
-
-        &:hover{
-            color: #4078c0;
-        }
-    }
-
-}
-
-@mixin black-c () {
-    color: #333;
-    a{
-        color: #333;
-        &:hover{
-            color: #4078c0;
-        }
-    }
-
-}
-
-@mixin white-bg () {
-    background: #fff;
+/* 常用背景 */
+@mixin itme-bg () {
+    background: #FFFDFB;
     box-shadow: 0 1px 2px rgba(0,0,0,0.15);
     border-radius: 3px;
+}
+/* 字体颜色01 */
+@mixin itme-c1 () {
+    color: yellow;
+    a{
+        color: yellow;
+        &:hover{
+            color: #4078c0;
+        }
+    }
+}
+/* 字体颜色02 */
+@mixin itme-c2 () {
+    color: lawngreen;
+    a{
+        color: lawngreen;
+        &:hover{
+            color: #4078c0;
+        }
+    }
+}
+/* 实线边 */
+$bds_c:#ECE2D7;
+@mixin bds () {
+    border:1px solid $bds_c;
+}
+@mixin bdsl () {
+    border-left:1px solid $bds_c;
+}
+@mixin bdsr () {
+    border-right:1px solid $bds_c;
+}
+@mixin bdsb () {
+    border-bottom:1px solid $bds_c;
+}
+@mixin bdst () {
+    border-top:1px solid $bds_c;
+}
+/* 虚线边 */
+$bdd_c:#ECE2D7;
+@mixin bddl () {
+    border-left:1px dashed $bdd_c;
+}
+@mixin bddr () {
+    border-right:1px dashed $bdd_c;
+}
+@mixin bddb () {
+    border-bottom:1px dashed $bdd_c;
+}
+@mixin bddt () {
+    border-top:1px dashed $bdd_c;
+}
+/* 常规色 */
+body{
+    background: #dfc2a0;
+    color: #906b40;
+}
+a{
+    color: #6c625c;
+}
+a:hover,
+a:focus {
+    color: #283176;
+}
+/* 顶部菜单 */
+.header-inner{
+    background: #6c625c;
+}
+
+/* 主体菜单 */
+.main_header{
+    border-bottom: 1px solid #e5e5e5;
+    background: #8f847c;
+}
+
+/* 顶部菜单字体 */
+.header-inner{
+    color: #FFF5EA;
+    a{
+        color: #FFF5EA;
+        &:hover{
+            color: #DFC2A0;
+        }
+    }
+}
+
+/* 主体菜单字体 */
+.main_header{
+    color: #FFF5EA;
+    a{
+        color: #FFF5EA;
+        &:hover{
+            color: #DFC2A0;
+        }
+    }
+}
+
+/* 主体背景 */
+.content-inner{
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+    background: #fbefe1;
+}
+
+/* 特色图背景 */
+.featured-box{
+    background: yellow;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+/* 首页评论 */
+.min_comments ul{
+    background: red;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+/* 左边栏背景 */
+#lSidebar{
+    background: #00b5e5;
+}
+/* 左边栏控制器背景 */
+#lSidebar .sidectrl{
+    background: rosybrown;
+}
+/* 搜索输入框背景 */
+.search-form-input{
+    @include bg-w (0.75);
+    border: 1px solid #ddd;
+    color: #666;
+}
+/* 弹窗背景 */
+.cd-user-modal-container{
+    background: #00b5e5;
+    .modal-head{
+        background: royalblue;
+        color: blue;
+        border-bottom: 1px solid red;
+    }
+    .modal-main{
+        color: blue;
+        .dl-btn a{
+            background: #27ae60;
+            color: #fff;
+            &:hover{
+                background: #38CA76;
+            }
+        }
+    }
+    .modal-bottom{
+        background: royalblue;
+        color: blue;
+        border-top: 1px solid red;
+    }
+}
+/* 评论区 */
+#respond input[type="text"],#respond textarea{
+    background: blueviolet;
+    border: 1px solid brown;
+}
+#commentform p:before{
+    color: red;
+}
+.comment-body{
+    background: red;
+    border:1px solid black;
+    .comment-name{
+        border-bottom: 1px solid darkcyan;
+        .arrow:after{
+            border:7px solid transparent;
+            border-right-color:red;
+        }
+    }
+}
+.comment-block .author-img{
+    background: red;
+}
+
+/* 下载盒子 */
+.download-wrap {
+    .dl-title{
+        color: red;
+        background:burlywood;
+    }
+}
+
+/* 页脚 */
+#footer{
+    background: #00A1D6;
+    .footer-end{
+        background: #666;
+    }
+}
+
+#fi-wx-show , .baidu_share .bdsharebuttonbox{
+    background: red;
+}
+
+/* 文章布局按钮 */
+.actions-menu{
+    a{
+        span{
+            background: #00A1D6;
+        }
+        &:hover span,&.selected span{
+            background: royalblue;
+        }
+    }
+}
+
+/* 小工具标签 */
+.tagcloud a{
+    border: 1px solid #333;
+}
+#wp-calendar{
+    color: #686868;
+    #today{
+        background:#E6E6E6;
+    }
+    th{
+        background:#999;
+        color:#FFF;
+    }
+}
+.widgets aside > ul li:before{
+    color: royalblue;
+}
+.new-posts,.comm_posts{
+    li{
+        &:before{
+            color: royalblue;
+        }
+    }
+}
+/* 弹出菜单 */
+.sub-menu{
+    background: #FBEFE1;
+    li{
+        a{
+            color: #6C625C;
+            border-bottom: 1px solid #E8D9C8;
+            &:hover{
+                color: #fff;
+                background: #6C625C;
+            }
+        }
+    }
+    &:after{
+        border:7px solid transparent;
+        border-bottom-color:#FBEFE1;
+    }
+}
+
+/* 登陆弹窗 */
+.login-form{
+    #user_login, #user_pass{
+        border: solid 1px #C1CED2;
+        background: #F0F3F4;
+    }
+    #wp-submit{
+        border: 1px solid #00a1d6;
+        color: #fff;
+        background: #00a1d6;
+        &:hover {
+            background: #00b5e5;
+        }
+    }
+    .login-links{
+        background: #edf1f2;
+        color: #58666e;
+        border-top: 1px solid #C1CED2;
+    }
+}
+
+/* 归档页面 */
+.tl-content{
+    border: 1px solid #dee5e7;
+    background: #fff;
+}
+
+.tl-wrap{
+    border-color: #00b5e5;
+}
+
+.tl-wrap:before{
+    background: #edf1f2;
+    box-shadow: 0 0 0 4px #f0f3f4
+}
+
+.tl-wrap:hover:before {
+    border-color: #0A76B7
+}
+
+.tl-content .arrow:after{
+    border-color:transparent;
+    border-right-color:#fff;
+}
+
+/* 头像 */
+.me_avatar{
+    background: #fff;
+    border: 5px solid #fff;
 }

@@ -2,7 +2,6 @@
 $sliders = cs_get_option( 'i_slider' ); 
 $pagination = cs_get_option('i_pagination');
 $like = cs_get_option( 'i_post_like' );
-$like_style = cs_get_option( 'i_like_style' );
 $avatar_bg = cs_get_option( 'i_avatar_bg' );
 $avatar_image = cs_get_option( 'i_avatar_image' );
 $avatar_name = cs_get_option( 'i_avatar_name' );
@@ -167,7 +166,7 @@ $me = cs_get_option( 'i_me_switch' );
 
 	                                        <?php if ($like == true) { ?>
 	                                            <li class="meta_like fr">
-	                                                <?php if ( $like_style == 'i_like' ) { ?>
+	                                                <?php if ( $like ) { ?>
 	                                                    <?php echo getPostLikeLink( get_the_ID() ); ?>
 	                                                <?php } ?>
 	                                            </li>
@@ -188,13 +187,13 @@ $me = cs_get_option( 'i_me_switch' );
                                     			foreach ($min_comments as $min_comment) {
                                     				if ($min_comment->comment_author_email != $my_email) {
                                     					$min_avatar=get_avatar($min_comment->comment_author_email,60);
-                                    					$min_output .= '<li><a class="colbox" href="'
-                                    					.get_comment_link( $min_comment->comment_ID, array('type' => 'all')).'" title="'.$min_comment->comment_date.'"><p class="avatar_box col">'
+                                    					$min_output .= '<li><a class="" href="'
+                                    					.get_comment_link( $min_comment->comment_ID, array('type' => 'all')).'" title="'.$min_comment->comment_date.'"><figure class="avatar avatar-box avatar-xs">'
                                     					.$min_avatar
-                                    					.'</p><p class="comment_box col">'
+                                    					.'</figure><span class="comment_box">'
                                     					.$min_comment->comment_author.'：'
                                     					.convert_smilies(strip_tags($min_comment->comment_content))
-                                    					.'</p></a></li>';
+                                    					.'</span></a></li>';
                                     					if ($i == $nums || $i == $commentcount) break;
                                     					++$i;
                                     				}
