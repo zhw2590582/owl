@@ -2839,6 +2839,7 @@ body.page article .post-wrap .post-inner .post-body, body.error404 article .post
 #awaiting_comments a {
   line-height: 1;
   color: #d32;
+  font-size: 1.4rem;
   text-decoration: none;
 }
 
