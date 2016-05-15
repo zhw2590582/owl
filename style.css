@@ -2804,6 +2804,16 @@ body.page article .post-wrap .post-inner .post-body, body.error404 article .post
   background: rgba(74, 74, 74, 0.6);
   color: #fff;
 }
+.skin_switcher .glass_btn {
+  color: #D68D47;
+  margin-left: 50px;
+}
+.skin_switcher .glass_btn .fa {
+  float: left;
+  height: 30px;
+  line-height: 30px;
+  margin-right: 5px;
+}
 
 #awaiting_comments {
   position: fixed;

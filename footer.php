@@ -134,6 +134,7 @@ $index = $meta_data['i_index'];
             <div class="skin_header clearfix">
                 <div class="container clearfix">
                     <span class="fl">自定义皮肤</span>
+                    <span class="glass_btn hand fl"><i class="fa fa-toggle-on" aria-hidden="true"></i>毛玻璃菜单</span>
                     <span class="col_skin hand fr"><i class="fa fa-times"></i></span>
                 </div>
             </div>

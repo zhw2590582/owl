@@ -192,6 +192,13 @@ $('body').on('click', '#comment-nav-below a', function(e) {
 		$("#header,.header-mask").css('background-image','url('+ skinBanner + ')');
 		$("body").css('background',skinBody);
 	});
+	$(".glass_btn").click(function() {
+		if($('body').hasClass("glass_nav")){
+			$('body').removeClass('glass_nav');
+		}else{
+			$('body').addClass('glass_nav');
+		}
+	});
 
 });
 

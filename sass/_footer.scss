@@ -129,6 +129,17 @@
             }
         }
     }
+
+    .glass_btn{
+        color: #D68D47;
+        margin-left: 50px;
+        .fa{
+            float: left;
+            height: 30px;
+            line-height: 30px;
+            margin-right: 5px;
+        }
+    }
 }
 
 #awaiting_comments{
