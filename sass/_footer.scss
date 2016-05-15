@@ -130,3 +130,30 @@
         }
     }
 }
+
+#awaiting_comments{
+    position:fixed;
+    top: 65px;
+    right: 24px;
+    z-index:9999;
+    max-width: 180px;
+    _width:130px;
+    display:block;
+    float:none;
+    padding: 5px 12px;
+    background-color:#fff;
+    -webkit-border-radius:5px;
+    border-radius:5px;
+    box-shadow:0 1px 1px rgba(0,0,0,0.25);
+    border:1px solid #aaa;
+}
+
+#awaiting_comments i{
+    margin-right: 7px;
+}
+
+#awaiting_comments a{
+    line-height: 1;
+    color:#d32;
+    text-decoration:none;
+}
