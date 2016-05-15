@@ -1,6 +1,6 @@
 //content
 $content_bg: #ebd9c3;
-$content_top:50px;
+$content_top:80px;
 $sidebar_w:250px;
 $featured_w:190px;
 $lC:26px;
@@ -28,8 +28,6 @@ $lC:26px;
           padding: 10px;
 
           .social_link{
-            margin-top: 10px;
-            padding-bottom: 10px;
 
             li{
               float: left;
@@ -59,7 +57,7 @@ $lC:26px;
         }
         .header-menu-list{
             >li{
-                line-height: $content_top;
+                line-height: 50px;
             }
         }
     }
@@ -69,9 +67,8 @@ $lC:26px;
 
 #widget-tab{
   .tabs_title{
-    height: 40px;
-    line-height: 40px;
     margin-bottom: 10px;
+    padding-bottom: 5px;
     @include bdsb;
 
     li{
@@ -81,14 +78,20 @@ $lC:26px;
       text-align: center;
 
       a{
-        display: block;
-        @include itme-c1;
+        display: inline-block;
+        width: 50px;
+        height: 28px;
+        line-height: 28px;
+        border-radius: 3px;
+      }
+      i{
+        font-size: 14px;
       }
     }
 
     .current{
       a{
-        color: #4078c0;
+
       }
     }
   }
@@ -118,7 +121,7 @@ $lC:26px;
         }
       }
 
-      .avatar_box{
+      .avatar-box{
         width: 32px;
 
         img{
@@ -144,8 +147,10 @@ $lC:26px;
     padding: 10px;
 
     .widget-title{
-      text-align: center;
       margin: 0 0 15px;
+      padding-bottom: 5px;
+      font-size: 18px;
+      @include bdsb;
     }
 
      > ul{
@@ -269,7 +274,7 @@ $lC:26px;
     }
 
     a{
-      padding: 0 5px;
+      padding: 2px 5px;
       border-radius: 3px;
       float: left;
       margin-right: 5px;
@@ -352,8 +357,8 @@ $lC:26px;
   }
 
   .main-menu{
-    height: $content_top;
-    line-height: $content_top;
+    height: 50px;
+    line-height: 50px;
     display: block;
     max-width: 750px;
 
@@ -427,8 +432,9 @@ $lC:26px;
   padding: 10px;
 
   .slider_inner{
-    @include itme-bg;
-    padding: 10px;
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.15);
   }
 }
 
@@ -514,7 +520,6 @@ article{
         }
 
         .post-content{
-          color: #333;
           padding-left: 220px;
           padding-right: 15px;
           font-size: 14px;
@@ -642,7 +647,7 @@ article{
         height: 25px;
         overflow: hidden;
 
-        .avatar_box{
+        .avatar-box{
           width: 25px;
           height: 25px;
 
@@ -655,7 +660,7 @@ article{
 
         }
 
-        &:hover img{
+        &:hover .avatar img{
           -webkit-transform: rotate(360deg);
           -moz-transform: rotate(360deg);
           -o-transform: rotate(360deg);

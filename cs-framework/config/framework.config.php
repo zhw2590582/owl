@@ -77,21 +77,6 @@ $options[]      = array(
           'dependency' => array( 'i_symbol_i_logo', '==', 'true' ),
         ),
 
-		// 自定义皮肤
-        array(
-          'id'        => 'i_skin',
-          'type'      => 'select',
-          'title'     => '自定义皮肤',
-          'options'   => array(
-          'i_skin01' => '复古',
-          'i_skin02' => '酷黑',
-          'i_skin03' => '清新',
-          ),
-          'default'   => 'i_skin01',
-          'help'      => '皮肤随版本更新而增加，另可定制个人专属皮肤',
-        ),
-
-
 		// 分页设置
 		 array(
 		  'type'    => 'notice',
@@ -164,40 +149,25 @@ $options[]      = array(
   'icon'        => 'fa fa-paint-brush',
   'fields'      => array(
 
-    	// Body设置
+    	// 默认皮肤
  		 array(
  		  'type'    => 'notice',
  		  'class'   => 'info',
- 		  'content' => 'Body设置',
+ 		  'content' => '默认皮肤',
  		),
-		
-		// 背景样式
+
+		// 顶部菜单背景样式
         array(
-          'id'         => 'i_body_style',
-          'type'       => 'radio',
-          'title'      => '背景样式',
-          'class'      => 'horizontal',
-          'options'    => array(
-            'i_body_c'   => '使用颜色',
-            'i_body_b'   => '使用纹理',
-          ),
-          'default'    => 'i_body_c',
+          'id'         => 'i_menu_glass',
+          'type'       => 'switcher',
+          'title'      => '菜毛玻璃效果',
         ),
-  
-		// 使用颜色
-        array(
-          'id'         => 'i_body_color',
-          'type'       => 'color_picker',
-          'title'      => '使用颜色',
-		  'default'    => '#fff',
-          'dependency' => array( 'i_body_style_i_body_c', '==', 'true' ),
-        ),  
   
 		// 使用纹理
         array(
           'id'           => 'i_body_image',
           'type'         => 'background',
-          'title'        => '使用纹理',
+          'title'        => 'Body背景纹理',
           'default'      => array(
             'image'      => 'something.png',
             'repeat'     => 'repeat-x',
@@ -205,30 +175,7 @@ $options[]      = array(
             'attachment' => 'fixed',
             'color'      => '#ffbc00',
           ),
-		  'dependency' => array( 'i_body_style_i_body_b', '==', 'true' ),
-        ),  
-		
-		// 菜单设置
- 		 array(
- 		  'type'    => 'notice',
- 		  'class'   => 'info',
- 		  'content' => '菜单设置',
- 		),
-		
-		// 背景样式
-        array(
-          'id'         => 'i_menu_glass',
-          'type'       => 'switcher',
-          'title'      => '毛玻璃效果',
         ),
-		
-  
-  		// Banner设置
- 		 array(
- 		  'type'    => 'notice',
- 		  'class'   => 'info',
- 		  'content' => 'Banner设置',
- 		),
 
  		// Banner图片
          array(
@@ -248,6 +195,74 @@ $options[]      = array(
  		  'help'    => '',
            'default' => '尚未设置',
  		),
+
+
+    	// 自定义皮肤
+ 		 array(
+ 		  'type'    => 'notice',
+ 		  'class'   => 'info',
+ 		  'content' => '自定义皮肤',
+ 		),
+
+		// 开启前端自定义皮肤
+		array(
+          'id'    	  => 'i_switcher',
+          'type'      => 'switcher',
+          'title'     => '开启前端自定义皮肤',
+        ),
+
+        // 自定义皮肤
+        array(
+          'id'              => 'i_skin_custom',
+          'type'            => 'group',
+          'title'           => '自定义幻灯片',
+          'info'            => '更多详细设置方式可以浏览使用说明',
+          'button_title'    => '添加滑块',
+          'accordion_title' => '滑块',
+          'fields'          => array(
+
+            // 自定义皮肤--标题
+            array(
+              'id'          => 'i_skin_title',
+              'type'        => 'text',
+              'title'       => '标题',
+              'attributes'    => array(
+                'placeholder' => '例如：皮肤01'
+              )
+            ),
+
+            // 自定义皮肤--缩略图
+            array(
+              'id'      => 'i_skin_thumb',
+              'type'    => 'upload',
+              'title'   => '缩略图',
+              'help'      => '推荐尺寸为100X100',
+            ),
+
+            // Banner图片
+             array(
+               'id'      => 'i_skin_banner',
+               'type'    => 'upload',
+               'title'   => 'Banner图片',
+               'help'      => '推荐尺寸为1920X200',
+             ),
+
+            // Body背景颜色
+            array(
+              'id'           => 'i_skin_body',
+              'type'         => 'background',
+              'title'        => 'body背景纹理',
+              'default'      => array(
+                'image'      => 'something.png',
+                'repeat'     => 'repeat',
+                'position'   => 'center center',
+                'attachment' => 'fixed',
+                'color'      => '#ffffff',
+              ),
+            ),
+            
+          )
+        ),
 
   ),
 );
@@ -285,15 +300,6 @@ $options[]      = array(
           'type'      => 'switcher',
           'default'   => true,
           'title'     => '搜索按钮',
-        ),
-		
-		// 开启前端换肤功能
-		array(
-          'id'    	  => 'i_switcher',
-          'type'      => 'switcher',
-          'title'     => '开启前端换肤',
-          'label'     => '假如此项没开启，换肤小工具会失效；一旦开启，自定义皮肤将失效',
-          'help'      => '开启后默认显示第一套皮肤，关于修改默认皮肤请看使用说明',
         ),
 
 		// 前端登录

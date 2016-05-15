@@ -81,8 +81,8 @@ $('body').on('click', '#comment-nav-below a', function(e) {
 	});
 
 //图像CSS类
-	$("#content img, .avatar-box img").addClass('ajax_gif');
-	$("#content img, .avatar-box img").load(function() {
+	$(".post-content img, .avatar-box img").addClass('ajax_gif');
+	$(".post-content img, .avatar-box img").load(function() {
 		$(this).removeClass('ajax_gif');
 	});
 
@@ -122,35 +122,10 @@ $('body').on('click', '#comment-nav-below a', function(e) {
 
 	$(".comment_btn").click(function() {
 		$("html,body").animate({
-			scrollTop: $("#comment-jump").offset().top - 60
+			scrollTop: $("#comment-jump").offset().top
 		}, 1000);
 		return false;
 	});
-
-	$("#r-wx").mouseenter(function() {
-		$("#fi-wx-show").css({
-			display: "block"
-		});
-	});
-
-	$("#r-wx").mouseleave(function() {
-		$("#fi-wx-show").css({
-			display: "none"
-		});
-	});
-
-	$(".baidu_share").mouseenter(function() {
-		$(".share_show").css({
-			display: "block"
-		});
-	});
-
-	$(".baidu_share").mouseleave(function() {
-		$(".share_show").css({
-			display: "none"
-		});
-	});
-
 
 //Modal
 	var $modal = $('.cd-user-modal');
@@ -199,6 +174,25 @@ $('body').on('click', '#comment-nav-below a', function(e) {
 //公告条
 	bulletin();
 	setInterval('bulletin()', 6000);
+
+//自定义皮肤
+	$(".skin-btn,.col_skin").click(function() {
+		ss = $(".skin_switcher");
+		sh = ss.height();
+		if(ss.hasClass("open")){
+			ss.animate({bottom: -sh + "px"}).removeClass("open");
+		}else{
+			ss.animate({bottom:"0"}).addClass("open");
+		}
+	});
+	$(".skin_list li").click(function() {
+		$(this).addClass('current').siblings().removeClass('current');
+		var skinBanner = $(this).attr('data-banner');
+		var skinBody = $(this).attr('data-body');
+		$("#header,.header-mask").css('background-image','url('+ skinBanner + ')');
+		$("body").css('background',skinBody);
+	});
+
 });
 
 // 图像懒加载

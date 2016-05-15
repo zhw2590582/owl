@@ -268,8 +268,8 @@ function Init_theme($oldthemename) {
 
 /* 统一标签尺寸 */
 function custom_tag_cloud_widget($args) {
-  $args['largest'] = 13; 
-  $args['smallest'] = 13; 
+  $args['largest'] = 12;
+  $args['smallest'] = 12;
   $args['unit'] = 'px'; 
   $args['number'] = '50'; 
   $args['orderby'] = 'count'; 
@@ -526,7 +526,7 @@ if ($push == true) {
 		$sql = "SELECT DISTINCT ID, post_title, post_password, comment_ID, comment_post_ID, comment_author, comment_date_gmt, comment_approved, comment_type,comment_author_url,comment_author_email, SUBSTRING(comment_content,1,22) AS com_excerpt FROM $wpdb->comments LEFT OUTER JOIN $wpdb->posts ON ($wpdb->comments.comment_post_ID = $wpdb->posts.ID) WHERE comment_approved = '1' AND comment_type = '' AND post_password = '' AND user_id='0' AND comment_author != '$outer' ORDER BY comment_date_gmt DESC LIMIT $limit";
 		$comments = $wpdb->get_results($sql);
 		foreach ($comments as $comment) {
-			$output .= '<li class="colbox"><p class="col avatar_box avatar">'.get_avatar( $comment, 32,"",$comment->comment_author).'</p><p class="col comment_box"><a class="with-tooltip" href="'. get_permalink($comment->ID) .'#comment-' . $comment->comment_ID . '" data-tooltip="《'.$comment->post_title . '》上的评论"><span class="s_name">'.strip_tags($comment->comment_author).':</span><span class="s_desc">'. strip_tags($comment->com_excerpt).'</span></a></p></li>';
+			$output .= '<li class="colbox"><p class="col avatar-box avatar">'.get_avatar( $comment, 32,"",$comment->comment_author).'</p><p class="col comment_box"><a class="with-tooltip" href="'. get_permalink($comment->ID) .'#comment-' . $comment->comment_ID . '" data-tooltip="《'.$comment->post_title . '》上的评论"><span class="s_name">'.strip_tags($comment->comment_author).':</span><span class="s_desc">'. strip_tags($comment->com_excerpt).'</span></a></p></li>';
 		}
 		$output = convert_smilies($output);
 		echo $output;
@@ -834,15 +834,9 @@ add_filter('wp_footer','get_not_audit_comments');
 add_action('wp_head', 'plugin_css', 99);
 function plugin_css() {
 	$ajaxbar = cs_get_option( 'i_ajax_color' ); 
-	$body_s = cs_get_option( 'i_body_style' ); 
-
-
-	if ( $body_s == 'i_body_c') { 
-		$body_c = cs_get_option( 'i_body_color' ); 
-	} else {
-		$body_b = cs_get_option( 'i_body_image' ); 
-		$body_c = ' '. $body_b[color] .' url(\''. $body_b[image] .'\') '. $body_b[repeat] .' '. $body_b[position] .' '. $body_b[attachment] .''; 
-	}
+	$body_s = cs_get_option( 'i_body_style' );
+    $body_b = cs_get_option( 'i_body_image' );
+    $body_c = ' '. $body_b[color] .' url(\''. $body_b[image] .'\') '. $body_b[repeat] .' '. $body_b[position] .' '. $body_b[attachment] .'';
 	
 	if ( $menu_g  == true) { 
 		$menu_bg = 'none';

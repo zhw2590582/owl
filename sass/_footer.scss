@@ -7,85 +7,126 @@
     .footer-inner{
         margin: 50px 0;
     }
+
+    .footer-end{
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+    }
 }
 
 #footer_btn{
     position: fixed;
     z-index: 4;
-    right: 35px;
-    bottom: 70px;
+    right: -1px;
+    bottom: 50%;
     display: none;
+    @include itme-bg;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
 }
 
 #footer_btn li {
-    margin-bottom: 15px;
+    @include bdsb;
+    &:last-child{
+        margin-bottom: 0;
+        border-bottom: none;
+    }
+    &:hover .footer-show{
+        display: block;
+    }
+    @include itme-c1;
 }
 
-#footer_btn li>a {
+#footer_btn li .icon {
+    position: relative;
     width: 40px;
     height: 40px;
     text-align: center;
-    text-decoration: none;
-    -webkit-border-radius: 3px;
-    border-radius: 3px;
-    -webkit-transition: background 200ms linear;
-    -moz-transition: background 200ms linear;
-    transition: background 200ms linear;
-    -webkit-backface-visibility: hidden;
     display: inline-block;
     line-height: 1;
     font-size: 20px;
     padding: 9px 10px 10px 10px;
-    background: rgba(0, 0, 0, 0.2);
-    color: #FFFFFF;
 }
 
-#footer_btn li>a:hover {
-    background: rgba(0, 0, 0, 0.5);
-}
-
-#fi-wx-show {
+.footer-show{
+    display: none;
+    @include itme-bg;
+    position: absolute;
     border-radius: 5px;
+    right: 42px;
+    bottom: -1px;
     padding: 5px;
+}
+
+.wx-show {
     width: 150px;
     height: 150px;
-    position: fixed;
-    right: 90px;
-    bottom: 85px;
 }
 
-#footer{
-
-}
-
-.footer-inner{
-
-}
-
-.footer-end{
-    height: 50px;
-    line-height: 50px;
-    text-align: center;
-}
-
-.share_show {
-    padding:15px;
-    width: 160px;
-    position: fixed;
-    right: 75px;
-    bottom: 70px;
-}
 
 .bdsharebuttonbox{
-    border-radius: 5px;
     padding:10px;
+    width: 150px;
+}
+
+.bdshare_popup_box{
+    position: fixed !important;
+    left: auto !important;
+    right: 50px;
+    top:50% !important;
 }
 
 .bdsharebuttonbox a{
-    font-size:14px !important;
+    font-size:12px !important;
     padding-left:20px !important;
 }
 
-#fi-wx-show , .baidu_share .bdsharebuttonbox{
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 1px;
+.skin_switcher{
+    position: fixed;
+    bottom: -170px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.9);
+
+    .skin_header{
+        height: 30px;
+        line-height: 30px;
+        margin-bottom: 20px;
+        background: #3E3E3E;
+        color: #fff;
+        i{
+            font-size: 14px;
+        }
+    }
+
+    .skin_list{
+        li{
+            position: relative;
+            display: inline-block;
+            float: left;
+            margin-right: 20px;
+            margin-bottom: 20px;
+            width: 100px;
+            height: 100px;
+            background: #333333;
+            cursor: pointer;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            &:hover,&.current{
+                border: 1px solid #94402F;
+            }
+            span{
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                height: 22px;
+                line-height: 22px;
+                text-align: center;
+                width: 100%;
+                background: rgba(74,74,74,0.6);
+                color: #fff;
+            }
+        }
+    }
 }

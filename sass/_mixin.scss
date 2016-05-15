@@ -5,19 +5,20 @@
 }
 /* 白色透明度 */
 @mixin bg-w ($n) {
-    background: rgba(225, 225, 225, $n);
+    background: rgba(255, 255, 255, $n);
 }
 /* 常用背景 */
 @mixin itme-bg () {
-    background: #FFFDFB;
+    background: #f9f8f2;
+    border: 1px solid #fff;
     box-shadow: 0 1px 2px rgba(0,0,0,0.15);
     border-radius: 3px;
 }
 /* 字体颜色01 */
 @mixin itme-c1 () {
-    color: yellow;
+    color: #867f6f;
     a{
-        color: yellow;
+        color: #867f6f;
         &:hover{
             color: #4078c0;
         }
@@ -25,16 +26,16 @@
 }
 /* 字体颜色02 */
 @mixin itme-c2 () {
-    color: lawngreen;
+    color: #a49d8c;
     a{
-        color: lawngreen;
+        color: #a49d8c;
         &:hover{
             color: #4078c0;
         }
     }
 }
 /* 实线边 */
-$bds_c:#ECE2D7;
+$bds_c:#e8e3d3;
 @mixin bds () {
     border:1px solid $bds_c;
 }
@@ -51,7 +52,7 @@ $bds_c:#ECE2D7;
     border-top:1px solid $bds_c;
 }
 /* 虚线边 */
-$bdd_c:#ECE2D7;
+$bdd_c:#e8e3d3;
 @mixin bddl () {
     border-left:1px dashed $bdd_c;
 }
@@ -66,78 +67,89 @@ $bdd_c:#ECE2D7;
 }
 /* 常规色 */
 body{
-    background: #dfc2a0;
-    color: #906b40;
+    color: #867f6f;
 }
 a{
-    color: #6c625c;
+    color: #f7bd44;
 }
 a:hover,
 a:focus {
-    color: #283176;
+    color: #333;
 }
 /* 顶部菜单 */
 .header-inner{
-    background: #6c625c;
+    background: #F9F8F3;
 }
 
 /* 主体菜单 */
 .main_header{
-    border-bottom: 1px solid #e5e5e5;
-    background: #8f847c;
+    border-bottom: 1px solid #E0DBCA;
+    background: #F9F8F3;
 }
 
 /* 顶部菜单字体 */
 .header-inner{
-    color: #FFF5EA;
+    color: #867f6f;
     a{
-        color: #FFF5EA;
+        color: #867f6f;
         &:hover{
-            color: #DFC2A0;
+            color: #333;
         }
     }
 }
 
 /* 主体菜单字体 */
 .main_header{
-    color: #FFF5EA;
+    color: #867f6f;
     a{
-        color: #FFF5EA;
+        color: #867f6f;
         &:hover{
-            color: #DFC2A0;
+            color: #333;
+        }
+    }
+}
+
+/* 文章布局按钮 */
+.actions-menu{
+    a{
+        span{
+            background: #867f6f;
+        }
+        &:hover span,&.selected span{
+            background: #333;
         }
     }
 }
 
 /* 主体背景 */
 .content-inner{
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
-    background: #fbefe1;
+    background: #EFEEEB;
 }
 
 /* 特色图背景 */
 .featured-box{
-    background: yellow;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    background: #FFFDFB;
+    border: 1px solid #fff;
+    box-shadow: 0 0px 1px rgb(220, 184, 145);
 }
 /* 首页评论 */
 .min_comments ul{
-    background: red;
+    background: #FFFDFB;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 /* 左边栏背景 */
 #lSidebar{
-    background: #00b5e5;
+    background: #efeeeb;
 }
 /* 左边栏控制器背景 */
 #lSidebar .sidectrl{
-    background: rosybrown;
+    background: #efeeeb;
 }
 /* 搜索输入框背景 */
 .search-form-input{
     @include bg-w (0.75);
     border: 1px solid #ddd;
-    color: #666;
+    color: #867f6f;
 }
 /* 弹窗背景 */
 .cd-user-modal-container{
@@ -202,25 +214,9 @@ a:focus {
     }
 }
 
-#fi-wx-show , .baidu_share .bdsharebuttonbox{
-    background: red;
-}
-
-/* 文章布局按钮 */
-.actions-menu{
-    a{
-        span{
-            background: #00A1D6;
-        }
-        &:hover span,&.selected span{
-            background: royalblue;
-        }
-    }
-}
-
 /* 小工具标签 */
 .tagcloud a{
-    border: 1px solid #333;
+    border: 1px solid #D2CFC9;
 }
 #wp-calendar{
     color: #686868;
@@ -233,25 +229,33 @@ a:focus {
     }
 }
 .widgets aside > ul li:before{
-    color: royalblue;
+    color: #A49D8C;
 }
 .new-posts,.comm_posts{
     li{
         &:before{
-            color: royalblue;
+            color: #A49D8C;
         }
     }
 }
+
+#widget-tab .current a{
+    background: #BFB6A0;
+    color: #fff;
+}
+
 /* 弹出菜单 */
 .sub-menu{
-    background: #FBEFE1;
+    background: #F9F8F3;
+    border: 1px solid #E0DBCA;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
     li{
         a{
-            color: #6C625C;
-            border-bottom: 1px solid #E8D9C8;
+            color: #867F6F;
+            border-bottom: 1px solid #E8E3D3;
             &:hover{
                 color: #fff;
-                background: #6C625C;
+                background: #867F6F;
             }
         }
     }

@@ -35,10 +35,10 @@ $avatar_name = cs_get_option( 'i_avatar_name' );
 		<div style="display:none;"><?php the_post_thumbnail( 'medium' ); ?></div>
 	<?php }?>	
     
-    <header id="header" style="background: url('<?php echo $banner; ?>') no-repeat center -10px;">
+    <header id="header" style="background-image: url('<?php echo $banner; ?>');">
         <div class="header-mask-sd">
             <div class="header-mask-blur">
-                <div class="header-mask" style="background: url('<?php echo $banner; ?>') no-repeat center -10px;"></div>
+                <div class="header-mask" style="background-image: url('<?php echo $banner; ?>')"></div>
                 <div class="header-mask-bg"></div>
             </div>
         </div>
@@ -99,12 +99,7 @@ $avatar_name = cs_get_option( 'i_avatar_name' );
 
                 <?php if ($switcher == true && !is_mobile()) { ?>
                     <li class="navbar-skin menu-item-has-children">
-                        <a href="" class="skin-btn">皮肤</a>
-                        <ul class="sub-menu clearfix">
-                            <li class="skin1"><a href="<?php echo get_template_directory_uri(); ?>/skin/switcher.php?style=skin01.css"><span></span>复古</a></li>
-                            <li class="skin2"><a href="<?php echo get_template_directory_uri(); ?>/skin/switcher.php?style=skin02.css"><span></span>酷黑</a></li>
-                            <li class="skin3"><a href="<?php echo get_template_directory_uri(); ?>/skin/switcher.php?style=skin03.css"><span></span>清新</a></li>
-                        </ul>
+                        <a href="javascript:void(0)" class="skin-btn">皮肤</a>
                     </li>
                 <?php }?>
 
@@ -120,6 +115,5 @@ $avatar_name = cs_get_option( 'i_avatar_name' );
                 </ul>
             </div>
         </div>
-        <div class="skin_btn hand"></div>
         <div id="header-modal" class="with-tooltip" data-tooltip="<?php echo $banner_test ?>"></div>
     </header>

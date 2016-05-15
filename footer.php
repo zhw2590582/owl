@@ -1,6 +1,7 @@
 <?php
  // 获取选项
 error_reporting(0);
+$switcher = cs_get_option( 'i_switcher' );
 $edit = cs_get_option( 'i_footer_edit' );
 $copyright = cs_get_option( 'i_foot_copyright' );  
 $gotop = cs_get_option( 'i_gotop' );  
@@ -60,79 +61,59 @@ $index = $meta_data['i_index'];
 		<div id="footer_btn">
 			<ul>
 				<?php if ($gotop == true) {
-					echo '<li class="mate-gotop">
-							<a href="#totop" class="scrolltotop" title="回到顶部"><i class="fa fa-chevron-up"></i></a>
+					echo '<li>
+							<a href="#totop" class="scrolltotop icon">
+								<i class="hand fa fa-chevron-up"></i>
+							</a>
 						</li>';
 				}?>
 	
 				<?php if ($share == true) {
-					echo '<li class="baidu_share">
-							<a href="javascript:void(0)" class="share_icon" title="分享">
-								<i class="fa fa-share-alt"></i>
-							</a>								
-								<div class="share_show" style="display: none;">
-									<div class="bdsharebuttonbox">
-										<a href="#" class="bds_mshare" data-cmd="mshare" title="一键分享">一键分享</a>
-										<a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a>
-										<a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a>
-										<a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a>
-										<a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a>
-										<a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣">豆瓣</a>
-										<a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网">人人网</a>									
-										<a href="#" class="bds_twi" data-cmd="twi" title="分享到 Twitter">Twitter</a>
-										<a href="#" class="bds_fbook" data-cmd="fbook" title="分享到 Facebook">Facebook</a>
-									</div>
-									<div class="clear"></div>
-								</div>
-						<script>
-							window._bd_share_config = {
-								"common": {
-									"bdSnsKey": {},
-									"bdText": "",
-									"bdMini": "2",
-									"bdPic": "",
-									"bdStyle": "0",
-									"bdSize": "16"
-								},
-								"share": {},';
-				}?>	
-				<?php if ($share == true && $share_img == true) {	
-						echo '				
-								"image": {
-									"viewList": ["qzone", "tsina", "tqq", "renren", "weixin"],
-									"viewText": "分享到：",
-									"viewSize": "16"
-								},';
-				}?>	
-				<?php if ($share == true && $share_word == true) {	
-						echo '
-								"selectShare": {
-									"bdContainerClass": null,
-									"bdSelectMiniList": ["qzone", "tsina", "tqq", "renren", "weixin"]
-								}';
-				}?>		
-				<?php if ($share == true) {
-					echo '	
-							};
-							with(document) 0[(getElementsByTagName("head")[0] || body).appendChild(createElement("script")).src = "http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=" + ~ (-new Date() / 36e5)];
-						</script>				
-					</li>';
-				}?>		
-				
+					echo '
+                    <li>
+                        <a href="javascript:void(0)" class="hand icon" title="分享">
+                            <i class="hand fa fa-share-alt"></i>
+                        </a>		
+                        <div class="bdsharebuttonbox footer-show">
+                            <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">分享到QQ空间</a>
+                            <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">分享到新浪微博</a>
+                            <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">分享到微信</a>
+                            <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网">分享到豆瓣网</a>
+                            <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧">分享到百度贴吧</a>
+                            <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友">分享到QQ好友</a>
+                            <a href="#" class="bds_mshare" data-cmd="mshare" title="分享到一键分享">分享到一键分享</a>
+                        </div>
+                        <script>
+                        window._bd_share_config={
+                        "common":{
+                                    "bdSnsKey":{},
+                                    "bdText":"",
+                                    "bdMini":"2",
+                                    "bdPic":"",
+                                    "bdStyle":"0",
+                                    "bdSize":"16"
+                                },
+                                "share":{}
+                            };
+                            with(document)0[(getElementsByTagName("head")[0]||body).appendChild(createElement("script")).src="http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion="+~(-new Date()/36e5)];</script>
+                    </li>
+                    ';
+				}?>
+                
 				<?php if ($comment == true && is_single ()) {
 					echo '<li class="mate-com">
-							<a href="#comment-jump" class="comment_btn" title="评论"><i class="fa fa-comment-o"></i></a>
+							<a href="#comment-jump" class="comment_btn hand icon"><i class="fa fa-comment-o"></i></a>
 						  </li>';
 				}?>								
 				
 				<?php if ($qrcode == true) {
-					echo '<li class="mate-qrcode">
-							<a style="" title="二维码" href="javascript:void(0)" id="r-wx">
-							<i class="fa fa-qrcode"></i>
-								<div id="fi-wx-show" style="display: none;">
-									<img src="'. $qrcodeimg .'">
-								</div>
+					echo '<li>
+							<a class="icon" title="二维码" href="javascript:void(0)">
+                                <i class="fa fa-qrcode"></i>
 							</a>
+                            <div class="wx-show footer-show">
+                                <img src="'. $qrcodeimg .'">
+                            </div>
 						</li>';
 				}?>	
 
@@ -146,6 +127,34 @@ $index = $meta_data['i_index'];
 			<!-- 音乐播放器 -->
 				<?php cue_playlist( $player_id ); ?>
 		<?php }	 ?>
+	<?php }	 ?>
+
+	<?php if ($switcher == true && !is_mobile()  ) { ?>
+        <div class="skin_switcher">
+            <div class="skin_header clearfix">
+                <div class="container clearfix">
+                    <span class="fl">自定义皮肤</span>
+                    <span class="col_skin hand fr"><i class="fa fa-times"></i></span>
+                </div>
+            </div>
+            <div class="container skin_list">
+                <ul class="clearfix">
+                    <?php 
+                        $skins = cs_get_option( 'i_skin_custom' );
+                        if( ! empty( $skins ) ) {
+                          foreach ( $skins as $skin ) {
+                            $body = ' '. $skin['i_skin_body'][color] .' url(\''. $skin['i_skin_body'][image] .'\') '. $skin['i_skin_body'][repeat] .' '. $skin['i_skin_body'][position] .' '. $skin['i_skin_body'][attachment] .'';
+                            echo '
+                            <li data-banner="'. $skin['i_skin_banner'] .'" data-body="'. $body .'">
+                                <img src="'. $skin['i_skin_thumb'] .'">
+                                <span class="text-ellipsis">'. $skin['i_skin_title'] .'</span>
+                            </li>';
+                          }
+                        }
+                    ?>
+                </ul>
+            </div>
+        </div>
 	<?php }	 ?>
 
 	<?php if ($notice == true && !is_mobile() ) {?>		
