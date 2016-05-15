@@ -2824,12 +2824,11 @@ body.page article .post-wrap .post-inner .post-body, body.error404 article .post
   _width: 130px;
   display: block;
   float: none;
-  padding: 5px 12px;
+  padding: 7px 12px;
   background-color: #fff;
   -webkit-border-radius: 5px;
   border-radius: 5px;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
-  border: 1px solid #aaa;
 }
 
 #awaiting_comments i {
@@ -2837,7 +2836,6 @@ body.page article .post-wrap .post-inner .post-body, body.error404 article .post
 }
 
 #awaiting_comments a {
-  line-height: 1;
   color: #d32;
   font-size: 1.4rem;
   text-decoration: none;
