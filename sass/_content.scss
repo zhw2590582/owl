@@ -147,8 +147,8 @@ $lC:26px;
     padding: 10px;
 
     .widget-title{
-      margin: 0 0 15px;
-      padding-bottom: 5px;
+      margin: 0 0 10px;
+      padding-bottom: 10px;
       font-size: 18px;
       @include bdsb;
     }
@@ -274,6 +274,7 @@ $lC:26px;
     }
 
     a{
+      @include bds;
       padding: 2px 5px;
       border-radius: 3px;
       float: left;
@@ -322,6 +323,7 @@ $lC:26px;
   padding: 0 15px;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
+  @include bdsb;
 
   .avatar_box{
     width: $sidebar_w;
@@ -332,20 +334,20 @@ $lC:26px;
     .me_img{
       position: absolute;
       z-index: 1;
-      top: -63px;
+      top: -40px;
       left: 0;
       display: inline-block;
 
       .me_avatar{
         display: inline-block;
-        width: 100px;
-        height: 100px;
+        width: 80px;
+        height: 80px;
         border-radius: 5px;
         box-shadow:0 0 1px rgba(0, 0, 0, 0.3);
       }
 
       .me_name{
-        font-size: 16px;
+        font-size: 14px;
         margin-left: 5px;
       }
 
@@ -379,10 +381,10 @@ $lC:26px;
 .bulletin {
   position: absolute;
   z-index: 2;
-  bottom:59px;
-  left: 110px;
-  height: 54px;
-  width: 300px;
+  bottom:54px;
+  left: 90px;
+  height: 34px;
+  width: 400px;
   line-height: 34px;
   overflow: hidden;
   padding: 2px;
@@ -391,8 +393,9 @@ $lC:26px;
   background-color:rgba(0,0,0,0.12);
 
   .bulletin_list{
-    height: 50px;
-    padding: 10px;
+    height: 30px;
+    overflow: hidden;
+    padding: 0 10px;
     border-radius:4px;
     background: rgba(255,255,255,0.7);
     -webkit-transition: all .3s;
@@ -406,10 +409,12 @@ $lC:26px;
   }
 
   li{
-    line-height: 16px;
-    padding-bottom: 6px;
-    height: 30px;
+    color: #333;
+    line-height: 32px;
+    width: 100%;
     overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   a {
@@ -451,6 +456,7 @@ article{
 
       .featured-box{
         position: absolute;
+        z-index: 1;
         left: 15px;
         top:-25px;
         width: $featured_w;
@@ -464,6 +470,8 @@ article{
           margin-bottom: 7px;
           border-radius: 2px;
           overflow: hidden;
+          background: url("images/default/featured_bg.png") no-repeat;
+          background-size:cover;
 
           a{
             display: block;
@@ -525,7 +533,7 @@ article{
           font-size: 14px;
 
           .read_more{
-            display: none;
+            font-size: 12px;
           }
         }
       }
@@ -830,7 +838,7 @@ article{
 
 #lSidebar{
   position: fixed;
-  z-index: 100;
+  z-index: 9999;
   left: -474px;
   top: 0;
   width: 500px;
@@ -942,7 +950,7 @@ article{
     }
 
     .commentlist{
-      border-left: 1px solid #dee5e7;
+      @include bdsl;
       display: block;
       list-style-type: none !important;
       counter-reset: li;
@@ -1010,10 +1018,12 @@ article{
 
           .comment-body{
             border-radius: 5px;
+            @include bds;
 
             .comment-name{
               position: relative;
               padding: 5px 10px;
+              @include bdsb;
 
               .arrow{
                 position: absolute;
@@ -1379,6 +1389,7 @@ body.page,body.error404{
     }
 
     .dl-title{
+      font-size: 14px;
       border-top-left-radius: 5px;
       border-top-right-radius: 5px;
     }
@@ -1527,6 +1538,8 @@ body.page,body.error404{
   box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
 
+  @include itme-c1;
+
   .arrow{
     position:absolute;
     display:block;
@@ -1578,8 +1591,6 @@ body.page,body.error404{
     line-height: 30px;
     border-radius: 3px;
     text-align: center;
-    background: #00b5e5;
-    color: #fff;
   }
 
 }

@@ -13,6 +13,8 @@ $avatar_image = cs_get_option( 'i_avatar_image' );
 $avatar_name = cs_get_option( 'i_avatar_name' );
 $avatar_content = cs_get_option( 'i_avatar_content' );
 $me = cs_get_option( 'i_me_switch' );
+$bulletin = cs_get_option( 'i_bulletin' );
+
 ?> 
 
 <?php get_header(); ?>
@@ -28,6 +30,7 @@ $me = cs_get_option( 'i_me_switch' );
                         </div>
                         <span class="me_name"><?php echo $avatar_name; ?></span>
                     </div>
+ 				<?php if ($bulletin) { ?>
                     <div class="bulletin">
                         <?php
                             $my_bulletins = cs_get_option( 'i_bulletin_custom' );
@@ -45,6 +48,7 @@ $me = cs_get_option( 'i_me_switch' );
                             echo '</ul>';
                         ?>
                     </div>
+				<?php } ?>
                 </div>
                 <div class="main-menu col">
                     <?php wp_nav_menu(array('theme_location' => 'main', 'container' => 'div', 'container_class' => 'header-menu-wrapper', 'menu_class' => 'header-menu-list', 'walker' => new description_walker())); ?>

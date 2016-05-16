@@ -1,11 +1,11 @@
 //footer
 
 #footer{
-    margin-top: -100px;
-    padding-top: 50px;
+    margin-top: -130px;
+    padding-top: 80px;
 
     .footer-inner{
-        margin: 50px 0;
+        padding: 50px 0;
     }
 
     .footer-end{
@@ -84,6 +84,7 @@
 
 .skin_switcher{
     position: fixed;
+    z-index: 2;
     bottom: -170px;
     left: 0;
     right: 0;

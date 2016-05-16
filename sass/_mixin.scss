@@ -20,7 +20,7 @@
     a{
         color: #867f6f;
         &:hover{
-            color: #4078c0;
+            color: #333;
         }
     }
 }
@@ -30,40 +30,59 @@
     a{
         color: #a49d8c;
         &:hover{
-            color: #4078c0;
+            color: #333;
         }
     }
 }
+
+/* 按钮 */
+.btn,#wp-submit,.submit{
+    border: 1px solid #00a1d6;
+    color: #fff;
+    background: #00a1d6;
+    &:hover {
+        color: #fff;
+        background: #00b5e5;
+    }
+}
+
+/* 输入框 */
+input[type="text"],,input[type="password"],textarea{
+    @include bg-w (0.75);
+    border: 1px solid #ddd;
+    color: #867f6f;
+}
+
 /* 实线边 */
-$bds_c:#e8e3d3;
+$bds_t:#e8e3d3;
 @mixin bds () {
-    border:1px solid $bds_c;
+    border:1px solid $bds_t;
 }
 @mixin bdsl () {
-    border-left:1px solid $bds_c;
+    border-left:1px solid $bds_t;
 }
 @mixin bdsr () {
-    border-right:1px solid $bds_c;
+    border-right:1px solid $bds_t;
 }
 @mixin bdsb () {
-    border-bottom:1px solid $bds_c;
+    border-bottom:1px solid $bds_t;
 }
 @mixin bdst () {
-    border-top:1px solid $bds_c;
+    border-top:1px solid $bds_t;
 }
 /* 虚线边 */
-$bdd_c:#e8e3d3;
+$bdd_t:#e8e3d3;
 @mixin bddl () {
-    border-left:1px dashed $bdd_c;
+    border-left:1px dashed $bdd_t;
 }
 @mixin bddr () {
-    border-right:1px dashed $bdd_c;
+    border-right:1px dashed $bdd_t;
 }
 @mixin bddb () {
-    border-bottom:1px dashed $bdd_c;
+    border-bottom:1px dashed $bdd_t;
 }
 @mixin bddt () {
-    border-top:1px dashed $bdd_c;
+    border-top:1px dashed $bdd_t;
 }
 /* 常规色 */
 body{
@@ -76,19 +95,15 @@ a:hover,
 a:focus {
     color: #333;
 }
+
+/* 主体背景+左边栏 */
+.content-inner,#lSidebar,.sidectrl{
+    background: #EFEEEB;
+}
+
 /* 顶部菜单 */
 .header-inner{
     background: #F9F8F3;
-}
-
-/* 主体菜单 */
-.main_header{
-    border-bottom: 1px solid #E0DBCA;
-    background: #F9F8F3;
-}
-
-/* 顶部菜单字体 */
-.header-inner{
     color: #867f6f;
     a{
         color: #867f6f;
@@ -98,8 +113,9 @@ a:focus {
     }
 }
 
-/* 主体菜单字体 */
+/* 主体菜单 */
 .main_header{
+    background: #F9F8F3;
     color: #867f6f;
     a{
         color: #867f6f;
@@ -121,138 +137,73 @@ a:focus {
     }
 }
 
-/* 主体背景 */
-.content-inner{
-    background: #EFEEEB;
-}
-
 /* 特色图背景 */
 .featured-box{
-    background: #FFFDFB;
-    border: 1px solid #fff;
-    box-shadow: 0 0px 1px rgb(220, 184, 145);
+    background: #fff;
+    box-shadow: 0 0 1px rgb(220, 184, 145);
 }
 /* 首页评论 */
 .min_comments ul{
-    background: #FFFDFB;
+    background: #fff;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
-/* 左边栏背景 */
-#lSidebar{
-    background: #efeeeb;
-}
-/* 左边栏控制器背景 */
-#lSidebar .sidectrl{
-    background: #efeeeb;
-}
-/* 搜索输入框背景 */
-.search-form-input{
-    @include bg-w (0.75);
-    border: 1px solid #ddd;
-    color: #867f6f;
-}
-/* 弹窗背景 */
-.cd-user-modal-container{
-    background: #00b5e5;
-    .modal-head{
-        background: royalblue;
-        color: blue;
-        border-bottom: 1px solid red;
-    }
-    .modal-main{
-        color: blue;
-        .dl-btn a{
-            background: #27ae60;
-            color: #fff;
-            &:hover{
-                background: #38CA76;
-            }
-        }
-    }
-    .modal-bottom{
-        background: royalblue;
-        color: blue;
-        border-top: 1px solid red;
-    }
-}
-/* 评论区 */
-#respond input[type="text"],#respond textarea{
-    background: blueviolet;
-    border: 1px solid brown;
-}
-#commentform p:before{
-    color: red;
-}
+
+/* 内页评论 */
 .comment-body{
-    background: red;
-    border:1px solid black;
+    background: #FFF;
     .comment-name{
-        border-bottom: 1px solid darkcyan;
         .arrow:after{
             border:7px solid transparent;
-            border-right-color:red;
+            border-right-color:#FFF;
         }
     }
 }
 .comment-block .author-img{
-    background: red;
+    background: #FFF;
 }
 
 /* 下载盒子 */
 .download-wrap {
-    .dl-title{
-        color: red;
-        background:burlywood;
+    .post-download{
+        background: #fff;
     }
+}
+
+/* 头像 */
+.me_avatar{
+    background: #fff;
+    border: 5px solid #fff;
 }
 
 /* 页脚 */
 #footer{
-    background: #00A1D6;
+    background: #D2CFC1;
     .footer-end{
-        background: #666;
+        border-top: 1px solid #000;
+        background: #BBB7A3;
     }
 }
 
-/* 小工具标签 */
-.tagcloud a{
-    border: 1px solid #D2CFC9;
-}
+/* 小工具 */
 #wp-calendar{
-    color: #686868;
-    #today{
-        background:#E6E6E6;
-    }
-    th{
-        background:#999;
-        color:#FFF;
-    }
-}
-.widgets aside > ul li:before{
-    color: #A49D8C;
-}
-.new-posts,.comm_posts{
-    li{
-        &:before{
-            color: #A49D8C;
-        }
+    #today,th{
+        background:#E2DCCB;
     }
 }
 
 #widget-tab .current a{
-    background: #BFB6A0;
-    color: #fff;
+    background: #E2DCCB;
 }
 
-/* 弹出菜单 */
+
+/* 二级菜单 */
 .sub-menu{
-    background: #F9F8F3;
-    border: 1px solid #E0DBCA;
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+    background: #fff;
+    @include bds;
     li{
         a{
             color: #867F6F;
-            border-bottom: 1px solid #E8E3D3;
+            @include bdsb;
             &:hover{
                 color: #fff;
                 background: #867F6F;
@@ -261,57 +212,27 @@ a:focus {
     }
     &:after{
         border:7px solid transparent;
-        border-bottom-color:#FBEFE1;
+        border-bottom-color:#fff;
     }
 }
 
-/* 登陆弹窗 */
-.login-form{
-    #user_login, #user_pass{
-        border: solid 1px #C1CED2;
-        background: #F0F3F4;
-    }
-    #wp-submit{
-        border: 1px solid #00a1d6;
-        color: #fff;
-        background: #00a1d6;
-        &:hover {
-            background: #00b5e5;
-        }
-    }
-    .login-links{
-        background: #edf1f2;
-        color: #58666e;
-        border-top: 1px solid #C1CED2;
-    }
-}
 
 /* 归档页面 */
 .tl-content{
-    border: 1px solid #dee5e7;
+    @include bds;
     background: #fff;
-}
-
-.tl-wrap{
-    border-color: #00b5e5;
 }
 
 .tl-wrap:before{
     background: #edf1f2;
-    box-shadow: 0 0 0 4px #f0f3f4
+    box-shadow: 0 0 0 4px #fff
 }
 
 .tl-wrap:hover:before {
-    border-color: #0A76B7
+    border-color: #00a1d6
 }
 
 .tl-content .arrow:after{
     border-color:transparent;
     border-right-color:#fff;
-}
-
-/* 头像 */
-.me_avatar{
-    background: #fff;
-    border: 5px solid #fff;
 }

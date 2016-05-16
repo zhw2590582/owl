@@ -17,6 +17,7 @@ $player_mobi = cs_get_option('i_player_mobi');
 $author = cs_get_option( 'i_post_author' );
 $jieya = cs_get_option( 'i_download_jieya' );
 $dlview = cs_get_option( 'i_download_view' );
+
 ?>
 
 <div class="post-inner">
@@ -31,7 +32,7 @@ $dlview = cs_get_option( 'i_download_view' );
             <?php }else{?>
                 <div class="featured-image" >
                     <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-						<img src="<?php bloginfo('template_directory'); ?>/images/thumbnail/img<?php echo rand(1,5)?>.png" alt="<?php the_title(); ?>" />
+						<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-echo="<?php bloginfo('template_directory'); ?>/images/thumbnail/img<?php echo rand(1,5)?>.png" alt="<?php the_title(); ?>" />
                     </a>
                 </div>
             <?php } ?>

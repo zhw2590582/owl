@@ -188,7 +188,7 @@ $index = $meta_data['i_index'];
                     <div class="modal-title"><i class="fa fa-download"></i>资源下载</div>
                 </div>
                 <div class="modal-main">
-                    <div class="dl-btn"><a href="javascript:void(0)" target="_black"><i class="fa fa-arrow-circle-o-down"></i>点击下载</a></div>
+                    <div class="dl-btn"><a class="btn" href="javascript:void(0)" target="_black"><i class="fa fa-arrow-circle-o-down"></i>点击下载</a></div>
                     <div class="dl-tqcode">提取码：<span></span></div>
                 </div>
                 <div class="modal-bottom">

@@ -8,6 +8,8 @@ $avatar_image = cs_get_option( 'i_avatar_image' );
 $avatar_name = cs_get_option( 'i_avatar_name' );
 $avatar_content = cs_get_option( 'i_avatar_content' );
 $me = cs_get_option( 'i_me_switch' );
+$bulletin = cs_get_option( 'i_bulletin' );
+
 ?>
 
 <?php get_header(); ?>
@@ -23,23 +25,25 @@ $me = cs_get_option( 'i_me_switch' );
                                 </div>
                                 <span class="me_name"><?php echo $avatar_name; ?></span>
                             </div>
-                            <div class="bulletin">
-                                <?php
-                                    $my_bulletins = cs_get_option( 'i_bulletin_custom' );
-                                    echo '<ul class="bulletin_list">';
-                                    if( ! empty( $my_bulletins ) ) {
-                                      foreach ( $my_bulletins as $bulletin ) {
-                                        echo '<li style="display:none">';
-                                        if( ! empty( $bulletin['i_bulletin_link'] ) ){ echo '<a href="'. $bulletin['i_bulletin_link'] .'"';}
-                                        if ( ! empty( $bulletin['i_bulletin_link'] ) && $bulletin['i_bulletin_newtab'] == true) { echo 'target="_black">';}else{ if ( ! empty( $bulletin['i_bulletin_link'] )){ echo '>';}}
-                                        echo ''. $bulletin['i_bulletin_text'] .'';
-                                        if( ! empty( $bulletin['i_bulletin_link'] ) ){ echo '</a>';}
-                                        echo '</li>';
-                                      }
-                                    }
-                                    echo '</ul>';
-                                ?>
-                            </div>
+ 				<?php if ($bulletin) { ?>
+                    <div class="bulletin">
+                        <?php
+                            $my_bulletins = cs_get_option( 'i_bulletin_custom' );
+                            echo '<ul class="bulletin_list">';
+                            if( ! empty( $my_bulletins ) ) {
+                              foreach ( $my_bulletins as $bulletin ) {
+                                echo '<li style="display:none">';
+                                if( ! empty( $bulletin['i_bulletin_link'] ) ){ echo '<a href="'. $bulletin['i_bulletin_link'] .'"';}
+                                if ( ! empty( $bulletin['i_bulletin_link'] ) && $bulletin['i_bulletin_newtab'] == true) { echo 'target="_black">';}else{ if ( ! empty( $bulletin['i_bulletin_link'] )){ echo '>';}}
+                                echo ''. $bulletin['i_bulletin_text'] .'';
+                                if( ! empty( $bulletin['i_bulletin_link'] ) ){ echo '</a>';}
+                                echo '</li>';
+                              }
+                            }
+                            echo '</ul>';
+                        ?>
+                    </div>
+				<?php } ?>
                         </div>
                         <div class="main-menu col">
                             <?php wp_nav_menu(array('theme_location' => 'main', 'container' => 'div', 'container_class' => 'header-menu-wrapper', 'menu_class' => 'header-menu-list', 'walker' => new description_walker())); ?>
@@ -100,7 +104,7 @@ $me = cs_get_option( 'i_me_switch' );
                                                                 <div class="archivePost">
                                                                      <ul class="timeline">
                                                                      <li class="tl-header">
-                                                                       <div class="btn btn-info">Now</div>
+                                                                       <div class="btn btn-info">现在</div>
                                                                      </li>
                                                                      <?php $count_posts = wp_count_posts(); $published_posts = $count_posts->publish;
                                                                      query_posts( 'posts_per_page=-1' );
@@ -119,7 +123,7 @@ $me = cs_get_option( 'i_me_switch' );
                                                                      endwhile;
                                                                      wp_reset_query(); ?>
                                                                       <li class="tl-header">
-                                                                        <div class="btn btn-info">Now</div>
+                                                                        <div class="btn btn-info">过去</div>
                                                                       </li>
                                                                      </ul>
                                                                  </div>
