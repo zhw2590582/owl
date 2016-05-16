@@ -153,11 +153,7 @@ $bulletin = cs_get_option( 'i_bulletin' );
 	                                    <?php else : ?>
 	                                    <?php endif; ?>
 	                                    <?php
-	                                        if(!get_post_format()) {
-	                                           get_template_part('format', 'standard');
-	                                        } else {
-	                                           get_template_part('format', get_post_format());
-	                                        };
+											get_template_part('format', 'standard');
 	                                    ?>
 
 	                                    <ul class="bottom_meta clearfix">
