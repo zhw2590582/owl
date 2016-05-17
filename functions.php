@@ -626,8 +626,8 @@ function post_thumbnail_src() {
         $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
         $post_thumbnail_src = $matches[1][0];
         if (empty($post_thumbnail_src)) {
-            $random = mt_rand(1, 10);
-            echo ''.get_template_directory_uri().'/images/thumbnail/img'.rand(1,5).'.png';
+            $feature_num = cs_get_option( 'i_feature_num' );
+            echo ''.get_template_directory_uri().'/images/thumbnail/img'.rand(1,$feature_num).'.png';
         }
     };
     echo $post_thumbnail_src;

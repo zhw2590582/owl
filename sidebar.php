@@ -8,7 +8,13 @@
                 <?php endif; ?>
 			</div>
 		</div>
-		<div class="sidectrl"></div>
+		<div class="sidectrl">
+			<div class="sidebar-ctrl">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+		</div>
 	</div>
 
 

@@ -47,6 +47,28 @@ $('body').on('click', '#comment-nav-below a', function(e) {
     });
 });
 
+//固定小工具
+var documentHeight = 0;
+var topPadding = 15;
+var item = $("#sidebar aside:last-child");
+$(function() {
+	var offset = item.offset();
+	documentHeight = $(document).height();
+	$(window).scroll(function() {
+		var sideBarHeight = item.height();
+		if ($(window).scrollTop() > offset.top) {
+			var newPosition = ($(window).scrollTop() - offset.top) + topPadding;
+			var maxPosition = documentHeight - (sideBarHeight + 368);
+			if (newPosition > maxPosition) {
+				newPosition = maxPosition;
+			}
+			item.addClass('lfixed');
+		} else {
+			item.removeClass('lfixed');
+		};
+	});
+});
+
 //选项卡
 (function ($) {
     $('.tabs_title').addClass('active').find('> li:eq(0)').addClass('current');
@@ -81,9 +103,10 @@ $('body').on('click', '#comment-nav-below a', function(e) {
 	});
 
 //图像CSS类
-	$(".post-content img, .avatar-box img").addClass('ajax_gif');
-	$(".post-content img, .avatar-box img").load(function() {
+	$("img").addClass('ajax_gif').load(function() {
 		$(this).removeClass('ajax_gif');
+	}).on('error', function () {
+		$(this).removeClass('ajax_gif').prop('src', 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==');
 	});
 
 //Tooltip
@@ -100,9 +123,6 @@ $('body').on('click', '#comment-nav-below a', function(e) {
 		$(this).prepend( '<img src="' + linkhref + 'favicon.ico">');
 	});
 
-	$('.linkcat li a img , .avatar').on('error', function () {
-	  $(this).prop('src', '../wp-content/themes/owl/images/default/broken.jpg');
-	});
 
 //底部按钮
 	$(window).scroll(function() {

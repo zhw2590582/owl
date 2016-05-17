@@ -713,6 +713,15 @@ pre code {
   width: 1.6rem;
 }
 
+#widget {
+  position: relative;
+}
+#widget .lfixed {
+  position: fixed;
+  top: 10px;
+  width: 240px;
+}
+
 .container {
   width: 1200px;
   margin: 0 auto;
@@ -776,8 +785,16 @@ a:focus {
 }
 
 /* 主体背景+左边栏 */
-.content-inner, #lSidebar, .sidectrl {
+.content-inner, #lSidebar {
   background: #EFEEEB;
+}
+
+/* 左边栏控制器 */
+.sidebar-ctrl {
+  background: #D4CEBF;
+}
+.sidebar-ctrl span {
+  background: #fff;
 }
 
 /* 顶部菜单 */
@@ -1532,6 +1549,7 @@ article .post-wrap .post-inner .featured-box .post_meta li a:hover, article .pos
 }
 article .post-wrap .post-inner .post-body {
   height: 160px;
+  overflow: hidden;
 }
 article .post-wrap .post-inner .post-body header {
   border-top-left-radius: 3px;
@@ -1608,6 +1626,7 @@ article .post-wrap .bottom_meta .meta_tabs a:before {
 }
 .single-post article .post-wrap .post-inner .post-body {
   height: auto;
+  overflow: visible;
   margin-bottom: 30px;
 }
 
@@ -1835,8 +1854,8 @@ article .post-wrap .bottom_meta .meta_tabs a:before {
   overflow: hidden;
 }
 #lSidebar .sideinner {
-  padding: 10px 25px 10px 10px;
-  width: 100%;
+  padding: 10px 30px 10px 10px;
+  width: 515px;
   height: 100%;
   overflow-y: scroll;
 }
@@ -1848,6 +1867,23 @@ article .post-wrap .bottom_meta .meta_tabs a:before {
   height: 100%;
   cursor: pointer;
   z-index: 50;
+}
+
+.sidebar-ctrl {
+  position: absolute;
+  width: 16px;
+  height: 85px;
+  right: 0;
+  top: 50%;
+  margin-top: -42px;
+  padding: 35px 0 0 4px;
+}
+.sidebar-ctrl span {
+  display: inline-block;
+  float: left;
+  width: 1px;
+  height: 15px;
+  margin-right: 3px;
 }
 
 .rb {

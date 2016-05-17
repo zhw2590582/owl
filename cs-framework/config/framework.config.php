@@ -566,6 +566,15 @@ $options[]      = array(
           'default'   => true,
           'title'     => 'Lazyload加载图片',
         ),
+		
+		// 随机特色图数量
+		array(
+          'id'    	  => 'i_feature_num',
+          'type'      => 'number',
+          'default'    => '5',
+          'title'     => '随机特色图数量',
+		  'help'      => '数目需与你的随机图片数目一致，否则会加载不了图片',
+        ),		
 
  		// 阅读更多设置
 		 array(

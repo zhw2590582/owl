@@ -97,8 +97,16 @@ a:focus {
 }
 
 /* 主体背景+左边栏 */
-.content-inner,#lSidebar,.sidectrl{
+.content-inner,#lSidebar{
     background: #EFEEEB;
+}
+
+/* 左边栏控制器 */
+.sidebar-ctrl {
+    background: #D4CEBF;
+    span{
+        background: #fff;
+    }
 }
 
 /* 顶部菜单 */

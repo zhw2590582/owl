@@ -504,6 +504,7 @@ article{
 
       .post-body{
         height: 160px;
+        overflow: hidden;
 
         header{
           border-top-left-radius: 3px;
@@ -589,6 +590,7 @@ article{
   }
   article .post-wrap .post-inner .post-body{
     height: auto;
+    overflow: visible;
     margin-bottom: 30px;
   }
 }
@@ -848,8 +850,8 @@ article{
   overflow: hidden;
 
   .sideinner{
-    padding:10px 25px 10px 10px;
-    width: 100%;
+    padding:10px 30px 10px 10px;
+    width: 515px;
     height: 100%;
     overflow-y: scroll;
 
@@ -868,6 +870,24 @@ article{
     z-index: 50;
   }
 }
+
+.sidebar-ctrl {
+  position: absolute;
+  width: 16px;
+  height: 85px;
+  right: 0;
+  top: 50%;
+  margin-top: -42px;
+  padding: 35px 0 0 4px;
+  span{
+    display: inline-block;
+    float: left;
+    width: 1px;
+    height: 15px;
+    margin-right: 3px;
+  }
+}
+
 
 .rb{
   width: 200px;

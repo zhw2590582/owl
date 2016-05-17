@@ -427,6 +427,16 @@ pre code {
   width: 1.6rem;
 }
 
+#widget{
+  position: relative;
+
+  .lfixed{
+    position: fixed;
+    top: 10px;
+    width: 240px;
+  }
+}
+
 .container{
   width:1200px;
   margin: 0 auto;

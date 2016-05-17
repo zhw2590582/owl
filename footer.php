@@ -342,7 +342,14 @@ $index = $meta_data['i_index'];
 
 			if($(".audio-wrapper audio").length>0){
 				$('.audio-wrapper audio').mediaelementplayer();
-			}
+			};
+			
+            $("img").addClass('ajax_gif').load(function() {
+                $(this).removeClass('ajax_gif');
+            }).on('error', function () {
+                $(this).removeClass('ajax_gif').prop('src', 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==');
+            });
+
 			
 		});	
 	<?php } ?>		
