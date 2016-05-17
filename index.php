@@ -8,7 +8,8 @@ $avatar_name = cs_get_option( 'i_avatar_name' );
 $avatar_content = cs_get_option( 'i_avatar_content' );
 $me = cs_get_option( 'i_me_switch' );
 $bulletin = cs_get_option( 'i_bulletin' );
-?> 
+$com = cs_get_option( 'i_index_com' );
+?>
 
 <?php get_header(); ?>	
 
@@ -176,7 +177,7 @@ $bulletin = cs_get_option( 'i_bulletin' );
 	                                <?php $nums=5;
                                     $get_comments_num=5;
                                     $min_comments = get_comments('status=approve&type=comment&number='.$get_comments_num.'&post_id='.get_the_ID());
-                                    if ( !empty($min_comments) ) {
+                                    if ( $com && !empty($min_comments) ) {
                                     	$my_email=get_bloginfo ('admin_email');
                                     	$i = 1; ?>
                                     	<div class="min_comments">

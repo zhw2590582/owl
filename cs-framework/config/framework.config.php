@@ -566,7 +566,15 @@ $options[]      = array(
           'default'   => true,
           'title'     => 'Lazyload加载图片',
         ),
-		
+
+		// 首页评论预览
+		array(
+          'id'    	  => 'i_index_com',
+          'type'      => 'switcher',
+          'default'   => true,
+          'title'     => '首页评论预览',
+        ),
+
 		// 随机特色图数量
 		array(
           'id'    	  => 'i_feature_num',
