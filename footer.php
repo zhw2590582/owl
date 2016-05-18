@@ -29,6 +29,11 @@ $login = cs_get_option( 'i_login' );
 $login_img = cs_get_option( 'i_login_image' );
 $sidebar = cs_get_option( 'i_sidebar' );
 $topbar = cs_get_option( 'i_topbar' );
+$donate = cs_get_option( 'i_donate' );
+$donate_title = cs_get_option( 'i_donate_title' );
+$donate_des = cs_get_option( 'i_donate_des' );
+$donate_alipay = cs_get_option( 'i_alipay_img' );
+$donate_wechat = cs_get_option( 'i_wechat_img' );
 $meta_data = get_post_meta( get_the_ID(), 'standard_options', true );
 $download = $meta_data['i_download'];
 $index = $meta_data['i_index'];
@@ -73,29 +78,32 @@ $index = $meta_data['i_index'];
                     <li>
                         <a href="javascript:void(0)" class="hand icon" title="分享">
                             <i class="hand fa fa-share-alt"></i>
-                        </a>		
-                        <div class="bdsharebuttonbox footer-show">
-                            <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">分享到QQ空间</a>
-                            <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">分享到新浪微博</a>
-                            <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">分享到微信</a>
-                            <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网">分享到豆瓣网</a>
-                            <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧">分享到百度贴吧</a>
-                            <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友">分享到QQ好友</a>
-                            <a href="#" class="bds_mshare" data-cmd="mshare" title="分享到一键分享">分享到一键分享</a>
-                        </div>
-                        <script>
-                        window._bd_share_config={
-                        "common":{
-                                    "bdSnsKey":{},
-                                    "bdText":"",
-                                    "bdMini":"2",
-                                    "bdPic":"",
-                                    "bdStyle":"0",
-                                    "bdSize":"16"
-                                },
-                                "share":{}
-                            };
-                            with(document)0[(getElementsByTagName("head")[0]||body).appendChild(createElement("script")).src="http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion="+~(-new Date()/36e5)];</script>
+                        </a>	
+						<div class="show-box">
+							<div class="bdsharebuttonbox footer-show">
+								<a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">分享到QQ空间</a>
+								<a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">分享到新浪微博</a>
+								<a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">分享到微信</a>
+								<a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网">分享到豆瓣网</a>
+								<a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧">分享到百度贴吧</a>
+								<a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友">分享到QQ好友</a>
+								<a href="#" class="bds_mshare" data-cmd="mshare" title="分享到一键分享">分享到一键分享</a>
+							</div>
+							<script>
+							window._bd_share_config={
+							"common":{
+										"bdSnsKey":{},
+										"bdText":"",
+										"bdMini":"2",
+										"bdPic":"",
+										"bdStyle":"0",
+										"bdSize":"16"
+									},
+									"share":{}
+								};
+								with(document)0[(getElementsByTagName("head")[0]||body).appendChild(createElement("script")).src="http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion="+~(-new Date()/36e5)];
+							</script>
+						</div>
                     </li>
                     ';
 				}?>
@@ -111,9 +119,11 @@ $index = $meta_data['i_index'];
 							<a class="icon" title="二维码" href="javascript:void(0)">
                                 <i class="fa fa-qrcode"></i>
 							</a>
-                            <div class="wx-show footer-show">
-                                <img src="'. $qrcodeimg .'">
-                            </div>
+							<div class="show-box">
+								<div class="wx-show footer-show">
+									<img src="'. $qrcodeimg .'">
+								</div>
+							</div>
 						</li>';
 				}?>	
 
@@ -144,9 +154,10 @@ $index = $meta_data['i_index'];
                         $skins = cs_get_option( 'i_skin_custom' );
                         if( ! empty( $skins ) ) {
                           foreach ( $skins as $skin ) {
+                            $banner = ' '. $skin['i_skin_banner'][color] .' url(\''. $skin['i_skin_banner'][image] .'\') no-repeat center -10px';
                             $body = ' '. $skin['i_skin_body'][color] .' url(\''. $skin['i_skin_body'][image] .'\') '. $skin['i_skin_body'][repeat] .' '. $skin['i_skin_body'][position] .' '. $skin['i_skin_body'][attachment] .'';
                             echo '
-                            <li data-banner="'. $skin['i_skin_banner'] .'" data-body="'. $body .'">
+                            <li data-banner="'. $banner .'" data-body="'. $body .'">
                                 <img src="'. $skin['i_skin_thumb'] .'">
                                 <span class="text-ellipsis">'. $skin['i_skin_title'] .'</span>
                             </li>';
@@ -229,7 +240,32 @@ $index = $meta_data['i_index'];
             </div>
         </div>
 	<?php }	?>
-
+	
+	<?php if ($donate == true) {?>
+		<div id="donate">
+			<div class="mini">
+				«<br>
+				<?php echo $donate_title; ?>
+			</div>
+			<div class="full alipay">
+				<h5><?php echo $donate_title; ?></h5>
+				<p><?php echo $donate_des; ?></p>
+				<div class="qr">
+					<img class="alipay_img" src="<?php echo $donate_alipay; ?>" height="140" width="140">
+					<img class="wechat_img" src="<?php echo $donate_wechat; ?>" height="140" width="140">
+				</div>
+				<div class="pays">
+					<a id="donate_alipay" href="javascript://" rev="alipay">支付宝</a>
+					<a id="donate_wechat" href="javascript://" rev="wechat">微信</a>
+				</div>
+				<p class="note">
+					打开<span class="name"></span>，使用扫一扫<br>
+				</p>
+				<i class="close">x</i>
+			</div>
+		</div>
+	<?php }?>
+	
 	<?php if ($sidebar == true) {?>
 		<?php get_sidebar(); ?>
 	<?php }?>

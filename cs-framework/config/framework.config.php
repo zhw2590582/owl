@@ -178,14 +178,18 @@ $options[]      = array(
         ),
 
  		// Banner图片
-         array(
-           'id'      => 'i_banner_image',
-           'type'    => 'upload',
-           'title'   => 'Banner图片',
-           'help'      => '',
-           'default' => get_template_directory_uri()."/images/default/banner.png",
- 		  'help'      => '推荐尺寸为1920X200',
-         ),
+        array(
+          'id'           => 'i_banner_image',
+          'type'         => 'background',
+          'title'        => 'Banner图片',
+          'default'      => array(
+            'image'      => 'something.png',
+            'repeat'     => 'repeat-x',
+            'position'   => 'center center',
+            'attachment' => 'fixed',
+            'color'      => '#ffbc00',
+          ),
+        ),
 
  		// Banner文字
  		array(
@@ -240,12 +244,18 @@ $options[]      = array(
             ),
 
             // Banner图片
-             array(
-               'id'      => 'i_skin_banner',
-               'type'    => 'upload',
-               'title'   => 'Banner图片',
-               'help'      => '推荐尺寸为1920X200',
-             ),
+            array(
+              'id'           => 'i_skin_banner',
+              'type'         => 'background',
+              'title'        => 'Banner图片',
+              'default'      => array(
+                'image'      => 'something.png',
+                'repeat'     => 'repeat',
+                'position'   => 'center center',
+                'attachment' => 'fixed',
+                'color'      => '#ffffff',
+              ),
+            ),
 
             // Body背景颜色
             array(
@@ -1000,12 +1010,26 @@ $options[]      = array(
   'icon'        => 'fa fa-sliders',
   'fields'      => array(
 
+		// 底部编辑器
+		 array(
+		  'type'    => 'notice',
+		  'class'   => 'info',
+		  'content' => '底部编辑器',
+		),  
+  
         // 底部编辑器
         array(
           'id'    => 'i_footer_edit',
           'type'  => 'wysiwyg',
           'title' => '底部编辑器',
         ),
+		
+		// 边栏按钮
+		 array(
+		  'type'    => 'notice',
+		  'class'   => 'info',
+		  'content' => '边栏按钮',
+		),  		
 
  		// 显示回到顶部按钮
 		array(
@@ -1022,22 +1046,6 @@ $options[]      = array(
           'title'     => '开启分享按钮',
           'default'   => true,
           'help'       => '实际上是插入百度分享代码，更多设置可以参考百度官方网站',
-        ),
-
- 		// 图片分享功能
-		array(
-          'id'    	  => 'i_share_img',
-          'type'      => 'switcher',
-          'title'     => '图片分享功能',
-          'dependency'   => array( 'i_share', '==', 'true' ),
-        ),
-
- 		// 划词分享功能
-		array(
-          'id'    	  => 'i_share_word',
-          'type'      => 'switcher',
-          'title'     => '划词分享功能',
-          'dependency'   => array( 'i_share', '==', 'true' ),
         ),
 
  		// 显示评论按钮
@@ -1066,6 +1074,57 @@ $options[]      = array(
 		  'dependency'   => array( 'i_qrcode', '==', 'true' ),
         ),
 
+		// 捐赠弹窗
+		 array(
+		  'type'    => 'notice',
+		  'class'   => 'info',
+		  'content' => '捐赠弹窗',
+		), 		
+
+ 		// 开启捐赠弹窗
+		array(
+          'id'    	  => 'i_donate',
+          'type'      => 'switcher',
+          'title'     => '开启捐赠弹窗',
+        ),	
+
+ 		// 标题
+        array(
+          'id'      => 'i_donate_title',
+          'type'    => 'text',
+          'title'   => '标题',
+          'default' => '购买主题',
+        ),	
+
+ 		// 描述
+        array(
+          'id'      => 'i_donate_des',
+          'type'    => 'text',
+          'title'   => '描述',
+          'default' => '少年，你有多忧伤！',
+        ),		
+
+		// 支付宝二维码
+        array(
+          'id'      => 'i_alipay_img',
+          'type'    => 'upload',
+          'title'   => '支付宝二维码',
+        ),		
+		
+		// 微信二维码
+        array(
+          'id'      => 'i_wechat_img',
+          'type'    => 'upload',
+          'title'   => '微信二维码',
+        ),			
+		
+		// 版权信息
+		 array(
+		  'type'    => 'notice',
+		  'class'   => 'info',
+		  'content' => '版权信息',
+		), 		
+		
 		// 版权信息
         array(
           'id'    => 'i_foot_copyright',

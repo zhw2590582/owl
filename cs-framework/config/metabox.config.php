@@ -39,13 +39,7 @@ $options[]    = array(
     array(
       'name'  => 'page_section_1',
       'fields' => array(
-
-        // 文章目录
-		array(
-          'id'    	  => 'i_archive_index',
-          'type'      => 'switcher',
-          'title'     => '归档目录',
-        ),	          
+          
 		
       ), 
     ), 
@@ -255,93 +249,7 @@ $options[]    = array(
     array(
       'name'   => 'aside_section_1',
       'fields' => array(
-	  
-		// 内页特色图
-        array(
-          'id'         => 'i_work_featured',
-          'type'       => 'radio',
-          'title'      => '内页特色图',
-          'class'      => 'horizontal',
-          'options'    => array(
-            'i_featured'   => '特色图',
-            'i_slider'   => '轮播图',
-          ),
-          'default'    => 'i_featured',
-        ),	
-		
-			// 自定义轮播图
-        array(
-          'id'              => 'i_work_custom',
-          'type'            => 'group',
-          'title'           => '自定义轮播图',
-          'info'            => '更多详细设置方式可以浏览使用说明',
-          'dependency' => array( 'i_work_featured_i_slider', '==', 'true' ),		  
-          'button_title'    => '添加滑块',
-          'accordion_title' => '滑块',
-          'fields'          => array(
-		  
-				// 自定义幻灯片--标题
-            array(
-              'id'          => 'i_work_title',
-			  'type'        => 'text',
-              'title'       => '标题',
-			  'attributes'    => array(
-				'placeholder' => '例如：滑块01'
-			  )
-            ),
-			
-				// 自定义幻灯片--图片		
-			array(
-			  'id'      => 'i_work_image',
-			  'type'    => 'upload',
-			  'title'   => '图片',
-			),		
-			
-				// 自定义幻灯片--链接						
-			array(
-			  'id'            => 'i_work_link',
-			  'type'          => 'text',
-			  'title'         => '链接',
-			  'attributes'    => array(
-				'placeholder' => 'http://...'
-			  )
-			),
-			
-				// 自定义幻灯片--新标签	
-			array(
-			  'id'    	  => 'i_work_newtab',
-			  'type'      => 'switcher',
-			  'title'     => '新标签打开',
-			  'dependency'   => array( 'i_work_link', '!=', '' ),
-			),				
-
-          )
-        ),		
-		
- 		// 自定义背景图片
-		array(
-          'id'    	  => 'i_work_bg',
-          'type'      => 'switcher',
-          'title'     => '自定义背景图片',
-        ),			
-		
-		// 设置背景图片
-        array(
-          'id'      => 'i_work_bg_scr',
-          'type'    => 'upload',
-          'title'   => '设置背景图片',
-          'help'      => '',
-          'default' => get_template_directory_uri()."/images/work_bg.jpg",	
-		  'help'      => '建议使用模糊背景图片',	
-		  'dependency'   => array( 'i_work_bg', '==', 'true' ),		  
-        ),	
-
- 		// 开启评论
-		array(
-          'id'    	  => 'i_work_comment',
-          'type'      => 'switcher',
-          'title'     => '开启评论',
-        ),				
+	  			
 
       ),
     ),	

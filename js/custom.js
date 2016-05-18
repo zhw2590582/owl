@@ -56,15 +56,17 @@ $(function() {
 	documentHeight = $(document).height();
 	$(window).scroll(function() {
 		var sideBarHeight = item.height();
-		if ($(window).scrollTop() > offset.top) {
-			var newPosition = ($(window).scrollTop() - offset.top) + topPadding;
-			var maxPosition = documentHeight - (sideBarHeight + 368);
-			if (newPosition > maxPosition) {
-				newPosition = maxPosition;
-			}
-			item.addClass('lfixed');
-		} else {
-			item.removeClass('lfixed');
+		if ( item.length > 0 ) { 
+			if ($(window).scrollTop() > offset.top) {
+				var newPosition = ($(window).scrollTop() - offset.top) + topPadding;
+				var maxPosition = documentHeight - (sideBarHeight + 368);
+				if (newPosition > maxPosition) {
+					newPosition = maxPosition;
+				}
+				item.addClass('lfixed');
+			} else {
+				item.removeClass('lfixed');
+			};
 		};
 	});
 });
@@ -209,7 +211,7 @@ $(function() {
 		$(this).addClass('current').siblings().removeClass('current');
 		var skinBanner = $(this).attr('data-banner');
 		var skinBody = $(this).attr('data-body');
-		$("#header,.header-mask").css('background-image','url('+ skinBanner + ')');
+		$("#header,.header-mask").css('background',skinBanner);
 		$("body").css('background',skinBody);
 	});
 	$(".glass_btn").click(function() {
@@ -219,7 +221,20 @@ $(function() {
 			$('body').addClass('glass_nav');
 		}
 	});
-
+	
+//捐赠
+	$("#donate .close").click(function() {
+		$("#donate").addClass('minimize');
+	});
+	$("#donate .mini").click(function() {
+		$("#donate").removeClass('minimize');
+	});
+	$("#donate #donate_alipay").click(function() {
+		$("#donate .full").addClass('alipay').removeClass('wechat');
+	});
+	$("#donate #donate_wechat").click(function() {
+		$("#donate .full").addClass('wechat').removeClass('alipay');
+	});
 });
 
 // 图像懒加载

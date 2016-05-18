@@ -315,3 +315,131 @@
 	right:20px;
 }
 
+#donate {
+	overflow: hidden;
+	position: fixed;
+	bottom: 30px;
+	right: 0;
+	zoom: 1;
+	width: 190px;
+	height: 280px;
+	border: 1px solid #444;
+	border-right: none;
+	border-radius: 5px 0 0 5px;
+	color: #ddd;
+	-webkit-transition: right 0.3s,height 0.5s 0.3s;
+	-moz-transition: right 0.3s,height 0.5s 0.3s;
+	transition: right 0.3s,height 0.5s 0.3s;
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled="true",startColorstr="#CC000000",endColorstr="#CC000000");
+	background-color: rgba(0,0,0,0.8);
+}
+
+#donate .full {
+	float: left;
+	width: 190px;
+	margin: 0;
+	padding: 10px 15px;
+	font: 12px/20px Arial;
+}
+
+#donate .full h5 {
+	margin: 0;
+	padding: 0;
+	font: bold 14px/20px Arial;
+}
+
+#donate .full .close {
+	position: absolute;
+	top: 12px;
+	right: 5px;
+	width: 16px;
+	height: 16px;
+	color: #e33;
+	font: bold 14px/16px Tahoma;
+	cursor: pointer;
+}
+
+#donate .full .qr {
+	height: 160px;
+	padding:10px;
+	margin-top: 5px;
+	border-radius: 5px 5px 0 0;
+	background-color: #f1f1f1;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+#donate .full .pays {
+	overflow: hidden;
+	border-radius: 0 0 5px 5px;
+	background: #111;
+	line-height: 24px;
+	text-align: center;
+}
+
+#donate .full .pays a {
+	float: left;
+	width: 50%;
+	color: #888;
+	text-decoration: none;
+}
+
+#donate .full .pays a:hover {
+	color: #eee;
+}
+
+#donate .full .note {
+	margin-top: 5px;
+	color: #aaa;
+}
+
+#donate .alipay .pays a[rev="alipay"],#donate .wechat .pays a[rev="wechat"] {
+	background: #f1f1f1;
+	color: #555;
+}
+
+#donate .full .qr img{
+	display:none;
+}
+
+#donate .alipay .qr .alipay_img{
+	display:block;
+}
+
+#donate .wechat .qr .wechat_img{
+	display:block;
+}
+
+#donate .alipay .name:before {
+	content: "支付宝钱包";
+}
+
+#donate .wechat .name:before {
+	content: "微信";
+}
+
+#donate .mini {
+	display: none;
+	float: left;
+	width: 30px;
+	height: 110px;
+	padding: 10px 5px;
+	font: 12px/18px Tahoma;
+	text-align: center;
+	cursor: pointer;
+}
+
+#donate.minimize {
+	width: 230px;
+	right: -200px;
+	height: 110px;
+	background-color: rgba(0,0,0,0.6);
+}
+
+#donate.minimize:hover {
+	background-color: rgba(0,0,0,0.8);
+}
+
+#donate.minimize .mini {
+	display: block;
+}

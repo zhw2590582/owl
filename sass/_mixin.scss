@@ -89,7 +89,7 @@ body{
     color: #867f6f;
 }
 a{
-    color: #f7bd44;
+    color: #BB4E18;
 }
 a:hover,
 a:focus {
@@ -186,6 +186,13 @@ a:focus {
 /* 页脚 */
 #footer{
     background: #D2CFC1;
+	color:#333;
+	a{
+		color:#333;
+		&:hover{
+			color:#999;
+		}
+	}
     .footer-end{
         border-top: 1px solid #000;
         background: #BBB7A3;

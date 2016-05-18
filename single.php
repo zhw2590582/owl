@@ -14,7 +14,7 @@ $avatar_name = cs_get_option( 'i_avatar_name' );
 $avatar_content = cs_get_option( 'i_avatar_content' );
 $me = cs_get_option( 'i_me_switch' );
 $bulletin = cs_get_option( 'i_bulletin' );
-
+$like = cs_get_option( 'i_post_like' );
 ?> 
 
 <?php get_header(); ?>
@@ -100,11 +100,7 @@ $bulletin = cs_get_option( 'i_bulletin' );
                                     <article <?php post_class('post'); ?>>
                                      <div class="post-wrap">
                                         <?php
-                                            if(!get_post_format()) {
-                                               get_template_part('format', 'standard');
-                                            } else {
-                                               get_template_part('format', get_post_format());
-                                            };
+											get_template_part('format', 'standard');
                                         ?>
 
                                         <?php if ($link == true && !is_mobile()) { ?>
@@ -181,9 +177,7 @@ $bulletin = cs_get_option( 'i_bulletin' );
 
 	                                        <?php if ($like == true) { ?>
 	                                            <li class="meta_like fr">
-	                                                <?php if ( $like_style == 'i_like' ) { ?>
-	                                                    <?php echo getPostLikeLink( get_the_ID() ); ?>
-	                                                <?php } ?>
+	                                                <?php echo getPostLikeLink( get_the_ID() ); ?>
 	                                            </li>
 	                                        <?php } ?>
 	                                    </ul>

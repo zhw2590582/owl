@@ -2,7 +2,7 @@
 
 #footer{
     margin-top: -130px;
-    padding-top: 80px;
+    padding-top: 50px;
 
     .footer-inner{
         padding: 50px 0;
@@ -32,7 +32,7 @@
         margin-bottom: 0;
         border-bottom: none;
     }
-    &:hover .footer-show{
+    &:hover .show-box{
         display: block;
     }
     @include itme-c1;
@@ -49,21 +49,24 @@
     padding: 9px 10px 10px 10px;
 }
 
-.footer-show{
+.show-box{
     display: none;
-    @include itme-bg;
     position: absolute;
     border-radius: 5px;
-    right: 42px;
-    bottom: -1px;
+    right: 40px;
+	padding-right:5px;
+    bottom: -6px;
     padding: 5px;
+}
+
+.footer-show{
+    @include itme-bg;
 }
 
 .wx-show {
     width: 150px;
     height: 150px;
 }
-
 
 .bdsharebuttonbox{
     padding:10px;

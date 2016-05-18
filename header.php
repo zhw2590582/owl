@@ -33,11 +33,11 @@ $avatar_name = cs_get_option( 'i_avatar_name' );
 	<?php if (is_mobile()) { ?>
 		<div style="display:none;"><?php the_post_thumbnail( 'medium' ); ?></div>
 	<?php }?>	
-    
-    <header id="header" style="background-image: url('<?php echo $banner; ?>');">
+     <?php $banner_c = ' '. $banner[color] .' url(\''. $banner[image] .'\') no-repeat center -10px'; ?>
+    <header id="header" style="background:<?php echo $banner_c; ?>;">
         <div class="header-mask-sd">
             <div class="header-mask-blur">
-                <div class="header-mask" style="background-image: url('<?php echo $banner; ?>')"></div>
+                <div class="header-mask" style="background: <?php echo $banner_c; ?>"></div>
                 <div class="header-mask-bg"></div>
             </div>
         </div>
@@ -51,7 +51,7 @@ $avatar_name = cs_get_option( 'i_avatar_name' );
                     <?php }elseif( $symbol == 'i_logo' ){ ?>
                         <div  class="logo">
                             <a href="<?php echo home_url(); ?>" title="<?php bloginfo('name'); ?>">
-                                <img src="<?php echo $logo ;?>" alt="<?php bloginfo('name'); ?>" />
+                                <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-echo="<?php echo $logo ;?>" alt="<?php bloginfo('name'); ?>" />
                             </a>
                         </div> 
                     <?php }else{ ?>
@@ -106,8 +106,7 @@ $avatar_name = cs_get_option( 'i_avatar_name' );
                 <!-- 搜索栏 -->	
                     <li class="search">
                         <form method="get" id="searchform" action="<?php echo home_url(); ?>/">
-                            <input type="text" class="search-form-input" name="s" value="搜索..." onfocus="if (this.value == '搜索...') {this.value = '';}" onblur="if (this.value == '') {this.value = '搜索...';}"  />
-                        </form>
+						<input type="text" class="search-form-input text" name="s" onfocus="if (this.value == '查找...') {this.value = '';}" onblur="if (this.value == '') {this.value = '查找...';}" value="查找...">                        </form>
                     </li>
                 <?php }?>
 

@@ -8,7 +8,7 @@ function island_scripts_styles() {
 	
     /* 注册样式 */
     wp_enqueue_style('style', get_template_directory_uri() . "/style.css", array() , '0.9', 'screen');
-    wp_enqueue_style('nivo-css', get_template_directory_uri() . "/css/nivo-slider.css", array() , '0.9', 'screen');
+    wp_enqueue_style('nivo-css', get_template_directory_uri() . "/css/add.css", array() , '0.9', 'screen');
     wp_enqueue_style('font-awesome-css', get_template_directory_uri() . "/cs-framework/assets/css/font-awesome.css", array() , '0.3', 'screen');
 	
     /* 注册脚本 */
@@ -963,7 +963,7 @@ function article_index($content) {
 			$ul_li .= '<li><a href="#title-'.$key.'" title="'.$title.'">'.$title."</a></li>\n";
 		}
 		$content = "\n<div id=\"article-index\">
-		<strong>文章目录</strong>
+		<p class='title'>文章目录</p>
 		<ol id=\"index-ul\">\n" . $ul_li . "</ol>
 		</div>\n" . $content;
 	}

@@ -123,26 +123,26 @@ $com = cs_get_option( 'i_index_com' );
                 		<?php } ?>
                 	<?php } ?>
 
+					<?php if(is_search()) { ?>
+						<h6 class="archive-title"><div class="title-inner"><i class="fa fa-search"></i> <?php printf( __( '搜索结果: %s' ), '<span>' . get_search_query() . '</span>' ); ?></div></h6>
+					<?php } else if(is_tag()) { ?>
+						<h6 class="archive-title"><div class="title-inner"><i class="fa fa-tags"></i> <?php single_tag_title(); ?></div></h6>
+					<?php } else if(is_day()) { ?>
+						<h6 class="archive-title"><div class="title-inner"><i class="icon-time"></i> <?php _e('归档'); ?> <?php echo get_the_date(); ?></div></h6>
+					<?php } else if(is_month()) { ?>
+						<h6 class="archive-title"><div class="title-inner"><i class="fa fa-calendar"></i> <?php echo get_the_date('F Y'); ?></div></h6>
+					<?php } else if(is_year()) { ?>
+						<h6 class="archive-title"><div class="title-inner"><i class="fa fa-calendar"></i> <?php echo get_the_date('Y'); ?></div></h6>
+					<?php } else if(is_category()) { ?>
+						<h6 class="archive-title"><div class="title-inner"><i class="fa fa-bookmark"></i> <?php single_cat_title(); ?></div></h6>
+					<?php } else if(is_author()) { ?>
+						<h6 class="archive-title"><div class="title-inner"><i class="fa fa-user"></i> <?php
+						$curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author)); echo $curauth->display_name; ?></div></h6>
+					<?php } ?>
+					
                     <div class="main-inner">
 
 	                    <div id="posts-box">
-	                            <?php if(is_search()) { ?>
-	                                <h2 class="archive-title"><i class="fa fa-search"></i> <?php printf( __( '搜索结果: %s' ), '<span>' . get_search_query() . '</span>' ); ?></h2>
-	                            <?php } else if(is_tag()) { ?>
-	                                <h2 class="archive-title"><i class="fa fa-tags"></i> <?php single_tag_title(); ?></h2>
-	                            <?php } else if(is_day()) { ?>
-	                                <h2 class="archive-title"><i class="icon-time"></i> <?php _e('归档'); ?> <?php echo get_the_date(); ?></h2>
-	                            <?php } else if(is_month()) { ?>
-	                                <h2 class="archive-title"><i class="fa fa-calendar"></i> <?php echo get_the_date('F Y'); ?></h2>
-	                            <?php } else if(is_year()) { ?>
-	                                <h2 class="archive-title"><i class="fa fa-calendar"></i> <?php echo get_the_date('Y'); ?></h2>
-	                            <?php } else if(is_category()) { ?>
-	                                <h2 class="archive-title"><i class="fa fa-list-ul"></i> <?php single_cat_title(); ?></h2>
-	                            <?php } else if(is_author()) { ?>
-	                                <h2 class="archive-title"><i class="fa fa-user"></i> <?php
-	                                $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author)); echo $curauth->display_name; ?></h2>
-	                            <?php } ?>
-
 	                        <div class="posts clearfix">
 	                            <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 	                            <?php setPostViews(get_the_ID());?>
@@ -159,16 +159,14 @@ $com = cs_get_option( 'i_index_com' );
 
 	                                    <ul class="bottom_meta clearfix">
 	                                    	<li class="mate-time fl"><i class="fa fa-clock-o"></i><?php echo ''.timeago( get_gmt_from_date(get_the_time('Y-m-d G:i:s')) ); ?></li>
-	                                        <li class="mate-cat fl"><i class="fa fa-circle-o-notch"></i><?php the_category(' '); ?></li>
+	                                        <li class="mate-cat fl"><i class="fa fa-bookmark"></i><?php the_category(' '); ?></li>
 	                                        <?php $posttags = get_the_tags(); if ($posttags) { ?>
 	                                            <li class="meta_tabs fl"><i class="fa fa-tags"></i><?php the_tags('', ' ', ''); ?></li>
 	                                        <?php } ?>
 
 	                                        <?php if ($like == true) { ?>
 	                                            <li class="meta_like fr">
-	                                                <?php if ( $like ) { ?>
-	                                                    <?php echo getPostLikeLink( get_the_ID() ); ?>
-	                                                <?php } ?>
+	                                                <?php echo getPostLikeLink( get_the_ID() ); ?>
 	                                            </li>
 	                                        <?php } ?>
 	                                    </ul>

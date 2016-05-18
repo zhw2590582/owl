@@ -53,6 +53,7 @@ $feature_num = cs_get_option( 'i_feature_num' );
             <ul class="post_meta clearfix">
                 <li class="mate-view"><i class="fa fa-eye"></i><?php echo getPostViews(get_the_ID()); ?></li>
                 <li class="mate-com"><a href="<?php the_permalink(); ?>#comments-title" title="comments"><i class="fa fa-comments-o"></i><?php comments_number(__('0','island'),__('1','island'),__( '%','island') );?></a></li>
+				<li class="mate-edit fr"><?php edit_post_link( __( '<i class="fa fa-edit"></i>' ), '<div class="edit-link" alt="编辑文章"  title="编辑文章">', '</div>' ); ?></li>
             </ul>
         </div>
     <?php } ?>

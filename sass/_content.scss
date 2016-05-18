@@ -14,6 +14,7 @@ $lC:26px;
 #content{
     .content-inner{
       border-radius: 5px;
+	  padding-bottom:100px;
     }
 
     #sidebar{
@@ -253,6 +254,7 @@ $lC:26px;
       vertical-align:middle;
       box-shadow:inset 0 1px 2px rgba(0,0,0,0.075);
       height: 26px;
+	  line-height:26px;
       width: 100%;
       border-radius: 3px;
     }
@@ -488,6 +490,10 @@ article{
           li{
             display: inline-block;
             margin-right: 10px;
+			
+			&:last-child{
+				margin-right: 0;
+			}
 
             i{
               font-size: 14px;
@@ -889,10 +895,6 @@ article{
 }
 
 
-.rb{
-  width: 200px;
-}
-
 .ias-noneleft{
   display: block;
   width: 100%;
@@ -941,9 +943,11 @@ article{
     padding-left: 15px;
   }
 
-  .mate-cat , .meta_tabs, .min_comments,  .post_meta{
+  .mate-cat , .meta_tabs, .min_comments, .post_meta,.read_more{
     display: none !important;
   }
+  
+  
 }
 
 .comments{
@@ -1132,8 +1136,8 @@ article{
     }
 
     #respond{
-      margin: 20px 0 15px -20px;
-
+	  padding-left:30px;
+	
       h3 {
         display: inline-block;
         font-size: 24px;
@@ -1254,7 +1258,12 @@ article{
 }
 
 .children{
-  margin-top: 5px;
+  margin-left:20px;
+  &:after{
+	  clear: both;
+	  content: "";
+	  display: table;
+  }
   li {
     padding-left: 30px;
 
@@ -1266,6 +1275,9 @@ article{
   }
 }
 
+.success_tip{
+	margin-left:30px;
+}
 
 .comment-form-author,.comment-form-email,.comment-form-url{
   display: inline-block;
@@ -1359,6 +1371,11 @@ article{
 
 .comment-awaiting-moderation {
   font-weight: bold;
+}
+
+#loading-comments{
+	text-align:center;
+	font-size:18px;
 }
 
 body.page,body.error404{
@@ -1697,4 +1714,51 @@ body.page,body.error404{
   border-radius: 11px;
   border: 2px solid #ffffff;
   box-shadow: 0 1px 0px rgba(0, 0, 0, 0.3);
+}
+
+.ias-trigger-prev{
+	display:none !important;
+}
+
+.ias-trigger-next{
+	width:100%;
+	float:left;
+	 a{
+		display:inline-block;
+		min-width:100px;
+		height:35px;
+		line-height:35px;
+		font-size:14px;
+		@include itme-bg;
+	 }
+	 @include itme-c1;
+}
+
+.archive-title{
+	margin:0 0 20px;
+	text-align:center;
+	padding:10px;
+	.title-inner{
+		height:40px;
+		line-height:40px;
+		@include itme-bg;
+	}
+}
+
+.jm-post-like.liked{
+	color:#E04646 !important;
+}
+
+.single-work{
+	.main-inner{
+		margin-top:0 !important;
+		padding:30px !important;
+	}
+	header,.post-content{
+		padding-left:15px !important;
+	}
+	.post-body{
+		height:auto !important;
+		overflow:visible !important;
+	}
 }

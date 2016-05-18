@@ -278,20 +278,19 @@ input#wp-submit {
   position:fixed;
   top:30px;
   left:50%;
-  margin-left:550px;
+  margin-left:615px;
+  @include itme-bg;
 
   #article-index {
-    -moz-border-radius: 6px 6px 6px 6px;
-    border: 1px solid #DEDFE1;
-    margin: 0 0 15px 15px;
-    padding: 0 6px;
-    width: 200px;
-    line-height: 23px;
-    strong {
-      border-bottom: 1px dashed #DDDDDD;
+    padding: 0 5px;
+    width: 150px;
+    .title {
+	  @include bdsb;
       display: block;
-      line-height: 30px;
-      padding: 0 4px;
+      line-height: 25px;
+      padding: 4px;
+	  margin-bottom:5px;
+	  font-size:16px;
     }
   }
 
@@ -300,10 +299,11 @@ input#wp-submit {
     padding-bottom: 10px;
 
     li {
-      background: none repeat scroll 0 0 transparent;
-	  list-style-type: disc;
-	  padding: 0;
-	  margin-left: 20px;
+		@include bddb;
+	    padding: 4px;		
+		&:last-child{
+			border-bottom:none
+		}
 	  }
 	}
 }
@@ -355,6 +355,9 @@ input#wp-submit {
         &:last-child{
           margin-right: 0;
         }
+		.fa{
+		  margin-right:5px;
+		}
       }
     }
   }
