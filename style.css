@@ -1833,10 +1833,12 @@ article .post-wrap .bottom_meta .meta_tabs a:before {
   height: 100px;
   border-radius: 5px;
   margin-bottom: 5px;
+  background: url("images/default/featured_bg.png") no-repeat;
+  background-size: cover;
   overflow: hidden;
 }
 .post-related .related_box li .r_title {
-  max-height: 40px;
+  height: 35px;
   overflow: hidden;
 }
 .post-related .related_box li a {
@@ -2701,7 +2703,7 @@ body.page article .post-wrap .post-inner .post-body, body.error404 article .post
 
 /* footer */
 #footer {
-  margin-top: -130px;
+  margin-top: -180px;
   padding-top: 50px;
 }
 #footer .footer-inner {

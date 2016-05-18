@@ -826,11 +826,13 @@ article{
         height: 100px;
         border-radius: 5px;
         margin-bottom: 5px;
+        background: url("images/default/featured_bg.png") no-repeat;
+        background-size:cover;
         overflow: hidden;
       }
 
       .r_title{
-        max-height: 40px;
+        height: 35px;
         overflow: hidden;
       }
 
