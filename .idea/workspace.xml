@@ -24,34 +24,34 @@
       <file leaf-file-name="_content.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sass/_content.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.25">
-              <caret line="2" column="15" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
+            <state vertical-scroll-proportion="-4.1960783">
+              <caret line="581" column="6" selection-start-line="581" selection-start-column="4" selection-end-line="581" selection-end-column="6" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_header.scss" pinned="false" current-in-tab="false">
+      <file leaf-file-name="_header.scss" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sass/_header.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.5882353">
-              <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
+            <state vertical-scroll-proportion="0.52024925">
+              <caret line="107" column="14" selection-start-line="107" selection-start-column="14" selection-end-line="107" selection-end-column="14" />
               <folding>
-                <element signature="e#2754#3079#0" expanded="false" />
-                <element signature="e#3089#3412#0" expanded="false" />
-                <element signature="e#3467#3701#0" expanded="false" />
-                <element signature="e#4865#5202#0" expanded="false" />
-                <element signature="e#5212#5254#0" expanded="false" />
-                <element signature="e#5270#5344#0" expanded="false" />
+                <element signature="e#2767#3092#0" expanded="false" />
+                <element signature="e#3102#3425#0" expanded="false" />
+                <element signature="e#3480#3714#0" expanded="false" />
+                <element signature="e#4878#5215#0" expanded="false" />
+                <element signature="e#5225#5267#0" expanded="false" />
+                <element signature="e#5283#5357#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="functions.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="functions.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/functions.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8268398">
+            <state vertical-scroll-proportion="0.0">
               <caret line="1052" column="35" selection-start-line="1052" selection-start-column="35" selection-end-line="1052" selection-end-column="35" />
               <folding />
             </state>
@@ -71,8 +71,8 @@
       <file leaf-file-name="_mixin.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sass/_mixin.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="106.5">
-              <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+            <state vertical-scroll-proportion="-2.6470587">
+              <caret line="53" column="51" selection-start-line="53" selection-start-column="46" selection-end-line="53" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -91,7 +91,7 @@
       <file leaf-file-name="_plugins.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sass/_plugins.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.784314">
+            <state vertical-scroll-proportion="-70.07843">
               <caret line="280" column="17" selection-start-line="280" selection-start-column="17" selection-end-line="280" selection-end-column="17" />
               <folding />
             </state>
@@ -129,15 +129,15 @@
         <option value="$PROJECT_DIR$/js/custom.js" />
         <option value="$PROJECT_DIR$/sidebar.php" />
         <option value="$PROJECT_DIR$/css/nivo-slider.css" />
-        <option value="$PROJECT_DIR$/sass/_mixin.scss" />
         <option value="$PROJECT_DIR$/cs-framework/config/framework.config.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/sass/_footer.scss" />
         <option value="$PROJECT_DIR$/sass/_base.scss" />
         <option value="$PROJECT_DIR$/sass/_plugins.scss" />
-        <option value="$PROJECT_DIR$/sass/_header.scss" />
-        <option value="$PROJECT_DIR$/sass/_content.scss" />
         <option value="$PROJECT_DIR$/functions.php" />
+        <option value="$PROJECT_DIR$/sass/_mixin.scss" />
+        <option value="$PROJECT_DIR$/sass/_content.scss" />
+        <option value="$PROJECT_DIR$/sass/_header.scss" />
       </list>
     </option>
   </component>
@@ -416,12 +416,12 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="36" column="12" selection-start-line="36" selection-start-column="12" selection-end-line="36" selection-end-column="12" />
           <folding>
-            <element signature="e#2754#3079#0" expanded="false" />
-            <element signature="e#3089#3412#0" expanded="false" />
-            <element signature="e#3467#3701#0" expanded="false" />
-            <element signature="e#4865#5202#0" expanded="false" />
-            <element signature="e#5212#5254#0" expanded="false" />
-            <element signature="e#5270#5344#0" expanded="false" />
+            <element signature="e#2767#3092#0" expanded="false" />
+            <element signature="e#3102#3425#0" expanded="false" />
+            <element signature="e#3480#3714#0" expanded="false" />
+            <element signature="e#4878#5215#0" expanded="false" />
+            <element signature="e#5225#5267#0" expanded="false" />
+            <element signature="e#5283#5357#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -720,14 +720,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sass/_mixin.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="106.5">
-          <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sass/_base.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-13.25">
@@ -744,42 +736,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1052" column="35" selection-start-line="1052" selection-start-column="35" selection-end-line="1052" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/sass/_plugins.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.784314">
+        <state vertical-scroll-proportion="-70.07843">
           <caret line="280" column="17" selection-start-line="280" selection-start-column="17" selection-end-line="280" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sass/_mixin.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.6470587">
+          <caret line="53" column="51" selection-start-line="53" selection-start-column="46" selection-end-line="53" selection-end-column="51" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sass/_content.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.25">
-          <caret line="2" column="15" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
+        <state vertical-scroll-proportion="-4.1960783">
+          <caret line="581" column="6" selection-start-line="581" selection-start-column="4" selection-end-line="581" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sass/_header.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.5882353">
-          <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
+        <state vertical-scroll-proportion="0.52024925">
+          <caret line="107" column="14" selection-start-line="107" selection-start-column="14" selection-end-line="107" selection-end-column="14" />
           <folding>
-            <element signature="e#2754#3079#0" expanded="false" />
-            <element signature="e#3089#3412#0" expanded="false" />
-            <element signature="e#3467#3701#0" expanded="false" />
-            <element signature="e#4865#5202#0" expanded="false" />
-            <element signature="e#5212#5254#0" expanded="false" />
-            <element signature="e#5270#5344#0" expanded="false" />
+            <element signature="e#2767#3092#0" expanded="false" />
+            <element signature="e#3102#3425#0" expanded="false" />
+            <element signature="e#3480#3714#0" expanded="false" />
+            <element signature="e#4878#5215#0" expanded="false" />
+            <element signature="e#5225#5267#0" expanded="false" />
+            <element signature="e#5283#5357#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/functions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8268398">
-          <caret line="1052" column="35" selection-start-line="1052" selection-start-column="35" selection-end-line="1052" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>

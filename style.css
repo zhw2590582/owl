@@ -765,6 +765,7 @@ input[type="text"], input[type="password"], textarea {
   background: rgba(255, 255, 255, 0.75);
   border: 1px solid #ddd;
   color: #867f6f;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075);
 }
 
 /* 实线边 */
@@ -1029,7 +1030,7 @@ a:focus {
 .glass_nav .header-inner .header-menu-list > li > a:hover, .glass_nav .header-inner .header-tool > li > a:hover, .glass_nav .header-inner .logo a:hover {
   color: #222;
 }
-.glass_nav .header-inner .header-menu-list > li:hover {
+.glass_nav .header-inner .header-menu .header-menu-list > li:hover {
   background: rgba(255, 255, 255, 0.24);
 }
 
@@ -1346,7 +1347,6 @@ li:hover > .sub-menu {
   font-size: 12px;
   color: #808080;
   vertical-align: middle;
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075);
   height: 26px;
   line-height: 26px;
   width: 100%;
@@ -2412,31 +2412,22 @@ body.page article .post-wrap .post-inner .post-body, body.error404 article .post
   width: 30px;
   text-align: center;
   line-height: 30px;
-  background: #00a1d6;
-  color: #fff;
 }
 .ed-widget form p .ed_tb_css {
   width: 100%;
-  padding-left: 35px;
+  padding-left: 30px;
   height: 30px;
   font-size: 12px;
-  color: #808080;
   vertical-align: middle;
-  border: 1px solid #ddd;
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075);
-  background: rgba(255, 255, 255, 0.75);
+  border-radius: 3px;
 }
 .ed-widget form p .ed_bt_css {
   display: block;
   width: 100%;
   height: 30px;
-  background: #00a1d6;
-  color: #fff;
   border: none;
   border-radius: 3px;
-}
-.ed-widget form p .ed_bt_css:hover {
-  background: #2EC7F9;
+  cursor: pointer;
 }
 .ed-widget form p .ed_validation {
   color: red;
