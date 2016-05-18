@@ -1922,6 +1922,7 @@ article .post-wrap .bottom_meta .meta_tabs a:before {
   box-shadow: none;
   height: auto;
   padding-bottom: 0;
+  background: none;
 }
 .layouts-box article .post-wrap .post-inner .featured-box .featured-image {
   margin-bottom: 0;
