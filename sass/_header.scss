@@ -1,6 +1,6 @@
 //header
 $header_h:50px;
-$banner_h:300px;
+$banner_h:350px;
 
 #header{
     position: relative;
@@ -105,7 +105,7 @@ $banner_h:300px;
       color: #222;
     }
   }
-  #menu-header > li:hover{
+  .header-menu-list > li:hover{
     background: rgba(255,255,255,0.24);
   }
 }

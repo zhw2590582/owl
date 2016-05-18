@@ -1043,7 +1043,6 @@ function island_comment($comment, $args, $depth) {
 	}
 	?>
 	<li <?php comment_class('clearfix'); ?> id="li-comment-<?php comment_ID() ?>">
-	<span class="commentcount"><?php echo $commentcountText; ?></span>
 		<div class="comment-block" id="comment-<?php comment_ID(); ?>">
 			<div class="author-img"><?php echo get_avatar($comment->comment_author_email, 50); ?></div>
 			<div class="comment-body clearfix">
@@ -1051,6 +1050,7 @@ function island_comment($comment, $args, $depth) {
 				    <span class="arrow left"></span>
                     <?php printf(__('<cite class="fn">%s</cite>', 'island') , get_comment_author_link()) ?>
                     <?php comment_admin_title($comment->comment_author_email); ?>
+                    <span class="fr"><?php echo $commentcountText; ?></span>
 				</div>
 				<div class="comment-text">
 					<?php comment_text() ?>			
