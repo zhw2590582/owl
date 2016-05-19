@@ -320,6 +320,17 @@ $lC:26px;
   }
 }
 
+#widget{
+  position: relative;
+
+  .lfixed{
+    position: fixed;
+    top: 10px;
+    width: 240px;
+  }
+}
+
+
 .main_header{
   padding: 0 15px;
   border-top-left-radius: 5px;
