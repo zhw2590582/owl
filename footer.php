@@ -154,7 +154,7 @@ $circle = cs_get_option( 'i_circle' );
                 <ul class="clearfix">
 					<?php $banner_c = ' '. $banner_d[color] .' url(\''. $banner_d[image] .'\') no-repeat center -10px'; ?>
 					<li data-banner="<?php echo $banner_c; ?>" data-body="" class="current">
-						<img src="">
+						<img src="images/default/featured_bg.png">
 						<span class="text-ellipsis">默认</span>
 					</li>
                     <?php 
