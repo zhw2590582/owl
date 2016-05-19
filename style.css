@@ -2928,7 +2928,6 @@ body.page article .post-wrap .post-inner .post-body, body.error404 article .post
   text-align: center;
   line-height: 50px;
   background: rgba(0, 0, 0, 0.5);
-  color: #fff;
   display: inline-block;
 }
 .cd-close-form:hover {
@@ -2948,6 +2947,13 @@ body.page article .post-wrap .post-inner .post-body, body.error404 article .post
   line-height: 15px;
   top: 10px;
   right: 12px;
+  color: #867f6f;
+}
+.modal-head .cd-close-form a {
+  color: #867f6f;
+}
+.modal-head .cd-close-form a:hover {
+  color: #333;
 }
 .modal-head .cd-close-form:before {
   font-size: 16px;
