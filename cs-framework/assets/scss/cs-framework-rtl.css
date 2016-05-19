@@ -1,7 +1,7 @@
 /*
 Error: File to import not found or unreadable: compass.
-       Load path: C:/Users/zhaohaiwei/Desktop/wordpress-theme-owl/owl-master/cs-framework/assets/scss
-        on line 1 of C:\Users\zhaohaiwei\Desktop\wordpress-theme-owl\owl-master\cs-framework\assets\scss\cs-framework-rtl.scss
+       Load path: C:/Users/zhaohaiwei/Desktop/wordpress-theme-owl/owl/cs-framework/assets/scss
+        on line 1 of C:\Users\zhaohaiwei\Desktop\wordpress-theme-owl\owl\cs-framework\assets\scss\cs-framework-rtl.scss
 
 1: @import "compass";
 2: @import "vendor/mixins";
@@ -11,7 +11,7 @@ Error: File to import not found or unreadable: compass.
 6:   margin-right: 0;
 
 Backtrace:
-C:\Users\zhaohaiwei\Desktop\wordpress-theme-owl\owl-master\cs-framework\assets\scss\cs-framework-rtl.scss:1
+C:\Users\zhaohaiwei\Desktop\wordpress-theme-owl\owl\cs-framework\assets\scss\cs-framework-rtl.scss:1
 E:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/import_node.rb:66:in `rescue in import'
 E:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/import_node.rb:45:in `import'
 E:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/tree/import_node.rb:28:in `imported_file'
@@ -49,4 +49,4 @@ E:/Program Files (x86)/Koala/bin/sass:18:in `<main>'
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: File to import not found or unreadable: compass.\A        Load path: C:/Users/zhaohaiwei/Desktop/wordpress-theme-owl/owl-master/cs-framework/assets/scss\A         on line 1 of C:\Users\zhaohaiwei\Desktop\wordpress-theme-owl\owl-master\cs-framework\assets\scss\cs-framework-rtl.scss\A \A 1: @import \"compass\";\A 2: @import \"vendor/mixins\";\A 3: \A 4: .cs-framework{\A 5:   margin-left: 20px;\A 6:   margin-right: 0;"; }
+  content: "Error: File to import not found or unreadable: compass.\A        Load path: C:/Users/zhaohaiwei/Desktop/wordpress-theme-owl/owl/cs-framework/assets/scss\A         on line 1 of C:\Users\zhaohaiwei\Desktop\wordpress-theme-owl\owl\cs-framework\assets\scss\cs-framework-rtl.scss\A \A 1: @import \"compass\";\A 2: @import \"vendor/mixins\";\A 3: \A 4: .cs-framework{\A 5:   margin-left: 20px;\A 6:   margin-right: 0;"; }

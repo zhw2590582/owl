@@ -8,7 +8,6 @@ function island_scripts_styles() {
 	
     /* 注册样式 */
     wp_enqueue_style('style', get_template_directory_uri() . "/style.css", array() , '0.9', 'screen');
-    wp_enqueue_style('nivo-css', get_template_directory_uri() . "/css/add.css", array() , '0.9', 'screen');
     wp_enqueue_style('font-awesome-css', get_template_directory_uri() . "/cs-framework/assets/css/font-awesome.css", array() , '0.3', 'screen');
 	
     /* 注册脚本 */
