@@ -2699,7 +2699,7 @@ body.page article .post-wrap .post-inner .post-body, body.error404 article .post
   position: fixed;
   z-index: 4;
   right: -1px;
-  bottom: 40%;
+  bottom: 30%;
   display: none;
   background: #f9f8f2;
   border: 1px solid #fff;
@@ -2806,10 +2806,10 @@ body.page article .post-wrap .post-inner .post-body, body.error404 article .post
   height: 100px;
   background: #333333;
   cursor: pointer;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.2);
 }
 .skin_switcher .skin_list li:hover, .skin_switcher .skin_list li.current {
-  border: 1px solid #94402F;
+  border: 2px solid #94402F;
 }
 .skin_switcher .skin_list li span {
   position: absolute;

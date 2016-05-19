@@ -190,7 +190,7 @@ $circle = cs_get_option( 'i_circle' );
                             $body = ' '. $skin['i_skin_body'][color] .' url(\''. $skin['i_skin_body'][image] .'\') '. $skin['i_skin_body'][repeat] .' '. $skin['i_skin_body'][position] .' '. $skin['i_skin_body'][attachment] .'';
                             echo '
                             <li data-banner="'. $banner .'" data-body="'. $body .'">
-                                <img src="'. $skin['i_skin_thumb'] .'">
+                                <img src="'. $skin['i_skin_thumb'] .'" height="96" width="96">
                                 <span class="text-ellipsis">'. $skin['i_skin_title'] .'</span>
                             </li>';
                           }
