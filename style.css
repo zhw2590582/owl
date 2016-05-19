@@ -1511,6 +1511,7 @@ article .post-wrap .post-inner .featured-box .featured-image {
 }
 article .post-wrap .post-inner .featured-box .featured-image a {
   display: block;
+  height: 100%;
 }
 article .post-wrap .post-inner .featured-box .featured-image img {
   height: auto;
@@ -2737,6 +2738,9 @@ body.page article .post-wrap .post-inner .post-body, body.error404 article .post
   font-size: 20px;
   padding: 9px 10px 10px 10px;
 }
+#footer_btn li .icon .fa {
+  font-size: 16px;
+}
 
 .show-box {
   display: none;
@@ -3551,11 +3555,10 @@ input#wp-submit {
 
 .donate-box {
   padding-bottom: 10px;
-  cursor: pointer;
 }
 
 .donate_title {
-  font-size: 14px;
+  font-size: 12px;
 }
 
 #donate {

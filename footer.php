@@ -129,7 +129,7 @@ $circle = cs_get_option( 'i_circle' );
 				}?>
 
 				<?php if ($donate == true) {
-					echo '<li class="donate-box">
+					echo '<li class="donate-box hand">
 							<a class="icon" href="javascript:void(0)">
 								<i class="fa fa-shopping-cart" aria-hidden="true"></i>
 								<span class="donate_title">'.$donate_title.'</span>
