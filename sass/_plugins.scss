@@ -818,38 +818,28 @@ input#wp-submit {
 }
 
 /* prettify */
-
-
-
 .prettyprint {
 	padding: 22px;
 	background-size: 100% 1.6em
 }
-
-
 
 .prettyprint.linenums {
 	padding: 22px 8px;
 	background-size: 100% 1.7em;
 }
 
-
-
 ol.linenums {
 	margin: 0 0 0 38px;
 	padding-left: 0
 }
 
-
-
 ol.linenums li {
 	margin-left:0 !important;
 	margin-bottom: 0;
 	padding-left: 16px;
-	line-height: 22px;
+	line-height: 23px;
+	list-style-type: decimal;
 }
-
-
 
 pre , code {
 	font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
