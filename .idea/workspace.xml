@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d8900106-f274-4529-9fb0-d361016eb2f3" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style.css.map" afterPath="$PROJECT_DIR$/style.css.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style.css" afterPath="$PROJECT_DIR$/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sass/_plugins.scss" afterPath="$PROJECT_DIR$/sass/_plugins.scss" />
     </list>
     <ignored path="Island.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,7 +27,7 @@
         <entry file="file://$PROJECT_DIR$/sass/_plugins.scss">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.4618834">
-              <caret line="91" column="18" selection-start-line="91" selection-start-column="18" selection-end-line="91" selection-end-column="18" />
+              <caret line="91" column="11" selection-start-line="91" selection-start-column="11" selection-end-line="91" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -71,12 +70,12 @@
         <option value="$PROJECT_DIR$/cs-framework/config/framework.config.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/sass/_base.scss" />
-        <option value="$PROJECT_DIR$/sass/_plugins.scss" />
         <option value="$PROJECT_DIR$/functions.php" />
         <option value="$PROJECT_DIR$/sass/_mixin.scss" />
         <option value="$PROJECT_DIR$/sass/_header.scss" />
         <option value="$PROJECT_DIR$/sass/_footer.scss" />
         <option value="$PROJECT_DIR$/sass/_content.scss" />
+        <option value="$PROJECT_DIR$/sass/_plugins.scss" />
       </list>
     </option>
   </component>
@@ -688,7 +687,7 @@
     <entry file="file://$PROJECT_DIR$/sass/_plugins.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4618834">
-          <caret line="91" column="18" selection-start-line="91" selection-start-column="18" selection-end-line="91" selection-end-column="18" />
+          <caret line="91" column="11" selection-start-line="91" selection-start-column="11" selection-end-line="91" selection-end-column="11" />
           <folding />
         </state>
       </provider>

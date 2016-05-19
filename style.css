@@ -2941,7 +2941,7 @@ body.page article .post-wrap .post-inner .post-body, body.error404 article .post
   font-size: 20px;
 }
 
-.user-modal-title .cd-close-form {
+.modal-head .cd-close-form {
   background: none;
   width: 15px;
   height: 15px;
@@ -2949,7 +2949,7 @@ body.page article .post-wrap .post-inner .post-body, body.error404 article .post
   top: 10px;
   right: 12px;
 }
-.user-modal-title .cd-close-form:before {
+.modal-head .cd-close-form:before {
   font-size: 16px;
 }
 
