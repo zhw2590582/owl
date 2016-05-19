@@ -21,32 +21,6 @@ function island_scripts_styles() {
 	$prettify = cs_get_option( 'i_code_prettify' ); 
 	if ($prettify == true) {
 		wp_enqueue_script('prettify');
-	}	
-	
-	/* 自定义皮肤 */
-    wp_register_style('switcher', get_template_directory_uri() . "/skin/switcher.php", array() , '0.3', 'screen');
-    wp_register_style('skin01', get_template_directory_uri() . "/skin/skin01.css", array() , '0.3', 'screen');
-    wp_register_style('skin02', get_template_directory_uri() . "/skin/skin02.css", array() , '0.3', 'screen');
-    wp_register_style('skin03', get_template_directory_uri() . "/skin/skin03.css", array() , '0.3', 'screen');
-    $skin = cs_get_option('i_skin');
-    $switcher = cs_get_option('i_switcher');
-
-    if ($switcher == true) {
-        wp_enqueue_style('switcher');
-    }else {
-		switch ($skin) {
-			case "i_skin01":
-				wp_enqueue_style('skin01');
-				break;
-
-			case "i_skin02":
-				wp_enqueue_style('skin02');
-				break;	
-				
-			case "i_skin03":
-				wp_enqueue_style('skin03');
-				break;					
-		}	
 	}
 
 	/* Logo字体图标 */	
@@ -54,6 +28,13 @@ function island_scripts_styles() {
 	$symbol = cs_get_option( 'i_symbol' );
 	if ( $symbol == 'i_font' ) {
 		wp_enqueue_style('logo');
+	}	
+	
+	/* 萤火虫背景 */
+	wp_register_script('circle', get_template_directory_uri() . '/js/circle.js', false, '0.3', true);
+	$circle = cs_get_option( 'i_circle' );
+ 	if ( $circle == true && !is_mobile() ) {
+		wp_enqueue_script('circle');	
 	}	
 	
 }

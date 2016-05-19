@@ -1432,6 +1432,19 @@ $options[]   = array(
 		array(
 		  'type'    => 'notice',
 		  'class'   => 'info',
+		  'content' => '萤火背景',
+		),
+		
+ 		// 萤火背景
+		array(
+          'id'    	  => 'i_circle',
+          'type'      => 'switcher',
+          'title'     => '萤火背景',
+        ),
+
+		array(
+		  'type'    => 'notice',
+		  'class'   => 'info',
 		  'content' => '音乐播放器',
 		),
 

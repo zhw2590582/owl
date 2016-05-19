@@ -37,6 +37,7 @@ $donate_wechat = cs_get_option( 'i_wechat_img' );
 $meta_data = get_post_meta( get_the_ID(), 'standard_options', true );
 $download = $meta_data['i_download'];
 $index = $meta_data['i_index'];
+$circle = cs_get_option( 'i_circle' );
 ?> 
 	
 	<footer id="footer">
@@ -270,6 +271,9 @@ $index = $meta_data['i_index'];
 		<?php get_sidebar(); ?>
 	<?php }?>
 	
+	<?php if ( $circle == true && !is_mobile()  ) { ?>
+		<canvas id="pixie"></canvas>
+	<?php }?>	
 	
 	<?php wp_footer(); ?>
 	<script>
