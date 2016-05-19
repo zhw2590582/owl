@@ -89,6 +89,20 @@
 	font-size: 20px;
 }
 
+.user-modal-title{
+	.cd-close-form {
+	    background: none;
+		width: 15px;
+		height: 15px;
+		line-height: 15px;
+		top: 10px;
+		right: 12px;
+		&:before{
+			font-size: 16px;
+		}
+	}
+}
+
 #login-form {
 	padding: 15px;
 }
