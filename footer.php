@@ -182,10 +182,10 @@ $circle = cs_get_option( 'i_circle' );
 		if(isset($_COOKIE["notice"])){
 		}else{?>	
 			<div class="cd-user-modal is-visible notice-modal">
-				<a href="#" class="cd-close-form"></a>
 				<div class="cd-user-modal-container">
 					<div class="modal-head clearfix">
 						<div class="modal-title"><?php echo $notice_title ?></div>
+						<a href="#" class="cd-close-form"></a>
 					</div>
 					<div class="modal-main">
 						<?php echo $notice_main ?>
@@ -200,10 +200,10 @@ $circle = cs_get_option( 'i_circle' );
 
 	<?php if ( is_single() && !is_mobile() && $download) {?>	
         <div class="cd-user-modal download-modal">
-			<a href="#" class="cd-close-form"></a>
             <div class="cd-user-modal-container">
                 <div class="modal-head">
                     <div class="modal-title"><i class="fa fa-download"></i>资源下载</div>
+					<a href="#" class="cd-close-form"></a>
                 </div>
                 <div class="modal-main">
                     <div class="dl-btn"><a class="btn" href="javascript:void(0)" target="_black"><i class="fa fa-arrow-circle-o-down"></i>点击下载</a></div>
