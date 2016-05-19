@@ -1,6 +1,7 @@
 <?php
  // 获取选项
 error_reporting(0);
+$banner_d = cs_get_option( 'i_banner_image' );
 $switcher = cs_get_option( 'i_switcher' );
 $edit = cs_get_option( 'i_footer_edit' );
 $copyright = cs_get_option( 'i_foot_copyright' );  
@@ -151,6 +152,11 @@ $circle = cs_get_option( 'i_circle' );
             </div>
             <div class="container skin_list">
                 <ul class="clearfix">
+					<?php $banner_c = ' '. $banner_d[color] .' url(\''. $banner_d[image] .'\') no-repeat center -10px'; ?>
+					<li data-banner="<?php echo $banner_c; ?>" data-body="" class="current">
+						<img src="">
+						<span class="text-ellipsis">默认</span>
+					</li>
                     <?php 
                         $skins = cs_get_option( 'i_skin_custom' );
                         if( ! empty( $skins ) ) {
