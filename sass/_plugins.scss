@@ -96,11 +96,11 @@
 		line-height: 15px;
 		top: 10px;
 		right: 12px;
-	    @include itme-c1;
 		&:before{
 			font-size: 16px;
 		}
 	}
+  @include itme-c1;
 }
 
 #login-form {
@@ -695,90 +695,60 @@ input#wp-submit {
 	right:20px;
 }
 
+.donate-box{
+  padding-bottom: 10px;
+  cursor: pointer;
+}
+
+.donate_title{
+  font-size: 14px;
+}
+
 #donate {
 	overflow: hidden;
-	position: fixed;
-	bottom: 30px;
-	right: 0;
+	bottom: 50px;
+	right: -4px;
 	zoom: 1;
-	width: 190px;
-	height: 280px;
-	border: 1px solid #444;
+	width: 180px;
+	height: 260px;
+  	padding: 10px;
 	border-right: none;
-	border-radius: 5px 0 0 5px;
-	color: #ddd;
-	-webkit-transition: right 0.3s,height 0.5s 0.3s;
-	-moz-transition: right 0.3s,height 0.5s 0.3s;
-	transition: right 0.3s,height 0.5s 0.3s;
-	filter: progid:DXImageTransform.Microsoft.gradient(enabled="true",startColorstr="#CC000000",endColorstr="#CC000000");
-	background-color: rgba(0,0,0,0.8);
+    @include itme-bg;
 }
 
-#donate .full {
-	float: left;
-	width: 190px;
-	margin: 0;
-	padding: 10px 15px;
-	font: 12px/20px Arial;
-}
-
-#donate .full h5 {
-	margin: 0;
+#donate h5 {
+	margin: 0 0 10px 0;
 	padding: 0;
-	font: bold 14px/20px Arial;
+  	font-size: 16px;
 }
 
-#donate .full .close {
-	position: absolute;
-	top: 12px;
-	right: 5px;
-	width: 16px;
-	height: 16px;
-	color: #e33;
-	font: bold 14px/16px Tahoma;
-	cursor: pointer;
-}
-
-#donate .full .qr {
+#donate .qr {
 	height: 160px;
-	padding:10px;
-	margin-top: 5px;
-	border-radius: 5px 5px 0 0;
-	background-color: #f1f1f1;
+	padding:5px;
+	border-radius: 3px 3px 0 0;
 	background-repeat: no-repeat;
 	background-position: center;
 }
 
-#donate .full .pays {
+#donate .pays {
 	overflow: hidden;
 	border-radius: 0 0 5px 5px;
-	background: #111;
+	margin-bottom: 10px;
 	line-height: 24px;
 	text-align: center;
 }
 
-#donate .full .pays a {
+#donate .pays a {
 	float: left;
 	width: 50%;
-	color: #888;
 	text-decoration: none;
 }
 
-#donate .full .pays a:hover {
-	color: #eee;
-}
-
-#donate .full .note {
+#donate .note {
 	margin-top: 5px;
-	color: #aaa;
 }
 
-#donate .alipay .pays a[rev="alipay"],#donate .wechat .pays a[rev="wechat"] {
-	background: #f1f1f1;
-	color: #555;
-}
-
-#donate .full .qr img{
+#donate .qr img{
 	display:none;
 }
 
@@ -796,32 +766,6 @@ input#wp-submit {
 
 #donate .wechat .name:before {
 	content: "微信";
-}
-
-#donate .mini {
-	display: none;
-	float: left;
-	width: 30px;
-	height: 110px;
-	padding: 10px 5px;
-	font: 12px/18px Tahoma;
-	text-align: center;
-	cursor: pointer;
-}
-
-#donate.minimize {
-	width: 230px;
-	right: -200px;
-	height: 110px;
-	background-color: rgba(0,0,0,0.6);
-}
-
-#donate.minimize:hover {
-	background-color: rgba(0,0,0,0.8);
-}
-
-#donate.minimize .mini {
-	display: block;
 }
 
 #pixie {

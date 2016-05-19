@@ -32,7 +32,6 @@ $sidebar = cs_get_option( 'i_sidebar' );
 $topbar = cs_get_option( 'i_topbar' );
 $donate = cs_get_option( 'i_donate' );
 $donate_title = cs_get_option( 'i_donate_title' );
-$donate_des = cs_get_option( 'i_donate_des' );
 $donate_alipay = cs_get_option( 'i_alipay_img' );
 $donate_wechat = cs_get_option( 'i_wechat_img' );
 $meta_data = get_post_meta( get_the_ID(), 'standard_options', true );
@@ -118,7 +117,7 @@ $circle = cs_get_option( 'i_circle' );
 				
 				<?php if ($qrcode == true) {
 					echo '<li>
-							<a class="icon" title="二维码" href="javascript:void(0)">
+							<a class="icon" href="javascript:void(0)">
                                 <i class="fa fa-qrcode"></i>
 							</a>
 							<div class="show-box">
@@ -127,12 +126,38 @@ $circle = cs_get_option( 'i_circle' );
 								</div>
 							</div>
 						</li>';
-				}?>	
+				}?>
+
+				<?php if ($donate == true) {
+					echo '<li class="donate-box">
+							<a class="icon" href="javascript:void(0)">
+								<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+								<span class="donate_title">'.$donate_title.'</span>
+							</a>
+							<div class="show-box">
+								<div id="donate" class="donate-show footer-show">
+									<div class="full alipay">
+										<h5>'.$donate_title.'</h5>
+										<div class="qr">
+											<img class="alipay_img" src="'.$donate_alipay.'" height="150" width="150">
+											<img class="wechat_img" src="'.$donate_wechat.'" height="150" width="150">
+										</div>
+										<div class="pays">
+											<a id="donate_alipay" href="javascript://" rev="alipay">支付宝</a>
+											<a id="donate_wechat" href="javascript://" rev="wechat">微信</a>
+										</div>
+										<p class="note">
+											打开<span class="name"></span>，使用扫一扫<br>
+										</p>
+									</div>
+								</div>
+							</div>
+						</li>';
+				}?>
 
 			</ul>
 		</div>
-	<?php }?>	
-
+	<?php }?>
 
 	<?php if ($player_mobi == true && is_mobile() ) { }else{ ?>
 		<?php if ($player == true && ! empty( $player_id ) && function_exists('cue_playlist') ) {?>
@@ -247,31 +272,6 @@ $circle = cs_get_option( 'i_circle' );
             </div>
         </div>
 	<?php }	?>
-	
-	<?php if ($donate == true) {?>
-		<div id="donate">
-			<div class="mini">
-				«<br>
-				<?php echo $donate_title; ?>
-			</div>
-			<div class="full alipay">
-				<h5><?php echo $donate_title; ?></h5>
-				<p><?php echo $donate_des; ?></p>
-				<div class="qr">
-					<img class="alipay_img" src="<?php echo $donate_alipay; ?>" height="140" width="140">
-					<img class="wechat_img" src="<?php echo $donate_wechat; ?>" height="140" width="140">
-				</div>
-				<div class="pays">
-					<a id="donate_alipay" href="javascript://" rev="alipay">支付宝</a>
-					<a id="donate_wechat" href="javascript://" rev="wechat">微信</a>
-				</div>
-				<p class="note">
-					打开<span class="name"></span>，使用扫一扫<br>
-				</p>
-				<i class="close">x</i>
-			</div>
-		</div>
-	<?php }?>
 	
 	<?php if ($sidebar == true) {?>
 		<?php get_sidebar(); ?>

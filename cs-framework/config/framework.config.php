@@ -1094,15 +1094,7 @@ $options[]      = array(
           'type'    => 'text',
           'title'   => '标题',
           'default' => '购买主题',
-        ),	
-
- 		// 描述
-        array(
-          'id'      => 'i_donate_des',
-          'type'    => 'text',
-          'title'   => '描述',
-          'default' => '少年，你有多忧伤！',
-        ),		
+        ),
 
 		// 支付宝二维码
         array(
