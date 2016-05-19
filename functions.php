@@ -92,6 +92,18 @@ function nav_css($classes) {
 }
 add_filter('body_class','nav_css');
 
+/* 小工具类名 */
+function widget_css($classes) {
+    $fixed = cs_get_option( 'i_widget_fixed' );
+	if ( $fixed == true ) {
+        $classes[] = 'widget_fixed';
+    }else {
+        $classes[] = '';
+	}
+    return $classes;
+}
+add_filter('body_class','widget_css');
+
 /* 引入密钥验证 */
 include ('verify.php');
 

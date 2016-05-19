@@ -931,6 +931,12 @@ $options[]      = array(
 		  'title'     => '左边栏',
 		), 
 
+		 // 滚动固定小工具
+		array(
+		  'id'    	  => 'i_widget_fixed',
+		  'type'      => 'switcher',
+		  'title'     => '滚动固定小工具',
+		),
 		
 		// 边栏轮播图
 		 array(

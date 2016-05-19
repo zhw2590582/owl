@@ -50,7 +50,7 @@ $('body').on('click', '#comment-nav-below a', function(e) {
 //固定小工具
 var documentHeight = 0;
 var topPadding = 15;
-var item = $("#sidebar aside:last-child");
+var item = $(".widget_fixed #sidebar aside:last-child");
 $(function() {
 	var offset = item.offset();
 	documentHeight = $(document).height();
@@ -223,12 +223,6 @@ $(function() {
 	});
 	
 //捐赠
-	$("#donate .close").click(function() {
-		$("#donate").addClass('minimize');
-	});
-	$("#donate .mini").click(function() {
-		$("#donate").removeClass('minimize');
-	});
 	$("#donate #donate_alipay").click(function() {
 		$("#donate .full").addClass('alipay').removeClass('wechat');
 	});
