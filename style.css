@@ -253,31 +253,6 @@ mark,
   padding: .1em .3em;
   vertical-align: baseline; }
 
-pre {
-  background: #f9f9f9;
-  border-left: .2rem solid #5764c6;
-  line-height: 1.8rem;
-  margin-bottom: 1em;
-  margin-top: 1em;
-  overflow: auto;
-  padding: 1.5rem; }
-
-code {
-  background: #efefef;
-  border-radius: .2rem;
-  display: inline;
-  font-size: 1em;
-  padding: .1em .3em;
-  vertical-align: baseline;
-  white-space: nowrap; }
-
-pre code {
-  background: transparent;
-  border-left: 0;
-  line-height: 1.8rem;
-  margin-bottom: 0;
-  margin-top: 0; }
-
 .table {
   border-collapse: collapse;
   border-spacing: 0;
