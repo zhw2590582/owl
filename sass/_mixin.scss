@@ -211,14 +211,17 @@ input[type="text"],,input[type="password"],textarea{
 }
 
 #widget-tab .current{
-	
+	a{
+		color:#856F62;
+	}
 	&:after{
 		position:absolute;
-		bottom:0;
+		bottom:-6px;
+		left:0;
 		content:'';
 		width:100%;
 		height:1px;
-		border-bottom:1px solid red;
+		border-bottom:1px solid #856F62;
 	}
 }
 
