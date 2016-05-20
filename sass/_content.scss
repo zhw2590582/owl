@@ -326,7 +326,7 @@ $lC:26px;
   .lfixed{
     position: fixed;
     top: 10px;
-    width: 240px;
+    width: $sidebar_w - 10px;
   }
 }
 

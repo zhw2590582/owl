@@ -17,10 +17,11 @@ function island_scripts_styles() {
     wp_enqueue_script('custom-js', get_template_directory_uri() . '/js/custom.js', false, '2.0', true);
 
 	/* 代码高亮 */
-    wp_register_script('prettify', get_template_directory_uri() . '/js/prettify.js', false, '0.3', true);
+    wp_register_script('prism-js', get_template_directory_uri() . '/js/prism.js', false, '0.3', true);
 	$prettify = cs_get_option( 'i_code_prettify' ); 
 	if ($prettify == true) {
-		wp_enqueue_script('prettify');
+		wp_enqueue_style('prism-style', get_template_directory_uri() . "css/prism.css", array() , '0.9', 'screen');
+		wp_enqueue_script('prism-js');
 	}
 
 	/* Logo字体图标 */	
