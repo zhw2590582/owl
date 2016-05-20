@@ -7,6 +7,50 @@
 @mixin bg-w ($n) {
     background: rgba(255, 255, 255, $n);
 }
+//实线边
+$bds_t:#e8e3d3;
+@mixin bds () {
+    border:1px solid $bds_t;
+}
+@mixin bdsl () {
+    border-left:1px solid $bds_t;
+}
+@mixin bdsr () {
+    border-right:1px solid $bds_t;
+}
+@mixin bdsb () {
+    border-bottom:1px solid $bds_t;
+}
+@mixin bdst () {
+    border-top:1px solid $bds_t;
+}
+//虚线边
+$bdd_t:#e8e3d3;
+@mixin bddl () {
+    border-left:1px dashed $bdd_t;
+}
+@mixin bddr () {
+    border-right:1px dashed $bdd_t;
+}
+@mixin bddb () {
+    border-bottom:1px dashed $bdd_t;
+}
+@mixin bddt () {
+    border-top:1px dashed $bdd_t;
+}
+
+//常规色
+body{
+    color: #867f6f;
+}
+a{
+    color: #BB4E18;
+}
+a:hover,
+a:focus {
+    color: #333;
+}
+
 //常用背景 
 @mixin itme-bg () {
     background: #f9f8f2;
@@ -54,49 +98,6 @@ input[type="text"],,input[type="password"],textarea{
     border: 1px solid #ddd;
     color: #867f6f;
     box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075);
-}
-
-//实线边
-$bds_t:#e8e3d3;
-@mixin bds () {
-    border:1px solid $bds_t;
-}
-@mixin bdsl () {
-    border-left:1px solid $bds_t;
-}
-@mixin bdsr () {
-    border-right:1px solid $bds_t;
-}
-@mixin bdsb () {
-    border-bottom:1px solid $bds_t;
-}
-@mixin bdst () {
-    border-top:1px solid $bds_t;
-}
-//虚线边
-$bdd_t:#e8e3d3;
-@mixin bddl () {
-    border-left:1px dashed $bdd_t;
-}
-@mixin bddr () {
-    border-right:1px dashed $bdd_t;
-}
-@mixin bddb () {
-    border-bottom:1px dashed $bdd_t;
-}
-@mixin bddt () {
-    border-top:1px dashed $bdd_t;
-}
-//常规色
-body{
-    color: #867f6f;
-}
-a{
-    color: #BB4E18;
-}
-a:hover,
-a:focus {
-    color: #333;
 }
 
 //主体背景+左边栏
@@ -209,8 +210,16 @@ a:focus {
     }
 }
 
-#widget-tab .current a{
-    background: #E2DCCB;
+#widget-tab .current{
+	
+	&:after{
+		position:absolute;
+		bottom:0;
+		content:'';
+		width:100%;
+		height:1px;
+		border-bottom:1px solid red;
+	}
 }
 
 
