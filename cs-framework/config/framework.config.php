@@ -1424,7 +1424,7 @@ $options[]   = array(
           'id'    	  => 'i_code_prettify',
           'type'      => 'switcher',
           'title'     => '代码高亮',
-		  'label'     => '使用pre标签把你的高亮代码包括起来',
+		  'label'     => '使用前请关注使用说明',
         ),
 
 		array(
@@ -1451,7 +1451,7 @@ $options[]   = array(
           'id'    	  => 'i_player',
           'type'      => 'switcher',
           'title'     => '开启音乐播放器',
-		  'help'    => '首次开启后，刷新页面，按提示安装cue音乐插件',
+		  'label'     => '使用前请关注使用说明',
         ),
 
 		// 歌单ID
