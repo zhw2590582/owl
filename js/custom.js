@@ -48,29 +48,16 @@ $('body').on('click', '#comment-nav-below a', function(e) {
 });
 
 //固定小工具
-var documentHeight = 0;
-var topPadding = 15;
-var item = $(".widget_fixed #sidebar aside:last-child");
-$(function() {
-	var offset = item.offset();
-	documentHeight = $(document).height();
-	$(window).scroll(function() {
-		var sideBarHeight = item.height();
-		if ( item.length > 0 ) { 
-			if ($(window).scrollTop() > offset.top) {
-				var newPosition = ($(window).scrollTop() - offset.top) + topPadding;
-				var maxPosition = documentHeight - (sideBarHeight + 368);
-				if (newPosition > maxPosition) {
-					newPosition = maxPosition;
-				}
-				item.addClass('lfixed');
-			} else {
-				item.removeClass('lfixed');
-			};
-		};
-	});
+$(window).bind('scroll', function() {
+	var item = $(".widget_fixed #sidebar aside:last-child");
+	var navHeight = $( window ).height() - item.height();
+	 if ($(window).scrollTop() > navHeight) {
+		 item.addClass('lfixed');
+	 }
+	 else {
+		 item.removeClass('lfixed');
+	 }
 });
-
 
 //选项卡
 (function ($) {
