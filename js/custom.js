@@ -48,9 +48,11 @@ $('body').on('click', '#comment-nav-below a', function(e) {
 });
 
 //固定小工具
+var item = $(".widget_fixed #sidebar aside:last-child");
+if (item.length > 0) {
+	var navHeight = item.offset().top;
+}
 $(window).bind('scroll', function() {
-	var item = $(".widget_fixed #sidebar aside:last-child");
-	var navHeight = $( window ).height() - item.offset();
 	 if ($(window).scrollTop() > navHeight) {
 		 item.addClass('lfixed');
 	 }
