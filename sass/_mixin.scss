@@ -15,22 +15,24 @@
     border-radius: 3px;
 }
 //字体颜色01
+$c1: #867f6f #333 !default; //第一个为默认色，第二个为鼠标经过色
 @mixin itme-c1 () {
-    color: #867f6f;
+    color: nth($c1,1);
     a{
-        color: #867f6f;
+        color: nth($c1,1);
         &:hover{
-            color: #333;
+            color: nth($c1,2);
         }
     }
 }
 //字体颜色02
+$c2: #a49d8c #333 !default;
 @mixin itme-c2 () {
-    color: #a49d8c;
+    color:nth($c2,1);
     a{
-        color: #a49d8c;
+        color: nth($c2,1);
         &:hover{
-            color: #333;
+            color: nth($c2,2);
         }
     }
 }
@@ -253,6 +255,7 @@ a:focus {
     border-right-color:#fff;
 }
 
+//捐赠按钮
 #donate .qr,#donate .alipay .pays a[rev="alipay"],#donate .wechat .pays a[rev="wechat"]{
     background: #D4CEBF;
 }
