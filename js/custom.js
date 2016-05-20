@@ -50,7 +50,7 @@ $('body').on('click', '#comment-nav-below a', function(e) {
 //固定小工具
 $(window).bind('scroll', function() {
 	var item = $(".widget_fixed #sidebar aside:last-child");
-	var navHeight = $( window ).height() - item.height();
+	var navHeight = $( window ).height() - item.offset();
 	 if ($(window).scrollTop() > navHeight) {
 		 item.addClass('lfixed');
 	 }
