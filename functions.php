@@ -20,7 +20,7 @@ function island_scripts_styles() {
     wp_register_script('prism-js', get_template_directory_uri() . '/js/prism.js', false, '0.3', true);
 	$prettify = cs_get_option( 'i_code_prettify' ); 
 	if ($prettify == true) {
-		wp_enqueue_style('prism-style', get_template_directory_uri() . "css/prism.css", array() , '0.9', 'screen');
+		wp_enqueue_style('prism-style', get_template_directory_uri() . "/css/prism.css", array() , '0.9', 'screen');
 		wp_enqueue_script('prism-js');
 	}
 
