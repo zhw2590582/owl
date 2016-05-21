@@ -702,9 +702,9 @@ article{
 
 .min_comments{
   padding: 0 5px;
-  @include itme-bg2;
 
   ul{
+    @include itme-bg2;
     padding: 5px 0 0;
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px;

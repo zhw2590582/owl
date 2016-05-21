@@ -1369,7 +1369,7 @@ li:hover > .sub-menu {
   border-radius: 5px;
   padding: 5px;
   background: #fff;
-  box-shadow: 0 0 1px #dcb891;
+  box-shadow: 0 0 1px #C3BDAA;
 }
 .main_header .avatar_box .me_img .me_name {
   font-size: 14px;
@@ -1468,7 +1468,7 @@ article .post-wrap .post-inner .featured-box {
   padding: 7px;
   border-radius: 3px;
   background: #fff;
-  box-shadow: 0 0 1px #dcb891;
+  box-shadow: 0 0 1px #C3BDAA;
 }
 article .post-wrap .post-inner .featured-box .featured-image {
   height: 132px;
@@ -1631,10 +1631,10 @@ article .post-wrap .bottom_meta .meta_tabs a:before {
 
 .min_comments {
   padding: 0 5px;
-  background: #fff;
-  box-shadow: 0 0 1px #dcb891;
 }
 .min_comments ul {
+  background: #fff;
+  box-shadow: 0 0 1px #C3BDAA;
   padding: 5px 0 0;
   border-bottom-left-radius: 3px;
   border-bottom-right-radius: 3px;
@@ -1966,7 +1966,7 @@ article .post-wrap .bottom_meta .meta_tabs a:before {
   width: 42px;
   height: 42px;
   background: #fff;
-  box-shadow: 0 0 1px #dcb891;
+  box-shadow: 0 0 1px #C3BDAA;
   box-shadow: 0 0 1px rgba(0, 0, 0, 0.15) inset;
   border-radius: 46px;
 }
@@ -1993,7 +1993,7 @@ article .post-wrap .bottom_meta .meta_tabs a:before {
 .comments #comments .commentlist li .comment-block .comment-body {
   border-radius: 5px;
   background: #fff;
-  box-shadow: 0 0 1px #dcb891;
+  box-shadow: 0 0 1px #C3BDAA;
 }
 .comments #comments .commentlist li .comment-block .comment-body .comment-name {
   position: relative;
@@ -2455,7 +2455,7 @@ body.page article .post-wrap .post-inner .post-body, body.error404 article .post
   border-radius: 50%;
   content: "";
   background: #fff;
-  box-shadow: 0 0 1px #dcb891;
+  box-shadow: 0 0 1px #C3BDAA;
   box-shadow: 0 0 0 4px #fff;
 }
 
@@ -2478,7 +2478,7 @@ body.page article .post-wrap .post-inner .post-body, body.error404 article .post
   display: inline-block;
   padding: 10px 15px;
   background: #fff;
-  box-shadow: 0 0 1px #dcb891;
+  box-shadow: 0 0 1px #C3BDAA;
   color: #867f6f;
 }
 .tl-content a {

@@ -56,7 +56,7 @@ $itme-bg: #f9f8f2;
 $itme-bg2: #fff;
 @mixin itme-bg2 () {
   background: $itme-bg2;
-  box-shadow: 0 0 1px rgb(220, 184, 145);
+  box-shadow: 0 0 1px #C3BDAA;
 }
 
 //常用背景3:侧边栏控制器、小工具标题装饰、捐赠二维码
