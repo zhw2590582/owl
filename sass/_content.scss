@@ -19,14 +19,16 @@ $lC:26px;
 
     #sidebar{
         width: $sidebar_w;
-        padding: 10px 0 10px 10px;
+        padding: 0 0 10px 10px;
         position: relative;
         border-bottom-left-radius: 5px;
 
         #about{
           @include itme-bg;
           margin-bottom: 20px;
-          padding: 10px;
+          padding: 10px 10px 5px;
+          border-top-left-radius: 0;
+          border-top-right-radius: 0;
 
           .social_link{
 
@@ -93,7 +95,16 @@ $lC:26px;
 
     .current{
       a{
-
+        color: nth($c3,1);
+      }
+      &:after{
+        position:absolute;
+        bottom:-6px;
+        left:0;
+        content:'';
+        width:100%;
+        height:1px;
+        border-bottom:1px solid nth($c3,1);
       }
     }
   }
@@ -145,7 +156,7 @@ $lC:26px;
 
   aside{
     @include itme-bg;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     padding: 10px;
 
     .widget-title{
@@ -153,6 +164,29 @@ $lC:26px;
       padding-bottom: 10px;
       font-size: 18px;
       @include bdsb;
+      text-align: center;
+
+      span{
+        position: relative;
+        display: block;
+        &:before,&:after{
+          content: '';
+          height: 8px;
+          width: 8px;
+          position: absolute;
+          border-radius: 8px;
+          z-index: 0;
+          top: 8px;
+          background-color: $itme-bg3;
+          box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2) inset;
+        }
+        &:before{
+          left: 10px;
+        }
+        &:after{
+          right: 10px;
+        }
+      }
     }
 
      > ul{
@@ -161,7 +195,7 @@ $lC:26px;
           padding-bottom: 5px;
           margin-bottom: 5px;
           line-height: 20px;
-          border-bottom: 1px dashed #ECECEC;
+          @include bddb;
 
           &:before{
 
@@ -294,8 +328,9 @@ $lC:26px;
     font-size: 0.928571429rem;
     line-height: 1.846153846;
 
-    th{
+    #today,th{
       text-align:center;
+      background:$itme-bg3;
     }
 
     td{
@@ -356,7 +391,8 @@ $lC:26px;
         width: 80px;
         height: 80px;
         border-radius: 5px;
-        box-shadow:0 0 1px rgba(0, 0, 0, 0.3);
+        padding: 5px;
+        @include itme-bg2;
       }
 
       .me_name{
@@ -477,6 +513,7 @@ article{
         overflow: hidden;
         padding: 7px;
         border-radius: 3px;
+        @include itme-bg2;
 
         .featured-image{
           height: 132px;
@@ -652,9 +689,20 @@ article{
   }
 }
 
+.actions-menu{
+  a{
+    span{
+      background: nth($mh_c,2);
+    }
+    &:hover span,&.selected span{
+      background: nth($mh_c,3);
+    }
+  }
+}
 
 .min_comments{
   padding: 0 5px;
+  @include itme-bg2;
 
   ul{
     padding: 5px 0 0;
@@ -902,12 +950,14 @@ article{
   top: 50%;
   margin-top: -42px;
   padding: 35px 0 0 4px;
+  background: $itme-bg3;
   span{
     display: inline-block;
     float: left;
     width: 1px;
     height: 15px;
     margin-right: 3px;
+    background: $itme-bg2;
   }
 }
 
@@ -1034,6 +1084,7 @@ article{
             padding: 5px;
             width: 42px;
             height: 42px;
+            @include itme-bg2;
             box-shadow: 0 0 1px rgba(0,0,0,.15) inset;
             border-radius: 46px;
 
@@ -1063,7 +1114,7 @@ article{
 
           .comment-body{
             border-radius: 5px;
-            @include bds;
+            @include itme-bg2;
 
             .comment-name{
               position: relative;
@@ -1092,6 +1143,8 @@ article{
                   top:-14px;
                   right: 10px;
                   left: auto;
+                  border:7px solid transparent;
+                  border-right-color:$itme-bg2;
                 }
               }
 
@@ -1434,6 +1487,7 @@ body.page,body.error404{
   margin: 30px 0;
   padding: 0 15px;
   .post-download{
+    background: $itme-bg2;
     @include bds;
     border-radius: 5px;
     .dl-title,.dl-box > div,.dl-view{
@@ -1568,6 +1622,12 @@ body.page,body.error404{
   border-width: 3px;
   border-radius: 50%;
   content: "";
+  @include itme-bg2;
+  box-shadow: 0 0 0 4px $itme-bg2;
+}
+
+.tl-wrap:hover:before {
+  border-color: nth($btn,1);
 }
 
 .tl-date {
@@ -1584,9 +1644,7 @@ body.page,body.error404{
   position: relative;
   display: inline-block;
   padding: 10px 15px;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
-  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
-
+  @include itme-bg2;
   @include itme-c1;
 
   .arrow{
@@ -1615,6 +1673,8 @@ body.page,body.error404{
       left: 1px;
       margin-top: -9px;
       border-left-width:0;
+      border-color:transparent;
+      border-right-color:$itme-bg2;
     }
   }
 }

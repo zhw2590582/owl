@@ -1,1 +1,167 @@
+@charset "utf-8";
+//常规色
+body{
+  color: #867f6f;
+}
+a{
+  color: #BB4E18;
+}
+a:hover, a:focus {
+  color: #333;
+}
 
+//所有实线边
+$bds_t:#EAE7DE;
+
+//所有虚线边
+$bdd_t:#EAE7DE;
+
+//所有按钮
+$btn: #00a1d6 #fff !default;//第一个为背景色，第二个为文字颜色，鼠标经过背景色线性加深5%
+.btn,#wp-submit,.submit{
+  border: 1px solid nth($btn,1);
+  color: nth($btn,2);
+  background: nth($btn,1);
+  &:hover {
+    color: nth($btn,2);
+    background: darken(nth($btn,1),5%);
+  }
+}
+
+//所有输入框
+input[type="text"],,input[type="password"],textarea{
+  @include bg-w (0.75);
+  border: 1px solid #ddd;
+  color: #867f6f;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075);
+}
+
+//常用背景:包含文章、小工具、浮动按钮等主要部件
+$itme-bg: #f9f8f2;
+@mixin itme-bg () {
+  background: $itme-bg;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 1px 1px rgba(0,0,0,0.15);
+  border-radius: 3px;
+}
+
+//常用背景2:头像、特色图、内页评论、首页评论
+$itme-bg2: #fff;
+@mixin itme-bg2 () {
+  background: $itme-bg2;
+  box-shadow: 0 0 1px rgb(220, 184, 145);
+}
+
+//常用背景3:侧边栏控制器、小工具标题装饰、捐赠二维码、首页评论
+$itme-bg3: #E2DBCA;
+@mixin itme-bg3 () {
+  background: $itme-bg3;
+}
+
+//字体颜色01:大部分链接颜色
+$c1: #867f6f #333 !default; //第一个为默认色，第二个为鼠标经过色
+@mixin itme-c1 () {
+  color: nth($c1,1);
+  a{
+    color: nth($c1,1);
+    &:hover{
+      color: nth($c1,2);
+    }
+  }
+}
+//字体颜色02:小部分链接颜色
+$c2: #a49d8c #333 !default;
+@mixin itme-c2 () {
+  color:nth($c2,1);
+  a{
+    color: nth($c2,1);
+    &:hover{
+      color: nth($c2,2);
+    }
+  }
+}
+//字体颜色03:极小部分链接颜色
+$c3: #443A2D #333 !default;
+@mixin itme-c3 () {
+  color:nth($c3,1);
+  a{
+    color: nth($c3,1);
+    &:hover{
+      color: nth($c3,2);
+    }
+  }
+}
+
+//顶部公告条
+.notice{
+  background: #fff;
+  border-bottom: 1px solid #E8E3D3;
+}
+
+//内容主体背景、左边栏
+.content-inner,#lSidebar{
+  background: #f0f0f0;
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+//顶部菜单
+$hi_c:#F9F8F3 #867f6f #333 !default;//第一个为背景色，第一个为链接正常色，第三个为鼠标经过色
+.header-inner{
+  background: nth($hi_c,1);
+  color: nth($hi_c,1);
+  a{
+    color: nth($hi_c,2);
+    &:hover{
+      color: nth($hi_c,3);
+    }
+  }
+}
+
+//主体菜单
+$mh_c:#F9F8F3 #867f6f #333 !default;
+.main_header{
+  background: nth($mh_c,1);
+  color: nth($mh_c,2);
+  a{
+    color: nth($mh_c,2);
+    &:hover{
+      color: nth($mh_c,3);
+    }
+  }
+}
+
+//二级菜单
+$sm_c:#fff #867F6F #fff !default;
+.sub-menu{
+  background: nth($sm_c,1);
+  li{
+    a{
+      color:nth($sm_c,2);
+      &:hover{
+        color: nth($sm_c,3);
+        background: nth($sm_c,2);
+      }
+    }
+  }
+  &:after{
+    border:7px solid transparent;
+    border-bottom-color:nth($sm_c,1);
+  }
+}
+
+//页脚
+#footer{
+  background: #D2CFC1;
+  color:#333;
+  a{
+    color:#333;
+    &:hover{
+      color:#999;
+    }
+  }
+  .footer-end{
+    border-top: 1px solid #000;
+    background: #BBB7A3;
+  }
+}

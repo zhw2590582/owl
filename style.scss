@@ -12,6 +12,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 /* reset */
 @import 'sass/reset';
 
+/* mixin */
+@import 'sass/mixin';
+
 /* skin */
 @import 'sass/skin';
 
@@ -20,9 +23,6 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 /* base */
 @import 'sass/base';
-
-/* mixin */
-@import 'sass/mixin';
 
 /* header */
 @import 'sass/header';

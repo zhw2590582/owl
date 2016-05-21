@@ -202,6 +202,7 @@ $banner_h:350px;
     border-radius: 4px;
     line-height: 1;
     width: 160px;
+    @include bds;
     li{
         position: relative;
         width: 100%;
@@ -209,6 +210,7 @@ $banner_h:350px;
         line-height: 30px;
 
         a{
+            @include bdsb;
             display: inline-block;
             height: 30px;
             width: 100%;
