@@ -97,7 +97,7 @@ if (item.length > 0) {
 	});
 
 //图像CSS类
-	$("img").addClass('ajax_gif').load(function() {
+	$("img").not($(".wp-smiley")) .addClass('ajax_gif').load(function() {
 		$(this).removeClass('ajax_gif');
 	}).on('error', function () {
 		$(this).removeClass('ajax_gif').prop('src', 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==');
