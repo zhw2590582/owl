@@ -1,4 +1,5 @@
 <?php
+$layout = cs_get_option('i_layout');
 $sliders = cs_get_option( 'i_slider' ); 
 $pagination = cs_get_option('i_pagination');
 $like = cs_get_option( 'i_post_like' );
@@ -64,7 +65,7 @@ $com = cs_get_option( 'i_index_com' );
 
 
             <div class="main_body colbox">
-                <?php if (!is_mobile()) { ?>
+                <?php if (!is_mobile() && $layout == 'i_layout_two') { ?>
                     <aside id="sidebar" class="col">
                         <?php if ($me == true) {?>
                             <div id="about">

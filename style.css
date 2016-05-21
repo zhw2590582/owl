@@ -706,6 +706,16 @@ mark,
   background: url("images/default/ajax.gif") center center no-repeat;
 }
 
+.layout_one .container {
+  width: 960px;
+}
+.layout_one #sidebar, .layout_one .avatar_box {
+  display: none;
+}
+.layout_one .grids .grid-item {
+  width: 219px;
+}
+
 /* mixin */
 body {
   color: #867f6f;
@@ -884,19 +894,17 @@ input[type="text"], input[type="password"], textarea {
   background: #EFEEEB;
 }
 
+.notice {
+  background: #fff;
+  border-bottom: 1px solid #E8E3D3;
+}
+
 /* header */
 .notice {
   position: relative;
   padding: 15px 40px;
   line-height: 1.3;
   text-align: center;
-  background: #f9f8f2;
-  border: 1px solid #fff;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
-  border-radius: 3px;
-  border: none;
-  box-shadow: none;
-  border-radius: 0;
 }
 .notice .clo-notice {
   position: absolute;
@@ -1933,6 +1941,9 @@ article .post-wrap .bottom_meta .meta_tabs a:before {
 .layouts-box .mate-cat, .layouts-box .meta_tabs, .layouts-box .min_comments, .layouts-box .post_meta, .layouts-box .read_more {
   display: none !important;
 }
+.layouts-box .ias-trigger-next {
+  margin-top: 20px;
+}
 
 .comments {
   width: 100%;
@@ -2836,11 +2847,11 @@ body.page article .post-wrap .post-inner .post-body, body.error404 article .post
   background: rgba(74, 74, 74, 0.6);
   color: #fff;
 }
-.skin_switcher .glass_btn {
+.skin_switcher .skin_fx {
   color: #D68D47;
   margin-left: 50px;
 }
-.skin_switcher .glass_btn .fa {
+.skin_switcher .skin_fx .fa {
   float: left;
   height: 30px;
   line-height: 30px;

@@ -51,7 +51,7 @@ $bulletin = cs_get_option( 'i_bulletin' );
                     </div>
 
                     <div class="main_body colbox">
-                        <?php if (!is_mobile()) { ?>
+                        <?php if (!is_mobile() && $layout == 'i_layout_two') { ?>
                             <aside id="sidebar" class="col">
                                 <?php if ($me == true) {?>
                                     <div id="about">

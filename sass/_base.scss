@@ -423,3 +423,15 @@ mark,
 .ajax_gif{
   background: url("images/default/ajax.gif") center center no-repeat;
 }
+
+.layout_one {
+  .container{
+    width:960px;
+  }
+  #sidebar, .avatar_box{
+    display: none;
+  }
+  .grids .grid-item{
+    width: 219px;
+  }
+}

@@ -35,6 +35,26 @@ $options[]      = array(
   'icon'        => 'fa fa-star',
   'fields'      => array(
 
+ 		// 布局设置
+		 array(
+		  'type'    => 'notice',
+		  'class'   => 'info',
+		  'content' => '布局设置',
+		),
+
+		// 布局设置
+        array(
+          'id'         => 'i_layout',
+          'type'       => 'radio',
+          'title'      => '布局设置',
+          'class'      => 'horizontal',
+          'options'    => array(
+            'i_layout_one'   => '单栏',
+            'i_layout_two'   => '双栏',
+          ),
+          'default'    => 'i_layout_two',
+        ),
+
  		// Favicon和Logo设置
 		 array(
 		  'type'    => 'notice',
@@ -1693,24 +1713,17 @@ $options[]   = array(
     array(
       'type'    => 'notice',
       'class'   => 'info',
-      'content' => '弹窗控件',
+      'content' => '顶部通知条',
     ),
 
       // 弹窗控件
     array(
           'id'        => 'i_notice',
           'type'      => 'switcher',
-          'title'     => '弹窗控件',
-          'label'     => 'cookie效果的弹窗',
-        ),
+          'title'     => '顶部通知条',
+          'label'     => 'Cookie默认保存1小时',
+     ),
 
-    // 标题
-    array(
-      'id'      => 'i_notice_title',
-      'type'    => 'text',
-      'title'   => '标题',
-      'dependency' => array( 'i_notice', '==', 'true' ),
-    ),
 
     // 内容
     array(

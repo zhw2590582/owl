@@ -53,17 +53,17 @@ if (item.length > 0) {
 	var navHeight = item.offset().top - 10;
 	var item2 = item.clone().addClass('lfixed').hide();
 	item.after(item2);
+	$(window).bind('scroll', function() {
+		if ($(window).scrollTop() > navHeight) {
+			item.css("visibility","hidden");
+			item2.show();
+		}
+		else {
+			item.css("visibility","visible");
+			item2.hide();
+		}
+	});
 }
-$(window).bind('scroll', function() {
-	 if ($(window).scrollTop() > navHeight) {
-		 item.css("visibility","hidden");
-		 item2.show();
-	 }
-	 else {
-		 item.css("visibility","visible");
-		 item2.hide();
-	 }
-});
 
 //选项卡
 	$('.tabs_title').addClass('active').find('> li:eq(0)').addClass('current');
@@ -207,6 +207,13 @@ $(window).bind('scroll', function() {
 			$('body').removeClass('glass_nav');
 		}else{
 			$('body').addClass('glass_nav');
+		}
+	});
+	$(".layout_btn").click(function() {
+		if($('body').hasClass("layout_one")){
+			$('body').removeClass('layout_one');
+		}else{
+			$('body').addClass('layout_one');
 		}
 	});
 	

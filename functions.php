@@ -68,6 +68,18 @@ add_filter( 'previous_post_rel_link', 'disable_stuff' );
 add_filter( 'next_post_rel_link', 'disable_stuff' );
 
 
+/* 布局类名 */
+function layout_css($classes) {
+    $layout = cs_get_option('i_layout');
+	if ( $layout == 'i_layout_one' ) {
+        $classes[] = 'layout_one';
+    }else {
+        $classes[] = '';
+	}
+    return $classes;
+}
+add_filter('body_class','layout_css');
+
 /* 加载类名 */
 function load_css($classes) {
     $page = cs_get_option('i_pagination'); 

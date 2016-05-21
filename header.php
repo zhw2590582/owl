@@ -38,7 +38,7 @@ $avatar_name = cs_get_option( 'i_avatar_name' );
     <?php if ($notice && !is_mobile()) { ?>
         <div class="notice hide">
             <div class="notice-inner"><?php echo $notice_main; ?></div>
-            <span class="clo-notice hand"><i class="fa fa-times"></i></span>
+            <a href="#" class="clo-notice"><i class="fa fa-times"></i></a>
         </div>
     <?php }?>
      <?php $banner_c = ' '. $banner[color] .' url(\''. $banner[image] .'\') no-repeat center -10px'; ?>
