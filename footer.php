@@ -20,9 +20,6 @@ $share = cs_get_option( 'i_share' );
 $share_img = cs_get_option( 'i_share_img' ); 
 $share_word = cs_get_option( 'i_share_word' ); 
 $tongji = cs_get_option( 'i_js_tongji' );
-$notice = cs_get_option( 'i_notice' ); 
-$notice_title = cs_get_option( 'i_notice_title' ); 
-$notice_main = cs_get_option( 'i_notice_main' ); 
 $shengming = cs_get_option( 'i_download_shengming' ); 
 $layout = cs_get_option( 'i_layout' );
 $sliders = cs_get_option( 'i_slider' );
@@ -200,28 +197,6 @@ $circle = cs_get_option( 'i_circle' );
             </div>
         </div>
 	<?php }	 ?>
-
-	<?php if ($notice == true && !is_mobile() ) {?>		
-		<?php
-		setcookie('notice','show',time()+3600);
-		if(isset($_COOKIE["notice"])){
-		}else{?>	
-			<div class="cd-user-modal is-visible notice-modal">
-				<div class="cd-user-modal-container">
-					<div class="modal-head clearfix">
-						<div class="modal-title"><?php echo $notice_title ?></div>
-						<a href="#" class="cd-close-form"></a>
-					</div>
-					<div class="modal-main">
-						<?php echo $notice_main ?>
-					</div>
-					<div class="modal-bottom">
-						<span>窗口<span id="num">3</span>秒后自动关闭</span>
-					</div>
-				</div>
-			</div>
-		<?php }	?>	
-	<?php }	?>	
 
 	<?php if ( is_single() && !is_mobile() && $download) {?>	
         <div class="cd-user-modal download-modal">

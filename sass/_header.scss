@@ -2,6 +2,25 @@
 $header_h:50px;
 $banner_h:350px;
 
+.notice{
+  position:relative;
+  padding:15px 40px;
+  line-height: 1.3;
+  text-align: center;
+  @include itme-bg;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  .clo-notice{
+    position: absolute;
+    right: 10px;
+    top: 12px;
+    width: 20px;
+    height: 20px;
+    font-size: 16px;
+  }
+}
+
 #header{
     position: relative;
     height: $banner_h;

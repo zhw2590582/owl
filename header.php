@@ -1,5 +1,7 @@
 <?php
 // 获取选项
+$notice = cs_get_option( 'i_notice' );
+$notice_main = cs_get_option( 'i_notice_main' );
 $keywords = cs_get_option( 'i_seo_keywords' ); 
 $description = cs_get_option( 'i_seo_description' );
 $favicon = cs_get_option( 'i_favicon_icon' ); 
@@ -32,7 +34,13 @@ $avatar_name = cs_get_option( 'i_avatar_name' );
 <body <?php body_class(); ?>>
 	<?php if (is_mobile()) { ?>
 		<div style="display:none;"><?php the_post_thumbnail( 'medium' ); ?></div>
-	<?php }?>	
+	<?php }?>
+    <?php if ($notice && !is_mobile()) { ?>
+        <div class="notice hide">
+            <div class="notice-inner"><?php echo $notice_main; ?></div>
+            <span class="clo-notice hand"><i class="fa fa-times"></i></span>
+        </div>
+    <?php }?>
      <?php $banner_c = ' '. $banner[color] .' url(\''. $banner[image] .'\') no-repeat center -10px'; ?>
     <header id="header" style="background:<?php echo $banner_c; ?>;">
         <div class="header-mask-sd">

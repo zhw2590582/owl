@@ -173,18 +173,13 @@ $(window).bind('scroll', function() {
 	});
 
 //通知Modal
-	function jump(count) {
-		window.setTimeout(function(){
-			count--;
-			if(count > 0) {
-				$('#num').text(count);
-				jump(count);
-			} else {
-				$('.notice-modal').removeClass('is-visible');
-			}
-		}, 1000);
-	}
-	jump(10);
+	$(".clo-notice").click(function() {
+		$(".notice").hide();
+		setCookie("notice","close","h1");
+	});
+	if(!getCookie("notice")){
+		$(".notice").show();
+	};
 
 //公告条
 	bulletin();
@@ -223,6 +218,46 @@ $(window).bind('scroll', function() {
 		$("#donate .full").addClass('wechat').removeClass('alipay');
 	});
 });
+
+//设置cookies
+function setCookie(name,value,time) {
+	var strsec = getsec(time);
+	var exp = new Date();
+	exp.setTime(exp.getTime() + strsec*1);
+	document.cookie = name + "="+ escape (value) + ";expires=" + exp.toGMTString();
+}
+function getsec(str) {
+	var str1=str.substring(1,str.length)*1;
+	var str2=str.substring(0,1);
+	if (str2=="s") {
+		return str1*1000;
+	} else if (str2=="h") {
+		return str1*60*60*1000;
+	} else if (str2=="d") {
+		return str1*24*60*60*1000;
+	}
+}
+//s20是代表20秒
+//h是指小时，如12小时则是：h12
+//d是天数，30天则：d30
+
+//读取cookies
+function getCookie(name) {
+	var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
+	if(arr=document.cookie.match(reg))
+		return unescape(arr[2]);
+	else
+		return null;
+}
+
+//删除cookies
+function delCookie(name) {
+	var exp = new Date();
+	exp.setTime(exp.getTime() - 1);
+	var cval=getCookie(name);
+	if(cval!=null)
+		document.cookie= name + "="+cval+";expires="+exp.toGMTString();
+}
 
 // 图像懒加载
 echo.init({
