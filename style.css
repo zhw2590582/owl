@@ -215,6 +215,12 @@ a:hover, a:focus {
   color: #333;
 }
 
+.content-inner, #lSidebar {
+  background: #f0f0f0;
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
 .btn, #wp-submit, .submit {
   border: 1px solid #00a1d6;
   color: #fff;
@@ -235,12 +241,6 @@ input[type="text"], input[type="password"], textarea {
 .notice {
   background: #fff;
   border-bottom: 1px solid #E8E3D3;
-}
-
-.content-inner, #lSidebar {
-  background: #f0f0f0;
-  border: 1px solid rgba(255, 255, 255, 0.65);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
 }
 
 .header-inner {

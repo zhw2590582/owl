@@ -2,20 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d8900106-f274-4529-9fb0-d361016eb2f3" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/thumbnail/img1.png" afterPath="$PROJECT_DIR$/images/thumbnail/img1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/thumbnail/img2.png" afterPath="$PROJECT_DIR$/images/thumbnail/img2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/thumbnail/img3.png" afterPath="$PROJECT_DIR$/images/thumbnail/img3.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/thumbnail/img4.png" afterPath="$PROJECT_DIR$/images/thumbnail/img4.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/thumbnail/img5.png" afterPath="$PROJECT_DIR$/images/thumbnail/img5.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sass/_content.scss" afterPath="$PROJECT_DIR$/sass/_content.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sass/_header.scss" afterPath="$PROJECT_DIR$/sass/_header.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sass/_mixin.scss" afterPath="$PROJECT_DIR$/sass/_mixin.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sass/_plugins.scss" afterPath="$PROJECT_DIR$/sass/_plugins.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sass/_skin.scss" afterPath="$PROJECT_DIR$/sass/_skin.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style.css.map" afterPath="$PROJECT_DIR$/style.css.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style.css" afterPath="$PROJECT_DIR$/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style.scss" afterPath="$PROJECT_DIR$/style.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Island.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -69,8 +56,8 @@
       <file leaf-file-name="_skin.scss" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sass/_skin.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.4304934">
-              <caret line="19" column="54" selection-start-line="19" selection-start-column="54" selection-end-line="19" selection-end-column="54" />
+            <state vertical-scroll-proportion="-2.4753363">
+              <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -782,8 +769,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sass/_skin.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.4304934">
-          <caret line="19" column="54" selection-start-line="19" selection-start-column="54" selection-end-line="19" selection-end-column="54" />
+        <state vertical-scroll-proportion="-2.4753363">
+          <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
           <folding />
         </state>
       </provider>

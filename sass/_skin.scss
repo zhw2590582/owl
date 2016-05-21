@@ -10,6 +10,13 @@ a:hover, a:focus {
   color: #333;
 }
 
+//内容主体背景、左边栏
+.content-inner,#lSidebar{
+  background: #f0f0f0;
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
 //所有实线边
 $bds_t:#EAE7DE;
 
@@ -52,7 +59,7 @@ $itme-bg2: #fff;
   box-shadow: 0 0 1px rgb(220, 184, 145);
 }
 
-//常用背景3:侧边栏控制器、小工具标题装饰、捐赠二维码、首页评论
+//常用背景3:侧边栏控制器、小工具标题装饰、捐赠二维码
 $itme-bg3: #E2DBCA;
 @mixin itme-bg3 () {
   background: $itme-bg3;
@@ -96,13 +103,6 @@ $c3: #443A2D #333 !default;
 .notice{
   background: #fff;
   border-bottom: 1px solid #E8E3D3;
-}
-
-//内容主体背景、左边栏
-.content-inner,#lSidebar{
-  background: #f0f0f0;
-  border: 1px solid rgba(255, 255, 255, 0.65);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
 }
 
 //顶部菜单
