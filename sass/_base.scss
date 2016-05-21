@@ -435,3 +435,11 @@ mark,
     width: 219px;
   }
 }
+
+.main_off{
+  #content .content-inner{
+    background: none;
+    box-shadow: none;
+    border: 1px solid transparent;
+  }
+}

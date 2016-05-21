@@ -182,6 +182,14 @@ $options[]      = array(
           'type'       => 'switcher',
           'title'      => '菜毛玻璃效果',
         ),
+
+		// 主体内容背景
+        array(
+          'id'         => 'i_main_bg',
+          'type'       => 'switcher',
+          'title'      => '主体内容背景',
+          'default'   => true,
+        ),
   
 		// 使用纹理
         array(

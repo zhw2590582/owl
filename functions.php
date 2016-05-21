@@ -105,6 +105,18 @@ function nav_css($classes) {
 }
 add_filter('body_class','nav_css');
 
+/* 主体内容背景 */
+function main_css($classes) {
+    $main_bg = cs_get_option( 'i_main_bg' );
+	if ( $main_bg == true ) {
+        $classes[] = '';
+    }else {
+        $classes[] = 'main_off';
+	}
+    return $classes;
+}
+add_filter('body_class','main_css');
+
 /* 小工具类名 */
 function widget_css($classes) {
     $fixed = cs_get_option( 'i_widget_fixed' );

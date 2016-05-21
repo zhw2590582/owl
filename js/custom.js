@@ -216,7 +216,14 @@ if (item.length > 0) {
 			$('body').addClass('layout_one');
 		}
 	});
-	
+	$(".main_btn").click(function() {
+		if($('body').hasClass("main_off")){
+			$('body').removeClass('main_off');
+		}else{
+			$('body').addClass('main_off');
+		}
+	});
+
 //捐赠
 	$("#donate #donate_alipay").click(function() {
 		$("#donate .full").addClass('alipay').removeClass('wechat');
