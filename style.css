@@ -2112,13 +2112,14 @@ article .post-wrap .bottom_meta .meta_tabs a:before {
   outline: none;
 }
 .comments #comments #respond textarea {
-  padding: 10px;
+  padding: 30px 10px 10px;
   width: 100%;
   line-height: 22px;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
   -webkit-appearance: none;
+  resize: none;
 }
 .comments #comments #respond textarea:focus {
   outline: none;
@@ -3638,6 +3639,29 @@ input#wp-submit {
   position: fixed;
   top: 0;
   left: 0;
+}
+
+#commentform {
+  position: relative;
+}
+
+.commentPlus {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  height: 30px;
+  line-height: 30px;
+  width: 100%;
+  background: #999;
+}
+.commentPlus > div {
+  display: inline-block;
+  float: left;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  font-size: 14px;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=style.css.map */

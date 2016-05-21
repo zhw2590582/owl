@@ -778,3 +778,30 @@ input#wp-submit {
 	top:0;
 	left:0;
 }
+
+#commentform{
+  position: relative;
+}
+
+.commentPlus{
+  position: absolute;
+  top: 30px;
+  left: 0;
+  height: 30px;
+  line-height: 30px;
+  width: 100%;
+  background: #999;
+  > div{
+	display: inline-block;
+	float: left;
+	width: 20px;
+	height: 20px;
+	text-align: center;
+	font-size: 14px;
+	cursor: pointer;
+  }
+  .comment-form-smilies{
+
+  }
+
+}

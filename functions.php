@@ -176,39 +176,79 @@ function get_ssl_avatar($avatar) {
 }
 add_filter('get_avatar', 'get_ssl_avatar');
 
-/* 自动特色图 */
-function autoset_featured() {
-          global $post;
-          $already_has_thumb = has_post_thumbnail($post->ID);
-              if (!$already_has_thumb)  {
-              $attached_image = get_children( "post_parent=$post->ID&post_type=attachment&post_mime_type=image&numberposts=1" );
-                          if ($attached_image) {
-                                foreach ($attached_image as $attachment_id => $attachment) {
-                                set_post_thumbnail($post->ID, $attachment_id);
-                                }
-                           }
-                        }
-      }  //end function
-	  
-$auto = cs_get_option( 'i_auto_featured' ); 
-if ($auto == true) {
-	add_action('the_post', 'autoset_featured');
-	add_action('save_post', 'autoset_featured');
-	add_action('draft_to_publish', 'autoset_featured');
-	add_action('new_to_publish', 'autoset_featured');
-	add_action('pending_to_publish', 'autoset_featured');
-	add_action('future_to_publish', 'autoset_featured');
-}	  
 
-/* 禁用emoji */
-remove_action('admin_print_scripts',	'print_emoji_detection_script');
-remove_action('admin_print_styles',	'print_emoji_styles');
-remove_action('wp_head',		'print_emoji_detection_script',	7);
-remove_action('wp_print_styles',	'print_emoji_styles');
-remove_action('embed_head',		'print_emoji_detection_script');
-remove_filter('the_content_feed',	'wp_staticize_emoji');
-remove_filter('comment_text_rss',	'wp_staticize_emoji');
-remove_filter('wp_mail',		'wp_staticize_emoji_for_email');
+//评论框增强
+function smilies_reset() {
+	global $wpsmiliestrans, $wp_smiliessearch;
+
+	// don't bother setting up smilies if they are disabled
+	if (!get_option('use_smilies')) {
+		return;
+	}
+
+	$wpsmiliestrans_fixed = array(
+		':mrgreen:' => "\xf0\x9f\x98\xa2",
+		':smile:' => "\xf0\x9f\x98\xa3",
+		':roll:' => "\xf0\x9f\x98\xa4",
+		':sad:' => "\xf0\x9f\x98\xa6",
+		':arrow:' => "\xf0\x9f\x98\x83",
+		':-(' => "\xf0\x9f\x98\x82",
+		':-)' => "\xf0\x9f\x98\x81",
+		':(' => "\xf0\x9f\x98\xa7",
+		':)' => "\xf0\x9f\x98\xa8",
+		':?:' => "\xf0\x9f\x98\x84",
+		':!:' => "\xf0\x9f\x98\x85",
+	);
+	$wpsmiliestrans = array_merge($wpsmiliestrans, $wpsmiliestrans_fixed);
+}
+function static_emoji_url() {
+	return get_bloginfo('template_directory').'/images/emoji/';
+}
+
+function reset_emojis() {
+	remove_action('wp_head', 'print_emoji_detection_script', 7);
+	remove_action('admin_print_scripts', 'print_emoji_detection_script');
+	remove_action('wp_print_styles', 'print_emoji_styles');
+	remove_action('admin_print_styles', 'print_emoji_styles');
+	add_filter('the_content', 'wp_staticize_emoji');
+	add_filter('comment_text', 'wp_staticize_emoji',50);
+        smilies_reset();
+        add_filter('emoji_url', 'static_emoji_url');
+}
+add_action('init', 'reset_emojis');
+
+function fa_get_wpsmiliestrans(){
+    global $wpsmiliestrans;
+    $wpsmilies = array_unique($wpsmiliestrans);
+    foreach($wpsmilies as $alt => $src_path){
+        $emoji = str_replace(array('&#x', ';'), '', wp_encode_emoji($src_path));
+        $output .= '<a class="add-smily" data-smilies="'.$alt.'"><img class="wp-smiley" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-echo="'.get_bloginfo('template_directory').'/images/emoji/'. $emoji .'.png" /></a>';
+    }
+    return $output;
+}
+add_filter( 'comment_form_defaults','fa_add_smilies_to_comment_form');
+function fa_add_smilies_to_comment_form($default) {
+    $commenter = wp_get_current_commenter();
+    $default['comment_field'] .= '
+    <div class="commentPlus clearfix">
+        <div class="commentSmilies" data-editor="smile">
+            <i class="fa fa-smile-o" aria-hidden="true"></i>
+            <p class="comment-form-smilies">' . fa_get_wpsmiliestrans() . '</p>
+        </div>
+        <div class="editor commentBold" data-editor="bold"><i class="fa fa-bold" aria-hidden="true"></i></div>
+        <div class="editor commentItalic" data-editor="italic"><i class="fa fa-italic" aria-hidden="true"></i></div>
+        <div class="editor commentUnderline" data-editor="underline"><i class="fa fa-underline" aria-hidden="true"></i></div>
+        <div class="editor commentDel" data-editor="del"><i class="fa fa-strikethrough" aria-hidden="true"></i></div>
+        <div class="editor commentClean" data-editor="clean"><i class="fa fa-trash-o" aria-hidden="true"></i></div>
+    </div>
+    ';
+    return $default;
+}
+function allowedtags_tab() {
+	global $allowedtags;
+	$allowedtags['u'] = array('class'=>true,);
+}
+add_action('comment_post', 'allowedtags_tab');
 
  /* SVG支持 */
 function my_upload_mimes($mimes = array()) {
@@ -880,22 +920,6 @@ function add_js() {
 	
     echo '<!-- 自定义js --><script>' . cs_get_option('i_js') . '</script>';
 }
-
-/* 评论表情包 */
-function add_my_smiley() {
-	echo '<div id="wp-smiley">';
-	include(TEMPLATEPATH . '/smiley.php');
-	echo '</div>';
-}
-if ( ! is_user_logged_in() ) { 
-  add_filter('comment_form_top', 'add_my_smiley');
-}
-add_filter('comment_form_logged_in_after', 'add_my_smiley');
-add_filter('smilies_src','custom_smilies_src',1,10);
-function custom_smilies_src ($img_src, $img, $siteurl){
-return get_bloginfo('template_directory').'/images/smilies/'.$img;
-}
-
 
 /* 评论高亮作者 */
 function comment_admin_title($email = '')

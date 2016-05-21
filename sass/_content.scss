@@ -1250,13 +1250,14 @@ article{
       }
 
       textarea{
-        padding: 10px;
+        padding: 30px 10px 10px;
         width: 100%;
         line-height: 22px;
         -webkit-border-radius: 3px;
         -moz-border-radius: 3px;
         border-radius: 3px;
         -webkit-appearance: none;
+        resize: none;
 
         &:focus{
           outline: none;
