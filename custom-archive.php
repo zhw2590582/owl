@@ -3,13 +3,12 @@
 Template Name: 归档页面
 */ 
 error_reporting(0);
-$meta_data = get_post_meta( get_the_ID(), 'archive_page', true );
+$layout = cs_get_option('i_layout');
 $avatar_image = cs_get_option( 'i_avatar_image' );
 $avatar_name = cs_get_option( 'i_avatar_name' );
 $avatar_content = cs_get_option( 'i_avatar_content' );
 $me = cs_get_option( 'i_me_switch' );
 $bulletin = cs_get_option( 'i_bulletin' );
-
 ?>
 
 <?php get_header(); ?>

@@ -1,5 +1,6 @@
 <?php
  // 获取选项
+$layout = cs_get_option('i_layout');
 $excerpt = cs_get_option( 'i_post_readmore' ); 
 $next = cs_get_option( 'i_post_next' ); 
 $author = cs_get_option( 'i_post_author' ); 

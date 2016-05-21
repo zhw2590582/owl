@@ -3,6 +3,7 @@
 Template Name: 友链页面
 */ 
 error_reporting(0);
+$layout = cs_get_option('i_layout');
 $avatar_image = cs_get_option( 'i_avatar_image' );
 $avatar_name = cs_get_option( 'i_avatar_name' );
 $avatar_content = cs_get_option( 'i_avatar_content' );

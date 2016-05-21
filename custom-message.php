@@ -3,6 +3,7 @@
 Template Name: 留言页面
 */ 
 error_reporting(0);
+$layout = cs_get_option('i_layout');
 $wall = cs_get_option('i_comment_wall');
 $num = cs_get_option('i_comment_num');
 $avatar_image = cs_get_option( 'i_avatar_image' );
