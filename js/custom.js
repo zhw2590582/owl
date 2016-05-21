@@ -50,30 +50,32 @@ $('body').on('click', '#comment-nav-below a', function(e) {
 //固定小工具
 var item = $(".widget_fixed #sidebar aside:last-child");
 if (item.length > 0) {
-	var navHeight = item.offset().top;
+	var navHeight = item.offset().top - 10;
+	var item2 = item.clone().addClass('lfixed').hide();
+	item.after(item2);
 }
 $(window).bind('scroll', function() {
 	 if ($(window).scrollTop() > navHeight) {
-		 item.addClass('lfixed');
+		 item.css("visibility","hidden");
+		 item2.show();
 	 }
 	 else {
-		 item.removeClass('lfixed');
+		 item.css("visibility","visible");
+		 item2.hide();
 	 }
 });
 
 //选项卡
-(function ($) {
-    $('.tabs_title').addClass('active').find('> li:eq(0)').addClass('current');
-    $('.tabs_title li a').click(function (g) {
-        var tab = $(this).closest('#widget-tab'),
-            index = $(this).closest('li').index();
-        tab.find('.tabs_title > li').removeClass('current');
-        $(this).closest('li').addClass('current');
-        tab.find('.tab_content').find('.tabs_item').not('.tabs_item:eq(' + index + ')').slideUp();
-        tab.find('.tab_content').find('.tabs_item:eq(' + index + ')').slideDown();
-        g.preventDefault();
-    } );
-})(jQuery);
+	$('.tabs_title').addClass('active').find('> li:eq(0)').addClass('current');
+	$('.tabs_title li a').click(function (g) {
+		var tab = $(this).closest('#widget-tab'),
+			index = $(this).closest('li').index();
+		tab.find('.tabs_title > li').removeClass('current');
+		$(this).closest('li').addClass('current');
+		tab.find('.tab_content').find('.tabs_item').not('.tabs_item:eq(' + index + ')').slideUp();
+		tab.find('.tab_content').find('.tabs_item:eq(' + index + ')').slideDown();
+		g.preventDefault();
+	} );
 
 //文章目录
     $(".index-box").append($(".content #article-index").clone());
@@ -110,6 +112,7 @@ $(window).bind('scroll', function() {
 		$(this).removeAttr("title").addClass("with-tooltip");
 	});
 
+//友链小图标
 	$(".linkcat li a").each(function(i) {
 		var linkhref = $(this).attr('href');
 		$(this).prepend( '<img src="' + linkhref + 'favicon.ico">');

@@ -1,7 +1,7 @@
 //content
 $content_bg: #ebd9c3;
 $content_top:130px;
-$sidebar_w:250px;
+$sidebar_w:300px;
 $featured_w:190px;
 $lC:26px;
 
@@ -521,7 +521,8 @@ article{
       }
 
       .post-body{
-        height: 160px;
+        height: 145px;
+        margin-bottom: 10px;
         overflow: hidden;
 
         header{
@@ -834,6 +835,7 @@ article{
 
       a{
         display: block;
+        height: 100%;
       }
 
       .r_pic{
@@ -925,8 +927,8 @@ article{
   article{
     width: 33.33%;
     float: left;
-    padding-right: 15px;
-    margin-bottom: 15px;
+    padding:0 5px;
+    margin-bottom: 10px;
   }
 
   article .post-wrap .post-inner .post-body{
