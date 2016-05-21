@@ -2663,7 +2663,7 @@ body.page article .post-wrap .post-inner .post-body, body.error404 article .post
 .archive-title {
   margin: 0 0 20px;
   text-align: center;
-  padding: 10px;
+  padding: 0 10px;
 }
 .archive-title .title-inner {
   height: 40px;
@@ -2672,6 +2672,8 @@ body.page article .post-wrap .post-inner .post-body, body.error404 article .post
   border: 1px solid rgba(255, 255, 255, 0.7);
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
   border-radius: 3px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }
 
 .jm-post-like.liked {

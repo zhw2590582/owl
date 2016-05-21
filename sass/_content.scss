@@ -1810,11 +1810,13 @@ body.page,body.error404{
 .archive-title{
 	margin:0 0 20px;
 	text-align:center;
-	padding:10px;
+	padding:0 10px;
 	.title-inner{
 		height:40px;
 		line-height:40px;
 		@include itme-bg;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
 	}
 }
 
