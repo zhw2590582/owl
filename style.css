@@ -1937,15 +1937,7 @@ article .post-wrap .bottom_meta .meta_tabs a:before {
 .comments #comments #comments-title:before {
   display: none;
 }
-.comments #comments .commentlist {
-  position: relative;
-  border-left: 1px solid #EAE7DE;
-  display: block;
-  padding: 15px 0;
-  list-style-type: none !important;
-  counter-reset: li;
-}
-.comments #comments .commentlistul:before {
+.comments #comments .comdot:before {
   position: absolute;
   top: -6px;
   left: -6px;
@@ -1959,7 +1951,7 @@ article .post-wrap .bottom_meta .meta_tabs a:before {
   box-shadow: 0 0 1px #C3BDAA;
   box-shadow: 0 0 0 3px #fff;
 }
-.comments #comments .commentlistul:after {
+.comments #comments .comdot:after {
   position: absolute;
   bottom: -6px;
   left: -6px;
@@ -1972,6 +1964,14 @@ article .post-wrap .bottom_meta .meta_tabs a:before {
   background: #fff;
   box-shadow: 0 0 1px #C3BDAA;
   box-shadow: 0 0 0 3px #fff;
+}
+.comments #comments .commentlist {
+  position: relative;
+  border-left: 1px solid #EAE7DE;
+  display: block;
+  padding: 15px 0;
+  list-style-type: none !important;
+  counter-reset: li;
 }
 .comments #comments .commentlist li {
   position: relative;

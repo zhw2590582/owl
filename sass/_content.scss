@@ -1045,15 +1045,8 @@ article{
       }
     }
 
-    .commentlist{
-      position: relative;
-      @include bdsl;
-      display: block;
-      padding: 15px 0;
-      list-style-type: none !important;
-      counter-reset: li;
-
-      &ul:before {
+    .comdot{
+      &:before {
         position: absolute;
         top: -6px;
         left: -6px;
@@ -1067,7 +1060,7 @@ article{
         box-shadow: 0 0 0 3px $itme-bg2;
       }
 
-      &ul:after {
+      &:after {
         position: absolute;
         bottom: -6px;
         left: -6px;
@@ -1080,6 +1073,15 @@ article{
         @include itme-bg2;
         box-shadow: 0 0 0 3px $itme-bg2;
       }
+    }
+
+    .commentlist{
+      position: relative;
+      @include bdsl;
+      display: block;
+      padding: 15px 0;
+      list-style-type: none !important;
+      counter-reset: li;
 
       li{
         position: relative;

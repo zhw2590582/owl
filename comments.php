@@ -14,7 +14,7 @@ if ( post_password_required() ) { ?>
 <div id="comments" class="clearfix">
 	<h3 id="comments-title"><?php comments_number(__('留言'),__('1条评论'),__( '%条评论') );?></h3>
 	<div id="loading-comments" class="hide"><span><i class="fa fa-spinner fa-pulse"></i> Loading...</span></div>
-    <ul class="commentlist">
+    <ul class="commentlist comdot">
         <?php wp_list_comments("callback=island_comment"); ?>
         <div class="clearfix"></div>
     </ul>
