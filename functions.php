@@ -327,7 +327,7 @@ function Init_theme($oldthemename) {
 	global $pagenow;
 	if ('themes.php' == $pagenow && isset($_GET['activated'])) {
 		global $verify;
-		$key = cs_get_customize_option( 'lazycat_key' ); 
+		$key = cs_get_customize_option( 'lazycat_key' );
 		$verify = get_option('Island_license_key');
 		if (!empty($verify) || $key == 'zhw2590582' ) {
 			wp_redirect(admin_url('admin.php?page=cs-framework'));
