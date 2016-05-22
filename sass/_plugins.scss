@@ -785,17 +785,21 @@ input#wp-submit {
 
 .commentPlus{
   position: absolute;
-  top: 30px;
+  bottom: 15px;
+  right: 0;
   left: 0;
-  height: 30px;
-  line-height: 30px;
+  height: 40px;
+  line-height: 40px;
   width: 100%;
-  background: #999;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border: 1px solid nth($int,1);
+  @include bg-w (0.9);
   > div{
 	display: inline-block;
 	float: left;
 	width: 20px;
-	height: 20px;
+	padding: 0 15px;
 	text-align: center;
 	font-size: 14px;
 	cursor: pointer;

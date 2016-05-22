@@ -202,27 +202,41 @@ if (item.length > 0) {
 		$("#header,.header-mask").css('background',skinBanner);
 		$("body").css('background',skinBody);
 	});
-	$(".glass_btn").click(function() {
-		if($('body').hasClass("glass_nav")){
-			$('body').removeClass('glass_nav');
+
+	$(".skin_fx").click( function () {
+		var date = $(this).attr("date-fx");
+		var toggle = $(this).find(".fa");
+		var body = $('body');
+		switch (date){
+			case 'layout':
+				if(body.hasClass("layout_one")){
+					body.removeClass('layout_one');
+				}else{
+					body.addClass('layout_one');
+				};
+				break;
+			case 'glass':
+				if(body.hasClass("glass_nav")){
+					body.removeClass('glass_nav');
+				}else{
+					body.addClass('glass_nav');
+				};
+				break;
+			case 'main':
+				if(body.hasClass("main_off")){
+					body.removeClass('main_off');
+				}else{
+					body.addClass('main_off');
+				};
+				break;
+		};
+		if(toggle.hasClass("fa-toggle-on")){
+			toggle.removeClass('fa-toggle-on').addClass('fa-toggle-off');
 		}else{
-			$('body').addClass('glass_nav');
-		}
+			toggle.addClass('fa-toggle-on').removeClass('fa-toggle-off');
+		};
 	});
-	$(".layout_btn").click(function() {
-		if($('body').hasClass("layout_one")){
-			$('body').removeClass('layout_one');
-		}else{
-			$('body').addClass('layout_one');
-		}
-	});
-	$(".main_btn").click(function() {
-		if($('body').hasClass("main_off")){
-			$('body').removeClass('main_off');
-		}else{
-			$('body').addClass('main_off');
-		}
-	});
+
 
 //捐赠
 	$("#donate #donate_alipay").click(function() {

@@ -88,6 +88,9 @@ jQuery(document).ready(function($) {
         case 'del':
           x="<del>" + SelectText + "</del>";
           break;
+        case 'img':
+          x="<img src='请输入图片地址' />";
+          break;
         case 'clean':
           x = "";
           $("#comment").val('');

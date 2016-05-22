@@ -168,9 +168,9 @@ $circle = cs_get_option( 'i_circle' );
             <div class="skin_header clearfix">
                 <div class="container clearfix">
                     <span class="fl">自定义皮肤</span>
-                    <span class="skin_fx layout_btn hand fl"><i class="fa fa-toggle-on" aria-hidden="true"></i>单栏布局</span>
-                    <span class="skin_fx glass_btn hand fl"><i class="fa fa-toggle-on" aria-hidden="true"></i>玻璃菜单</span>
-                    <span class="skin_fx main_btn hand fl"><i class="fa fa-toggle-on" aria-hidden="true"></i>主体内容背景</span>
+                    <span class="skin_fx layout_btn hand fl" date-fx="layout"><i class="fa fa-toggle-on" aria-hidden="true"></i>单栏布局</span>
+                    <span class="skin_fx glass_btn hand fl" date-fx="glass"><i class="fa fa-toggle-on" aria-hidden="true"></i>玻璃菜单</span>
+                    <span class="skin_fx main_btn hand fl" date-fx="main"><i class="fa fa-toggle-on" aria-hidden="true"></i>主体内容背景</span>
                     <span class="col_skin hand fr"><i class="fa fa-times"></i></span>
                 </div>
             </div>

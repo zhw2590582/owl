@@ -245,12 +245,13 @@ function fa_add_smilies_to_comment_form($default) {
     <div class="commentPlus clearfix">
         <div class="commentSmilies" data-editor="smile">
             <i class="fa fa-smile-o" aria-hidden="true"></i>
-            <p class="comment-form-smilies">' . fa_get_wpsmiliestrans() . '</p>
+            <p class="comment-form-smilies hide">' . fa_get_wpsmiliestrans() . '</p>
         </div>
         <div class="editor commentBold" data-editor="bold"><i class="fa fa-bold" aria-hidden="true"></i></div>
         <div class="editor commentItalic" data-editor="italic"><i class="fa fa-italic" aria-hidden="true"></i></div>
         <div class="editor commentUnderline" data-editor="underline"><i class="fa fa-underline" aria-hidden="true"></i></div>
         <div class="editor commentDel" data-editor="del"><i class="fa fa-strikethrough" aria-hidden="true"></i></div>
+        <div class="editor commentImg" data-editor="img"><i class="fa fa-picture-o" aria-hidden="true"></i></div>
         <div class="editor commentClean" data-editor="clean"><i class="fa fa-trash-o" aria-hidden="true"></i></div>
     </div>
     ';
@@ -261,6 +262,13 @@ function allowedtags_tab() {
 	$allowedtags['u'] = array('class'=>true,);
 }
 add_action('comment_post', 'allowedtags_tab');
+
+function recover_comment_fields($comment_fields){
+    $comment = array_shift($comment_fields);
+    $comment_fields =  array_merge($comment_fields ,array('comment' => $comment));
+    return $comment_fields;
+}
+add_filter('comment_form_fields','recover_comment_fields');
 
  /* SVG支持 */
 function my_upload_mimes($mimes = array()) {
@@ -1059,29 +1067,48 @@ class description_walker extends Walker_Nav_Menu
 /* 自定义评论输出 */
 function island_comment($comment, $args, $depth) {
     $GLOBALS['comment'] = $comment;
-	global $commentcount, $page;
-	if ( (int) get_option('page_comments') === 1 && (int) get_option('thread_comments') === 1 ) { //开启嵌套评论和分页才启用
-		if(!$commentcount) { //初始化楼层计数器
-			$page = ( !empty($in_comment_loop) ) ? get_query_var('cpage') : get_page_of_comment( $comment->comment_ID, $args ); //获取当前评论列表页码
-			$cpp = get_option('comments_per_page'); //获取每页评论显示数量
-			 if ( !$post_id ) $post_id = get_the_ID();
-			 if ( get_option('comment_order') === 'desc' ) { //倒序
-				$cnt = get_comments( array('status' => 'approve','parent' => '0','post_id' => $post_id,'count' => true) );
-				if (ceil($cnt / $cpp) == 1 || ($page > 1 && $page  == ceil($cnt / $cpp))) $commentcount = $cnt + 1;
-				else $commentcount = $cpp * $page + 1;
-			} else {
-				$commentcount = $cpp * ($page - 1);
-			}
-		}
-		if ( !$parent_id = $comment->comment_parent ) {
-			$commentcountText = '';
-			if ( get_option('comment_order') === 'desc' ) { //倒序
-				$commentcountText .= --$commentcount . '楼';
-			} else {
-				$commentcountText .= ++$commentcount . '楼';
-			}
-		}
-	}
+/* 主评论计数器 by zwwooooo Modified Gimhoy(http://blog.gimhoy.com) */
+        global $commentcount,$wpdb, $post;
+        if(!$commentcount) { //初始化楼层计数器
+            if ( get_option('comment_order') === 'desc' ) { //倒序
+                $comments = $wpdb->get_results("SELECT * FROM $wpdb->comments WHERE comment_post_ID = $post->ID AND comment_type = '' AND comment_approved = '1' AND !comment_parent");
+                $cnt = count($comments);//获取主评论总数量
+                $page = get_query_var('cpage');//获取当前评论列表页码
+                $cpp=get_option('comments_per_page');//获取每页评论显示数量
+                if (ceil($cnt / $cpp) == 1 || ($page > 1 && $page  == ceil($cnt / $cpp))) {
+                    $commentcount = $cnt + 1;//如果评论只有1页或者是最后一页，初始值为主评论总数
+                } else {
+                    $commentcount = $cpp * $page + 1;
+                }
+            }else{ //顺序
+                $page = get_query_var('cpage')-1;
+                $cpp=get_option('comments_per_page');//获取每页评论数
+                $commentcount = $cpp * $page;
+            }
+        }
+/* 主评论计数器 end */
+        if ( !$parent_id = $comment->comment_parent ) {
+            $commentcountText = '';
+            if ( get_option('comment_order') === 'desc' ) { //倒序
+                $commentcountText .= --$commentcount . '楼';
+            } else {
+                switch ($commentcount) {
+                    case 0:
+                        $commentcountText .= '<span>沙发！</span>'; ++$commentcount;
+                        break;
+                    case 1:
+                        $commentcountText .= '<span>板凳！</span>'; ++$commentcount;
+                        break;
+                    case 2:
+                        $commentcountText .= '<span>地板！</span>'; ++$commentcount;
+                        break;
+                    default:
+                        $commentcountText .= ++$commentcount . '楼';
+                        break;
+                }
+            }
+            $commentcountText .= '';
+        }
 	?>
 	<li <?php comment_class('clearfix'); ?> id="li-comment-<?php comment_ID() ?>">
 		<div class="comment-block" id="comment-<?php comment_ID(); ?>">
