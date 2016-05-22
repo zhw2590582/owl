@@ -1053,7 +1053,7 @@ article{
       list-style-type: none !important;
       counter-reset: li;
 
-      &:before {
+      &ul:before {
         position: absolute;
         top: -6px;
         left: -6px;
@@ -1067,7 +1067,7 @@ article{
         box-shadow: 0 0 0 3px $itme-bg2;
       }
 
-      &:after {
+      &ul:after {
         position: absolute;
         bottom: -6px;
         left: -6px;
@@ -1240,6 +1240,7 @@ article{
 
     #respond{
 	  padding-left:30px;
+      margin-bottom: 30px;
 	
       h3 {
         display: inline-block;

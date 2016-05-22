@@ -18,8 +18,8 @@ var edit_mode = '1', // 再編輯模式 ( '1'=開; '0'=不開 )
 		pic_sb = 'wp-admin/images/wpspin_dark.gif', // 提交 icon
 		pic_no = wp_url + 'wp-admin/images/no.png',      // 錯誤 icon
 		pic_ys = wp_url + 'wp-admin/images/yes.png',     // 成功 icon
-		txt1 = '<div id="loading"><i class="fa fa-spinner fa-pulse"></i>正在提交, 請稍候...</div>',
-		txt2 = '<div id="error">#</div>',
+		txt1 = '<div id="loading" class="comment-tip"><i class="fa fa-spinner fa-pulse"></i>正在提交, 請稍候...</div>',
+		txt2 = '<div id="error" class="comment-tip">#</div>',
 		txt3 = '"><i class="fa fa-check" style="color:#0BBD33;"></i> 提交成功',
 		edt1 = ', 刷新页面之前可以<a rel="nofollow" class="comment-reply-link" href="#edit" onclick=\'return addComment.moveForm("',
 		edt2 = ')\'>再编辑</a>',
@@ -65,7 +65,7 @@ $('#commentform').submit(function() {
 
 // show comment
 		new_htm = '" id="new_comm_' + num + '"></';
-		new_htm = ( parent == '0' ) ? ('\n<ol style=" " class="commentlist' + new_htm + 'ol>') : ('\n<ul class="children clearfix' + new_htm + 'ul>');
+		new_htm = ( parent == '0' ) ? ('\n<ol style=" " class="clearfix commentlist' + new_htm + 'ol>') : ('\n<ul class="children clearfix' + new_htm + 'ul>');
 
 		ok_htm = '\n<span class="success_tip" id="success_' + num + txt3;
 		if ( edit_mode == '1' ) {

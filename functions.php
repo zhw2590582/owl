@@ -234,7 +234,7 @@ function fa_get_wpsmiliestrans(){
     $wpsmilies = array_unique($wpsmiliestrans);
     foreach($wpsmilies as $alt => $src_path){
         $emoji = str_replace(array('&#x', ';'), '', wp_encode_emoji($src_path));
-        $output .= '<a class="add-smily" data-smilies="'.$alt.'"><img class="wp-smiley" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-echo="'.get_bloginfo('template_directory').'/images/emoji/'. $emoji .'.png" /></a>';
+        $output .= '<a class="add-smily" data-smilies="'.$alt.'"><img class="wp-smiley" src="'.get_bloginfo('template_directory').'/images/emoji/'. $emoji .'.png" /></a>';
     }
     return $output;
 }
@@ -243,9 +243,9 @@ function fa_add_smilies_to_comment_form($default) {
     $commenter = wp_get_current_commenter();
     $default['comment_field'] .= '
     <div class="commentPlus clearfix">
-        <div class="commentSmilies" data-editor="smile">
+        <div class="editor commentSmilies" data-editor="smile">
             <i class="fa fa-smile-o" aria-hidden="true"></i>
-            <p class="comment-form-smilies hide">' . fa_get_wpsmiliestrans() . '</p>
+            <p class="comment-form-smilies clearfix hide">' . fa_get_wpsmiliestrans() . '</p>
         </div>
         <div class="editor commentBold" data-editor="bold"><i class="fa fa-bold" aria-hidden="true"></i></div>
         <div class="editor commentItalic" data-editor="italic"><i class="fa fa-italic" aria-hidden="true"></i></div>

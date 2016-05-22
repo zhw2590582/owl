@@ -809,3 +809,35 @@ input#wp-submit {
   }
 
 }
+
+.commentSmilies{
+  position: relative;
+  .comment-form-smilies{
+	position: absolute !important;
+	bottom: 35px;
+	left: 10px;
+	width: 300px;
+	padding: 5px;
+	border-radius: 3px;
+	border: 1px solid nth($int,1);
+	@include bg-w (0.9);
+
+	a{
+	  display: inline-block;
+	  float: left;
+	  width: 20px;
+	  height: 20px;
+	  line-height: 20px;
+	  margin: 3px;
+	}
+  }
+}
+
+.comment-tip{
+  position: absolute;
+}
+
+.wp-smiley{
+  height: 20px !important;
+  max-height: 20px !important;
+}

@@ -75,7 +75,16 @@ jQuery(document).ready(function($) {
      $(".editor").click( function () { 
         var date = $(this).attr("data-editor");
         var SelectText = getSelectText('comment');
+        var smilies = $('.comment-form-smilies');
         switch (date){
+        case 'smile':
+          x="";
+			if(smilies.hasClass("hide")){
+				smilies.removeClass('hide');
+			}else{
+				smilies.addClass('hide');
+			};
+          break;
         case 'bold':
           x="<strong>" + SelectText + "</strong>";
           break;
