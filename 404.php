@@ -71,7 +71,7 @@ $me = cs_get_option( 'i_me_switch' );
                             </div>
                         <?php } ?>
                         <div id="widget" class="widgets">
-                            <?php if (function_exists('dynamic_sidebar') && dynamic_sidebar('Main Sidebar') ) : else : ?>
+                            <?php if (function_exists('dynamic_sidebar') && dynamic_sidebar('Aside') ) : else : ?>
                             <?php endif; ?>
                         </div>
                     </aside>
