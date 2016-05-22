@@ -102,7 +102,9 @@ $bulletin = cs_get_option( 'i_bulletin' );
         												<div class="post-content">
         													<div calss="content">
         														<?php the_content(); ?>
-                                                                <?php wp_list_bookmarks('orderby=id&category_orderby=id'); ?> 
+        														<ul class="link_box">
+                                                                    <?php wp_list_bookmarks('orderby=id&category_orderby=id'); ?>
+        														</ul>
         													</div>
         												</div>
         											</div>
@@ -113,9 +115,9 @@ $bulletin = cs_get_option( 'i_bulletin' );
 
 									<!-- 评论 -->
 									<?php if ('open' == $post->comment_status) { ?>
-									<div id="comment-jump" class="comments">
-										<?php comments_template(); ?>
-									</div>
+                                        <div id="comment-jump" class="comments">
+                                            <?php comments_template(); ?>
+                                        </div>
 									<?php } ?>
 
         	                    </div>

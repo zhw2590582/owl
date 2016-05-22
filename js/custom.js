@@ -104,7 +104,7 @@ if (item.length > 0) {
 	});
 
 //Tooltip
-	$(".tagcloud a , .linkcat li a").each(function(i) {
+	$(".tagcloud a").each(function(i) {
 		var formattedDate = $(this).attr('title');
 		$(this).attr("data-tooltip", function(n, v) {
 			return formattedDate;

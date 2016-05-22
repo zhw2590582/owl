@@ -1150,7 +1150,7 @@ li:hover > .sub-menu {
 #widget-tab .tabs_item li {
   padding-bottom: 5px;
   margin-bottom: 10px;
-  border-bottom: 1px dashed #EAE7DE;
+  border-bottom: 1px dashed #E8E3D4;
   color: #867f6f;
 }
 #widget-tab .tabs_item li a {
@@ -1225,7 +1225,7 @@ li:hover > .sub-menu {
   padding-bottom: 5px;
   margin-bottom: 5px;
   line-height: 20px;
-  border-bottom: 1px dashed #EAE7DE;
+  border-bottom: 1px dashed #E8E3D4;
 }
 .widgets aside a {
   color: #867f6f;
@@ -1634,7 +1634,7 @@ article .post-wrap .bottom_meta .meta_tabs a:before {
 }
 .min_comments ul li {
   padding: 2px 5px;
-  border-bottom: 1px dashed #EAE7DE;
+  border-bottom: 1px dashed #E8E3D4;
   color: #a49d8c;
 }
 .min_comments ul li:last-child {
@@ -2361,8 +2361,11 @@ body.page article .post-wrap .post-inner .post-body .post-content, body.error404
 }
 body.page article .post-wrap .post-inner .post-body, body.error404 article .post-wrap .post-inner .post-body {
   height: auto;
-  min-height: 500px;
+  min-height: 100px;
   padding-bottom: 50px;
+}
+body.page .bottom_meta, body.error404 .bottom_meta {
+  display: none;
 }
 
 .error404 .post-content {
@@ -2732,6 +2735,69 @@ body.page article .post-wrap .post-inner .post-body, body.error404 article .post
 .single-work .post-body {
   height: auto !important;
   overflow: visible !important;
+}
+
+.link_box {
+  margin-top: 50px;
+}
+.link_box .linkcat {
+  display: block;
+  margin-bottom: 50px;
+}
+.link_box .linkcat::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+.link_box .linkcat h2 {
+  position: relative;
+  z-index: 1;
+  font-size: 18px;
+  margin: 0 0 30px;
+}
+.link_box .linkcat h2:before {
+  content: "\f0c1";
+  font-family: FontAwesome;
+  margin-right: 10px;
+  font-size: 12px;
+}
+.link_box .linkcat h2:after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 25px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  border-top: 1px dashed #E8E3D4;
+}
+.link_box .linkcat .blogroll::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+.link_box .linkcat .blogroll li {
+  display: inline-block;
+  width: 24%;
+  padding-right: 20px;
+  margin-bottom: 15px;
+  list-style-type: none;
+  border-radius: 4px;
+}
+.link_box .linkcat .blogroll li a {
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  float: 12px;
+}
+.link_box .linkcat .blogroll li a img {
+  float: left;
+  margin-right: 7px;
+  margin-bottom: 0 !important;
+  line-height: 1;
+  width: 18px;
 }
 
 /* footer */
@@ -3243,7 +3309,7 @@ input#wp-submit {
   padding-bottom: 10px;
 }
 .index-box #index-ul li {
-  border-bottom: 1px dashed #EAE7DE;
+  border-bottom: 1px dashed #E8E3D4;
   padding: 4px;
 }
 .index-box #index-ul li:last-child {

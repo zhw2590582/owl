@@ -168,20 +168,19 @@ $like = cs_get_option( 'i_post_like' );
                                             </ul>
                                             <?php } ?>
                                         </div>
+                                            <ul class="bottom_meta clearfix">
+                                                <li class="mate-time fl"><i class="fa fa-clock-o"></i><?php echo ''.timeago( get_gmt_from_date(get_the_time('Y-m-d G:i:s')) ); ?></li>
+                                                <li class="mate-cat fl"><i class="fa fa-circle-o-notch"></i><?php the_category(' '); ?></li>
+                                                <?php $posttags = get_the_tags(); if ($posttags) { ?>
+                                                    <li class="meta_tabs fl"><i class="fa fa-tags"></i><?php the_tags('', ' ', ''); ?></li>
+                                                <?php } ?>
 
-	                                    <ul class="bottom_meta clearfix">
-	                                    	<li class="mate-time fl"><i class="fa fa-clock-o"></i><?php echo ''.timeago( get_gmt_from_date(get_the_time('Y-m-d G:i:s')) ); ?></li>
-	                                        <li class="mate-cat fl"><i class="fa fa-circle-o-notch"></i><?php the_category(' '); ?></li>
-	                                        <?php $posttags = get_the_tags(); if ($posttags) { ?>
-	                                            <li class="meta_tabs fl"><i class="fa fa-tags"></i><?php the_tags('', ' ', ''); ?></li>
-	                                        <?php } ?>
-
-	                                        <?php if ($like == true) { ?>
-	                                            <li class="meta_like fr">
-	                                                <?php echo getPostLikeLink( get_the_ID() ); ?>
-	                                            </li>
-	                                        <?php } ?>
-	                                    </ul>
+                                                <?php if ($like == true) { ?>
+                                                    <li class="meta_like fr">
+                                                        <?php echo getPostLikeLink( get_the_ID() ); ?>
+                                                    </li>
+                                                <?php } ?>
+                                            </ul>
                                      </div>
                                     </article>
                                     <?php endwhile; ?>
