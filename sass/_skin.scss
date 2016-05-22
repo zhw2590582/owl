@@ -107,7 +107,7 @@ $c3: #8A4C2E #333 !default;
 }
 
 //顶部菜单
-$hi_c:#F9F8F3 #867f6f #333 !default;//第一个为背景色，第一个为链接正常色，第三个为鼠标经过色
+$hi_c:#F9F8F3 #676050 #333 !default;//第一个为背景色，第一个为链接正常色，第三个为鼠标经过色
 .header-inner{
   background: nth($hi_c,1);
   color: nth($hi_c,1);

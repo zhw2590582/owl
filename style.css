@@ -248,7 +248,7 @@ input[type="text"], input[type="password"], textarea {
   color: #F9F8F3;
 }
 .header-inner a {
-  color: #867f6f;
+  color: #676050;
 }
 .header-inner a:hover {
   color: #333;
@@ -1089,6 +1089,10 @@ li:hover > .sub-menu {
   border-radius: 3px;
   margin-bottom: 20px;
   padding: 10px 10px 5px;
+}
+#content #sidebar #about .social_link {
+  border-top: 1px dashed #E8E3D4;
+  padding-top: 7px;
 }
 #content #sidebar #about .social_link li {
   float: left;

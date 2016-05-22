@@ -29,7 +29,8 @@ $lC:26px;
           padding: 10px 10px 5px;
 
           .social_link{
-
+            @include bddt;
+            padding-top: 7px;
             li{
               float: left;
               width: 20%;
