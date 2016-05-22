@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d8900106-f274-4529-9fb0-d361016eb2f3" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sass/_content.scss" afterPath="$PROJECT_DIR$/sass/_content.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/comments.php" afterPath="$PROJECT_DIR$/comments.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cs-framework/config/framework.config.php" afterPath="$PROJECT_DIR$/cs-framework/config/framework.config.php" />
     </list>
     <ignored path="Island.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,20 +33,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="footer.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/footer.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="172" column="72" selection-start-line="172" selection-start-column="68" selection-end-line="172" selection-end-column="72" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_content.scss" pinned="false" current-in-tab="true">
+      <file leaf-file-name="_content.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sass/_content.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.84304935">
+            <state vertical-scroll-proportion="-23.5">
               <caret line="1074" column="7" selection-start-line="1074" selection-start-column="7" selection-end-line="1074" selection-end-column="7" />
               <folding />
             </state>
@@ -94,6 +83,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="framework.config.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/cs-framework/config/framework.config.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.6839827">
+              <caret line="1490" column="10" selection-start-line="1490" selection-start-column="10" selection-end-line="1490" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="comments-ajax.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/comments-ajax.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -103,16 +102,6 @@
                 <marker date="1463894402000" expanded="true" signature="934:948" placeholder="..." />
                 <marker date="1463894402000" expanded="true" signature="2095:2108" placeholder="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="functions.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/functions.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="481.74075">
-              <caret line="236" column="91" selection-start-line="236" selection-start-column="91" selection-end-line="236" selection-end-column="91" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -160,7 +149,6 @@
         <option value="$PROJECT_DIR$/style.scss" />
         <option value="$PROJECT_DIR$/sass/_mixin.scss" />
         <option value="$PROJECT_DIR$/js/plugins.js" />
-        <option value="$PROJECT_DIR$/cs-framework/config/framework.config.php" />
         <option value="$PROJECT_DIR$/sass/_base.scss" />
         <option value="$PROJECT_DIR$/404.php" />
         <option value="$PROJECT_DIR$/footer.php" />
@@ -171,6 +159,7 @@
         <option value="$PROJECT_DIR$/comments-ajax.js" />
         <option value="$PROJECT_DIR$/comments.php" />
         <option value="$PROJECT_DIR$/sass/_content.scss" />
+        <option value="$PROJECT_DIR$/cs-framework/config/framework.config.php" />
       </list>
     </option>
   </component>
@@ -693,14 +682,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cs-framework/config/framework.config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="190" column="30" selection-start-line="190" selection-start-column="30" selection-end-line="190" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sass/_base.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -785,6 +766,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/comments.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="16" column="33" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sass/_content.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-23.5">
+          <caret line="1074" column="7" selection-start-line="1074" selection-start-column="7" selection-end-line="1074" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="178" column="7" selection-start-line="178" selection-start-column="1" selection-end-line="178" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/comments-ajax.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-8.222222">
@@ -796,26 +801,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/functions.php">
+    <entry file="file://$PROJECT_DIR$/cs-framework/config/framework.config.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="481.74075">
-          <caret line="236" column="91" selection-start-line="236" selection-start-column="91" selection-end-line="236" selection-end-column="91" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/comments.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="33" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sass/_content.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.84304935">
-          <caret line="1074" column="7" selection-start-line="1074" selection-start-column="7" selection-end-line="1074" selection-end-column="7" />
+        <state vertical-scroll-proportion="0.6839827">
+          <caret line="1490" column="10" selection-start-line="1490" selection-start-column="10" selection-end-line="1490" selection-end-column="10" />
           <folding />
         </state>
       </provider>

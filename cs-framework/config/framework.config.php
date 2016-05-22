@@ -1490,26 +1490,6 @@ $options[]   = array(
           'dependency' => array( 'i_player', '==', 'true' ),
         ),
 
-		// 播放器背景颜色
-        array(
-          'id'         => 'i_player_bg',
-          'type'       => 'color_picker',
-          'title'      => '播放器背景颜色',
-		  'default'    => '#000000',
-		  'rgba'    => false,
-          'dependency' => array( 'i_player', '==', 'true' ),
-        ),
-
-		// 播放器按钮颜色
-        array(
-          'id'         => 'i_player_btn',
-          'type'       => 'color_picker',
-          'title'      => '播放器按钮颜色',
-		  'default'    => '#ffffff',
-		  'rgba'    => false,
-          'dependency' => array( 'i_player', '==', 'true' ),
-        ),
-
 		// 手机端是否显示
 		array(
           'id'    	  => 'i_player_mobi',
