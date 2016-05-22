@@ -19,7 +19,7 @@ $lC:26px;
 
     #sidebar{
         width: $sidebar_w;
-        padding: 0 0 10px 10px;
+        padding: 10px 0 10px 10px;
         position: relative;
         border-bottom-left-radius: 5px;
 
@@ -27,8 +27,6 @@ $lC:26px;
           @include itme-bg;
           margin-bottom: 20px;
           padding: 10px 10px 5px;
-          border-top-left-radius: 0;
-          border-top-right-radius: 0;
 
           .social_link{
 
@@ -1019,6 +1017,10 @@ article{
     margin-top: 20px;
   }
 
+  .ias-noneleft{
+    margin-top: 20px;
+  }
+
 }
 
 .comments{
@@ -1165,7 +1167,7 @@ article{
                   right: 10px;
                   left: auto;
                   border:8px solid transparent;
-                  border-right-color:rgba(0,0,0,0.15);
+                  border-right-color:rgba(95, 95, 95, 0.15);
                 }
                 &:after{
                   position:absolute;
@@ -1855,22 +1857,21 @@ body.page,body.error404{
 		min-width:100px;
 		height:35px;
 		line-height:35px;
-		font-size:14px;
+		font-size:12px;
 		@include itme-bg;
+        border-radius: 35px;
 	 }
 	 @include itme-c1;
 }
 
 .archive-title{
-	margin:0 0 20px;
+	margin:10px 0 20px;
 	text-align:center;
 	padding:0 10px;
 	.title-inner{
 		height:40px;
 		line-height:40px;
 		@include itme-bg;
-        border-top-left-radius: 0;
-        border-top-right-radius: 0;
 	}
 }
 

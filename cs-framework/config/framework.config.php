@@ -1050,7 +1050,15 @@ $options[]      = array(
 		  'class'   => 'info',
 		  'content' => '底部编辑器',
 		),  
-  
+
+  		// 底部文本
+ 		array(
+           'id'    	  => 'i_footer_text',
+           'type'      => 'switcher',
+           'default'   => true,
+           'title'     => '底部编辑器',
+         ),
+
         // 底部编辑器
         array(
           'id'    => 'i_footer_edit',

@@ -35,15 +35,18 @@ $meta_data = get_post_meta( get_the_ID(), 'standard_options', true );
 $download = $meta_data['i_download'];
 $index = $meta_data['i_index'];
 $circle = cs_get_option( 'i_circle' );
-?> 
+$footer_text = cs_get_option( 'i_footer_text' );
+?>
 	
 	<footer id="footer">
 
-		<div class="footer-inner">
-			<div class="container clearfix">
-				<?php echo $edit ?>
-			</div>
-		</div>
+        <?php if ($footer_text) {?>
+            <div class="footer-inner">
+                <div class="container clearfix">
+                    <?php echo $edit ?>
+                </div>
+            </div>
+        <?php }?>
 
         <div class="footer-end">
             <div class="container clearfix">

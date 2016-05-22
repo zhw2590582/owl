@@ -12,7 +12,7 @@ a:hover, a:focus {
 
 //内容主体背景、左边栏
 .content-inner,#lSidebar{
-  background: #f0f0f0;
+  background: rgba(241, 240, 239, 0.95);
   border: 1px solid rgba(255, 255, 255, 0.65);
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
 }
@@ -44,24 +44,24 @@ input[type="text"],,input[type="password"],textarea{
   box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075);
 }
 
-//常用背景:包含文章、小工具、浮动按钮等主要部件
-$itme-bg: #f9f8f2;
+//常用背景:包含文章、小工具、浮动按钮等主要部件、版权栏
+$itme-bg: #F9F8F2;
 @mixin itme-bg () {
   background: $itme-bg;
   border: 1px solid rgba(255, 255, 255, 0.7);
-  box-shadow: 0 1px 1px rgba(0,0,0,0.15);
+  box-shadow: 0 0 5px rgba(198, 198, 198, 0.4);
   border-radius: 3px;
 }
 
-//常用背景2:头像、特色图、内页评论、首页评论
+//常用背景2:头像、特色图、内页评论、首页评论、底部文本
 $itme-bg2: #fff;
 @mixin itme-bg2 () {
   background: $itme-bg2;
-  box-shadow: 0 0 1px #C3BDAA;
+  box-shadow: 0 0 1px #DAD4C5;
 }
 
 //常用背景3:侧边栏控制器、小工具标题装饰、捐赠二维码
-$itme-bg3: #E2DBCA;
+$itme-bg3: #D0C6B0;
 @mixin itme-bg3 () {
   background: $itme-bg3;
 }
@@ -89,7 +89,7 @@ $c2: #a49d8c #333 !default;
   }
 }
 //字体颜色03:极小部分链接颜色
-$c3: #443A2D #333 !default;
+$c3: #8A4C2E #333 !default;
 @mixin itme-c3 () {
   color:nth($c3,1);
   a{
@@ -102,8 +102,8 @@ $c3: #443A2D #333 !default;
 
 //顶部公告条
 .notice{
-  background: #fff;
-  border-bottom: 1px solid #E8E3D3;
+  background: #FFF8E9;
+  border-bottom: 1px solid #EFE8D7;
 }
 
 //顶部菜单
@@ -148,21 +148,5 @@ $sm_c:#fff #867F6F #fff !default;
   &:after{
     border:7px solid transparent;
     border-bottom-color:nth($sm_c,1);
-  }
-}
-
-//页脚
-#footer{
-  background: #D2CFC1;
-  color:#333;
-  a{
-    color:#333;
-    &:hover{
-      color:#999;
-    }
-  }
-  .footer-end{
-    border-top: 1px solid #000;
-    background: #BBB7A3;
   }
 }
