@@ -36,7 +36,14 @@ function island_scripts_styles() {
 	$circle = cs_get_option( 'i_circle' );
  	if ( $circle == true && !is_mobile() ) {
 		wp_enqueue_script('circle');	
-	}	
+	}
+
+    /* 视频背景 */
+    wp_register_script('bideo', get_template_directory_uri() . '/js/bideo.js', false, '0.3', true);
+    $video = cs_get_option( 'i_video' );
+    if ( $video == true && !is_mobile() ) {
+        wp_enqueue_script('bideo');
+    }
 	
 }
 add_action('wp_enqueue_scripts', 'island_scripts_styles'); 
@@ -128,6 +135,18 @@ function widget_css($classes) {
     return $classes;
 }
 add_filter('body_class','widget_css');
+
+/* 视频类名 */
+function video_css($classes) {
+    $video = cs_get_option( 'i_video' );
+	if ( $video == true ) {
+        $classes[] = 'video_bg';
+    }else {
+        $classes[] = '';
+	}
+    return $classes;
+}
+add_filter('body_class','video_css');
 
 /* 引入密钥验证 */
 include ('verify.php');

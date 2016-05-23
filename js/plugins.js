@@ -108,3 +108,5 @@ jQuery(document).ready(function($) {
         insertText(document.getElementById('comment'),x)
       });
 });
+
+

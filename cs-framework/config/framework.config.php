@@ -1479,6 +1479,36 @@ $options[]   = array(
 		array(
 		  'type'    => 'notice',
 		  'class'   => 'info',
+		  'content' => '视频背景',
+		),
+
+ 		// 视频背景
+		array(
+          'id'    	  => 'i_video',
+          'type'      => 'switcher',
+          'title'     => '视频背景',
+        ),
+
+        // 视频链接
+        array(
+          'id'      => 'i_video_link',
+          'type'    => 'upload',
+          'title'   => '视频链接',
+          'dependency' => array( 'i_video', '==', 'true' ),
+          'help'      => '可以上传或者外链',
+        ),
+
+        // 视频封面
+        array(
+          'id'      => 'i_video_img',
+          'type'    => 'upload',
+          'title'   => '视频封面',
+          'dependency' => array( 'i_video', '==', 'true' ),
+        ),
+
+		array(
+		  'type'    => 'notice',
+		  'class'   => 'info',
 		  'content' => '音乐播放器',
 		),
 

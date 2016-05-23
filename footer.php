@@ -35,6 +35,9 @@ $meta_data = get_post_meta( get_the_ID(), 'standard_options', true );
 $download = $meta_data['i_download'];
 $index = $meta_data['i_index'];
 $circle = cs_get_option( 'i_circle' );
+$video = cs_get_option( 'i_video' );
+$video_link = cs_get_option( 'i_video_link' );
+$video_img = cs_get_option( 'i_video_img' );
 $footer_text = cs_get_option( 'i_footer_text' );
 ?>
 	
@@ -260,7 +263,15 @@ $footer_text = cs_get_option( 'i_footer_text' );
 	<?php if ( $circle == true && !is_mobile()  ) { ?>
 		<canvas id="pixie"></canvas>
 	<?php }?>	
-	
+
+	<?php if ( $video == true && !is_mobile()  ) { ?>
+        <div id="video_container">
+            <video id="background_video" loop muted autoplay date-video="<?php echo $video_link; ?>"></video>
+            <div id="video_cover" style="background-image:url('<?php echo $video_img; ?>')"></div>
+            <div id="overlay"></div>
+        </div>
+	<?php }?>
+
 	<?php wp_footer(); ?>
 	<script>
 
