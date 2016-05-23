@@ -328,7 +328,7 @@ function Init_theme($oldthemename) {
 	if ('themes.php' == $pagenow && isset($_GET['activated'])) {
 		global $verify;
 		$key = cs_get_customize_option( 'lazycat_key' );
-		$verify = get_option('Island_license_key');
+		$verify = get_option('Owl_license_key');
 		if (!empty($verify) || $key == 'zhw2590582' ) {
 			wp_redirect(admin_url('admin.php?page=cs-framework'));
 			exit;
@@ -391,7 +391,7 @@ if ($theme_url == $wp_url) {
 function theme_pro( $classes ) {
   global $verify;
   $key = cs_get_customize_option( 'lazycat_key' ); 
-    $verify = get_option('Island_license_key');
+    $verify = get_option('Owl_license_key');
     if (!empty($verify) || $key == 'zhw2590582') {
       return "$classes theme_pro";
     } else {
@@ -444,7 +444,7 @@ function tie_admin_bar() {
     global $wp_admin_bar;
     global $verify;
 	$key = cs_get_customize_option( 'lazycat_key' ); 
-    $verify = get_option('Island_license_key');
+    $verify = get_option('Owl_license_key');
     if (!empty($verify) || $key == 'zhw2590582') {
         if (current_user_can('switch_themes')) {
             $wp_admin_bar->add_menu(array(
