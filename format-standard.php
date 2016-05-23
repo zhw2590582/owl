@@ -26,7 +26,7 @@ $feature_num = cs_get_option( 'i_feature_num' );
             <?php if ( has_post_thumbnail() ) { ?>
                 <div class="featured-image" >
                     <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                        <?php the_post_thumbnail( 'large-image' ); ?>
+                        <?php the_post_thumbnail( 'medium' ); ?>
                     </a>
                 </div>
             <?php }else{?>
