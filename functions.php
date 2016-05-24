@@ -575,8 +575,8 @@ function posts_custom_column_views($column_name, $id){
 
 /* 后台更新提醒 */
 function my_admin_notice() {
-	$url = 'https://raw.githubusercontent.com/zhw2590582/owl/master/update.json';
 	$name = wp_get_theme()->display('Name');
+	$url = 'https://raw.githubusercontent.com/zhw2590582/'.$name.'/master/update.json';
 	$nowversion = wp_get_theme()->display('Version');
 	$json_string = wp_remote_retrieve_body( wp_remote_get(''.$url.'',array('timeout' => 120)));
 	$obj=json_decode($json_string);

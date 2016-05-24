@@ -1616,21 +1616,6 @@ $options[]   = array(
 		array(
 		  'type'    => 'notice',
 		  'class'   => 'info',
-		  'content' => '推送通知',
-		),
-
- 		// 更新推送
-		array(
-          'id'    	  => 'i_push',
-          'type'      => 'switcher',
-          'default'   => true,
-          'label'     => '开启可及时得到最新主题更新消息',
-          'title'     => '推送通知',
-        ),
-
-		array(
-		  'type'    => 'notice',
-		  'class'   => 'info',
 		  'content' => '维护模式',
 		),
 
