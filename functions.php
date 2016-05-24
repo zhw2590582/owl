@@ -584,7 +584,7 @@ function my_admin_notice() {
 	$notice=$obj->notice;
 	$switch=$obj->switch;
 	if ($switch == 'on' && strcmp($newversion,$nowversion)>0) {
-		echo '<div class="update-nag">您的'.$name.'当前版本为:'.$nowversion.'，可更新到:'.$newversion.'！<a href='.admin_url( 'update-core.php' ).'>请现在升级</a>。遇到问题请加QQ群：284093657。</br>'.$notice.'</div>';
+		echo '<div class="update-nag">您的'.$name.'当前版本为:'.$nowversion.'，可更新到:'.$newversion.'！</br>'.$notice.'</div>';
 	}		
 }
 add_action( 'admin_notices', 'my_admin_notice' );
