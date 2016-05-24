@@ -246,7 +246,8 @@ a {
   transition: all 0.1s; }
 
 img {
-  max-width: 100%; }
+  max-width: 100%;
+  height: auto; }
 
 [disabled],
 .disabled {
