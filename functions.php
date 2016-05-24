@@ -582,11 +582,14 @@ function my_admin_notice() {
 	$obj=json_decode($json_string);
 	$newversion=$obj->version;
 	$notice=$obj->notice;
+	$switch=$obj->switch;
 	if (strcmp($newversion,$nowversion)>0) {
 		echo '<div class="update-nag">您的'.$name.'当前版本为:'.$nowversion.'，可更新到:'.$newversion.'！<a href='.admin_url( 'update-core.php' ).'>请现在升级</a>。遇到问题请加QQ群：284093657。</br>'.$notice.'</div>';
 	}		
 }
-add_action( 'admin_notices', 'my_admin_notice' );
+if($switch == 'on'){
+    add_action( 'admin_notices', 'my_admin_notice' );
+}
 
 /* 边栏评论 */	
 	function h_comments($outer,$limit){
