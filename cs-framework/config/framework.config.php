@@ -348,14 +348,13 @@ $options[]      = array(
           'default'   => true,
         ),
 		
-		// 登录图片
+		// 登录背景图片
          array(
            'id'      => 'i_login_image',
            'type'    => 'upload',
-           'title'   => '登录图片',
+           'title'   => '登录背景图片',
            'help'      => '',
            'default' => get_template_directory_uri()."/images/default/login_bg.png",
- 		   'help'      => '推荐尺寸为1920X200',
 		   'dependency' => array( 'i_login', '==', 'true' ),
          ),
 		
@@ -372,7 +371,7 @@ $options[]      = array(
   'icon'        => 'fa fa-image',
   'fields'      => array(
 
-		// 首页开启灯箱
+		// 首页开启幻灯片
 		array(
           'id'    	  => 'i_slider',
           'type'      => 'switcher',
@@ -380,7 +379,7 @@ $options[]      = array(
 		  'help'      => '注意：幻灯片只显示在主页',
         ),
 
-			// 自定义灯箱
+			// 自定义幻灯片
         array(
           'id'              => 'i_slider_custom',
           'type'            => 'group',
@@ -829,14 +828,6 @@ $options[]      = array(
 		  'content' => '归档页面',
 		),  
 		
-		// 归档索引
-		array(
-          'id'    	  => 'i_archive_index',
-          'type'      => 'switcher',
-          'default'   => true,
-          'title'     => '归档索引',
-        ),
-		
 		 // 友链页面
 		 array(
 		  'type'    => 'notice',
@@ -1051,7 +1042,7 @@ $options[]      = array(
 		  'content' => '底部编辑器',
 		),  
 
-  		// 底部文本
+  		// 底部编辑器
  		array(
            'id'    	  => 'i_footer_text',
            'type'      => 'switcher',

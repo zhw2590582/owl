@@ -73,14 +73,23 @@ blockquote p:last-child {
 blockquote cite {
   color: #b3b3b3;
 }
-ul,
-ol {
+ul,ol {
   margin: 0;
   padding: 0;
   list-style: none;
 }
-mark,
-.highlight {
+
+.content ul{
+  margin-left:15px;
+  list-style-type: disc;
+}
+
+.content ol{
+  margin-left:15px;
+  list-style-type: decimal;
+}
+
+mark,.highlight {
   background: #ffe5a3;
   border-radius: .2rem;
   display: inline;
