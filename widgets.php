@@ -504,7 +504,7 @@ if( ! class_exists( 'CS_Widget_Slider' ) ) {
 
       $widget_ops     = array(
         'classname'   => 'cs_widget_slider',
-        'description' => '图像链接小工具'
+        'description' => 'Owl轮播图'
       );
 
       parent::__construct( 'cs_widget_slider', 'Owl轮播图', $widget_ops );
