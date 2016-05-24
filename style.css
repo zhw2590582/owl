@@ -802,6 +802,9 @@ mark, .highlight {
 .layout_one .grids .grid-item {
   width: 219px;
 }
+.layout_one .index-box {
+  margin-left: 500px;
+}
 
 .main_off #content .content-inner {
   background: none;
