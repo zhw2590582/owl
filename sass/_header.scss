@@ -1,6 +1,7 @@
+@charset "UTF-8";
 //header
-$header_h:50px;
-$banner_h:350px;
+$header_h:50px; //菜单高度
+$banner_h:450px; //Banner高度
 
 .notice{
   position:relative;
@@ -24,7 +25,6 @@ $banner_h:350px;
 
     .header-mask-sd{
         height: $header_h;
-        @include bg-w(0.3);
         box-shadow:rgba(0,0,0,0.1) 0 1px 2px;
         position: absolute;
         top: 0;
@@ -58,7 +58,6 @@ $banner_h:350px;
             top: 0;
             width: 100%;
             height: 100%;
-            @include bg-w(0.4);
         }
     }
     .header-inner{
@@ -112,17 +111,58 @@ $banner_h:350px;
     }
 }
 
-.glass_nav .header-inner{
-  background: none;
-  .header-menu-list>li >a,.header-tool>li >a,.logo a{
-    color: #222;
-    &:hover{
-      color: #222;
+.glass_nav {
+
+  .header-inner{
+    background: none;
+  }
+
+  .glass_w{
+
+    .header-mask-sd{
+      @include bg-w(0.3);
+    }
+
+    .header-mask-bg{
+      @include bg-w(0.4);
+    }
+
+    .header-inner{
+      .header-menu-list>li >a,.header-tool>li >a,.logo a{
+        color: #222;
+        &:hover{
+          color: #222;
+        }
+      }
+      .header-menu .header-menu-list > li:hover{
+        background: rgba(255,255,255,0.24);
+      }
     }
   }
-  .header-menu .header-menu-list > li:hover{
-    background: rgba(255,255,255,0.24);
+
+  .glass_b{
+
+    .header-mask-sd{
+      @include bg-b(0.3);
+    }
+
+    .header-mask-bg{
+      @include bg-b(0.3);
+    }
+
+    .header-inner{
+      .header-menu-list>li >a,.header-tool>li >a,.logo a{
+        color: rgba(255, 255, 255, 0.7);
+        &:hover{
+          color: #fff;
+        }
+      }
+      .header-menu .header-menu-list > li:hover{
+        background: rgba(255,255,255,0.1);
+      }
+    }
   }
+
 }
 
 .header-menu-list,.header-tool{

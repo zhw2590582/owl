@@ -75,7 +75,7 @@
   }
 }(window));
 jQuery(document).ready(function($) {
-  var video = $('#background_video').attr("date-video");;
+  var video = $('#background_video').attr("data-video");;
   var bv = new Bideo();
   bv.init({
     videoEl: document.querySelector('#background_video'),

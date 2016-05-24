@@ -182,8 +182,11 @@ $footer_text = cs_get_option( 'i_footer_text' );
             </div>
             <div class="container skin_list">
                 <ul class="clearfix">
-					<?php $banner_c = ' '. $banner_d[color] .' url(\''. $banner_d[image] .'\') no-repeat center -10px'; ?>
-					<li data-banner="<?php echo $banner_c; ?>" data-body="" class="current">
+					<?php
+					 $menu_c = cs_get_option( 'i_glass_style' );
+					 $banner_c = ' '. $banner_d[color] .' url(\''. $banner_d[image] .'\') no-repeat center -10px';
+					?>
+					<li data-banner="<?php echo $banner_c; ?>" data-body="" class="current" data-menu="<?php echo $menu_c; ?>">
 						<img src="<?php bloginfo('template_directory'); ?>/images/default/featured_bg.png">
 						<span class="text-ellipsis">默认</span>
 					</li>
@@ -191,10 +194,11 @@ $footer_text = cs_get_option( 'i_footer_text' );
                         $skins = cs_get_option( 'i_skin_custom' );
                         if( ! empty( $skins ) ) {
                           foreach ( $skins as $skin ) {
+                            $menu = $skin['i_skin_glass'];
                             $banner = ' '. $skin['i_skin_banner'][color] .' url(\''. $skin['i_skin_banner'][image] .'\') no-repeat center -10px';
                             $body = ' '. $skin['i_skin_body'][color] .' url(\''. $skin['i_skin_body'][image] .'\') '. $skin['i_skin_body'][repeat] .' '. $skin['i_skin_body'][position] .' '. $skin['i_skin_body'][attachment] .'';
                             echo '
-                            <li data-banner="'. $banner .'" data-body="'. $body .'">
+                            <li data-banner="'. $banner .'" data-body="'. $body .'" data-menu="'. $menu .'">
                                 <img src="'. $skin['i_skin_thumb'] .'" height="96" width="96">
                                 <span class="text-ellipsis">'. $skin['i_skin_title'] .'</span>
                             </li>';
@@ -266,7 +270,7 @@ $footer_text = cs_get_option( 'i_footer_text' );
 
 	<?php if ( $video == true && !is_mobile()  ) { ?>
         <div id="video_container">
-            <video id="background_video" loop muted autoplay date-video="<?php echo $video_link; ?>"></video>
+            <video id="background_video" loop muted autoplay data-video="<?php echo $video_link; ?>"></video>
             <div id="video_cover" style="background-image:url('<?php echo $video_img; ?>')"></div>
             <div id="overlay"></div>
         </div>

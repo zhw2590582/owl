@@ -183,6 +183,20 @@ $options[]      = array(
           'title'      => '菜单玻璃效果',
         ),
 
+		// 玻璃样式
+        array(
+          'id'         => 'i_glass_style',
+          'type'       => 'radio',
+          'title'      => '玻璃样式',
+          'class'      => 'horizontal',
+          'options'    => array(
+            'i_glass_w'   => '白玻璃',
+            'i_glass_b'   => '黑玻璃',
+          ),
+          'default'    => 'i_glass_w',
+          'dependency' => array( 'i_menu_glass', '==', 'true' ),
+        ),
+
 		// 主体内容背景
         array(
           'id'         => 'i_main_bg',
@@ -269,6 +283,19 @@ $options[]      = array(
               'type'    => 'upload',
               'title'   => '缩略图',
               'help'      => '推荐尺寸为100X100',
+            ),
+
+            // 菜单玻璃样式
+            array(
+              'id'         => 'i_skin_glass',
+              'type'       => 'radio',
+              'title'      => '菜单玻璃样式',
+              'class'      => 'horizontal',
+              'options'    => array(
+                'i_glass_w'   => '白玻璃',
+                'i_glass_b'   => '黑玻璃',
+              ),
+              'default'    => 'i_glass_w',
             ),
 
             // Banner图片

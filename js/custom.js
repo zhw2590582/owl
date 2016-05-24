@@ -199,8 +199,16 @@ if (item.length > 0) {
 		$(this).addClass('current').siblings().removeClass('current');
 		var skinBanner = $(this).attr('data-banner');
 		var skinBody = $(this).attr('data-body');
+		var skinmenu = $(this).attr('data-menu');
 		$("#header,.header-mask").css('background',skinBanner);
 		$("body").css('background',skinBody);
+
+		if(skinmenu == 'i_glass_b'){
+			$("#header").addClass('glass_b').removeClass('glass_w');
+
+		}else{
+			$("#header").addClass('glass_w').removeClass('glass_b');
+		}
 	});
 
 	$(".skin_fx").click( function () {

@@ -1,14 +1,13 @@
+@charset "UTF-8";
 //content
-$content_bg: #ebd9c3;
-$content_top:130px;
-$sidebar_w:300px;
-$featured_w:190px;
+$sidebar_w:300px; //侧边栏宽度
+$featured_w:190px; //特色图宽度
 $lC:26px;
 
 
 #content{
     position: relative;
-    top: -$content_top;
+    top: 220px - $banner_h;
 }
 
 #content{

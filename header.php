@@ -42,13 +42,22 @@ $avatar_name = cs_get_option( 'i_avatar_name' );
         </div>
     <?php }?>
      <?php $banner_c = ' '. $banner[color] .' url(\''. $banner[image] .'\') no-repeat center -10px'; ?>
-    <header id="header" style="background:<?php echo $banner_c; ?>;">
+     <?php
+     $i_glass = cs_get_option( 'i_glass_style' );
+     if ( $i_glass  == 'i_glass_w') {
+         $i_glass_c = 'glass_w';
+     }else{
+         $i_glass_c = 'glass_b';
+     }
+     ?>
+    <header id="header" class="<?php echo $i_glass_c; ?>" style="background:<?php echo $banner_c; ?>;">
         <div class="header-mask-sd">
             <div class="header-mask-blur">
                 <div class="header-mask" style="background: <?php echo $banner_c; ?>"></div>
                 <div class="header-mask-bg"></div>
             </div>
         </div>
+
         <div class="header-inner">
             <div class="container clearfix">
                 <div class="header-logo">
