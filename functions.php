@@ -596,10 +596,10 @@ if ($i_update == true) {
 
 //客户端
 function my_admin_notice() {
-	$url = wp_get_theme()->display('ThemeURI');
+	$url = 'https://raw.githubusercontent.com/zhw2590582/owl/master/update.json';
 	$name = wp_get_theme()->display('Name');
 	$nowversion = wp_get_theme()->display('Version');
-	$json_string = wp_remote_retrieve_body( wp_remote_get(''.$url.'updates/update.json',array('timeout' => 120)));
+	$json_string = wp_remote_retrieve_body( wp_remote_get(''.$url.'',array('timeout' => 120)));
 	$obj=json_decode($json_string);
 	$newversion=$obj->version;
 	$notice=$obj->notice;
