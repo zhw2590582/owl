@@ -63,7 +63,7 @@ p {
   margin: 0 0 1rem;
 }
 blockquote {
-  border-left: .2rem solid $itme-bg3;
+  border-left: .2rem solid nth($c3,1);
   margin-left: 0;
   padding: 1rem 2rem;
 }
