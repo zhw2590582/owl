@@ -180,7 +180,7 @@ $options[]      = array(
         array(
           'id'         => 'i_menu_glass',
           'type'       => 'switcher',
-          'title'      => '菜毛玻璃效果',
+          'title'      => '菜单玻璃效果',
         ),
 
 		// 主体内容背景
