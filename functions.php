@@ -1032,7 +1032,7 @@ if (cs_get_option('i_post_revision') == true) {
 function article_index($content) {
 	$matches = array();
 	$ul_li = '';
-	$r = '/<h([2-6]).*?\>(.*?)<\/h[2-6]>/is';
+	$r = "/<h3>([^<]+)</h3>/im";
 	if(is_single() && preg_match_all($r, $content, $matches)) {
 		foreach($matches[1] as $key => $value) {
 			$title = trim(strip_tags($matches[2][$key]));
