@@ -573,28 +573,7 @@ function posts_custom_column_views($column_name, $id){
     }
 }
 
-/* 后台更新提醒 */	
-
-//服务器端
-function createFolder($path){
-	if (!file_exists($path)){
-	   createFolder(dirname($path));
-	   mkdir($path, 0777);
-}}
-$data = array();
-$data['version'] = ''.cs_get_option('i_update_version').'';
-$data['notice'] = ''.cs_get_option('i_update_notice').'';
-foreach ( $data as $key => $value ) {  
-	$data[$key] = urlencode ( $value );  
-} 	
-$json_string = urldecode ( json_encode ( $data ) ); 
-$i_update = cs_get_option('i_update');
-if ($i_update == true) {
-	createFolder('updates');
-	file_put_contents('updates/update.json', $json_string);	
-}	
-
-//客户端
+/* 后台更新提醒 */
 function my_admin_notice() {
 	$url = 'https://raw.githubusercontent.com/zhw2590582/owl/master/update.json';
 	$name = wp_get_theme()->display('Name');
@@ -607,11 +586,7 @@ function my_admin_notice() {
 		echo '<div class="update-nag">您的'.$name.'当前版本为:'.$nowversion.'，可更新到:'.$newversion.'！<a href='.admin_url( 'update-core.php' ).'>请现在升级</a>。遇到问题请加QQ群：284093657。</br>'.$notice.'</div>';
 	}		
 }
-$push = cs_get_option('i_push');
-if ($push == true) {
-  add_action( 'admin_notices', 'my_admin_notice' );
-}
-
+add_action( 'admin_notices', 'my_admin_notice' );
 
 /* 边栏评论 */	
 	function h_comments($outer,$limit){
