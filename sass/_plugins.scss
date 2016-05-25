@@ -53,7 +53,7 @@
 	-webkit-transition-duration: 0.3s;
 	-moz-transition-duration: 0.3s;
 	transition-duration: 0.3s;
-    @include itme-bg;
+    @include itme-bg2;
     border: none;
 }
 
@@ -74,11 +74,12 @@
   	border-radius: 50%;
 	text-align: center;
 	line-height: 50px;
+  	color: #999;
 	background: rgba(0, 0, 0, 0.5);
 	display: inline-block;
 
   	&:hover{
-	  color: #BDBDBD;
+	  color: #fff;
 	}
 }
 
@@ -184,6 +185,7 @@ input#wp-submit {
 	border-bottom-left-radius: 5px;
 	border-bottom-right-radius: 5px;
     @include bdst;
+    @include itme-c2;
 }
 
 .login-submit {

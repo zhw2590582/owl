@@ -246,6 +246,7 @@ mark,.highlight {
   transform: translate(-50%, 0);
   transition: all .216s ease;
   z-index: 99;
+  white-space:nowrap;
 }
 .tooltip:hover::after,
 .tooltip:focus::after {

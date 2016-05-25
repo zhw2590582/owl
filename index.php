@@ -80,7 +80,7 @@ $com = cs_get_option( 'i_index_com' );
                                           foreach ( $my_socials as $social ) {
                                             $iconstyle = $social['i_icon_style'];
                                             echo '<li>';
-                                            if( ! empty( $social['i_social_link'] ) ){echo '<a href="'. $social['i_social_link'] .'" title="'. $social['i_social_title'] .'"';}else{echo '<a href="javascript:void(0)" title="'. $social['i_social_title'] .'" ';}
+                                            if( ! empty( $social['i_social_link'] ) ){echo '<a href="'. $social['i_social_link'] .'" class="tooltip tooltip-bottom" data-tooltip="'. $social['i_social_title'] .'"';}else{echo '<a href="javascript:void(0)"  class="tooltip tooltip-bottom" data-tooltip="'. $social['i_social_title'] .'" ';}
                                             if ( $social['i_social_newtab'] == true) { echo 'target="_black"';}
                                             if ($iconstyle == 'i_icon') {echo '><i class="'. $social['i_social_icon'] .'"></i>';} else {echo '><img src="'. $social['i_social_image'] .'">';}
                                             echo '</a>';
