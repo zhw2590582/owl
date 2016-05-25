@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d8900106-f274-4529-9fb0-d361016eb2f3" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sass/_base.scss" afterPath="$PROJECT_DIR$/sass/_base.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sass/_content.scss" afterPath="$PROJECT_DIR$/sass/_content.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sass/_plugins.scss" afterPath="$PROJECT_DIR$/sass/_plugins.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sass/_skin.scss" afterPath="$PROJECT_DIR$/sass/_skin.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style.css.map" afterPath="$PROJECT_DIR$/style.css.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style.css" afterPath="$PROJECT_DIR$/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/format-standard.php" afterPath="$PROJECT_DIR$/format-standard.php" />
     </list>
     <ignored path="Island.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,10 +33,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_plugins.scss" pinned="false" current-in-tab="true">
+      <file leaf-file-name="_plugins.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sass/_plugins.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7725857">
+            <state vertical-scroll-proportion="-9.725491">
               <caret line="187" column="20" selection-start-line="187" selection-start-column="20" selection-end-line="187" selection-end-column="20" />
               <folding />
             </state>
@@ -59,11 +53,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-2.056277">
+              <caret line="80" column="81" selection-start-line="80" selection-start-column="81" selection-end-line="80" selection-end-column="81" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="format-standard.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/format-standard.php">
+          <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="82" column="162" selection-start-line="82" selection-start-column="162" selection-end-line="82" selection-end-column="162" />
+              <caret line="28" column="67" selection-start-line="28" selection-start-column="67" selection-end-line="28" selection-end-column="67" />
               <folding />
             </state>
           </provider>
@@ -119,7 +123,6 @@
         <option value="$PROJECT_DIR$/sass/_footer.scss" />
         <option value="$PROJECT_DIR$/single.php" />
         <option value="$PROJECT_DIR$/custom-friend.php" />
-        <option value="$PROJECT_DIR$/format-standard.php" />
         <option value="$PROJECT_DIR$/functions.php" />
         <option value="$PROJECT_DIR$/update.json" />
         <option value="$PROJECT_DIR$/header.php" />
@@ -135,6 +138,7 @@
         <option value="$PROJECT_DIR$/sass/_content.scss" />
         <option value="$PROJECT_DIR$/sass/_skin.scss" />
         <option value="$PROJECT_DIR$/sass/_plugins.scss" />
+        <option value="$PROJECT_DIR$/format-standard.php" />
       </list>
     </option>
   </component>
@@ -645,13 +649,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/format-standard.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="28" column="57" selection-start-line="28" selection-start-column="57" selection-end-line="28" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/update.json">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -744,14 +741,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="82" column="162" selection-start-line="82" selection-start-column="162" selection-end-line="82" selection-end-column="162" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sass/_base.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-18.25">
@@ -778,8 +767,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sass/_plugins.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7725857">
+        <state vertical-scroll-proportion="-9.725491">
           <caret line="187" column="20" selection-start-line="187" selection-start-column="20" selection-end-line="187" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/format-standard.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="28" column="67" selection-start-line="28" selection-start-column="67" selection-end-line="28" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.056277">
+          <caret line="80" column="81" selection-start-line="80" selection-start-column="81" selection-end-line="80" selection-end-column="81" />
           <folding />
         </state>
       </provider>
