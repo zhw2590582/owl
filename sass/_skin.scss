@@ -12,13 +12,13 @@ a:hover, a:focus {
 
 //内容主体背景、左边栏
 .content-inner,#lSidebar{
-  background: #F1F0EF;
+  background: #EAE8DF;
   border: 1px solid rgba(255, 255, 255, 0.65);
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
 }
 
 //所有实线边
-$bds_t:#EAE7DE;
+$bds_t:#E8E2D2;
 
 //所有虚线边
 $bdd_t:#E8E3D4;
@@ -45,11 +45,11 @@ input[type="text"],,input[type="password"],textarea{
 }
 
 //常用背景:包含文章、小工具、浮动按钮等主要部件、版权栏
-$itme-bg: #F9F8F2;
+$itme-bg: #F7F6F1;
 @mixin itme-bg () {
   background: $itme-bg;
-  border: 1px solid rgba(255, 255, 255, 0.7);
-  box-shadow: 0 0 5px rgba(198, 198, 198, 0.4);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.8);
   border-radius: 3px;
 }
 
@@ -57,7 +57,7 @@ $itme-bg: #F9F8F2;
 $itme-bg2: #fff;
 @mixin itme-bg2 () {
   background: $itme-bg2;
-  box-shadow: 0 0 1px #DAD4C5;
+  box-shadow: 0 0 1px #BFB7A3;
 }
 
 //常用背景3:侧边栏控制器、小工具标题装饰、捐赠二维码
@@ -67,7 +67,7 @@ $itme-bg3: #D0C6B0;
 }
 
 //字体颜色01:大部分链接颜色
-$c1: #867f6f #333 !default; //第一个为默认色，第二个为鼠标经过色
+$c1: #866457 #333 !default; //第一个为默认色，第二个为鼠标经过色
 @mixin itme-c1 () {
   color: nth($c1,1);
   a{
