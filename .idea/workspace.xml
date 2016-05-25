@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d8900106-f274-4529-9fb0-d361016eb2f3" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/format-standard.php" afterPath="$PROJECT_DIR$/format-standard.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sass/_content.scss" afterPath="$PROJECT_DIR$/sass/_content.scss" />
     </list>
     <ignored path="Island.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -53,10 +53,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.056277">
+            <state vertical-scroll-proportion="0.0">
               <caret line="80" column="81" selection-start-line="80" selection-start-column="81" selection-end-line="80" selection-end-column="81" />
               <folding />
             </state>
@@ -83,11 +83,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_content.scss" pinned="false" current-in-tab="false">
+      <file leaf-file-name="_content.scss" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sass/_content.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.5">
-              <caret line="642" column="23" selection-start-line="642" selection-start-column="23" selection-end-line="642" selection-end-column="23" />
+            <state vertical-scroll-proportion="0.5201794">
+              <caret line="642" column="20" selection-start-line="642" selection-start-column="20" selection-end-line="642" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -135,10 +135,10 @@
         <option value="$PROJECT_DIR$/post-like.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/sass/_base.scss" />
-        <option value="$PROJECT_DIR$/sass/_content.scss" />
         <option value="$PROJECT_DIR$/sass/_skin.scss" />
         <option value="$PROJECT_DIR$/sass/_plugins.scss" />
         <option value="$PROJECT_DIR$/format-standard.php" />
+        <option value="$PROJECT_DIR$/sass/_content.scss" />
       </list>
     </option>
   </component>
@@ -749,14 +749,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sass/_content.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.5">
-          <caret line="642" column="23" selection-start-line="642" selection-start-column="23" selection-end-line="642" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sass/_skin.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="4.625">
@@ -783,8 +775,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.056277">
+        <state vertical-scroll-proportion="0.0">
           <caret line="80" column="81" selection-start-line="80" selection-start-column="81" selection-end-line="80" selection-end-column="81" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sass/_content.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5201794">
+          <caret line="642" column="20" selection-start-line="642" selection-start-column="20" selection-end-line="642" selection-end-column="20" />
           <folding />
         </state>
       </provider>

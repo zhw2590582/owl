@@ -1572,7 +1572,6 @@ article .post-wrap .post-inner .post-body header h2 a:hover {
 article .post-wrap .post-inner .post-body .post-content {
   padding-left: 220px;
   padding-right: 15px;
-  font-size: 14px;
 }
 article .post-wrap .post-inner .post-body .post-content .read_more {
   font-size: 12px;
@@ -1614,6 +1613,7 @@ article .post-wrap .bottom_meta .meta_tabs a:before {
 .single-post article .post-wrap .post-inner .post-body .post-content {
   padding-left: 15px;
   margin-bottom: 50px;
+  font-size: 14px;
 }
 .single-post #content #main .main-inner {
   margin-top: 0;
