@@ -1269,6 +1269,12 @@ li:hover > .sub-menu {
 .widgets aside a:hover {
   color: #333;
 }
+.widgets .cs_widget_link {
+  padding: 5px;
+}
+.widgets .cs_widget_link a {
+  display: block;
+}
 
 .widgets aside > ul li:before {
   font-family: FontAwesome;

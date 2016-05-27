@@ -204,6 +204,12 @@ $lC:26px;
     @include itme-c1;
 
   }
+  .cs_widget_link{
+    padding: 5px;
+    a{
+      display: block;
+    }
+  }
 }
 
 .widgets aside{
