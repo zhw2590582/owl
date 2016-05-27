@@ -1269,11 +1269,17 @@ li:hover > .sub-menu {
 .widgets aside a:hover {
   color: #333;
 }
-.widgets .cs_widget_link, .widgets .cs_widget_slider {
+.widgets .cs_widget_link {
   padding: 5px;
 }
-.widgets .cs_widget_link a, .widgets .cs_widget_slider a {
+.widgets .cs_widget_link a {
   display: block;
+}
+.widgets .cs_widget_link .cs_widget_slider {
+  padding: 5px;
+}
+.widgets .cs_widget_link .cs_widget_slider .nivo-directionNav {
+  display: none;
 }
 
 .widgets aside > ul li:before {

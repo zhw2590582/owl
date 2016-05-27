@@ -204,10 +204,16 @@ $lC:26px;
     @include itme-c1;
 
   }
-  .cs_widget_link,.cs_widget_slider{
+  .cs_widget_link{
     padding: 5px;
     a{
       display: block;
+    }
+    .cs_widget_slider{
+      padding: 5px;
+      .nivo-directionNav{
+        display: none;
+      }
     }
   }
 }
