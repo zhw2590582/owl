@@ -53,7 +53,7 @@ $itme-bg: #F7F6F1;
   border-radius: 3px;
 }
 
-//常用背景2:头像、特色图、内页评论、首页评论、底部文本
+//常用背景2:头像、特色图、内页评论、首页评论、底部文本、读者墙
 $itme-bg2: #fff;
 @mixin itme-bg2 () {
   background: $itme-bg2;

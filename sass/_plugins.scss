@@ -328,16 +328,21 @@ input#wp-submit {
 .grids{
   margin: 0 auto;
   .grid-item{
+
     position: relative;
-    width: 220px;
+    width: 20%;
     float: left;
-    padding: 0;
-    margin: 0 8px 30px;
-    @include itme-bg;
+    padding: 5px;
+	margin-bottom: 0;
+
+	.grid-inner{
+	  @include itme-bg;
+	}
 
     .work-wrap{
       padding: 10px 10px 5px;
       .featured-image{
+		position: relative;
         width: 200px;
         height: 150px;
         overflow: hidden;
@@ -356,12 +361,11 @@ input#wp-submit {
     .work-content{
       position: absolute;
       padding: 10px;
-      font-size: 14px;
       display: none;
-      top: 10px;
-      left: 10px;
-      width: 200px;
-      height: 150px;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       @include bg-b (0.75);
     }
 

@@ -56,6 +56,7 @@ $bulletin = cs_get_option( 'i_bulletin' );
                             <div class="main-inner">
         	                    <div id="posts-box">
         	                        <div class="posts grids clearfix">
+
                                         <?php 
                                           $temp = $wp_query; 
                                           $wp_query = null; 
@@ -84,13 +85,15 @@ $bulletin = cs_get_option( 'i_bulletin' );
                                           ?>
 
                                         <article <?php post_class('grid-item'); ?>>
+                                            <div class="grid-inner">
                                             <div class="work-wrap">
                                                 <a class="featured-image" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
                                                     <?php the_post_thumbnail('thumbnail'); ?>
+                                                    <div class="work-content" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+                                                        <?php the_title();?>
+                                                    </div>
                                                 </a>
-                                                <a class="work-content" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                                                    <?php the_title();?>
-                                                </a>
+
                                             </div>
                                             <ul class="work-mate clearfix">
                                                 <li class="work_tabs fl"><?php $terms_as_text = get_the_term_list( $post->ID, 'genre', '', ', ', '' ) ; echo strip_tags($terms_as_text); ?></li>
@@ -100,6 +103,7 @@ $bulletin = cs_get_option( 'i_bulletin' );
                                                 </ul>
 
                                             </ul>
+                                            </div>
                                         </article>
 
                                         <?php endwhile;?>
