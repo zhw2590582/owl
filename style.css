@@ -1275,10 +1275,10 @@ li:hover > .sub-menu {
 .widgets .cs_widget_link a {
   display: block;
 }
-.widgets .cs_widget_link .cs_widget_slider {
+.widgets .cs_widget_slider {
   padding: 5px;
 }
-.widgets .cs_widget_link .cs_widget_slider .nivo-directionNav {
+.widgets .cs_widget_slider .nivo-directionNav {
   display: none;
 }
 
