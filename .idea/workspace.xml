@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d8900106-f274-4529-9fb0-d361016eb2f3" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sass/_content.scss" afterPath="$PROJECT_DIR$/sass/_content.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style.css.map" afterPath="$PROJECT_DIR$/style.css.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style.css" afterPath="$PROJECT_DIR$/style.css" />
     </list>
     <ignored path="Island.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,8 +28,8 @@
           <file leaf-file-name="_content.scss" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/sass/_content.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.82398754">
-                  <caret line="214" column="22" selection-start-line="214" selection-start-column="22" selection-end-line="214" selection-end-column="22" />
+                <state vertical-scroll-proportion="0.894081">
+                  <caret line="217" column="3" selection-start-line="217" selection-start-column="3" selection-end-line="217" selection-end-column="3" />
                   <folding />
                 </state>
               </provider>
@@ -790,8 +788,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sass/_content.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.82398754">
-          <caret line="214" column="22" selection-start-line="214" selection-start-column="22" selection-end-line="214" selection-end-column="22" />
+        <state vertical-scroll-proportion="0.894081">
+          <caret line="217" column="3" selection-start-line="217" selection-start-column="3" selection-end-line="217" selection-end-column="3" />
           <folding />
         </state>
       </provider>
