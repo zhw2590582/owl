@@ -1269,10 +1269,10 @@ li:hover > .sub-menu {
 .widgets aside a:hover {
   color: #333;
 }
-.widgets .cs_widget_link {
+.widgets .cs_widget_link, .widgets .cs_widget_slider {
   padding: 5px;
 }
-.widgets .cs_widget_link a {
+.widgets .cs_widget_link a, .widgets .cs_widget_slider a {
   display: block;
 }
 
