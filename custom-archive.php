@@ -77,7 +77,9 @@ $bulletin = cs_get_option( 'i_bulletin' );
                                         </div>
                                     </div>
                                 <?php } ?>
+                                <div id="widget" class="widgets">
 
+                                </div>
                             </aside>
                         <?php }?>
                         <div id="main" class="col">
