@@ -2,143 +2,141 @@
 /* 
 Template Name: 归档页面
 */ 
-error_reporting(0);
-$layout = cs_get_option('i_layout');
-$avatar_image = cs_get_option( 'i_avatar_image' );
-$avatar_name = cs_get_option( 'i_avatar_name' );
-$avatar_content = cs_get_option( 'i_avatar_content' );
-$me = cs_get_option( 'i_me_switch' );
-$bulletin = cs_get_option( 'i_bulletin' );
+$meta_data = get_post_meta( get_the_ID(), 'archive_page', true );
+$featured = $meta_data['i_page_image'];
 ?>
 
 <?php get_header(); ?>
 
-		<section id="content">
-            <div class="container">
-                <div class="content-inner">
-                    <div class="main_header colbox">
-                        <div class="avatar_box col">
-                            <div class="me_img">
-                                <div class="me_avatar">
-                                    <img src="<?php echo $avatar_image; ?>">
-                                </div>
-                                <span class="me_name"><?php echo $avatar_name; ?></span>
-                            </div>
- 				<?php if ($bulletin) { ?>
-                    <div class="bulletin">
-                        <?php
-                            $my_bulletins = cs_get_option( 'i_bulletin_custom' );
-                            echo '<ul class="bulletin_list">';
-                            if( ! empty( $my_bulletins ) ) {
-                              foreach ( $my_bulletins as $bulletin ) {
-                                echo '<li style="display:none">';
-                                if( ! empty( $bulletin['i_bulletin_link'] ) ){ echo '<a href="'. $bulletin['i_bulletin_link'] .'"';}
-                                if ( ! empty( $bulletin['i_bulletin_link'] ) && $bulletin['i_bulletin_newtab'] == true) { echo 'target="_black">';}else{ if ( ! empty( $bulletin['i_bulletin_link'] )){ echo '>';}}
-                                echo ''. $bulletin['i_bulletin_text'] .'';
-                                if( ! empty( $bulletin['i_bulletin_link'] ) ){ echo '</a>';}
-                                echo '</li>';
-                              }
-                            }
-                            echo '</ul>';
-                        ?>
-                    </div>
-				<?php } ?>
-                        </div>
-                        <div class="main-menu col">
-                            <?php wp_nav_menu(array('theme_location' => 'main', 'container' => 'div', 'container_class' => 'header-menu-wrapper', 'menu_class' => 'header-menu-list', 'walker' => new description_walker())); ?>
-                        </div>
-                    </div>
-
-                    <div class="main_body colbox">
-                        <?php if (!is_mobile() && $layout == 'i_layout_two') { ?>
-                            <aside id="sidebar" class="col">
-                                <?php if ($me == true) {?>
-                                    <div id="about">
-                                        <p class="me_content">
-                                            <?php echo $avatar_content; ?>
-                                        </p>
-                                        <div class="social_link">
-                                            <?php
-                                                $my_socials = cs_get_option( 'i_social' );
-                                                echo '<ul class="clearfix">';
-                                                if( ! empty( $my_socials ) ) {
-                                                  foreach ( $my_socials as $social ) {
-                                                    $iconstyle = $social['i_icon_style'];
-                                                    echo '<li>';
-                                                    if( ! empty( $social['i_social_link'] ) ){echo '<a href="'. $social['i_social_link'] .'" title="'. $social['i_social_title'] .'"';}else{echo '<a href="javascript:void(0)" title="'. $social['i_social_title'] .'" ';}
-                                                    if ( $social['i_social_newtab'] == true) { echo 'target="_black"';}
-                                                    if ($iconstyle == 'i_icon') {echo '><i class="'. $social['i_social_icon'] .'"></i>';} else {echo '><img src="'. $social['i_social_image'] .'">';}
-                                                    echo '</a>';
-                                                    echo '</li>';
-                                                  }
-                                                }
-                                                echo '</ul>';
-                                            ?>
-                                        </div>
-                                    </div>
-                                <?php } ?>
-                                <div id="widget" class="widgets">
-                                    <?php if (function_exists('dynamic_sidebar') && dynamic_sidebar('Aside') ) : else : ?>
-                                    <?php endif; ?>
-                                </div>
-                            </aside>
-                        <?php }?>
-                        <div id="main" class="col">
-                            <div class="main-inner">
-        	                    <div id="posts-box">
-        	                        <div class="posts clearfix">
-        								<article>
-        									<div class="post-wrap">
-        										<div class="post-inner">
-        											<div class="post-body">
-        												<header>
-															<h2 class="entry-title">
-																<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-																	<?php the_title(); ?>
-																</a>
-															</h2>
-        												</header>
-        												<div class="post-content">
-        													<div calss="content">
-                                                                <div class="archivePost">
-                                                                     <ul class="timeline">
-                                                                     <li class="tl-header">
-                                                                       <div class="btn btn-info">现在</div>
-                                                                     </li>
-                                                                     <?php $count_posts = wp_count_posts(); $published_posts = $count_posts->publish;
-                                                                     query_posts( 'posts_per_page=-1' );
-                                                                     while ( have_posts() ) : the_post();
-                                                                         echo '<li class="tl-item"><div class="tl-wrap">';
-                                                                         echo '<span class="tl-date">';
-                                                                         the_time(get_option( 'date_format' ));
-                                                                         echo '</span><div class="tl-content">
-                                                                         <span class="arrow"></span>
-                                                                         <a href="';
-                                                                         the_permalink();
-                                                                         echo '" title="'.esc_attr( get_the_title() ).'">';
-                                                                         the_title();
-                                                                         echo '</a></div></div></li>';
-                                                                         $published_posts--;
-                                                                     endwhile;
-                                                                     wp_reset_query(); ?>
-                                                                      <li class="tl-header">
-                                                                        <div class="btn btn-info">过去</div>
-                                                                      </li>
-                                                                     </ul>
-                                                                 </div>
-        													</div>
-        												</div>
-        											</div>
-        										</div>
-        									</div>
-        								</article>
-        	                        </div>
-        	                    </div>
-                        	</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-<?php get_footer(); ?>
+		<!-- 归档页面 -->
+		<div id="content">
+			<div class="posts fade out">	
+				<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+				<article <?php post_class('post'); ?>>			
+					<div class="box-wrap">
+						<div class="box">
+							 <?php if (!empty($featured)) { ?>		
+									<a class="featured-image" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><img src="<?php echo $featured; ?>" class="attachment-large-image wp-post-image ajax_gif"></a>
+							 <?php } else { ?>
+								<?php if ( has_post_thumbnail()) { ?>
+									<a class="featured-image" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_post_thumbnail( 'large-image' ); ?></a>
+								<?php } ?>
+							<?php } ?>			
+							<div class="post-content">
+								<header>
+									<h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
+									<ul class="top_meta"></ul>
+								</header>
+								<div class="content">
+									<?php the_content(__( 'Read More','island')); ?>
+									<div id="archives">      
+										<div id="archives-content">      
+										<?php       
+											$the_query = new WP_Query( 'posts_per_page=-1&ignore_sticky_posts=1' );      
+											$year=0; $mon=0; $i=0; $j=0;      
+											$all = array();      
+											$output = '';      
+											while ( $the_query->have_posts() ) : $the_query->the_post();      
+												$year_tmp = get_the_time('Y');      
+												$mon_tmp = get_the_time('n');      
+												$y=$year; $m=$mon;      
+												if ($mon != $mon_tmp && $mon > 0) $output .= '</div></div>';      
+												if ($year != $year_tmp) { // 输出年份      
+													$year = $year_tmp;      
+													$all[$year] = array();      
+												}      
+												if ($mon != $mon_tmp) { // 输出月份      
+													$mon = $mon_tmp;      
+													array_push($all[$year], $mon);      
+													$output .= "<div class='archive_title' id='arti-$year-$mon'><h3>$year-$mon</h3><div class='archives archives-$mon' data-date='$year-$mon'>";      
+												}      
+												$output .= '<div class="brick"><a href="'.get_permalink() .'"><span class="time">'.get_the_time('n-d').'</span>'.get_the_title() .'<em>('. get_comments_number('0', '1', '%') .')</em></a></div>';      
+											endwhile;      
+											wp_reset_postdata();      
+											$output .= '</div></div>';      
+											echo $output;      
+										 
+											$html = "";      
+											$year_now = date("Y");      
+											foreach($all as $key => $value){// 输出 左侧年份表      
+												$html .= "<li class='year' id='year-$key'><a href='#' class='year-toogle' id='yeto-$key'>$key</a><ul class='monthall'>";      
+												for($i=12; $i>0; $i--){      
+													if($key == $year_now && $i > $value[0]) continue;      
+													$html .= in_array($i, $value) ? ("<li class='month monthed' id='mont-$key-$i'>$i</li>") : ("<li class='month'>$i</li>");      
+												}      
+												$html .= "</ul></li>";   
+											}      
+										?>     
+										</div>   
+										<?php if (!is_mobile()) { ?>
+											<div id="archive-nav" class="fade out">      
+												<ul class="archive-nav"><?php echo $html;?></ul>      
+											</div>  
+										<?php }?>	
+									</div><!-- #archives -->  										
+								</div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+					</div>	
+				</article>	
+				<?php endwhile; ?>
+				<?php endif; ?>
+		   </div>
+		</div>
+		<?php if (!is_mobile()) { ?>
+		<script>
+			jQuery(document).ready(function($) {  
+				$(".content #archive-nav").hide();	  
+				var old_top = $("#archives").offset().top,   
+					_year = parseInt($(".year:first").attr("id").replace("year-", ""));   
+				$(".year:first, .year .month:first").addClass("selected");   
+				$(".month.monthed").click(function() {   
+					var _this = $(this),   
+						_id = "#" + _this.attr("id").replace("mont", "arti");   
+					if (!_this.hasClass("selected")) {   
+						var _stop = $(_id).offset().top - 10,   
+							_selected = $(".month.monthed.selected");   
+						_selected.removeClass("selected");   
+						_this.addClass("selected");   
+						$("body, html").scrollTop(_stop)   
+					}   
+				});   
+				$(".year-toogle").click(function(e) {   
+					e.preventDefault();   
+					var _this = $(this),   
+						_thisp = _this.parent();   
+					if (!_thisp.hasClass("selected")) {   
+						var _selected = $(".year.selected"),   
+							_month = _thisp.children("ul").children("li").eq(0);   
+						_selected.removeClass("selected");   
+						_thisp.addClass("selected");   
+						_month.click()   
+					}   
+				});   
+				$(window).scroll(function() {   
+					var _this = $(this),   
+						_top = _this.scrollTop();     
+					$(".archive_title").each(function() {   
+						var _this = $(this),   
+							_ooid = _this.attr("id"),   
+							_newyear = parseInt(_ooid.replace(/arti-(\d*)-\d*/, "$1")),   
+							_offtop = _this.offset().top - 40,   
+							_oph = _offtop + _this.height();   
+						if (_top >= _offtop && _top < _oph) {   
+							if (_newyear != _year) {   
+								$("#year-" + _year).removeClass("selected");   
+								$("#year-" + _newyear).addClass("selected");   
+								_year = _newyear   
+							}   
+							var _id = _id = "#" + _ooid.replace("arti", "mont"),   
+								_selected = $(".month.monthed.selected");   
+							_selected.removeClass("selected");   
+							$(_id).addClass("selected")   
+						}   
+					})   
+				})   
+			}); 
+		</script>
+		<?php }?>	
+		<?php get_footer(); ?>
