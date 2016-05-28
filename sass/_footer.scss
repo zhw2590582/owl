@@ -1,18 +1,14 @@
 //footer
 
 #footer{
-    @include itme-bg2;
     @include itme-c1;
+    border: none;
     margin-top: -80px;
     .footer-inner{
         padding: 50px 0;
     }
 
     .footer-end{
-        @include itme-bg;
-        border: none;
-        @include bdst;
-        box-shadow: none;
         height: 50px;
         line-height: 50px;
         text-align: center;
