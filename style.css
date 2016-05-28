@@ -968,7 +968,7 @@ mark, .highlight {
   position: relative;
   display: inline-block;
   float: left;
-  padding: 0 15px;
+  padding: 0 12px;
 }
 .header-menu-list > li > a, .header-tool > li > a {
   padding: 5px;
