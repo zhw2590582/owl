@@ -236,7 +236,7 @@ $footer_text = cs_get_option( 'i_footer_text' );
         <div class="cd-user-modal login-modal">
             <a href="#" class="cd-close-form"></a>
             <div class="cd-user-modal-container">
-                <div class="login-img" style="background: url('<?php echo $login_img; ?>') no-repeat center center;"></div>
+                <div class="login-img" style="background-image: url('<?php echo $login_img; ?>');"></div>
             	<div class="login-form">
                     <?php
                         $login_form_args = array (
