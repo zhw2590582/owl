@@ -78,7 +78,8 @@ $bulletin = cs_get_option( 'i_bulletin' );
                                     </div>
                                 <?php } ?>
                                 <div id="widget" class="widgets">
-
+                             <?php if (function_exists('dynamic_sidebar') && dynamic_sidebar('Aside') ) : else : ?>
+                             <?php endif; ?>
                                 </div>
                             </aside>
                         <?php }?>
