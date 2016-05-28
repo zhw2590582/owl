@@ -115,28 +115,10 @@ $bulletin = cs_get_option( 'i_bulletin' );
                                                                         $url = $comment->comment_author_url;
                                                                         else $url="#";
                                                                         $avatar = get_avatar( $comment->comment_author_email, $size = '24', $default = get_bloginfo('wpurl').'/avatar/default.jpg' );
-                                                                        $tmp = "
-                                                                        <li>
-                                                                        <a target=\"_blank\" href=\"".$comment->comment_author_url."\">
-                                                                            <div class='readers-inner colbox'>
-                                                                                <div class='col avatar-img'>
-                                                                                    ".$avatar."
-                                                                                </div>
-                                                                                <div class='col'>
-                                                                                    <p class='name'>
-                                                                                        ".$comment->comment_author."
-                                                                                    </p>
-                                                                                    <p class='cnt'>
-                                                                                        ".$comment->cnt."条评论
-                                                                                    </p>
-                                                                                </div>
-
-                                                                            </div>
-                                                                        </a>
-                                                                        </li>";
+                                                                        $tmp = "<li><a class='with-tooltip' data-tooltip='".$comment->comment_author."' target=\"_blank\" href=\"".$comment->comment_author_url."\">".$avatar."</a><span class='cnt'>".$comment->cnt."</span></li>";
                                                                         $output .= $tmp;
                                                                      }
-                                                                    $output = "<ul class=\"readers-list clearfix\">".$output."<div class='clearfix'></div></ul>";
+                                                                    $output = "<ul class=\"readers-list\">".$output."<div class='clearfix'></div></ul>";
                                                                     echo $output ;
                                                                 }?>
                                                                 <!-- end 读者墙 -->	
