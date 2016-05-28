@@ -9,11 +9,8 @@
     }
 
     .footer-end{
-        border: none;
-        @include bdst;
-        box-shadow: none;
         height: 50px;
-        padding-top: 20px;
+        line-height: 50px;
         text-align: center;
     }
 }
