@@ -50,7 +50,36 @@ $bulletin = cs_get_option( 'i_bulletin' );
                     </div>
 
                     <div class="main_body colbox">
+                        <?php if (!is_mobile() && $layout == 'i_layout_two') { ?>
+                            <aside id="sidebar" class="col">
+                                <?php if ($me == true) {?>
+                                    <div id="about">
+                                        <p class="me_content">
+                                            <?php echo $avatar_content; ?>
+                                        </p>
+                                        <div class="social_link">
+                                            <?php
+                                                $my_socials = cs_get_option( 'i_social' );
+                                                echo '<ul class="clearfix">';
+                                                if( ! empty( $my_socials ) ) {
+                                                  foreach ( $my_socials as $social ) {
+                                                    $iconstyle = $social['i_icon_style'];
+                                                    echo '<li>';
+                                                    if( ! empty( $social['i_social_link'] ) ){echo '<a href="'. $social['i_social_link'] .'" title="'. $social['i_social_title'] .'"';}else{echo '<a href="javascript:void(0)" title="'. $social['i_social_title'] .'" ';}
+                                                    if ( $social['i_social_newtab'] == true) { echo 'target="_black"';}
+                                                    if ($iconstyle == 'i_icon') {echo '><i class="'. $social['i_social_icon'] .'"></i>';} else {echo '><img src="'. $social['i_social_image'] .'">';}
+                                                    echo '</a>';
+                                                    echo '</li>';
+                                                  }
+                                                }
+                                                echo '</ul>';
+                                            ?>
+                                        </div>
+                                    </div>
+                                <?php } ?>
 
+                            </aside>
+                        <?php }?>
                         <div id="main" class="col">
                             <div class="main-inner">
         	                    <div id="posts-box">
