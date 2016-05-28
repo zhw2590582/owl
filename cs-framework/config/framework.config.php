@@ -215,7 +215,7 @@ $options[]      = array(
             'repeat'     => 'repeat-x',
             'position'   => 'center center',
             'attachment' => 'fixed',
-            'color'      => '#ffbc00',
+            'color'      => '#fff',
           ),
         ),
 
@@ -229,7 +229,7 @@ $options[]      = array(
             'repeat'     => 'repeat-x',
             'position'   => 'center center',
             'attachment' => 'fixed',
-            'color'      => '#ffbc00',
+            'color'      => '#fff',
           ),
         ),
 
