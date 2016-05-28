@@ -16,6 +16,17 @@ $bulletin = cs_get_option( 'i_bulletin' );
 		<section id="content">
             <div class="container">
                 <div class="content-inner">
+                    <div class="main_header colbox">
+                        <div class="avatar_box col">
+                            <div class="me_img">
+                                <div class="me_avatar">
+                                    <img src="<?php echo $avatar_image; ?>">
+                                </div>
+                                <span class="me_name"><?php echo $avatar_name; ?></span>
+                            </div>
+
+                        </div>
+                    </div>
 
                     <div class="main_body colbox">
 
@@ -28,6 +39,10 @@ $bulletin = cs_get_option( 'i_bulletin' );
         										<div class="post-inner">
         											<div class="post-body">
 								<div class="content">
+																<header>
+									<h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
+									<ul class="top_meta"></ul>
+								</header>
 									<?php the_content(__( 'Read More','island')); ?>
 									<div id="archives">      
 										<div id="archives-content">      
