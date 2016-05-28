@@ -41,7 +41,7 @@ $avatar_name = cs_get_option( 'i_avatar_name' );
             <a href="javascript:void(0)" class="clo-notice"><i class="fa fa-times"></i></a>
         </div>
     <?php }?>
-     <?php $banner_c = ' '. $banner[color] .' url(\''. $banner[image] .'\') no-repeat center -10px'; ?>
+     <?php $banner_c = ' '. $banner[color] .' url(\''. $banner[image] .'\') no-repeat center 0'; ?>
      <?php
      $i_glass = cs_get_option( 'i_glass_style' );
      if ( $i_glass  == 'i_glass_w') {
