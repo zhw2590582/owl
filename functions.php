@@ -200,13 +200,11 @@ if ($player == true) {
 	require_once( get_template_directory().'/TGM/plugins.php' );
 }
 
-
 function get_ssl_avatar($avatar) {
    $avatar = preg_replace('/.*\/avatar\/(.*)\?s=([\d]+)&amp;.*/','<img class="avatar avatar-$2" src="https://secure.gravatar.com/avatar/$1?s=$2" alt="" width="$2" height="$2" />',$avatar);
    return $avatar;
 }
 add_filter('get_avatar', 'get_ssl_avatar');
-
 
 //评论框增强
 function smilies_reset() {
