@@ -66,48 +66,9 @@ $lC:26px;
 }
 
 
-#widget-tab{
-  .tabs_title{
-    margin-bottom: 10px;
-    padding-bottom: 5px;
-    @include bdsb;
+.cs_widget_comment{
 
-    li{
-	  position:relative;
-      display: inline-block;
-      float: left;
-      width: 33.3%;
-      text-align: center;
-
-      a{
-        display: inline-block;
-        width: 50px;
-        height: 28px;
-        line-height: 28px;
-        border-radius: 3px;
-      }
-      i{
-        font-size: 14px;
-      }
-    }
-
-    .current{
-      a{
-        color: nth($c3,1);
-      }
-      &:after{
-        position:absolute;
-        bottom:-6px;
-        left:0;
-        content:'';
-        width:100%;
-        height:1px;
-        border-bottom:1px solid nth($c3,1);
-      }
-    }
-  }
-
-  .tabs_item{
+  #comment-list{
 
     li{
       padding-bottom: 5px;

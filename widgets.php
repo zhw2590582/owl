@@ -420,41 +420,51 @@ if ( ! function_exists( 'cs_widget_init_Link' ) ) {
   add_action( 'widgets_init', 'cs_widget_init_Link', 2 );
 }
 
+
 /**
  *
- * 三合一选项卡
+ * 最新评论
  *
  */
-if( ! class_exists( 'CS_Widget_tab' ) ) {
-  class CS_Widget_tab extends WP_Widget {
+if( ! class_exists( 'CS_Widget_comment' ) ) {
+  class CS_Widget_comment extends WP_Widget {
 	//构建函数
     function __construct() {
 
       $widget_ops     = array(
-        'classname'   => 'cs_widget_tab',
-        'description' => '三合一选项卡'
+        'classname'   => 'cs_widget_comment',
+        'description' => '最新评论'
       );
 
-      parent::__construct( 'cs_widget_tab', 'Owl三合一选项卡', $widget_ops );
+      parent::__construct( 'cs_widget_comment', 'island最新评论', $widget_ops );
 
     }
 	//前台显示函数
+
     function widget( $args, $instance ) {
 
       extract( $args );
 
-	  $NewTab = $instance['sure'];
-        echo '<aside id="widget-tab">';
-        h_comments($outer='博主',$limit= 10);
-        echo '</aside>';
+      echo $before_widget;
 
-    }
+	  if ( ! empty( $instance['title'] ) ) {
+		 echo $before_title . $instance['title'] . $after_title;
+	  }
+
+      echo '<div class="textwidget" id="comment-list"><ul>';
+		h_comments($outer='博主',$limit= $instance['number']);
+      echo '</ul></div>';
+
+      echo $after_widget;
+
+    }	
+	
 	//数据更新函数
     function update( $new_instance, $old_instance ) {
 
       $instance            = $old_instance;
       $instance['title']   = $new_instance['title'];
-
+      $instance['number']    = $new_instance['number'];	  
       return $instance;
 
     }
@@ -465,7 +475,8 @@ if( ! class_exists( 'CS_Widget_tab' ) ) {
       // 设置默认值
       // -------------------------------------------------
       $instance   = wp_parse_args( $instance, array(
-        'title'   => '三合一选项卡',
+        'title'   => '最新评论',
+        'number'    => '10',		
       ));
 
       //
@@ -479,17 +490,30 @@ if( ! class_exists( 'CS_Widget_tab' ) ) {
         'title' => '标题',
       );
 
-      echo cs_add_element( $text_field, $text_value );	  
+      echo cs_add_element( $text_field, $text_value );
+
+      //
+      // 金额
+      // -------------------------------------------------
+      $number_value = esc_attr( $instance['number'] );
+      $number_field = array(
+        'id'    => $this->get_field_name('number'),
+        'name'  => $this->get_field_name('number'),
+        'type'  => 'number',
+        'title' => '数目',
+      );
+
+      echo cs_add_element( $number_field, $number_value );  
 
     }
   } 
 }
 
-if ( ! function_exists( 'cs_widget_init_tab' ) ) {
-  function cs_widget_init_tab() {
-    register_widget( 'CS_Widget_tab' );
+if ( ! function_exists( 'cs_widget_init_comment' ) ) {
+  function cs_widget_init_comment() {
+    register_widget( 'CS_Widget_comment' );
   }
-  add_action( 'widgets_init', 'cs_widget_init_tab', 2 );
+  add_action( 'widgets_init', 'cs_widget_init_comment', 2 );
 }
 
 /**

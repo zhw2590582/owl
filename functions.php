@@ -601,27 +601,6 @@ add_action( 'admin_notices', 'my_admin_notice' );
 		echo $output;
 	}
 
-//边栏热门文章
-	function most_comm_posts($days=30, $nums=5) {
-	global $wpdb;
-	$today = date("Y-m-d H:i:s"); 
-	$daysago = date( "Y-m-d H:i:s", strtotime($today) - ($days * 24 * 60 * 60) ); 
-	$result = $wpdb->get_results("SELECT comment_count, ID, post_title, post_date FROM $wpdb->posts WHERE post_date BETWEEN '$daysago' AND '$today' ORDER BY comment_count DESC LIMIT 0 , $nums");
-	$output = '';
-	if(empty($result)) {
-		$output = '<li>None data.</li>';
-	} else {
-		foreach ($result as $topten) {
-			$postid = $topten->ID;
-			$title = $topten->post_title;
-			$commentcount = $topten->comment_count;
-			if ($commentcount != 0) {
-				$output .= '<li><a  target="_blank" href="'.get_permalink($postid).'" title="'.$title.'">'.$title.'</a></li>';
-			}
-		}
-	}
-	echo $output;
-	}
 
 /* 启用文章摘录 */
 function improved_trim_excerpt($text) {
