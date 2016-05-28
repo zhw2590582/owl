@@ -823,6 +823,13 @@ mark, .highlight {
   padding: 15px 40px;
   line-height: 1.3;
   text-align: center;
+  color: #867F6F;
+}
+.notice a {
+  color: #867F6F;
+}
+.notice a:hover {
+  color: #333;
 }
 .notice .clo-notice {
   position: absolute;

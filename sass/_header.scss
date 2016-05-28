@@ -8,6 +8,7 @@ $banner_h:450px; //Banner高度
   padding:15px 40px;
   line-height: 1.3;
   text-align: center;
+  @include itme-c1;
   .clo-notice{
     position: absolute;
     right: 10px;
