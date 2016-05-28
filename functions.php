@@ -200,12 +200,12 @@ if ($player == true) {
 	require_once( get_template_directory().'/TGM/plugins.php' );
 }
 
-/* 调用ssl 头像链接 */
-function get_ssl_avatar($avatar) {
-   $avatar = preg_replace('/.*\/avatar\/(.*)\?s=([\d]+)&.*/','<img src="https://secure.gravatar.com/avatar/$1?s=$2" class="avatar avatar-$2" height="$2" width="$2">',$avatar);
-   return $avatar;
+//多说官方Gravatar头像调用
+function Fanly_get_avatar($avatar) {
+    $avatar = str_replace(array("www.gravatar.com","0.gravatar.com","1.gravatar.com","2.gravatar.com"),"gravatar.duoshuo.com",$avatar);
+    return $avatar;
 }
-add_filter('get_avatar', 'get_ssl_avatar');
+add_filter( 'get_avatar', 'Fanly_get_avatar', 10, 3 );
 
 
 //评论框增强
