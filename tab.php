@@ -12,7 +12,16 @@
         </ul>
     </div>
     <div class="tabs_item hide" id="recent-post">
-
+        <ul class="new-posts">
+            <?php
+            $recentPosts = new WP_Query();
+            $recentPosts->query('showposts=12'); ?>
+            <?php while ($recentPosts->have_posts()) : $recentPosts->the_post(); ?>
+            <li>
+                <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
+            </li>
+            <?php endwhile; ?>
+        </ul>
     </div>
     <div class="tabs_item hide" id="hot-post">
         <ul class="comm_posts">
