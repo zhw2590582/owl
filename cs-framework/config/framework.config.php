@@ -14,7 +14,7 @@ if (!empty($verify) || $key == 'zhw2590582' ) {
       'menu_type'       => 'menu', // menu, submenu, options, theme, etc.
       'menu_slug'       => 'cs-framework',
       'ajax_save'       => true,
-      'show_reset_all'  => true,
+      'show_reset_all'  => false,
       'framework_title' => ''.wp_get_theme()->display('Name').'<small style="color:red;margin-left:10px">'.wp_get_theme()->display('Version').'</small>',
    );
 } else {};
