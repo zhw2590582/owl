@@ -1496,6 +1496,7 @@ article .post-wrap .post-inner .featured-box .featured-image a {
 }
 article .post-wrap .post-inner .featured-box .featured-image img {
   height: auto;
+  width: 100%;
 }
 article .post-wrap .post-inner .featured-box .post_meta {
   font-size: 12px;
