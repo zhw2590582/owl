@@ -215,7 +215,7 @@ a:hover, a:focus {
   color: #333;
 }
 
-.content-inner, #lSidebar {
+.content-inner, #lSidebar, #footer {
   background: #EAE8DF;
   border: 1px solid rgba(255, 255, 255, 0.65);
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
@@ -1113,7 +1113,7 @@ li:hover > .sub-menu {
 
 #content .content-inner {
   border-radius: 5px;
-  padding-bottom: 100px;
+  padding-bottom: 150px;
 }
 #content #sidebar {
   width: 300px;
@@ -2826,9 +2826,8 @@ body.page .bottom_meta, body.error404 .bottom_meta {
 
 /* footer */
 #footer {
-  background: #fff;
-  box-shadow: 0 0 1px #BFB7A3;
   color: #867F6F;
+  border: none;
   margin-top: -80px;
 }
 #footer a {
@@ -2841,13 +2840,6 @@ body.page .bottom_meta, body.error404 .bottom_meta {
   padding: 50px 0;
 }
 #footer .footer-end {
-  background: #F7F6F1;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.8);
-  border-radius: 3px;
-  border: none;
-  border-top: 1px solid #E8E2D2;
-  box-shadow: none;
   height: 50px;
   line-height: 50px;
   text-align: center;
