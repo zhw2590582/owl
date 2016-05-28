@@ -429,7 +429,7 @@ function my_admin_enqueue_scripts() {
 function my_admin_print_footer_scripts() {
     $dismissed = explode(',', (string)get_user_meta(get_current_user_id() , 'dismissed_wp_pointers', true));
     if (!in_array('my_pointer', $dismissed)):
-        $pointer_content = '<h3>你好！验证 Island 主题成功</h3>';
+        $pointer_content = '<h3>你好！验证 Owl 主题成功</h3>';
         $pointer_content.= '<p>主题设置从这里进入，使用中若有疑问，可以联系老赵</p>';
 ?>
         <script type="text/javascript">
@@ -469,7 +469,7 @@ function tie_admin_bar() {
             $wp_admin_bar->add_menu(array(
                 'parent' => 0,
                 'id' => 'mpanel_page',
-                'title' => 'Island 主题选项',
+                'title' => 'Owl 主题选项',
                 'href' => admin_url('admin.php?page=cs-framework')
             ));
         }
