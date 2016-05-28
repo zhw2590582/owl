@@ -445,7 +445,7 @@ if( ! class_exists( 'CS_Widget_tab' ) ) {
 
 	  $NewTab = $instance['sure'];
         echo '<aside id="widget-tab">';
-        include('tab.php');
+        h_comments($outer='博主',$limit= 10);
         echo '</aside>';
 
     }
