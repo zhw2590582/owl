@@ -433,10 +433,10 @@ if( ! class_exists( 'CS_Widget_comment' ) ) {
 
       $widget_ops     = array(
         'classname'   => 'cs_widget_comment',
-        'description' => '最新评论'
+        'description' => 'Owl最新评论'
       );
 
-      parent::__construct( 'cs_widget_comment', 'island最新评论', $widget_ops );
+      parent::__construct( 'cs_widget_comment', 'Owl最新评论', $widget_ops );
 
     }
 	//前台显示函数
