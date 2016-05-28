@@ -202,8 +202,8 @@ if ($player == true) {
 
 /* 调用ssl 头像链接 */
 function get_ssl_avatar($avatar) {
-   $avatar = preg_replace('/.*\/avatar\/(.*)\?s=([\d]+)&.*/','<img src="https://secure.gravatar.com/avatar/$1?s=$2" class="avatar avatar-$2" height="$2" width="$2">',$avatar);
-   return $avatar;
+	$avatar = str_replace(array("www.gravatar.com", "0.gravatar.com", "1.gravatar.com", "2.gravatar.com"), "cn.gravatar.com", $avatar);
+	return $avatar;
 }
 add_filter('get_avatar', 'get_ssl_avatar');
 
