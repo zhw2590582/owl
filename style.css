@@ -2965,7 +2965,7 @@ body.page .bottom_meta, body.error404 .bottom_meta {
 
 .skin_switcher {
   position: fixed;
-  z-index: 2;
+  z-index: 100;
   bottom: -170px;
   left: 0;
   right: 0;

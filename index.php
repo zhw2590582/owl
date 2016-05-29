@@ -153,7 +153,7 @@ $com = cs_get_option( 'i_index_com' );
 	                                <div class="post-wrap">
 	                                    <?php if ( is_sticky() ) : ?>
 	                                    <!-- 置顶文章 -->
-	                                    <div class="post-sticky with-tooltip" data-tooltip="置顶文章"></div>
+	                                    <div class="post-sticky with-tooltip m_hide" data-tooltip="置顶文章"></div>
 	                                    <?php else : ?>
 	                                    <?php endif; ?>
 	                                    <?php
