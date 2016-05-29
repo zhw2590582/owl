@@ -77,4 +77,10 @@
   .layouts-box article{
     width: 100%;
   }
+  .layouts-box article .post-wrap .post-inner .post-body{
+    height: auto;
+  }
+  .comments #comments{
+    padding: 0 10px 0 15px;
+  }
 }
