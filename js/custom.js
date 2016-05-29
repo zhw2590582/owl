@@ -96,13 +96,6 @@ if (item.length > 0) {
 		}
 	});
 
-//图像CSS类
-	$("img").not($(".wp-smiley")) .addClass('ajax_gif').load(function() {
-		$(this).removeClass('ajax_gif');
-	}).on('error', function () {
-		$(this).removeClass('ajax_gif').prop('src', 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==');
-	});
-
 //Tooltip
 	$(".tagcloud a").each(function(i) {
 		var formattedDate = $(this).attr('title');
@@ -118,6 +111,12 @@ if (item.length > 0) {
 		$(this).prepend( '<img src="' + linkhref + 'favicon.ico">');
 	});
 
+//图像CSS类
+	$("img").not($(".wp-smiley")) .addClass('ajax_gif').load(function() {
+		$(this).removeClass('ajax_gif');
+	}).on('error', function () {
+		$(this).removeClass('ajax_gif').prop('src', 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==');
+	});
 
 //底部按钮
 	$(window).scroll(function() {
