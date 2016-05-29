@@ -312,13 +312,7 @@ function open_comments_for_pages( $status, $post_type, $comment_type ) {
 }
 add_filter( 'get_default_comment_status', 'open_comments_for_pages', 10, 3 );
 
-/* 首页忽略置顶文章 */
-function island_alter_main_loop($query){
-    if (!$query->is_home() || !$query->is_main_query())
-        return;
-    $query->set('ignore_sticky_posts', 1);
-}
-add_action('pre_get_posts', 'island_alter_main_loop'); 	
+
 
 
 /* Lazyload 功能,默认移动设备不开启，默认特色图不开启 */
