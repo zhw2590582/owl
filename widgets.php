@@ -545,7 +545,7 @@ if( ! class_exists( 'CS_Widget_Slider' ) ) {
 			if( ! empty( $my_sliders2 ) ) {
 			  foreach ( $my_sliders2 as $slider2 ) {
 				if( ! empty( $slider2['i_slider2_link'] ) ){ echo '<a href="'. $slider2['i_slider2_link'] .'"';}
-				if ( ! empty( $slider2['i_slider2_link'] ) && $slider['i_slider2_newtab'] == true) { echo 'target="_black">';}else{ if ( ! empty( $slider2['i_slider2_link'] )){ echo '>';}}
+				if ( ! empty( $slider2['i_slider2_link'] ) && $slider2['i_slider2_newtab'] == true) { echo 'target="_black">';}else{ if ( ! empty( $slider2['i_slider2_link'] )){ echo '>';}}
 				echo '<img class=" " src="'. $slider2['i_slider2_image'] .'" data-thumb="'. $slider2['i_slider2_image'] .'" title="'. $slider2['i_slider2_text'] .'"/>';
 				if( ! empty( $slider2['i_slider2_link'] ) ){ echo '</a>';}
 			  }
