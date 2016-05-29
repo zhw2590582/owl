@@ -1,4 +1,8 @@
+var temp = jQuery("script").last().attr("src");
+url = temp.substring(0, temp.indexOf('js'));
+
 jQuery(document).ready(function($) {
+
 
 //文章分栏
 $('.layouts_width').click(function(){
@@ -105,18 +109,22 @@ if (item.length > 0) {
 		$(this).removeAttr("title").addClass("with-tooltip");
 	});
 
-//友链小图标
-	$(".linkcat li a").each(function(i) {
-		var linkhref = $(this).attr('href');
-		$(this).prepend( '<img src="' + linkhref + 'favicon.ico">');
-	});
-
 //图像CSS类
 	$("img").not($(".wp-smiley")) .addClass('ajax_gif').load(function() {
 		$(this).removeClass('ajax_gif');
 	}).on('error', function () {
 		$(this).removeClass('ajax_gif').prop('src', 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==');
 	});
+
+//友链小图标
+	$(".linkcat li a").each(function(i) {
+		var linkhref = $(this).attr('href');
+		$(this).prepend( '<img src="' + linkhref + 'favicon.ico">');
+	});
+	$(".linkcat img").on('error', function () {
+		$(this).prop('src', url + '/images/default/d_favicon.ico');
+	});
+
 
 //底部按钮
 	$(window).scroll(function() {
