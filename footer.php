@@ -57,7 +57,7 @@ $footer_text = cs_get_option( 'i_footer_text' );
                     echo'&copy; '.date("Y").' All Rights Reserved.';
                 } ?>	
 
-                <a href="http://zhw-island.com/" target="_blank"> Theme by Island</a>
+                <a href="http://zhw-island.com/" target="_blank"> Theme by Owl</a>
 
                 <?php if( ! empty( $tongji ) ){ echo '<script>'.$tongji.'</script>';}else{
                     echo' ';
