@@ -1974,7 +1974,7 @@ article .post-wrap .bottom_meta .meta_tabs a:before {
 .layouts-box article .post-wrap .post-inner .post-body .post-content {
   padding-left: 15px;
 }
-.layouts-box .mate-cat, .layouts-box .meta_tabs, .layouts-box .min_comments, .layouts-box .post_meta, .layouts-box .read_more {
+.layouts-box .mate-cat, .layouts-box .meta_tabs, .layouts-box .min_comments, .layouts-box .post_meta, .layouts-box .read_more, .layouts-box .post-sticky {
   display: none !important;
 }
 .layouts-box .ias-trigger-next {
@@ -4023,6 +4023,14 @@ input#wp-submit {
 
   .layouts-box article {
     padding: 5px 5px 0;
+  }
+
+  #content .content-inner {
+    padding-bottom: 50px;
+  }
+
+  #footer {
+    margin-top: -190px;
   }
 }
 @media only screen and (max-width: 768px) {
