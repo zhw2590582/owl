@@ -1608,6 +1608,17 @@ article .post-wrap .bottom_meta .meta_tabs a:before {
   content: '#';
 }
 
+.post-sticky {
+  position: absolute;
+  z-index: 99;
+  left: 13px;
+  top: -27px;
+  background: url("images/default/sticky.png") no-repeat;
+  background-size: cover;
+  width: 60px;
+  height: 60px;
+}
+
 .single-post article {
   margin-bottom: 20px;
 }
