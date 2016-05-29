@@ -84,7 +84,7 @@ $feature_num = cs_get_option( 'i_feature_num' );
 </div>
 
 <?php if ( is_single() && $download && !is_mobile() ) {?>
-    <div class="download-wrap">
+    <div class="download-wrap m_hide">
         <div class="post-download <?php if ( !current_user_can('level_10') && $dlview == true ){echo 'dlview';}?>">
             <div class="dl-title"><i class="fa fa-download"></i>资源下载</div>
             <div class="dl-box">

@@ -87,6 +87,15 @@ function layout_css($classes) {
 }
 add_filter('body_class','layout_css');
 
+/* 自适应类名 */
+function rwd_css($classes) {
+    $classes[] = 'layouts-box';
+    return $classes;
+}
+if ( is_mobile() ) {
+    add_filter('body_class','rwd_css');
+}
+
 /* 加载类名 */
 function load_css($classes) {
     $page = cs_get_option('i_pagination'); 

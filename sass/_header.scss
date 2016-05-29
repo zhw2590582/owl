@@ -334,3 +334,25 @@ li:hover{
   height:$banner_h;
   width: 100%;
 }
+
+.menu-toggle {
+  display: none;
+  float: right;
+  font-size: 24px;
+  line-height: 24px;
+  padding-top: 13px;
+}
+
+a.menu-toggle:before {
+  content: "\f0c9";
+  font-family: FontAwesome;
+}
+
+a.open-nav:before {
+  content: "\f00d";
+  font-family: FontAwesome;
+}
+
+#header .header-menu.open-nav{
+  display: block;
+}

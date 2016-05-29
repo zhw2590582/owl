@@ -17,7 +17,9 @@ $com = cs_get_option( 'i_index_com' );
 <section id="content">
     <div class="container">
         <div class="content-inner">
-            <div class="main_header colbox">
+
+        <?php if (!is_mobile()) { ?>
+            <div class="main_header colbox m_hide">
                 <div class="avatar_box col">
                     <div class="me_img">
                         <div class="me_avatar">
@@ -61,12 +63,12 @@ $com = cs_get_option( 'i_index_com' );
                     </a>
                 </div>
             </div>
-
+        <?php } ?>
 
 
             <div class="main_body colbox">
                 <?php if (!is_mobile() && $layout == 'i_layout_two') { ?>
-                    <aside id="sidebar" class="col">
+                    <aside id="sidebar" class="col m_hide">
                         <?php if ($me == true) {?>
                             <div id="about">
                                 <p class="me_content">
@@ -176,10 +178,10 @@ $com = cs_get_option( 'i_index_com' );
 	                                <?php $nums=5;
                                     $get_comments_num=5;
                                     $min_comments = get_comments('status=approve&type=comment&number='.$get_comments_num.'&post_id='.get_the_ID());
-                                    if ( $com && !empty($min_comments) ) {
+                                    if ( $com && !empty($min_comments && !is_mobile()) ) {
                                     	$my_email=get_bloginfo ('admin_email');
                                     	$i = 1; ?>
-                                    	<div class="min_comments">
+                                    	<div class="min_comments m_hide">
                                     		<ul><?php
                                     			$commentcount = $min_comments->comment_count;
                                     			$min_output='';

@@ -23,7 +23,9 @@ $like = cs_get_option( 'i_post_like' );
 <section id="content">
     <div class="container"> 
         <div class="content-inner">
-            <div class="main_header colbox">
+
+        <?php if (!is_mobile()) { ?>
+            <div class="main_header colbox m_hide">
                 <div class="avatar_box col">
                     <div class="me_img">
                         <div class="me_avatar">
@@ -31,7 +33,7 @@ $like = cs_get_option( 'i_post_like' );
                         </div>
                         <span class="me_name"><?php echo $avatar_name; ?></span>
                     </div>
- 				<?php if ($bulletin) { ?>
+                <?php if ($bulletin) { ?>
                     <div class="bulletin">
                         <?php
                             $my_bulletins = cs_get_option( 'i_bulletin_custom' );
@@ -49,17 +51,18 @@ $like = cs_get_option( 'i_post_like' );
                             echo '</ul>';
                         ?>
                     </div>
-				<?php } ?>
+                <?php } ?>
                 </div>
                 <div class="main-menu col">
                     <?php wp_nav_menu(array('theme_location' => 'main', 'container' => 'div', 'container_class' => 'header-menu-wrapper', 'menu_class' => 'header-menu-list', 'walker' => new description_walker())); ?>
                 </div>
             </div>
+        <?php } ?>
 
 
              <div class="main_body colbox">
                  <?php if (!is_mobile() && $layout == 'i_layout_two') { ?>
-                     <aside id="sidebar" class="col">
+                     <aside id="sidebar" class="col m_hide">
                          <?php if ($me == true) {?>
                              <div id="about">
                                  <p class="me_content">
@@ -105,12 +108,12 @@ $like = cs_get_option( 'i_post_like' );
                                         ?>
 
                                         <?php if ($link == true && !is_mobile()) { ?>
-                                        <div class="post-copyright">
+                                        <div class="post-copyright m_hide">
                                             转载原创文章请注明，转载自： <a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a> » <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
                                         </div>
                                         <?php } ?>
 
-                                        <div class="post-related">
+                                        <div class="post-related m_hide">
                                             <?php if ($related == true && !is_mobile()) { ?>
                                             <ul class="related_box clearfix">
                                                 <?php

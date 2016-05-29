@@ -1,7 +1,7 @@
 <?php
 
 ?>
-	<div id="lSidebar" class="widgets">
+	<div id="lSidebar" class="widgets m_hide">
 		<div class="sideinner">
 			<div class="lContent">
                 <?php if (function_exists('dynamic_sidebar') && dynamic_sidebar('Sidebar') ) : else : ?>

@@ -16,15 +16,17 @@ $bulletin = cs_get_option( 'i_bulletin' );
 		<section id="content">
             <div class="container">
                 <div class="content-inner">
-                    <div class="main_header colbox">
-                        <div class="avatar_box col">
-                            <div class="me_img">
-                                <div class="me_avatar">
-                                    <img src="<?php echo $avatar_image; ?>">
-                                </div>
-                                <span class="me_name"><?php echo $avatar_name; ?></span>
-                            </div>
- 				<?php if ($bulletin) { ?>
+
+        <?php if (!is_mobile()) { ?>
+            <div class="main_header colbox m_hide">
+                <div class="avatar_box col">
+                    <div class="me_img">
+                        <div class="me_avatar">
+                            <img src="<?php echo $avatar_image; ?>">
+                        </div>
+                        <span class="me_name"><?php echo $avatar_name; ?></span>
+                    </div>
+                <?php if ($bulletin) { ?>
                     <div class="bulletin">
                         <?php
                             $my_bulletins = cs_get_option( 'i_bulletin_custom' );
@@ -42,16 +44,17 @@ $bulletin = cs_get_option( 'i_bulletin' );
                             echo '</ul>';
                         ?>
                     </div>
-				<?php } ?>
-                        </div>
-                        <div class="main-menu col">
-                            <?php wp_nav_menu(array('theme_location' => 'main', 'container' => 'div', 'container_class' => 'header-menu-wrapper', 'menu_class' => 'header-menu-list', 'walker' => new description_walker())); ?>
-                        </div>
-                    </div>
+                <?php } ?>
+                </div>
+                <div class="main-menu col">
+                    <?php wp_nav_menu(array('theme_location' => 'main', 'container' => 'div', 'container_class' => 'header-menu-wrapper', 'menu_class' => 'header-menu-list', 'walker' => new description_walker())); ?>
+                </div>
+            </div>
+        <?php } ?>
 
                     <div class="main_body colbox">
                         <?php if (!is_mobile() && $layout == 'i_layout_two') { ?>
-                            <aside id="sidebar" class="col">
+                            <aside id="sidebar" class="col m_hide">
                                 <?php if ($me == true) {?>
                                     <div id="about">
                                         <p class="me_content">

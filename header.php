@@ -36,12 +36,15 @@ $avatar_name = cs_get_option( 'i_avatar_name' );
 		<div style="display:none;"><?php the_post_thumbnail( 'medium' ); ?></div>
 	<?php }?>
     <?php if ($notice && !is_mobile()) { ?>
-        <div class="notice hide">
+        <div class="notice hide m_hide">
             <div class="notice-inner"><?php echo $notice_main; ?></div>
             <a href="javascript:void(0)" class="clo-notice"><i class="fa fa-times"></i></a>
         </div>
     <?php }?>
-     <?php $banner_c = ' '. $banner[color] .' url(\''. $banner[image] .'\') no-repeat center 0'; ?>
+    <?php if (!is_mobile()) { ?>
+    	<?php $banner_c = ' '. $banner[color] .' url(\''. $banner[image] .'\') no-repeat center 0'; ?>
+    <?php }?>
+     
      <?php
      $i_glass = cs_get_option( 'i_glass_style' );
      if ( $i_glass  == 'i_glass_w') {
@@ -51,13 +54,14 @@ $avatar_name = cs_get_option( 'i_avatar_name' );
      }
      ?>
     <header id="header" class="<?php echo $i_glass_c; ?>" style="background:<?php echo $banner_c; ?>;">
-        <div class="header-mask-sd">
+     <?php if (!is_mobile()) { ?>
+        <div class="header-mask-sd m_hide">
             <div class="header-mask-blur">
                 <div class="header-mask" style="background: <?php echo $banner_c; ?>"></div>
                 <div class="header-mask-bg"></div>
             </div>
         </div>
-
+ 	<?php }?>
         <div class="header-inner">
             <div class="container clearfix">
                 <div class="header-logo">
@@ -83,9 +87,9 @@ $avatar_name = cs_get_option( 'i_avatar_name' );
                 </nav>	
 
                 <ul class="header-tool header-menu-list">
-
-                    <?php if ($login == true) { ?>
-                    <li class="navbar-login menu-item-has-children">
+                    <a href="javascript:void(0)" class="menu-toggle"></a>
+                    <?php if ($login == true && !is_mobile()) { ?>
+                    <li class="navbar-login menu-item-has-children m_hide">
                         <?php $current_user = wp_get_current_user(); ?>
                         <?php if ( is_user_logged_in() ) { ?>
                             <a class="avatar-box" href="<?php if(current_user_can('level_10')){ echo admin_url( 'admin.php?page=cs-framework' ) ;}else {echo admin_url( 'index.php' ) ;}  ?>" title="后台管理">
@@ -114,14 +118,14 @@ $avatar_name = cs_get_option( 'i_avatar_name' );
                 <?php } ?>	  
 
                 <?php if ($switcher == true && !is_mobile()) { ?>
-                    <li class="navbar-skin menu-item-has-children">
+                    <li class="navbar-skin menu-item-has-children m_hide">
                         <a href="javascript:void(0)" class="skin-btn">皮肤</a>
                     </li>
                 <?php }?>
 
                 <?php if ($search == true && !is_mobile()) { ?>
                 <!-- 搜索栏 -->	
-                    <li class="search">
+                    <li class="search m_hide">
                         <form method="get" id="searchform" action="<?php echo home_url(); ?>/">
 						<input type="text" class="search-form-input text" name="s" onfocus="if (this.value == '查找...') {this.value = '';}" onblur="if (this.value == '') {this.value = '查找...';}" value="查找...">                        </form>
                     </li>
@@ -130,5 +134,7 @@ $avatar_name = cs_get_option( 'i_avatar_name' );
                 </ul>
             </div>
         </div>
-        <div id="header-modal" class="with-tooltip" data-tooltip="<?php echo $banner_test ?>"></div>
+        <?php if (!is_mobile()) { ?>
+       		 <div id="header-modal" class="with-tooltip m_hide" data-tooltip="<?php echo $banner_test ?>"></div>
+        <?php }?>
     </header>

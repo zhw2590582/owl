@@ -253,6 +253,23 @@ if (item.length > 0) {
 	$("#donate #donate_wechat").click(function() {
 		$("#donate .full").addClass('wechat').removeClass('alipay');
 	});
+
+//自适应
+	if( $(window).width() < 1200){
+		$('body').not('.single,.page').addClass('layouts-box');
+	};
+	$(window).resize(function() {
+		if( $(window).width() < 1200){
+			$('body').not('.single,.page').addClass('layouts-box');
+		}else{
+			$('body').removeClass('layouts-box');
+		};
+	})
+
+	$(".menu-toggle").click(function() {
+		$(".header-menu,.menu-toggle").toggleClass("open-nav");
+	});
+
 });
 
 //设置cookies

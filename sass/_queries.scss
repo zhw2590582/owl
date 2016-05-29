@@ -1,0 +1,85 @@
+
+@media only screen and (max-width:1200px) {
+  .m_hide,.nivo-directionNav,.nivo-caption,.sub-menu,.menu-item-has-children > a:after{
+    display: none !important;
+  }
+
+  .menu-toggle {
+    display: block
+  }
+
+  #header{
+    height: $banner_h - 160px;
+    background:none !important;
+  }
+
+  .container{
+    width: 100%;
+    padding: 0 10px;
+  }
+  .glass_nav .header-inner{
+      background: nth($hi_c,1);
+      color: nth($hi_c,1) !important;
+      a{
+        color: nth($hi_c,2) !important;
+        &:hover{
+          color: nth($hi_c,3) !important;
+        }
+      }
+  }
+
+  #header{
+    .header-inner{
+      position: fixed;
+      z-index: 999;
+      width: 100%;
+    }
+    .header-menu{
+      display: none;
+      position: fixed;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      top: 50px;
+      left: 0;
+      right: 0;
+      margin: 0;
+      background: $main_bg;
+      @include bdst;
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+      li{
+        display: block;
+        width: 100%;
+        a{
+          display: block;
+          width: 100%;
+          height: 40px;
+          line-height: 30px;
+        }
+      }
+    }
+  }
+
+
+  .app_slider{
+    padding: 5px;
+  }
+
+  #content #main .main-inner{
+    margin-top: 0;
+    padding: 5px;
+  }
+
+  .layouts-box article{
+    padding: 5px 0 0;
+  }
+
+}
+
+@media only screen and (max-width:768px) {
+  .container{
+  }
+  .layouts-box article{
+    width: 100%;
+  }
+}

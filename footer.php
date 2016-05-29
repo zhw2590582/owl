@@ -43,8 +43,8 @@ $footer_text = cs_get_option( 'i_footer_text' );
 	
 	<footer id="footer">
 
-        <?php if ($footer_text) {?>
-            <div class="footer-inner">
+        <?php if ($footer_text && !is_mobile()) {?>
+            <div class="footer-inner m_hide">
                 <div class="container clearfix">
                     <?php echo $edit ?>
                 </div>
@@ -67,7 +67,7 @@ $footer_text = cs_get_option( 'i_footer_text' );
 	</footer>
 
     <?php if (!is_mobile()) { ?>
-		<div id="footer_btn">
+		<div id="footer_btn" class="m_hide">
 			<ul>
 				<?php if ($gotop == true) {
 					echo '<li>
@@ -170,7 +170,7 @@ $footer_text = cs_get_option( 'i_footer_text' );
 	<?php }	 ?>
 
 	<?php if ($switcher == true && !is_mobile()  ) { ?>
-        <div class="skin_switcher">
+        <div class="skin_switcher m_hide">
             <div class="skin_header clearfix">
                 <div class="container clearfix">
                     <span class="fl">自定义皮肤</span>
@@ -211,7 +211,7 @@ $footer_text = cs_get_option( 'i_footer_text' );
 	<?php }	 ?>
 
 	<?php if ( is_single() && !is_mobile() && $download) {?>	
-        <div class="cd-user-modal download-modal">
+        <div class="cd-user-modal download-modal m_hide">
             <div class="cd-user-modal-container">
                 <div class="modal-head">
                     <div class="modal-title"><i class="fa fa-download"></i>资源下载</div>
@@ -232,8 +232,8 @@ $footer_text = cs_get_option( 'i_footer_text' );
 		<div class="index-box"></div>
 	<?php }	?>	
 	
-    <?php if ( !is_user_logged_in() && $login == true) { ?>
-        <div class="cd-user-modal login-modal">
+    <?php if ( !is_user_logged_in() && $login == true && !is_mobile() ) { ?>
+        <div class="cd-user-modal login-modal m_hide">
             <a href="#" class="cd-close-form"></a>
             <div class="cd-user-modal-container">
                 <div class="login-img" style="background-image: url('<?php echo $login_img; ?>');"></div>
@@ -260,8 +260,8 @@ $footer_text = cs_get_option( 'i_footer_text' );
         </div>
 	<?php }	?>
 	
-	<?php if ($sidebar == true) {?>
-		<?php get_sidebar(); ?>
+	<?php if ($sidebar == true && !is_mobile() ) {?>
+        <?php get_sidebar(); ?>
 	<?php }?>
 	
 	<?php if ( $circle == true && !is_mobile()  ) { ?>
@@ -269,7 +269,7 @@ $footer_text = cs_get_option( 'i_footer_text' );
 	<?php }?>	
 
 	<?php if ( $video == true && !is_mobile()  ) { ?>
-        <div id="video_container">
+        <div id="video_container" class="m_hide">
             <video id="background_video" loop muted autoplay data-video="<?php echo $video_link; ?>"></video>
             <div id="video_cover" style="background-image:url('<?php echo $video_img; ?>')"></div>
             <div id="overlay"></div>
