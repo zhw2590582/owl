@@ -9,7 +9,6 @@ $loadend = cs_get_option( 'i_ajax_end' );
 $loadnum = cs_get_option( 'i_ajax_num' ); 
 $worksnum = cs_get_option( 'i_works_num' ); 
 $avatar_image = cs_get_option( 'i_avatar_image' );
-$avatar_name = cs_get_option( 'i_avatar_name' );
 $avatar_content = cs_get_option( 'i_avatar_content' );
 $me = cs_get_option( 'i_me_switch' );
 $bulletin = cs_get_option( 'i_bulletin' );
@@ -27,8 +26,16 @@ $bulletin = cs_get_option( 'i_bulletin' );
                         <div class="me_avatar">
                             <img src="<?php echo $avatar_image; ?>">
                         </div>
-                        <span class="me_name"><?php echo $avatar_name; ?></span>
-                    </div>
+                        <ul class="me_name">
+                            <li>
+                                <p class="me_num"><?php $count_posts = wp_count_posts(); echo $published_posts =$count_posts->publish;?></p>
+                                <p class="me_title">文章</p>
+                            </li>
+                            <li>
+                                <p class="me_num"><?php echo $wpdb->get_var("SELECT COUNT(*) FROM $wpdb->comments");?></p>
+                                <p class="me_title">评论</p>
+                            </li>
+                        </ul>                    </div>
                 <?php if ($bulletin) { ?>
                     <div class="bulletin">
                         <?php
@@ -54,7 +61,7 @@ $bulletin = cs_get_option( 'i_bulletin' );
                 </div>
             </div>
         <?php } ?>
-                    
+
                     <div class="main_body colbox">
                         <div id="main" class="col m_hide">
                             <div class="main-inner">

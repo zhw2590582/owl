@@ -5,7 +5,6 @@ $pagination = cs_get_option('i_pagination');
 $like = cs_get_option( 'i_post_like' );
 $avatar_bg = cs_get_option( 'i_avatar_bg' );
 $avatar_image = cs_get_option( 'i_avatar_image' );
-$avatar_name = cs_get_option( 'i_avatar_name' );
 $avatar_content = cs_get_option( 'i_avatar_content' );
 $me = cs_get_option( 'i_me_switch' );
 $bulletin = cs_get_option( 'i_bulletin' );
@@ -25,7 +24,16 @@ $com = cs_get_option( 'i_index_com' );
                         <div class="me_avatar">
                             <img src="<?php echo $avatar_image; ?>">
                         </div>
-                        <span class="me_name"><?php echo $avatar_name; ?></span>
+                        <ul class="me_name">
+                            <li>
+                                <p class="me_num"><?php $count_posts = wp_count_posts(); echo $published_posts =$count_posts->publish;?></p>
+                                <p class="me_title">文章</p>
+                            </li>
+                            <li>
+                                <p class="me_num"><?php echo $wpdb->get_var("SELECT COUNT(*) FROM $wpdb->comments");?></p>
+                                <p class="me_title">评论</p>
+                            </li>
+                        </ul>
                     </div>
  				<?php if ($bulletin) { ?>
                     <div class="bulletin">

@@ -1322,14 +1322,6 @@ $options[]      = array(
           'default' => get_template_directory_uri()."/images/default/avatar.png",
         ),
 
- 		// 昵称
-        array(
-          'id'      => 'i_avatar_name',
-          'type'    => 'text',
-          'title'   => '昵称',
-          'default' => '你的名字',
-        ),
-
  		// 简介
         array(
           'id'      => 'i_avatar_content',
