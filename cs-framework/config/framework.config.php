@@ -1775,45 +1775,5 @@ $options[]   = array(
   ),
 );
 
-// ------------------------------
-// 权限                       -
-// ------------------------------
-$options[]   = array(
-  'name'     => 'authority',
-  'title'    => '权限',
-  'icon'     => 'fa fa-user-secret',
-  'fields'   => array(
-
-    array(
-      'type'    => 'notice',
-      'class'   => 'info',
-      'content' => '更新推送',
-    ),
-
-    // 更新推送
-    array(
-          'id'        => 'i_update',
-          'type'      => 'switcher',
-          'title'     => '更新推送',
-        ),
-
-    // 版本号
-        array(
-          'id'         => 'i_update_version',
-          'type'       => 'text',
-          'title'      => '版本号',
-          'dependency' => array( 'i_update', '==', 'true' ),
-        ),
-
-    // 通知
-        array(
-          'id'         => 'i_update_notice',
-          'type'       => 'textarea',
-          'title'      => '通知',
-          'dependency' => array( 'i_update', '==', 'true' ),
-        ),
-
-  )
-);
 
 CSFramework::instance( $settings, $options );
