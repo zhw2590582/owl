@@ -127,10 +127,6 @@
 	width:50px ! important;
 	height:50px ! important;
 }
-#accordion-section-lazycat , .hide , .toplevel_page_cs-framework .cs-framework .cs-nav ul li:last-child , .theme_free .pro {
+#accordion-section-lazycat , .hide{
 	display:none ! important;
-}
-
-.zhw_admin.toplevel_page_cs-framework .cs-framework .cs-nav ul li:last-child, .theme_pro .pro  {
-    display: block ! important;
 }
