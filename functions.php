@@ -1120,13 +1120,13 @@ function island_comment($comment, $args, $depth) {
 					</span>		
 					<span class="comment-edit">
 						<?php edit_comment_link(__('(Edit)', 'island') , '  ', '') ?>
-					</span>	
+					</span>
+                    <?php if ($comment->comment_approved == '0'): ?>
+                        <span class="comment-awaiting-moderation">
+                        <?php _e('Your comment is awaiting moderation.', 'island') ?></span>
+                    <?php endif; ?>
 				</div>
-				
-				<?php if ($comment->comment_approved == '0'): ?>
-					<em class="comment-awaiting-moderation">
-					<?php _e('Your comment is awaiting moderation.', 'island') ?></em>
-				<?php endif; ?>
+
 			</div>
 		</div>
 <?php
