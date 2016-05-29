@@ -3979,17 +3979,13 @@ input#wp-submit {
     line-height: 30px;
   }
 
-  .app_slider {
-    padding: 5px;
-  }
-
   #content #main .main-inner {
     margin-top: 0;
     padding: 5px;
   }
 
   .layouts-box article {
-    padding: 5px 0 0;
+    padding: 5px 5px 0;
   }
 }
 @media only screen and (max-width: 768px) {
