@@ -39,7 +39,12 @@ $like = cs_get_option( 'i_post_like' );
                                 <p class="me_num"><?php echo $wpdb->get_var("SELECT COUNT(*) FROM $wpdb->comments");?></p>
                                 <p class="me_title">评论</p>
                             </li>
-                        </ul>                    </div>
+                            <li>
+                                <p class="me_num"><?php $link = $wpdb->get_var("SELECT COUNT(*) FROM $wpdb->links WHERE link_visible = 'Y'"); echo $link; ?></p>
+                                <p class="me_title">邻居</p>
+                            </li>
+                        </ul>                   
+                    </div>
                 <?php if ($bulletin) { ?>
                     <div class="bulletin">
                         <?php

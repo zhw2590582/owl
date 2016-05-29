@@ -1410,7 +1410,7 @@ a.open-nav:before {
 .main_header .avatar_box .me_img .me_name {
   display: inline-block;
   float: left;
-  padding-top: 45px;
+  padding-top: 46px;
   font-size: 14px;
   margin-left: 5px;
 }
@@ -1418,7 +1418,7 @@ a.open-nav:before {
   display: inline-block;
   float: left;
   list-style-type: none;
-  padding: 0 20px;
+  padding: 0 15px;
   border-right: 1px solid #E8E2D2;
 }
 .main_header .avatar_box .me_img .me_name li:last-child {
@@ -1430,12 +1430,11 @@ a.open-nav:before {
   text-align: center;
 }
 .main_header .avatar_box .me_img .me_name li .me_num {
-  font-size: 13px;
+  font-size: 12px;
   margin: 3px 0 4px;
 }
 .main_header .avatar_box .me_img .me_name li .me_title {
-  font-size: 14px;
-  color: #9E6E56;
+  font-size: 13px;
 }
 .main_header .avatar_box .me_img img {
   border-radius: 4px;

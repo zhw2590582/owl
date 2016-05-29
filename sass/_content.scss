@@ -370,14 +370,14 @@ $lC:26px;
       .me_name{
         display: inline-block;
         float: left;
-        padding-top: 45px;
+        padding-top: 46px;
         font-size: 14px;
         margin-left: 5px;
         li{
           display: inline-block;
           float: left;
           list-style-type: none;
-          padding: 0 20px;
+          padding: 0 15px;
           @include bdsr;
           &:last-child{
             border-right: none;
@@ -388,12 +388,11 @@ $lC:26px;
             text-align: center;
           }
           .me_num{
-            font-size: 13px;
+            font-size: 12px;
             margin: 3px 0 4px;
           }
           .me_title{
-            font-size: 14px;
-            color:nth($c3,1);
+            font-size: 13px;
           }
         }
       }
