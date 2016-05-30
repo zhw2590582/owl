@@ -3270,6 +3270,10 @@ input#wp-submit {
   bottom: 0;
   background: rgba(0, 0, 0, 0.5); }
 
+.cue-playlist-container.playlist-closed {
+  position: relative;
+  z-index: 10000; }
+
 /* media-queries */
 @media only screen and (max-width: 1200px) {
   .m_hide, .nivo-directionNav, .nivo-caption, .sub-menu, .menu-item-has-children > a:after {
