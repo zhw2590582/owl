@@ -1461,11 +1461,13 @@ article {
       .audio-wrapper .mejs-container .mejs-controls .mejs-play button:before {
         color: rgba(255, 255, 255, 0.75);
         content: "\f144";
-        font-size: 50px; }
+        font-size: 50px;
+        line-height: 50px; }
       .audio-wrapper .mejs-container .mejs-controls .mejs-pause button:before {
         color: rgba(255, 255, 255, 0.6);
         content: "\f04c";
-        font-size: 30px; }
+        font-size: 30px;
+        line-height: 50px; }
       .audio-wrapper .mejs-container .mejs-controls .mejs-time-rail {
         position: absolute;
         bottom: 0;
