@@ -1578,10 +1578,18 @@ body.page,body.error404{
     }
 
     .dl-view{
+	  display:none;
       color: red;
       border-bottom: none;
     }
   }
+	.dlview .dl-box{
+		display: none;
+	}
+
+	.dlview .dl-view{
+		display: block;
+	}
 }
 
 .posts-nav {
