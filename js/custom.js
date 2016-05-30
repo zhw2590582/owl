@@ -1,8 +1,8 @@
 var temp = jQuery("script").last().attr("src");
 url = temp.substring(0, temp.indexOf('js'));
 
-jQuery(document).ready(function($) {
 
+jQuery(document).ready(function($) {
 
 //文章分栏
 $('.layouts_width').click(function(){
