@@ -519,22 +519,21 @@ input#wp-submit {
 	text-align:center;
 }
 .nivo-controlNav a {
-	display: inline-block;
-	width: 12px;
-	height: 12px;
-	margin: 0 4px;
-	background: rgba(0, 0, 0, 0.5);
-	border-radius: 12px;
+	margin: 10px 0 0 8px;
+	border-radius: 5px;
+	width: 8px;
+	height: 8px;
+	line-height: 8px;
 	overflow: hidden;
-	text-indent: -999em;
-	border: 2px solid transparent;
-	cursor: pointer;
-	opacity:.8;
+	text-indent: -10px;
+	background: #fff;
+	display: inline-block;
+	text-indent: 20px;
+	cursor: pointer
 }
 .nivo-controlNav a.active {
-	background: rgba(255, 255, 255, 0.8);
-	border: 2px solid rgba(0, 0, 0, 0.5);
-	cursor: default;
+	background: #fd4c5d;
+	width: 16px
 }
 
 .nivo-control {
