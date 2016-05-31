@@ -46,7 +46,7 @@ $workscom = cs_get_option( 'i_works_comment' );
 							<?php } ?>
                         </div>
                         <div class="main-menu col">
-                            <?php wp_nav_menu(array('theme_location' => 'main', 'container' => 'div', 'container_class' => 'header-menu-wrapper', 'menu_class' => 'header-menu-list', 'walker' => new description_walker())); ?>
+                            <?php wp_nav_menu(array('theme_location' => 'main', 'container' => 'div', 'container_class' => 'header-menu-wrapper', 'menu_class' => 'header-menu-list')); ?>
                         </div>
                     </div>
                     <div class="main_body colbox">

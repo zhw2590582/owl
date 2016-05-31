@@ -83,7 +83,7 @@ $avatar_name = cs_get_option( 'i_avatar_name' );
                 </div>
 
                 <nav class="header-menu">
-                    <?php wp_nav_menu(array('theme_location' => 'header', 'container' => 'div', 'container_class' => 'header-menu-wrapper', 'menu_class' => 'header-menu-list', 'walker' => new description_walker())); ?>
+                    <?php wp_nav_menu(array('theme_location' => 'header', 'container' => 'div', 'container_class' => 'header-menu-wrapper', 'menu_class' => 'header-menu-list')); ?>
                 </nav>	
 
                 <ul class="header-tool header-menu-list">

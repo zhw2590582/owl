@@ -60,7 +60,7 @@ $com = cs_get_option( 'i_index_com' );
 				<?php } ?>
                 </div>
                 <div class="main-menu col">
-                    <?php wp_nav_menu(array('theme_location' => 'main', 'container' => 'div', 'container_class' => 'header-menu-wrapper', 'menu_class' => 'header-menu-list', 'walker' => new description_walker())); ?>
+                    <?php wp_nav_menu(array('theme_location' => 'main', 'container' => 'div', 'container_class' => 'header-menu-wrapper', 'menu_class' => 'header-menu-list')); ?>
                 </div>
                 <div class="actions-menu col">
                     <a class="layouts_width selected" href="#">
