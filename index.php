@@ -190,7 +190,7 @@ $com = cs_get_option( 'i_index_com' );
 	                                <?php $nums=5;
                                     $get_comments_num=5;
                                     $min_comments = get_comments('status=approve&type=comment&number='.$get_comments_num.'&post_id='.get_the_ID());
-                                    if ( $com && !empty($min_comments && !is_mobile()) ) {
+                                    if ( $com && !empty($min_comments) && !is_mobile() ) {
                                     	$my_email=get_bloginfo ('admin_email');
                                     	$i = 1; ?>
                                     	<div class="min_comments m_hide">
