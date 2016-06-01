@@ -77,6 +77,15 @@
     margin-top: -190px;
   }
 
+  .comment-form-author, .comment-form-email, .comment-form-url{
+    width: 100%;
+    padding-right: 0;
+  }
+
+  .comments #comments #respond{
+    padding-left: 10px;
+  }
+
 }
 
 @media only screen and (max-width:768px) {

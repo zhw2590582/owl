@@ -273,12 +273,12 @@ function fa_add_smilies_to_comment_form($default) {
             <i class="fa fa-smile-o" aria-hidden="true"></i>
             <p class="comment-form-smilies clearfix hide">' . fa_get_wpsmiliestrans() . '</p>
         </div>
-        <div class="editor commentBold" data-editor="bold"><i class="fa fa-bold" aria-hidden="true"></i></div>
-        <div class="editor commentItalic" data-editor="italic"><i class="fa fa-italic" aria-hidden="true"></i></div>
-        <div class="editor commentUnderline" data-editor="underline"><i class="fa fa-underline" aria-hidden="true"></i></div>
-        <div class="editor commentDel" data-editor="del"><i class="fa fa-strikethrough" aria-hidden="true"></i></div>
-        <div class="editor commentImg" data-editor="img"><i class="fa fa-picture-o" aria-hidden="true"></i></div>
-        <div class="editor commentClean" data-editor="clean"><i class="fa fa-trash-o" aria-hidden="true"></i></div>
+        <div class="editor commentBold m_hide" data-editor="bold"><i class="fa fa-bold" aria-hidden="true"></i></div>
+        <div class="editor commentItalic m_hide" data-editor="italic"><i class="fa fa-italic" aria-hidden="true"></i></div>
+        <div class="editor commentUnderline m_hide" data-editor="underline"><i class="fa fa-underline" aria-hidden="true"></i></div>
+        <div class="editor commentDel m_hide" data-editor="del"><i class="fa fa-strikethrough" aria-hidden="true"></i></div>
+        <div class="editor commentImg m_hide" data-editor="img"><i class="fa fa-picture-o" aria-hidden="true"></i></div>
+        <div class="editor commentClean m_hide" data-editor="clean"><i class="fa fa-trash-o" aria-hidden="true"></i></div>
     </div>
     ';
     return $default;
