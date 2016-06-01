@@ -757,7 +757,7 @@ $options[]      = array(
 		// 邮箱密码
         array(
           'id'         => 'i_smpt_password',
-          'type'    => 'text',
+          'type'    => 'password',
           'title'      => '邮箱密码',
           'dependency' => array( 'i_comment_smpt', '==', 'true' ),
         ),
