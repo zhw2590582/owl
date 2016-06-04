@@ -461,3 +461,20 @@ mark,.highlight {
     border-bottom: none;
   }
 }
+
+.alignleft {
+  display:inline;
+  float:left;
+  margin-right:1.625em;
+}
+.alignright {
+  display:inline;
+  float:right;
+  margin-left:1.625em;
+}
+.aligncenter {
+  clear:both;
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+}

@@ -20,6 +20,7 @@
   .glass_nav .header-inner{
       background: nth($hi_c,1);
       color: nth($hi_c,1) !important;
+      @include bdsb;
       a{
         color: nth($hi_c,2) !important;
         &:hover{
