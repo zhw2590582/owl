@@ -294,7 +294,7 @@ html {
 }
 
 body {
-  font: 80.75%/1.5 STheiti,Verdana,'Microsoft Yahei',arial,sans-serif;
+  font-family: "Lantinghei SC", "Open Sans", Arial, "Hiragino Sans GB", "Microsoft YaHei", "\5FAE\8F6F\96C5\9ED1", "STHeiti", "WenQuanYi Micro Hei", SimSun, sans-serif;
   font-size: 1.2rem;
   overflow-x: hidden;
 }
@@ -1602,7 +1602,7 @@ article .post-wrap .post-inner .post-body header h2 a:hover {
 article .post-wrap .post-inner .post-body .post-content {
   padding-left: 220px;
   padding-right: 15px;
-  font-size: 13px;
+  font-size: 14px;
 }
 article .post-wrap .post-inner .post-body .post-content .read_more {
   font-size: 12px;
