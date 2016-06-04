@@ -1610,13 +1610,11 @@ body.page,body.error404{
     padding: 0 5px;
     line-height: 30px;
     margin: 0 5px;
-    background: #FAFAFA;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
-    border: 1px solid #ffffff;
+    @include itme-bg2;
   }
 
   .page-numbers.current,.posts-nav .page-numbers:not(.dots):hover{
-    background-color: #fff;
+    @include itme-bg2;
   }
 }
 

@@ -799,7 +799,8 @@ input#wp-submit {
   border-bottom-left-radius: 3px;
   border-bottom-right-radius: 3px;
   border: 1px solid nth($int,1);
-  @include bg-w (0.9);
+  @include itme-bg2;
+  box-shadow: none;
   > div{
 	display: inline-block;
 	float: left;

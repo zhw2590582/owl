@@ -2510,12 +2510,12 @@ body.page .bottom_meta, body.error404 .bottom_meta {
   padding: 0 5px;
   line-height: 30px;
   margin: 0 5px;
-  background: #FAFAFA;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-  border: 1px solid #ffffff;
+  background: #fff;
+  box-shadow: 0 0 1px #BFB7A3;
 }
 .posts-nav .page-numbers.current, .posts-nav .posts-nav .page-numbers:not(.dots):hover {
-  background-color: #fff;
+  background: #fff;
+  box-shadow: 0 0 1px #BFB7A3;
 }
 
 .ed-widget form p {
@@ -3880,7 +3880,9 @@ input#wp-submit {
   border-bottom-left-radius: 3px;
   border-bottom-right-radius: 3px;
   border: 1px solid #ddd;
-  background: rgba(255, 255, 255, 0.9);
+  background: #fff;
+  box-shadow: 0 0 1px #BFB7A3;
+  box-shadow: none;
 }
 .commentPlus > div {
   display: inline-block;
