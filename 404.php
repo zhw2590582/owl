@@ -61,8 +61,8 @@ $bulletin = cs_get_option( 'i_bulletin' );
         <?php } ?>
 
             <div class="main_body colbox">
-                <?php if (!is_mobile()) { ?>
-                    <aside id="sidebar" class="col">
+                <?php if (!is_mobile() && $layout == 'i_layout_two') { ?>
+                    <aside id="sidebar" class="col m_hide">
                         <?php if ($me == true) {?>
                             <div id="about">
                                 <p class="me_content">
@@ -103,7 +103,7 @@ $bulletin = cs_get_option( 'i_bulletin' );
 										<div class="post-inner">
 											<div class="post-body">
 												<div class="post-content">
-													<div calss="content">
+													<div calss="content clearfix">
 													    <div class="title404">404</div>
 														<p>对不起，你要查看的页面已经不存在，请返回！</p>
 													</div>
