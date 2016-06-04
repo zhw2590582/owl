@@ -114,7 +114,7 @@ $bulletin = cs_get_option( 'i_bulletin' );
 															</h2>
         												</header>
         												<div class="post-content">
-        													<div calss="content">
+        													<div calss="content clearfix">
                                                                 <div class="archivePost">
                                                                      <ul class="timeline">
                                                                      <li class="tl-header">

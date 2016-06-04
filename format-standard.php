@@ -62,7 +62,7 @@ $feature_num = cs_get_option( 'i_feature_num' );
             <h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
         </header>
         <div class="post-content">
-            <div class="content">
+            <div class="content clearfix">
             <?php if(is_search() || is_archive()) { ?>
                 <div class="excerpt-more">
                     <?php the_excerpt(__( 'Read More','island')); ?>
