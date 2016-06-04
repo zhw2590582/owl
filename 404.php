@@ -1,9 +1,10 @@
 <?php
+error_reporting(0);
+$layout = cs_get_option('i_layout');
 $avatar_image = cs_get_option( 'i_avatar_image' );
-$avatar_name = cs_get_option( 'i_avatar_name' );
 $avatar_content = cs_get_option( 'i_avatar_content' );
 $me = cs_get_option( 'i_me_switch' );
-
+$bulletin = cs_get_option( 'i_bulletin' );
 ?>
 
 <?php get_header(); ?>
@@ -11,14 +12,29 @@ $me = cs_get_option( 'i_me_switch' );
 <section id="content">
     <div class="container">
         <div class="content-inner">
-            <div class="main_header colbox">
+        <?php if (!is_mobile()) { ?>
+            <div class="main_header colbox m_hide">
                 <div class="avatar_box col">
                     <div class="me_img">
                         <div class="me_avatar">
                             <img src="<?php echo $avatar_image; ?>">
                         </div>
-                        <span class="me_name"><?php echo $avatar_name; ?></span>
+                        <ul class="me_name">
+                            <li>
+                                <p class="me_num"><?php $count_posts = wp_count_posts(); echo $published_posts =$count_posts->publish;?></p>
+                                <p class="me_title">文章</p>
+                            </li>
+                            <li>
+                                <p class="me_num"><?php echo $wpdb->get_var("SELECT COUNT(*) FROM $wpdb->comments");?></p>
+                                <p class="me_title">评论</p>
+                            </li>
+                            <li>
+                                <p class="me_num"><?php $link = $wpdb->get_var("SELECT COUNT(*) FROM $wpdb->links WHERE link_visible = 'Y'"); echo $link; ?></p>
+                                <p class="me_title">邻居</p>
+                            </li>
+                        </ul>
                     </div>
+                <?php if ($bulletin) { ?>
                     <div class="bulletin">
                         <?php
                             $my_bulletins = cs_get_option( 'i_bulletin_custom' );
@@ -36,11 +52,13 @@ $me = cs_get_option( 'i_me_switch' );
                             echo '</ul>';
                         ?>
                     </div>
+                <?php } ?>
                 </div>
                 <div class="main-menu col">
-                    <?php wp_nav_menu(array('theme_location' => 'main', 'container' => 'div', 'container_class' => 'header-menu-wrapper', 'menu_class' => 'header-menu-list', 'walker' => new description_walker())); ?>
+                    <?php wp_nav_menu(array('theme_location' => 'main', 'container' => 'div', 'container_class' => 'header-menu-wrapper', 'menu_class' => 'header-menu-list')); ?>
                 </div>
             </div>
+        <?php } ?>
 
             <div class="main_body colbox">
                 <?php if (!is_mobile()) { ?>
