@@ -1114,10 +1114,6 @@ article{
           height: auto;
           top: 14px;
           z-index:999;
-
-          &:before{
-            content: '#';
-          }
         }
 
         .comment-block{
@@ -1513,10 +1509,6 @@ article{
   position: relative !important;
   top: auto !important;
   right: auto !important;
-}
-
-.comment-awaiting-moderation {
-  font-weight: bold;
 }
 
 #loading-comments{

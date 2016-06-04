@@ -2080,9 +2080,6 @@ article .post-wrap .bottom_meta .meta_tabs a:before {
   top: 14px;
   z-index: 999;
 }
-.comments #comments .commentlist li .commentcount:before {
-  content: '#';
-}
 .comments #comments .commentlist li .comment-block {
   position: relative;
   padding: 10px 0 10px 30px;
@@ -2441,10 +2438,6 @@ article .post-wrap .bottom_meta .meta_tabs a:before {
   position: relative !important;
   top: auto !important;
   right: auto !important;
-}
-
-.comment-awaiting-moderation {
-  font-weight: bold;
 }
 
 #loading-comments {
