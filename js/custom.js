@@ -267,7 +267,7 @@ if (item.length > 0) {
 	};
 	$(window).resize(function() {
 		if( $(window).width() < 1200){
-			$('body').not('.single,.page').addClass('layouts-box');
+			$('body').not('.single,.page,.error404').addClass('layouts-box');
 		}else{
 			$('body').removeClass('layouts-box');
 		};
