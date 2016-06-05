@@ -178,14 +178,14 @@ $like = cs_get_option( 'i_post_like' );
                                                     <?php $i++;
                                                     } wp_reset_query();
                                                 }
-                                                if ( $i  == 0 )  echo '<div class="r_title">没有相关文章!</div>';
+                                                if ( $i  == 0 )  echo '<div class="r_title">!</div>';
                                                 ?>
                                             </ul>
                                             <?php } ?>
                                         </div>
                                             <ul class="bottom_meta clearfix">
                                                 <li class="mate-time fl"><i class="fa fa-clock-o"></i><?php echo ''.timeago( get_gmt_from_date(get_the_time('Y-m-d G:i:s')) ); ?></li>
-                                                <li class="mate-cat fl m_hide"><i class="fa fa-circle-o-notch"></i><?php the_category(' '); ?></li>
+                                                <li class="mate-cat fl m_hide"><i class="fa fa-bookmark"></i><?php the_category(' '); ?></li>
                                                 <?php $posttags = get_the_tags(); if ($posttags) { ?>
                                                     <li class="meta_tabs fl m_hide"><i class="fa fa-tags"></i><?php the_tags('', ' ', ''); ?></li>
                                                 <?php } ?>
