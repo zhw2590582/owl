@@ -187,7 +187,7 @@ $footer_text = cs_get_option( 'i_footer_text' );
 					 $banner_c = ' '. $banner_d[color] .' url(\''. $banner_d[image] .'\') no-repeat center -10px';
 					?>
 					<li data-banner="<?php echo $banner_c; ?>" data-body="" class="current" data-menu="<?php echo $menu_c; ?>">
-						<img src="<?php bloginfo('template_directory'); ?>/images/default/featured_bg.png">
+						<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-echo="<?php bloginfo('template_directory'); ?>/images/default/featured_bg.png">
 						<span class="text-ellipsis">默认</span>
 					</li>
                     <?php 
@@ -199,7 +199,7 @@ $footer_text = cs_get_option( 'i_footer_text' );
                             $body = ' '. $skin['i_skin_body'][color] .' url(\''. $skin['i_skin_body'][image] .'\') '. $skin['i_skin_body'][repeat] .' '. $skin['i_skin_body'][position] .' '. $skin['i_skin_body'][attachment] .'';
                             echo '
                             <li data-banner="'. $banner .'" data-body="'. $body .'" data-menu="'. $menu .'">
-                                <img src="'. $skin['i_skin_thumb'] .'" height="96" width="96">
+                                <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-echo="'. $skin['i_skin_thumb'] .'" height="96" width="96">
                                 <span class="text-ellipsis">'. $skin['i_skin_title'] .'</span>
                             </li>';
                           }
