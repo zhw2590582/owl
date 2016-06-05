@@ -772,7 +772,7 @@ mark, .highlight {
 }
 
 .container {
-  width: 1000px;
+  width: 1200px;
   margin: 0 auto;
 }
 
@@ -1156,7 +1156,7 @@ a.open-nav:before {
   padding-bottom: 150px;
 }
 #content #sidebar {
-  width: 250px;
+  width: 300px;
   padding: 10px 0 10px 10px;
   position: relative;
   border-bottom-left-radius: 5px;
@@ -1394,7 +1394,7 @@ a.open-nav:before {
 #widget .lfixed {
   position: fixed;
   top: 10px;
-  width: 240px;
+  width: 290px;
 }
 
 .main_header {
@@ -1404,7 +1404,7 @@ a.open-nav:before {
   border-bottom: 1px solid #E8E2D2;
 }
 .main_header .avatar_box {
-  width: 250px;
+  width: 300px;
   padding-right: 10px;
   position: relative;
   z-index: 0;
