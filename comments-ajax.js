@@ -171,8 +171,4 @@ function countdown() {
   }
 }
 
-if ( $('.commentlist li').length = 0 ) {
-	$('.commentlist').removeClass('comdot');
-}
-
 });// end jQ
