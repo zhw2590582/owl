@@ -178,7 +178,7 @@ $like = cs_get_option( 'i_post_like' );
                                                     <?php $i++;
                                                     } wp_reset_query();
                                                 }
-                                                if ( $i  == 0 )  echo '<div class="r_title">!</div>';
+                                                if ( $i  == 0 )  echo '<div class="r_title"></div>';
                                                 ?>
                                             </ul>
                                             <?php } ?>
