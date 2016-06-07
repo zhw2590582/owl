@@ -248,11 +248,11 @@ $footer_text = cs_get_option( 'i_footer_text' );
                     ?>
                     <?php wp_login_form($login_form_args); ?>
                     <p class="login-links clearfix">
-                        <span class="alignleft">
+                        <span class="fl">
                             <a href="<?php echo htmlspecialchars(wp_lostpassword_url(get_permalink()), ENT_QUOTES); ?>"><?php echo __('忘记密码', 'pinthis'); ?></a>
                         </span>
                         <?php if (get_option('users_can_register')) { ?>
-                            <span class="alignright"><?php wp_register('', ''); ?></span>
+                            <span class="fr"><?php wp_register('', ''); ?></span>
                         <?php } ?>
                     </p>
             	</div>
