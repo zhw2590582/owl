@@ -122,7 +122,7 @@ if (item.length > 0) {
 		$(this).prepend( '<img src="' + linkhref + 'favicon.ico">');
 	});
 	$(".linkcat img").on('error', function () {
-		$(this).prop('src', url + '/images/default/d_favicon.ico');
+		$(this).prop('src', url + 'images/default/d_favicon.ico');
 	});
 
 
