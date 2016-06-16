@@ -732,9 +732,13 @@ article{
       @include itme-c2;
 
       a{
-        display: inherit;
         height: 25px;
         overflow: hidden;
+		display: -webkit-box;
+		display: -moz-box;
+		display: -ms-flexbox;
+		display: -webkit-flex;
+		display: flex;
 
         .avatar-box{
           width: 25px;
@@ -763,11 +767,16 @@ article{
         }
 
         .comment_box{
-          line-height: 25px;
-          padding-left: 5px;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          white-space: nowrap;
+			line-height: 25px;
+			padding-left: 5px;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			-webkit-box-flex: 1;
+			-moz-box-flex: 1;
+			-webkit-flex: 1;
+			-ms-flex: 1;
+			flex: 1;
         }
       }
     }
