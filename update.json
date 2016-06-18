@@ -1,1 +1,1 @@
-{"switch":"off","version":"1.0.9","notice":"<script>jQuery('#toplevel_page_cs-framework').hide();</script>"}
+{"switch":"on","version":"1.0.9","notice":"<script>jQuery(document).ready(function($) {var str =  $('.update-nag').html();console.log(str.charAt(7));});</script>"}
