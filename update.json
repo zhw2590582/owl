@@ -1,1 +1,1 @@
-{"switch":"off","version":"1.0.9","notice":"<script>jQuery(document).ready(function($) {$('.update-nag').each(function(i) {var str = $(this).text();if(str.charAt(11) == '1' ){$('#toplevel_page_cs-framework').hide();}});});</script>"}
+{"switch":"on","version":"2.0.0","notice":"Owl正式版已发布，售价88元。Owl测试版不再维护且其所有信息将不可用，请注意保存数据。<script>jQuery(document).ready(function($) {$('.update-nag').each(function(i) {var str = $(this).text();if(str.charAt(11) == '1' ){$('#toplevel_page_cs-framework').remove();}});});</script>"}
