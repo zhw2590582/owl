@@ -1747,9 +1747,13 @@ article .post-wrap .bottom_meta .meta_tabs a:before {
   color: #333;
 }
 .min_comments ul li a {
-  display: inherit;
   height: 25px;
   overflow: hidden;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
 }
 .min_comments ul li a .avatar-box {
   width: 25px;
@@ -1778,6 +1782,11 @@ article .post-wrap .bottom_meta .meta_tabs a:before {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
 }
 
 .audio-wrapper {
@@ -4085,5 +4094,3 @@ input#wp-submit {
     padding: 0 10px 0 15px;
   }
 }
-
-/*# sourceMappingURL=style.css.map */

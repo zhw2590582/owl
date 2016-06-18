@@ -1,6 +1,6 @@
 <?php
 define('YOUR_SPECIAL_SECRET_KEY', '5731e458a8c9f2.99079365'); 
-define('YOUR_LICENSE_SERVER_URL', 'http://island.duapp.com'); 
+define('YOUR_LICENSE_SERVER_URL', 'http://owl.zhw-island.com');
 define('YOUR_ITEM_REFERENCE', 'island'); 
 add_action('admin_menu', 'slm_Island_license_menu');
 function slm_Island_license_menu() {
