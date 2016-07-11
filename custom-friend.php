@@ -116,7 +116,9 @@ $bulletin = cs_get_option( 'i_bulletin' );
         												</header>
         												<div class="post-content">
         													<div calss="content clearfix">
-        														<?php the_content(); ?>
+        														<?php if ( have_posts() ) : the_post(); ?>
+                                                                    <?php the_content(); ?>
+                                                                <?php endif; ?>
         														<ul class="link_box">
                                                                     <?php wp_list_bookmarks('orderby=id&category_orderby=id'); ?>
         														</ul>
