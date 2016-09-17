@@ -1,13 +1,13 @@
-<?php 
-/* 
+<?php
+/*
 Template Name: 作品页面
-*/ 
+*/
 error_reporting(0);
 $pagination = cs_get_option('i_pagination');
-$loadmore = cs_get_option( 'i_ajax_loading' );  
-$loadend = cs_get_option( 'i_ajax_end' ); 
-$loadnum = cs_get_option( 'i_ajax_num' ); 
-$worksnum = cs_get_option( 'i_works_num' ); 
+$loadmore = cs_get_option( 'i_ajax_loading' );
+$loadend = cs_get_option( 'i_ajax_end' );
+$loadnum = cs_get_option( 'i_ajax_num' );
+$worksnum = cs_get_option( 'i_works_num' );
 $avatar_image = cs_get_option( 'i_avatar_image' );
 $avatar_content = cs_get_option( 'i_avatar_content' );
 $me = cs_get_option( 'i_me_switch' );
@@ -39,7 +39,7 @@ $bulletin = cs_get_option( 'i_bulletin' );
                                 <p class="me_num"><?php $link = $wpdb->get_var("SELECT COUNT(*) FROM $wpdb->links WHERE link_visible = 'Y'"); echo $link; ?></p>
                                 <p class="me_title">邻居</p>
                             </li>
-                        </ul>                     
+                        </ul>
                       </div>
                 <?php if ($bulletin) { ?>
                     <div class="bulletin">
@@ -68,23 +68,23 @@ $bulletin = cs_get_option( 'i_bulletin' );
         <?php } ?>
 
                     <div class="main_body colbox">
-                        <div id="main" class="col m_hide">
+                        <div id="main" class="col">
                             <div class="main-inner">
         	                    <div id="posts-box">
         	                        <div class="posts grids clearfix">
 
-                                        <?php 
-                                          $temp = $wp_query; 
-                                          $wp_query = null; 
-                                          $wp_query = new WP_Query(); 
+                                        <?php
+                                          $temp = $wp_query;
+                                          $wp_query = null;
+                                          $wp_query = new WP_Query();
                                           $show_posts = $worksnum;
-                                          $permalink = 'Post name'; 
+                                          $permalink = 'Post name';
                                           $post_type = 'work';
-                                          $req_uri =  $_SERVER['REQUEST_URI'];  
+                                          $req_uri =  $_SERVER['REQUEST_URI'];
                                           if($permalink == 'Default') {
                                               $req_uri = explode('paged=', $req_uri);
                                               if($_GET['paged']) {
-                                                $uri = $req_uri[0] . 'paged='; 
+                                                $uri = $req_uri[0] . 'paged=';
                                               } else {
                                                 $uri = $req_uri[0] . '&paged=';
                                               }
@@ -95,9 +95,9 @@ $bulletin = cs_get_option( 'i_bulletin' );
                                               }
                                                 $uri = $req_uri . 'page/';
                                           }
-                                          $wp_query->query('showposts='.$show_posts.'&post_type='. $post_type .'&paged='.$paged); 
+                                          $wp_query->query('showposts='.$show_posts.'&post_type='. $post_type .'&paged='.$paged);
                                           $count_posts = wp_count_posts('projects');
-                                          while ($wp_query->have_posts()) : $wp_query->the_post(); 
+                                          while ($wp_query->have_posts()) : $wp_query->the_post();
                                           ?>
 
                                         <article <?php post_class('grid-item'); ?>>
@@ -146,8 +146,8 @@ $bulletin = cs_get_option( 'i_bulletin' );
                                         </div>
                                     </div>
 
-                                      <?php 
-                                      $wp_query = null; 
+                                      <?php
+                                      $wp_query = null;
                                       $wp_query = $temp;  // Reset
                                       ?>
 
@@ -158,12 +158,12 @@ $bulletin = cs_get_option( 'i_bulletin' );
                                             $(".post-nav").removeClass("post-nav");
                                         } else if ($(".post-nav-inside a").length==1){
 
-                                        }else{			
+                                        }else{
                                             $(".post-nav-inside a:eq(0)").wrap("<div class='post-nav-left'></div>");
-                                            $(".post-nav-inside a:eq(1)").wrap("<div class='post-nav-right'></div>");	
-                                        }			
-                                    });	
-                                    </script>	
+                                            $(".post-nav-inside a:eq(1)").wrap("<div class='post-nav-right'></div>");
+                                        }
+                                    });
+                                    </script>
 
         	                    </div>
                         	</div>

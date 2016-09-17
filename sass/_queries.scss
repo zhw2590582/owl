@@ -89,6 +89,12 @@
   .link_box .linkcat .blogroll li{
     width: 49%;
   }
+  .grids .grid-item .work-wrap .featured-image{
+    width: 100%;
+  }
+  .grids .grid-item{
+    width: 25%;
+  }
 }
 
 @media only screen and (max-width:768px) {
@@ -102,5 +108,8 @@
   }
   .comments #comments{
     padding: 0 10px 0 15px;
+  }
+  .grids .grid-item,.layout_one .grids .grid-item{
+    width: 100%;
   }
 }
