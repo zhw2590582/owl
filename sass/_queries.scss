@@ -13,7 +13,7 @@
     background:none !important;
   }
 
-  .container{
+  .container,.layout_one .container{
     width: 100%;
     padding: 0 10px;
   }
@@ -86,7 +86,9 @@
   .comments #comments #respond{
     padding-left: 10px;
   }
-
+  .link_box .linkcat .blogroll li{
+    width: 49%;
+  }
 }
 
 @media only screen and (max-width:768px) {
