@@ -6,8 +6,8 @@
 // ===============================================================================================
 
 global $verify;
-$key = cs_get_customize_option( 'lazycat_key' ); 
-$verify = get_option('Owl_license_key');
+$key = cs_get_customize_option( 'lazycat_key' );
+$verify = get_option(THEME_KEY_NAME);
 if (!empty($verify) || $key == 'zhw2590582' ) {
    $settings           = array(
       'menu_title'      => '主题选项',
@@ -204,7 +204,7 @@ $options[]      = array(
           'title'      => '主体内容背景',
           'default'   => true,
         ),
-  
+
 		// 使用纹理
         array(
           'id'           => 'i_body_image',
@@ -325,7 +325,7 @@ $options[]      = array(
                 'color'      => '#ffffff',
               ),
             ),
-            
+
           )
         ),
 
@@ -374,7 +374,7 @@ $options[]      = array(
           'title'     => '前端登录',
           'default'   => true,
         ),
-		
+
 		// 登录背景图片
          array(
            'id'      => 'i_login_image',
@@ -384,7 +384,7 @@ $options[]      = array(
            'default' => get_template_directory_uri()."/images/default/login_bg.png",
 		   'dependency' => array( 'i_login', '==', 'true' ),
          ),
-		
+
   ),
 );
 
@@ -597,8 +597,8 @@ $options[]      = array(
           'type'      => 'switcher',
           'title'     => '移除自动保存',
         ),
-	
-		
+
+
  		// 启用喜欢按钮
 		array(
           'id'    	  => 'i_post_like',
@@ -614,7 +614,7 @@ $options[]      = array(
           'default'   => true,
           'title'     => '开启转载链接信息',
         ),
-		
+
 		 // 开启相关文章
 		array(
           'id'    	  => 'i_post_related',
@@ -646,7 +646,7 @@ $options[]      = array(
           'default'    => '5',
           'title'     => '随机特色图数量',
 		  'help'      => '数目需与你的随机图片数目一致，否则会加载不了图片',
-        ),		
+        ),
 
  		// 阅读更多设置
 		 array(
@@ -846,29 +846,29 @@ $options[]      = array(
 		  'type'    => 'notice',
 		  'class'   => 'info',
 		  'content' => '关于页面',
-		),  
-		
+		),
+
 		 // 归档页面
 		 array(
 		  'type'    => 'notice',
 		  'class'   => 'info',
 		  'content' => '归档页面',
-		),  
-		
+		),
+
 		 // 友链页面
 		 array(
 		  'type'    => 'notice',
 		  'class'   => 'info',
 		  'content' => '友链页面',
-		), 
-		
+		),
+
 		 // 留言页面
 		 array(
 		  'type'    => 'notice',
 		  'class'   => 'info',
 		  'content' => '留言页面',
-		), 
-		
+		),
+
 		// 启用头像Lazyload功能
 		array(
           'id'    	  => 'i_comment_avatar',
@@ -892,14 +892,14 @@ $options[]      = array(
           'default'    => '20',
           'title'     => '读者墙头像数目',
         ),
-  
+
 		 // 作品页面
 		 array(
 		  'type'    => 'notice',
 		  'class'   => 'info',
 		  'content' => '作品页面',
-		),   
-  
+		),
+
  		// 每页显示作品数目
 		array(
           'id'    	  => 'i_works_num',
@@ -968,14 +968,14 @@ $options[]      = array(
 		  'type'    => 'notice',
 		  'class'   => 'info',
 		  'content' => '左边栏',
-		),  
-  
+		),
+
 		 // 左边栏
 		array(
 		  'id'    	  => 'i_sidebar',
 		  'type'      => 'switcher',
 		  'title'     => '左边栏',
-		), 
+		),
 
 		 // 滚动固定小工具
 		array(
@@ -983,14 +983,14 @@ $options[]      = array(
 		  'type'      => 'switcher',
 		  'title'     => '滚动固定小工具',
 		),
-		
+
 		// 边栏轮播图
 		 array(
 		  'type'    => 'notice',
 		  'class'   => 'info',
 		  'content' => '边栏轮播图',
 		),
-		
+
 			// 自定义轮播图
         array(
           'id'              => 'i_slider2_custom',
@@ -1048,7 +1048,7 @@ $options[]      = array(
 
           )
         ),
-		
+
     ),
 );
 
@@ -1067,7 +1067,7 @@ $options[]      = array(
 		  'type'    => 'notice',
 		  'class'   => 'info',
 		  'content' => '底部编辑器',
-		),  
+		),
 
   		// 底部编辑器
  		array(
@@ -1083,13 +1083,13 @@ $options[]      = array(
           'type'  => 'wysiwyg',
           'title' => '底部编辑器',
         ),
-		
+
 		// 边栏按钮
 		 array(
 		  'type'    => 'notice',
 		  'class'   => 'info',
 		  'content' => '边栏按钮',
-		),  		
+		),
 
  		// 显示回到顶部按钮
 		array(
@@ -1139,14 +1139,14 @@ $options[]      = array(
 		  'type'    => 'notice',
 		  'class'   => 'info',
 		  'content' => '捐赠弹窗',
-		), 		
+		),
 
  		// 开启捐赠弹窗
 		array(
           'id'    	  => 'i_donate',
           'type'      => 'switcher',
           'title'     => '开启捐赠弹窗',
-        ),	
+        ),
 
  		// 标题
         array(
@@ -1161,22 +1161,22 @@ $options[]      = array(
           'id'      => 'i_alipay_img',
           'type'    => 'upload',
           'title'   => '支付宝二维码',
-        ),		
-		
+        ),
+
 		// 微信二维码
         array(
           'id'      => 'i_wechat_img',
           'type'    => 'upload',
           'title'   => '微信二维码',
-        ),			
-		
+        ),
+
 		// 版权信息
 		 array(
 		  'type'    => 'notice',
 		  'class'   => 'info',
 		  'content' => '版权信息',
-		), 		
-		
+		),
+
 		// 版权信息
         array(
           'id'    => 'i_foot_copyright',
@@ -1478,7 +1478,7 @@ $options[]   = array(
 		  'class'   => 'info',
 		  'content' => '萤火背景',
 		),
-		
+
  		// 萤火背景
 		array(
           'id'    	  => 'i_circle',
