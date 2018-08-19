@@ -5,19 +5,14 @@
 // -----------------------------------------------------------------------------------------------
 // ===============================================================================================
 
-global $verify;
-$key = cs_get_customize_option( 'lazycat_key' );
-$verify = get_option(THEME_KEY_NAME);
-if (!empty($verify) || $key == 'zhw2590582' ) {
-   $settings           = array(
-      'menu_title'      => '主题选项',
-      'menu_type'       => 'menu', // menu, submenu, options, theme, etc.
-      'menu_slug'       => 'cs-framework',
-      'ajax_save'       => true,
-      'show_reset_all'  => false,
-      'framework_title' => ''.wp_get_theme()->display('Name').'<small style="color:red;margin-left:10px">'.wp_get_theme()->display('Version').'</small>',
-   );
-} else {};
+$settings           = array(
+  'menu_title'      => '主题选项',
+  'menu_type'       => 'menu', // menu, submenu, options, theme, etc.
+  'menu_slug'       => 'cs-framework',
+  'ajax_save'       => true,
+  'show_reset_all'  => false,
+  'framework_title' => ''.wp_get_theme()->display('Name').'<small style="color:red;margin-left:10px">'.wp_get_theme()->display('Version').'</small>',
+);
 
 // ===============================================================================================
 // -----------------------------------------------------------------------------------------------
